@@ -5,7 +5,17 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        "Barlow": "Barlow, sans-serif",
+        "Mulish": "Mulish, sans-serif"
+      },
+      colors: {
+        primary: "#000",
+        secondary: "#fff",
+        bg: "#f0f0f0"
+      }
+    },
   },
   plugins: [],
 }
