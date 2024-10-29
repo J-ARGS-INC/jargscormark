@@ -11,8 +11,9 @@ export default {
         "Mulish": "Mulish, sans-serif"
       },
       colors: {
-        primary: "#000",
+        primary: "#0E28C3",
         secondary: "#fff",
+        purple: "#C0272D",
         bg: "#f0f0f0"
       }
     },

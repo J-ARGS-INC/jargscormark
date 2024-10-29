@@ -1,4 +1,9 @@
 import { useState } from 'react'
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
 import './assets/App.css'
 import "./assets/index.css"
 function App() {

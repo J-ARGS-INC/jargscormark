@@ -7,7 +7,7 @@ const Container = () => {
         <>
             <Header />
             <Outlet />
-            {/* <Footer /> */}
+            <Footer />
         </>
     )
 }

@@ -5,11 +5,11 @@ const Header = () => {
     return (
         <>
             {/* Large Screens */}
-            <nav className='py-4  justify-between fixed  w-[100%] hidden md:flex'>
+            <nav className='py-5 justify-between fixed  w-[100%] hidden md:flex bg-white z-10 shadow-sm'>
                 <ul>
                     {/* <li>Hi</li> */}
                 </ul>
-                <ul className='flex gap-5 font-Barlow'>
+                <ul className='flex justify-between gap-14 font-Barlow'>
                     <li><NavLink to={"/"}>Home</NavLink></li>
                     <li><NavLink to={"/services"}>Services</NavLink></li>
                     <li><NavLink to={"/about"}>About</NavLink></li>
