@@ -38,7 +38,7 @@ const Homepage = () => {
 
                     <div className='hidden md:grid grid-cols-2 gap-5 pl-32 h-[60vh]'>
                         <div className="border-primary border  rounded-md overflow-hidden">
-                            <img src="https://images.pexels.com/photos/5485890/pexels-photo-5485890.jpeg?auto=compress&cs=tinysrgb&w=600" className='w-[100%] h-[100%] object-cover' alt="" />
+                            <img src="https://images.pexels.com/photos/7959665/pexels-photo-7959665.jpeg" className='w-[100%] h-[100%] object-cover' alt="" />
                         </div>
                         <div className="border-primary border  rounded-md overflow-hidden relative top-14">
                             <img src="https://images.pexels.com/photos/2489295/pexels-photo-2489295.jpeg?auto=compress&cs=tinysrgb&w=600" className='w-[100%] h-[100%] object-cover' alt="" />
@@ -291,9 +291,6 @@ const Homepage = () => {
                     </div>
                 </div>
             </section>
-
-
-
         </>
     )
 }
