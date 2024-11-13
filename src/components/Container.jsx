@@ -7,7 +7,9 @@ const Container = () => {
     return (
         <>
             <Header />
-            <Outlet />
+            <div className='mt-10 md:mt-0'>
+                <Outlet />
+            </div>
             <Footer />
         </>
     )
