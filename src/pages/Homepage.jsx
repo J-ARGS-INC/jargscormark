@@ -7,7 +7,7 @@ import { PiFunnel } from "react-icons/pi";
 import { MdShowChart } from "react-icons/md";
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import { SwiperSlide, Swiper } from 'swiper/react'
-
+import { motion } from 'framer-motion';
 
 import Img1 from "../assets/Images/canva-white-brown-simple-restaurant-logo-koIA1HEug0Q-removebg-preview.png"
 import Img2 from "../assets/Images/canva-yellow-and-white-minimalist-kitchen-logo-B0UKuTQPinA-removebg-preview.png"
@@ -24,25 +24,41 @@ const Homepage = () => {
             <header>
                 <div className='md:min-h-[100vh] grid grid-cols-1  md:grid-cols-2 py-10 px-5  md:py-[18vh] md:px-20 bg-[#f5f5f5]'>
                     <div className='font-Mulish'>
-                        <p className=''>Ready to ignite your business with <b className='text-primary'>JARGS?</b></p>
-                        <div className='font-Barlow py-5'>
-                            <h1 className='text-5xl md:text-6xl font-bold capitalize mb-3' >Crafting Brands,  that Inspire, Engage, and Transform.</h1>
-                            <p className='text-xl mb-8'>Your brand is more than just a business—it’s a story that deserves to be told, and we’re here to make sure that story resonates, inspires, and drives action</p>
-                            <div className='grid grid-cols-1 md:grid-cols-2 gap-[5vw]'>
-                                <NavLink className={"flex items-center gap-3 justify-between bg-primary py-4 px-5 text-lg text-secondary rounded-full hover:bg-secondary hover:text-primary duration-500 hover:border-primary border border-transparent hover:shadow-lg "}>Let's Go <TbLocation size={20} /></NavLink>
 
-                                <NavLink className={"flex items-center gap-3 justify-between bg-secondary py-4 px-5 text-lg text-primary rounded-full border hover:border-primary duration-500 "}>Elevate Your Brand<RxArrowRight size={20} className='' /></NavLink>
+                        <motion.p initial={{ translateX: -200, opacity: 0 }} animate={{ translateX: 0, opacity: 1 }} className=''>Ready to ignite your business with <b className='text-primary'>JARGS?</b></motion.p>
+
+                        <div className='font-Barlow py-5'>
+                            <motion.div initial={{ translateY: 30, opacity: 0 }} animate={{ translateY: 0, opacity: 1 }} transition={{ duration: 0.4, delay: 0.2 }}>
+                                <h1 className='text-5xl md:text-6xl font-bold capitalize mb-3' >Crafting Brands,  that Inspire, Engage, and Transform.</h1>
+                            </motion.div>
+                            <motion.div initial={{ translateX: -20, opacity: 0 }} animate={{ translateX: 0, opacity: 1 }} transition={{ delay: 0.4 }}>
+                                <p className='text-xl mb-8'>Your brand is more than just a business—it’s a story that deserves to be told, and we’re here to make sure that story resonates, inspires, and drives action</p>
+                            </motion.div>
+                            <div className='grid grid-cols-1 md:grid-cols-2 gap-[5vw]'>
+                                <motion.div initial={{ y: 50, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.5 }}>
+                                    <NavLink className={"flex items-center gap-3 justify-between bg-primary py-4 px-5 text-lg text-secondary rounded-full hover:bg-secondary hover:text-primary duration-500 hover:border-primary border border-transparent hover:shadow-lg "}>Let's Go <TbLocation size={20} /></NavLink>
+                                </motion.div>
+
+                                <motion.div initial={{ y: 50, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.6 }}>
+
+                                    <NavLink className={"flex items-center gap-3 justify-between bg-secondary py-4 px-5 text-lg text-primary rounded-full border hover:border-primary duration-500 "}>Elevate Your Brand<RxArrowRight size={20} className='' /></NavLink>
+                                </motion.div>
+
                             </div>
                         </div>
+
                     </div>
 
                     <div className='hidden md:grid grid-cols-2 gap-5 pl-32 h-[60vh]'>
-                        <div className="border-primary border  rounded-md overflow-hidden">
+
+                        <motion.div initial={{ y: 70, }} animate={{ y: 0 }} transition={{ delay: 0.1, duration: 0.4 }} className="border-primary border  rounded-md overflow-hidden">
                             <img src="https://images.pexels.com/photos/7959665/pexels-photo-7959665.jpeg" className='w-[100%] h-[100%] object-cover' alt="" />
-                        </div>
-                        <div className="border-primary border  rounded-md overflow-hidden relative top-14">
+                        </motion.div>
+
+
+                        <motion.div initial={{ y: -60 }} animate={{ y: 0 }} transition={{ delay: 0.15, duration: 0.5 }} className="border-primary border  rounded-md overflow-hidden relative top-14">
                             <img src="https://images.pexels.com/photos/2489295/pexels-photo-2489295.jpeg?auto=compress&cs=tinysrgb&w=600" className='w-[100%] h-[100%] object-cover' alt="" />
-                        </div>
+                        </motion.div>
                         {/* <div className="border-black border"></div>
                 <div className="border-black border"></div> */}
                     </div>
@@ -83,70 +99,79 @@ const Homepage = () => {
 
 
                 <div className='grid grid-cols-1 items-start md:grid-cols-2 font-Barlow py-24'>
-                    <div className='text-lg flex items-center gap-x-3 '>
-                        <div className='w-5 h-5 bg-purple rounded-xl'></div>
-                        <p>About</p>
-                    </div>
+                    <motion.div initial={{ x: 50, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }}>
+                        <div className='text-lg flex items-center gap-x-3 '>
+                            <div className='w-5 h-5 bg-purple rounded-xl'></div>
+                            <p>About</p>
+                        </div>
+                    </motion.div>
 
-                    <div className=''>
+                    <motion.div initial={{ y: 30, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ delay: 0.25 }} className=''>
                         <h1 className='text-4xl font-bold capitalize mb-5'> When you use <b className='text-primary'>JARGS</b>, Revenue Goes Up.</h1>
                         <p className='text-xl'>
                             You read Building a Jargs and then wondered… what’s next? Just understanding the Jargs Framework doesn’t help your bottom line. It’s time to implement Jargs in your business.
                         </p>
 
 
-                    </div>
+                    </motion.div>
 
 
                 </div>
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-10 mb-20'>
-                    <div className='bg-[#fafafa] p-10 rounded-3xl'>
-                        <div className='flex justify-between'>
-                            <h1 className='text-6xl font-Barlow opacity-30 text-primary'>01</h1>
+                    <motion.div initial={{ x: -30 }} viewport={{ amount: 0.3 }} whileInView={{ x: 0 }} transition={{ delay: 0.1 }}>
+                        <div className='bg-[#fafafa] p-10 rounded-3xl'>
+                            <div className='flex justify-between'>
+                                <h1 className='text-6xl font-Barlow opacity-30 text-primary'>01</h1>
+                            </div>
+                            <div className='mt-20 font-Mulish'>
+                                <h1 className='text-xl mb-5'>Choose Your Path</h1>
+                                <p className=''>
+                                    Are you overwhelmed trying to grow your marketing business? Struggling to align your team? Looking to inspire an audience with the power of story? Choose your path below.
+                                </p>
+                            </div>
                         </div>
-                        <div className='mt-20 font-Mulish'>
-                            <h1 className='text-xl mb-5'>Choose Your Path</h1>
-                            <p className=''>
-                                Are you overwhelmed trying to grow your marketing business? Struggling to align your team? Looking to inspire an audience with the power of story? Choose your path below.
-                            </p>
+                    </motion.div>
+                    <motion.div initial={{ x: 50 }} viewport={{ amount: 0.2 }} whileInView={{ x: 0 }} transition={{ delay: 0.15 }}>
+                        <div className='bg-[#fafafa] p-10 rounded-3xl'>
+                            <div className='flex justify-between'>
+                                <h1 className='text-6xl font-Barlow opacity-30 text-primary'>02</h1>
+                            </div>
+                            <div className='mt-20 font-Mulish'>
+                                <h1 className='text-xl mb-5'>Choose Your Path</h1>
+                                <p className=''>
+                                    Are you overwhelmed trying to grow your marketing business? Struggling to align your team? Looking to inspire an audience with the power of story? Choose your path below.
+                                </p>
+                            </div>
                         </div>
-                    </div>
+                    </motion.div>
 
-                    <div className='bg-[#fafafa] p-10 rounded-3xl'>
-                        <div className='flex justify-between'>
-                            <h1 className='text-6xl font-Barlow opacity-30 text-primary'>02</h1>
+                    <motion.div initial={{ x: -30 }} viewport={{ amount: 0.3 }} whileInView={{ x: 0 }} transition={{ delay: 0.1 }}>
+                        <div className='bg-[#fafafa] p-10 rounded-3xl'>
+                            <div className='flex justify-between'>
+                                <h1 className='text-6xl font-Barlow opacity-30 text-primary'>03</h1>
+                            </div>
+                            <div className='mt-20 font-Mulish'>
+                                <h1 className='text-xl mb-5'>Choose Your Path</h1>
+                                <p className=''>
+                                    Are you overwhelmed trying to grow your marketing business? Struggling to align your team? Looking to inspire an audience with the power of story? Choose your path below.
+                                </p>
+                            </div>
                         </div>
-                        <div className='mt-20 font-Mulish'>
-                            <h1 className='text-xl mb-5'>Choose Your Path</h1>
-                            <p className=''>
-                                Are you overwhelmed trying to grow your marketing business? Struggling to align your team? Looking to inspire an audience with the power of story? Choose your path below.
-                            </p>
-                        </div>
-                    </div>
+                    </motion.div>
 
-                    <div className='bg-[#fafafa] p-10 rounded-3xl'>
-                        <div className='flex justify-between'>
-                            <h1 className='text-6xl font-Barlow opacity-30 text-primary'>03</h1>
+                    <motion.div initial={{ x: 50 }} viewport={{ amount: 0.2 }} whileInView={{ x: 0 }} transition={{ delay: 0.15 }}>
+                        <div className='bg-[#fafafa] p-10 rounded-3xl'>
+                            <div className='flex justify-between'>
+                                <h1 className='text-6xl font-Barlow opacity-30 text-primary'>04</h1>
+                            </div>
+                            <div className='mt-20 font-Mulish'>
+                                <h1 className='text-xl mb-5'>Choose Your Path</h1>
+                                <p className=''>
+                                    Are you overwhelmed trying to grow your marketing business? Struggling to align your team? Looking to inspire an audience with the power of story? Choose your path below.
+                                </p>
+                            </div>
                         </div>
-                        <div className='mt-20 font-Mulish'>
-                            <h1 className='text-xl mb-5'>Choose Your Path</h1>
-                            <p className=''>
-                                Are you overwhelmed trying to grow your marketing business? Struggling to align your team? Looking to inspire an audience with the power of story? Choose your path below.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div className='bg-[#fafafa] p-10 rounded-3xl'>
-                        <div className='flex justify-between'>
-                            <h1 className='text-6xl font-Barlow opacity-30 text-primary'>04</h1>
-                        </div>
-                        <div className='mt-20 font-Mulish'>
-                            <h1 className='text-xl mb-5'>Choose Your Path</h1>
-                            <p className=''>
-                                Are you overwhelmed trying to grow your marketing business? Struggling to align your team? Looking to inspire an audience with the power of story? Choose your path below.
-                            </p>
-                        </div>
-                    </div>
+                    </motion.div>
 
                 </div>
 
