@@ -646,7 +646,7 @@ const Homepage = () => {
                         <p className='mb-2'>Let’s work together to uncover what’s holding your business back and map out the steps to unlock its full potential.
                         </p>
 
-                        <h1 className='text-3xl mb-8'>Ready to gain clarity and start winning?
+                        <h1 className='text-3xl mb-8'>Ready to gain clarity and start winning ?
                         </h1>
                         <NavLink to={"/services"} className={"flex w-[50%] items-center gap-3 justify-center bg-secondary py-4 px-5 text-sm rounded-full hover:bg-secondary hover:text-primary duration-500 border-primary border  hover:shadow-lg"}>Schedule a Consultation Today</NavLink>
                     </div>
