@@ -158,30 +158,34 @@ const Homepage = () => {
             <section className='py-5 px-5  md:py-5 md:px-20'>
 
                 {/* Why we do what we do */}
-                <div className='grid grid-cols-1 items-start md:grid-cols-2 font-Barlow py-24'>
-                    <motion.div initial={{ x: 50, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }}>
-                        <div className='text-lg flex items-center gap-x-3 '>
-                            <div className='w-5 h-5 bg-purple rounded-xl'></div>
-                            {/* <p>About</p> */}
-                        </div>
-                    </motion.div>
+                <div className='grid grid-cols-1 gap-10 items-start md:grid-cols-2 font-Barlow py-24'>
+                    <div>
+                        <motion.div initial={{ x: 50, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }}>
+                            <div className='text-lg flex items-center gap-x-3 '>
+                                <div className='w-5 h-5 bg-purple rounded-xl'></div>
+                                {/* <p>About</p> */}
+                            </div>
+                        </motion.div>
 
-                    <motion.div initial={{ y: 30, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ delay: 0.25 }} className=''>
-                        <h1 className='text-4xl font-bold capitalize mb-5'> Why We Do What We Do</h1>
-                        <p className='text-xl'>
-                            We’re here to help vision-driven entrepreneurs and businesses gain the recognition they deserve. Achieving greatness is no small feat—we understand the challenges, and that’s why we’re committed to being your trusted partner every step of the way.
-                        </p>
+                    </div>
+                    <div>
+                        <motion.div initial={{ y: 30, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ delay: 0.25 }} className=''>
+                            <h1 className='text-3xl md:text-4xl font-bold capitalize mb-5'> Why We Do What We Do</h1>
+                            <p className='text-xl'>
+                                We’re here to help vision-driven entrepreneurs and businesses gain the recognition they deserve. Achieving greatness is no small feat—we understand the challenges, and that’s why we’re committed to being your trusted partner every step of the way.
+                            </p>
 
 
-                    </motion.div>
+                        </motion.div>
 
+                    </div>
 
                 </div>
                 <hr className='mb-20' />
                 {/* How jargs comark can help you succeed */}
                 <motion.div initial={{ y: 50, opacity: 0 }} viewport={{ amount: 0.5, once: true }} whileInView={{ y: 0, opacity: 1 }} className='grid grid-cols-1 md:grid-cols-3  mb-20 items-center'>
                     <div>
-                        <h1 className='font-Barlow text-4xl mb-5 capitalize'>
+                        <h1 className='font-Barlow text-3xl md:text-4xl mb-5 capitalize'>
                             The more visible your brand, the more opportunities
 
                             <b className='text-primary'> you create to scale your revenue.</b>
@@ -192,7 +196,7 @@ const Homepage = () => {
                     <div>
                         <h1 className='font-Barlow text-2xl mb-5'> How Can Jargs Cormark Help You Succeed?</h1>
                         <p className='font-Mulish mb-6'>Visibility drives growth. Jargs Cormark ensures you’re seen where it matters</p>
-                        <ul className='font-Mulish list-disc flex flex-col gap-y-5 mb-10'>
+                        <ul className='font-Mulish list-disc flex flex-col gap-y-5 mb-10 px-5 md:px-0'>
                             <li><b className='font-semibold'>Boost Your Online Presence:</b> Increase visibility across platforms with tailored strategies
                             </li>
 
@@ -254,12 +258,12 @@ const Homepage = () => {
                 </motion.div>
 
                 {/* Testimonial */}
-                <div className='grid gap-y-10 md:grid-cols-3 my-20 items-center'>
+                <div className='grid gap-y-10 grid-cols-1 md:grid-cols-3 my-20 items-center'>
                     <div>
                         <h1 className='font-Barlow text-5xl mb-3'>From our <b>Community.</b></h1>
                         <p className='font-Mulish text-lg mb-6'>Here's what our client's have to say about our services</p>
 
-                        <NavLink to={"/a"} className={"w-fit flex items-center gap-3 justify-between bg-secondary py-4 px-5 font-Mulish text-primary text-sm rounded-full border border-primary duration-500 capitalize"}>Boost your brand visibility</NavLink>
+                        <NavLink to={"/a"} className={"w-fit flex items-center gap-3 justify-between bg-secondary py-4 px-5 font-Mulish text-primary md:text-sm rounded-full border border-primary duration-500 capitalize"}>Boost your brand visibility</NavLink>
                     </div>
                     <div></div>
                     <div>
@@ -276,7 +280,7 @@ const Homepage = () => {
                                             </div>
                                             <div>
                                                 <h1 className='font-Barlow font-bold'>{name}</h1>
-                                                <p className='text-sm font-Mulish'>{role}</p>
+                                                <p className='md:text-sm font-Mulish'>{role}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -293,14 +297,14 @@ const Homepage = () => {
                         <h1 className='text-3xl mb-3'>Our <br /> <b className='font-extrabold text-primary'>services</b> </h1>
                         <p className='mb-6'>At Jargs Cormark, we specialize in helping high performing businesses and entrepreneurs like you break barriers, build connections, and transform potential into profits. From creating compelling content to designing conversion-driven campaigns, we’re here to turn your vision into a thriving reality.
                         </p>
-                        <NavLink to={"/services"} className={"flex w-[50%] items-center gap-3 justify-center bg-primary py-4 px-5 text-lg text-secondary rounded-full hover:bg-secondary hover:text-primary duration-500 hover:border-primary border border-transparent hover:shadow-lg"}>Discover More </NavLink>
+                        <NavLink to={"/services"} className={"flex w-[100%]  md:w-[50%] items-center gap-3 justify-center bg-primary py-4 px-5 text-lg text-secondary rounded-full hover:bg-secondary hover:text-primary duration-500 hover:border-primary border border-transparent hover:shadow-lg"}>Discover More </NavLink>
                     </motion.div>
 
                     <div className='md:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-5 md:px-20'>
                         {
                             services.map(({ header, priceRange, subtext }, index) => <motion.div className='border border-primary rounded-2xl flex flex-col p-5 justify-end  ' key={index} initial={{ x: index % 2 == 0 ? 20 : -20, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} viewport={{ amount: 0.5, once: true }}>
                                 <div className='mb-20 flex'>
-                                    <span className='border text-sm py-1 px-5 rounded-full border-black'>{!header.includes("Social") && "From"} {priceRange}</span>
+                                    <span className='border md:text-sm py-1 px-5 rounded-full border-black'>{!header.includes("Social") && "From"} {priceRange}</span>
                                 </div>
                                 <h1 className='text-2xl font-bold font-Barlow mb-5 text-primary'>{header}</h1>
                                 <p>
@@ -330,7 +334,7 @@ const Homepage = () => {
                 </section>
 
                 {/* The longer you wait */}
-                <motion.div initial={{ y: 50, opacity: 0 }} viewport={{ amount: 0.5, once: true }} whileInView={{ y: 0, opacity: 1 }} className='grid grid-cols-1 md:grid-cols-3  mb-20 items-center'>
+                <motion.div initial={{ y: 50, opacity: 0 }} viewport={{ amount: 0.5, once: true }} whileInView={{ y: 0, opacity: 1 }} className='grid grid-cols-1 md:grid-cols-3  mb-20 items-center gap-10 '>
                     <div>
                         <h1 className='font-Barlow text-5xl mb-5 capitalize'>The Longer you wait, <b className='text-primary'>the harder it becomes.</b></h1>
 
@@ -338,8 +342,8 @@ const Homepage = () => {
                     </div>
                     <div></div>
                     <div>
-                        <h1 className='font-Barlow text-4xl mb-5'> Take action now or Risk:</h1>
-                        <ul className='font-Mulish list-disc flex flex-col gap-y-5'>
+                        <h1 className='font-Barlow text-3xl md:text-4xl mb-5'> Take action now or Risk:</h1>
+                        <ul className='font-Mulish list-disc flex flex-col gap-y-5 px-5 md:px-0'>
                             <li>Falling behind competitors stealing your customers.
                             </li>
                             <li>
@@ -359,7 +363,7 @@ const Homepage = () => {
                 <div>
                     <motion.div initial={{ x: 30, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} viewport={{ amount: 0.3, once: true }} className='mt-36 mb-10 grid grid-cols-2'>
                         <div>
-                            <h1 className='font-Barlow text-4xl mb-5 capitalize '>Get results in 3 steps:</h1>
+                            <h1 className='font-Barlow text-3xl md:text-4xl mb-5 capitalize '>Get results in 3 steps:</h1>
 
 
 
@@ -416,7 +420,7 @@ const Homepage = () => {
 
                         <div className='md:col-span-3 '>
                             <div className='flex  justify-center'>
-                                <NavLink to={"/services"} className={"flex w-[50%] items-center gap-3 justify-center bg-secondary py-4 px-5 text-sm rounded-full hover:bg-secondary hover:text-primary duration-500 border-primary border  hover:shadow-lg"}>Boost your brand visibility  </NavLink>
+                                <NavLink to={"/services"} className={"flex w-[100%]  md:w-[50%] items-center gap-3 justify-center bg-secondary py-4 px-5 md:text-sm rounded-full hover:bg-secondary hover:text-primary duration-500 border-primary border  hover:shadow-lg"}>Boost your brand visibility  </NavLink>
                             </div>
                         </div>
 
@@ -439,10 +443,10 @@ const Homepage = () => {
                 </div>
 
                 {/* Testimonial */}
-                <div className='grid gap-32 md:grid-cols-3 mt-36 mb-20 items-center'>
+                <div className='grid md:gap-32 grid-cols-1 md:grid-cols-3 md:mt-36 md:mb-20 items-center'>
                     <div>
                         <p className='font-Mulish mb-3'>Testimonial</p>
-                        <h1 className='font-Barlow text-4xl mb-3 font-semibold'>What People think about us</h1>
+                        <h1 className='font-Barlow text-3xl md:text-4xl mb-3 font-semibold'>What People think about us</h1>
                         <p className='font-Mulish'>
                             Experiences shared by clients, showcasing how we've made a difference in their businesses.
                         </p>
@@ -450,7 +454,10 @@ const Homepage = () => {
                     </div>
 
                     <div className='md:col-span-2'>
-                        <Swiper className='w-[100%] h-fit py-20' autoplay slidesPerView={2} modules={[Autoplay]} direction='horizontal' centeredSlides={false} spaceBetween={30}>
+                        <Swiper className='w-[100%] h-fit py-20' autoplay slidesPerView={{
+                            320: 1,
+                            768: 2
+                        }} modules={[Autoplay]} direction='horizontal' centeredSlides={false} spaceBetween={30}>
                             {
                                 testimonials.map(({ image, name, role, text }, index) => index + 1 > 3 && <SwiperSlide>
                                     <div className='border h-[230px] p-5 pt-10 relative rounded-3xl flex flex-col justify-between'>
@@ -463,14 +470,14 @@ const Homepage = () => {
                                             </div>
                                             <div>
                                                 <h1 className='font-Barlow font-bold'>{name}</h1>
-                                                <p className='text-sm font-Mulish'>{role}</p>
+                                                <p className='md:text-sm font-Mulish'>{role}</p>
                                             </div>
                                         </div> */}
-                                        <h1 className='font-Mulish text-sm mb-5'>
+                                        <h1 className='font-Mulish md:text-sm mb-5'>
                                             {text}
                                         </h1>
 
-                                        <p className='font-Mulish text-sm italic'> - {name}, {role}</p>
+                                        <p className='font-Mulish md:text-sm italic'> - {name}, {role}</p>
 
                                     </div>
                                 </SwiperSlide>)
@@ -483,9 +490,9 @@ const Homepage = () => {
                 {/* Does this sound like you? */}
 
                 <div>
-                    <motion.div initial={{ x: 30, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} viewport={{ amount: 0.3, once: true }} className='mt-36 mb-10 grid grid-cols-2'>
+                    <motion.div initial={{ x: 30, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} viewport={{ amount: 0.3, once: true }} className='md:mt-36 mb-10 grid grid-cols-2'>
                         <div>
-                            <h1 className='font-Barlow text-4xl mb-5 capitalize '>Does this sound like you?</h1>
+                            <h1 className='font-Barlow text-3xl md:text-4xl mb-5 capitalize '>Does this sound like you?</h1>
                             {/* <p className='font-Mulish text-xl mb-6'>Achieve more with less effort.</p> */}
 
 
@@ -544,23 +551,9 @@ const Homepage = () => {
 
                         <div className='md:col-span-3 '>
                             <div className='flex  justify-center'>
-                                <NavLink to={"/services"} className={"flex w-[50%] items-center gap-3 justify-center bg-secondary py-4 px-5 text-sm rounded-full hover:bg-secondary hover:text-primary duration-500 border-primary border  hover:shadow-lg"}>Schedule a Consultation Today</NavLink>
+                                <NavLink to={"/services"} className={"flex w-[100%]  md:w-[50%] items-center gap-3 justify-center bg-secondary py-4 px-5 md:text-sm rounded-full hover:bg-secondary hover:text-primary duration-500 border-primary border  hover:shadow-lg"}>Schedule a Consultation Today</NavLink>
                             </div>
                         </div>
-
-                        {/* <motion.div initial={{ x: 50 }} viewport={{ amount: 0.2 }} whileInView={{ x: 0 }} transition={{ delay: 0.15 }}>
-                        <div className='bg-[#fafafa] p-10 rounded-3xl'>
-                            <div className='flex justify-between'>
-                                <h1 className='text-6xl font-Barlow opacity-30 text-primary'>04</h1>
-                            </div>
-                            <div className='mt-20 font-Mulish'>
-                                <h1 className='text-xl mb-5'>Choose Your Path</h1>
-                                <p className=''>
-                                    Are you overwhelmed trying to grow your marketing business? Struggling to align your team? Looking to inspire an audience with the power of story? Choose your path below.
-                                </p>
-                            </div>
-                        </div>
-                    </motion.div> */}
 
                     </div>
 
@@ -600,7 +593,7 @@ const Homepage = () => {
 
                 <div className='grid grid-cols-1 md:grid-cols-2 mb-10'>
                     <div>
-                        <h1 className='text-3xl mb-3'>Looking to  Your Marketing  <i>Improve</i>   <b className='font-extrabold text-primary'> Without a Long-Term Commitment?</b> </h1>
+                        <h1 className='text-3xl mb-5 md:mb-3'>Looking to  Your Marketing  <i>Improve</i>   <b className='font-extrabold text-primary'> Without a Long-Term Commitment?</b> </h1>
                         <p className='mb-4'>We understand that sometimes all you need is expert insight to steer your efforts in the right direction.
 
                         </p>
@@ -609,10 +602,10 @@ const Homepage = () => {
                     </div>
                 </div>
 
-                <div className='grid md:grid-cols-3 gap-10 mb-10'>
+                <div className='grid grid-cols-1 md:grid-cols-3 gap-10 mb-10'>
                     <div className='bg-[#fcfcfc] p-6 rounded-3xl border border-black flex flex-col justify-between'>
                         <div className='flex justify-between'>
-                            <h1 className='text-4xl font-Barlow  text-primary'>01</h1>
+                            <h1 className='text-3xl md:text-4xl font-Barlow  text-primary'>01</h1>
                         </div>
                         <div className=' font-Mulish'>
                             <h1 className='text-lg mb-5'>Identify gaps in your current strategy</h1>
@@ -622,7 +615,7 @@ const Homepage = () => {
 
                     <div className='bg-[#fcfcfc] p-6 rounded-3xl border border-black flex flex-col justify-between'>
                         <div className='flex justify-between'>
-                            <h1 className='text-4xl font-Barlow  text-primary'>02</h1>
+                            <h1 className='text-3xl md:text-4xl font-Barlow  text-primary'>02</h1>
                         </div>
                         <div className='mt-10 font-Mulish'>
                             <h1 className='text-lg mb-5'>Explore untapped opportunities to boost visibility and engagement</h1>
@@ -632,7 +625,7 @@ const Homepage = () => {
 
                     <div className='bg-[#fcfcfc] p-6 rounded-3xl border border-black flex flex-col justify-between'>
                         <div className='flex justify-between'>
-                            <h1 className='text-4xl font-Barlow  text-primary'>03</h1>
+                            <h1 className='text-3xl md:text-4xl font-Barlow  text-primary'>03</h1>
                         </div>
                         <div className='mt-10 font-Mulish'>
                             <h1 className='text-lg mb-5'>Craft actionable strategies designed to drive measurable results</h1>
@@ -648,7 +641,7 @@ const Homepage = () => {
 
                         <h1 className='text-3xl mb-8'>Ready to gain clarity and start winning ?
                         </h1>
-                        <NavLink to={"/services"} className={"flex w-[50%] items-center gap-3 justify-center bg-secondary py-4 px-5 text-sm rounded-full hover:bg-secondary hover:text-primary duration-500 border-primary border  hover:shadow-lg"}>Schedule a Consultation Today</NavLink>
+                        <NavLink to={"/services"} className={"flex w-[100%]  md:w-[50%] items-center gap-3 justify-center bg-secondary py-4 px-5 md:text-sm rounded-full hover:bg-secondary hover:text-primary duration-500 border-primary border  hover:shadow-lg"}>Schedule a Consultation Today</NavLink>
                     </div>
                 </div>
 
