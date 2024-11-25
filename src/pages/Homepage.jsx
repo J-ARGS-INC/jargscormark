@@ -9,39 +9,107 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import { SwiperSlide, Swiper } from 'swiper/react'
 import { motion } from 'framer-motion';
 
-import Img1 from "../assets/Images/canva-white-brown-simple-restaurant-logo-koIA1HEug0Q-removebg-preview.png"
-import Img2 from "../assets/Images/canva-yellow-and-white-minimalist-kitchen-logo-B0UKuTQPinA-removebg-preview.png"
-import Img3 from "../assets/Images/attachment_150123703-removebg-preview.png"
-import Img4 from "../assets/Images/images-removebg-preview (1).png"
-import Img5 from "../assets/Images/pngtree-building-and-construction-logo-design-template-image_317780-removebg-preview.png"
-import Img6 from "../assets/Images/images-removebg-preview.png"
-import Img7 from "../assets/Images/canva-mauve-black-minimalist-aesthetic-cookie-biscuit-business-logo-4xgzbZfcvpU-removebg-preview.png"
+import Img1 from "../assets/Images/clientLogo.png"
+import Img2 from "../assets/Images/clientLogo2.png"
+import Img3 from "../assets/Images/clientLogo3.png"
+import Img4 from "../assets/Images/clientLogo4.png"
+import Img5 from "../assets/Images/clientLogo5.png"
+import Img6 from "../assets/Images/clientLogo6.png"
+import Img7 from "../assets/Images/clientLogo7.png"
+import testimonial1 from "../assets/Images/testimonial1.jpg"
 const Homepage = () => {
-    const numberOfCompanies = new Intl.NumberFormat("en-us", { style: "decimal" }).format(100000)
+    const testimonials = [
+        {
+            text: "Jargs Cormark completely transformed the way we approach branding and marketing. Their innovative strategies and attention to detail helped us connect with our audience like never before. ",
+            image: "https://images.pexels.com/photos/2380795/pexels-photo-2380795.jpeg?auto=compress&cs=tinysrgb&w=800",
+            name: "Kyle weznick",
+            role: "Media director, Turn around music Group"
+        },
+        {
+            text: "Jargs Cormark completely transformed the way we approach branding and marketing. Their innovative strategies and attention to detail helped us connect with our audience like never before. ",
+            image: "https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=600",
+            name: "Kyle weznick",
+            role: "Media director, Turn around music Group"
+        },
+        {
+            text: "Jargs Cormark completely transformed the way we approach branding and marketing. Their innovative strategies and attention to detail helped us connect with our audience like never before. ",
+            image: "https://images.pexels.com/photos/733500/pexels-photo-733500.jpeg?auto=compress&cs=tinysrgb&w=600",
+            name: "Kyle weznick",
+            role: "Media director, Turn around music Group"
+        },
+        {
+            text: "Jargs Cormark made a remarkable impact on my business with their professionalism and tailored support. From clear strategies to tangible outcomes, their dedication ensured seamless and productive results. Truly invaluable! ",
+            image: testimonial1,
+            name: "Ololade",
+            role: "Canada"
+        },
+        {
+            text: "Working with Jargs Cormark has been a game-changer for our brand. Their ability to craft a tailored brand strategy helped us stand out in a crowded market. Highly recommend their expertise",
+            image: "https://images.pexels.com/photos/7450281/pexels-photo-7450281.jpeg?auto=compress&cs=tinysrgb&w=600",
+            name: "Mrs Helen",
+            role: "USA"
+        },
+        {
+            text: "From creative content to precise social media management, they’ve elevated our presence and driven consistent engagement. ",
+            image: "https://images.pexels.com/photos/2921045/pexels-photo-2921045.jpeg?auto=compress&cs=tinysrgb&w=600",
+            name: "Kouamé",
+            role: "Ghana"
+        },
+        {
+            text: "Our website looks amazing, since launching it with Jargs Cormark, we look more presentable and our sales have grown significantly",
+            image: "https://images.pexels.com/photos/2327283/pexels-photo-2327283.jpeg?auto=compress&cs=tinysrgb&w=600",
+            name: "Clinton",
+            role: "Rwanda"
+        }
+    ]
+    const services = [
+        {
+            header: "Brand Strategy & Positioning",
+            subtext: "Stand out with strategies that build trust and highlight your unique value.",
+            priceRange: "$999"
+        },
+        {
+            header: "Digital Marketing",
+            subtext: "Reach your audience where they are with campaigns that drive results, from social media, email, website, or targeted ads. This is our full digital marketing package for you on a monthly basis. ",
+            priceRange: "$2299"
+        },
+        {
+            header: "Content Creation and Video Production",
+            subtext: "Engage, inspire, and convert with high-quality, impactful Storytelling content. ",
+            priceRange: "$99"
+        },
+        {
+            header: "Social Media Management",
+            subtext: "Turn your social media channels into powerful tools for connection and growth. We create and manage tailored content strategies that resonate with your audience, drive engagement, and build a loyal community around your brand.",
+            priceRange: "Basic - $499, Standard - $799, Premium - $1299"
+        },
+    ]
     return (
         <>
             {/* Landing page */}
             <header>
-                <div className='md:min-h-[100vh] grid grid-cols-1  md:grid-cols-2 py-10 px-5  md:py-[18vh] md:px-20 bg-[#f5f5f5]'>
-                    <div className='font-Mulish'>
+                <div className='md:h-[95vh] grid grid-cols-1  md:grid-cols-2 py-10 px-5  md:py-[18vh] md:px-20 bg-[#f5f5f5] relative'>
 
-                        <motion.p initial={{ translateX: -200, opacity: 0 }} animate={{ translateX: 0, opacity: 1 }} className=''>Ready to ignite your business with <b className='text-primary'>JARGS?</b></motion.p>
+                    <div className='font-Mulish relative z-10 text-white'>
+
+                        <motion.p initial={{ translateX: -200, opacity: 0 }} animate={{ translateX: 0, opacity: 1 }} className=''>Ready to ignite your business with <b className='text-purple'>JARGS?</b></motion.p>
 
                         <div className='font-Barlow py-5'>
                             <motion.div initial={{ translateY: 30, opacity: 0 }} animate={{ translateY: 0, opacity: 1 }} transition={{ duration: 0.4, delay: 0.2 }}>
-                                <h1 className='text-5xl md:text-6xl font-bold capitalize mb-3' >Crafting Brands,  that Inspire, Engage, and Transform.</h1>
+                                <h1 className='text-5xl md:text-6xl font-bold capitalize mb-3' >Empower Your Brand & Sell More</h1>
                             </motion.div>
                             <motion.div initial={{ translateX: -20, opacity: 0 }} animate={{ translateX: 0, opacity: 1 }} transition={{ delay: 0.4 }}>
-                                <p className='text-xl mb-8'>Your brand is more than just a business—it’s a story that deserves to be told, and we’re here to make sure that story resonates, inspires, and drives action</p>
+                                <p className='text-xl mb-8'>We’re a Digital Marketing and Branding Agency that wants Your business to stand out, dominate markets, and achieve lasting success with purpose-driven strategies.
+                                </p>
                             </motion.div>
                             <div className='grid grid-cols-1 md:grid-cols-2 gap-[5vw]'>
                                 <motion.div initial={{ y: 50, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.5 }}>
-                                    <NavLink className={"flex items-center gap-3 justify-between bg-primary py-4 px-5 text-lg text-secondary rounded-full hover:bg-secondary hover:text-primary duration-500 hover:border-primary border border-transparent hover:shadow-lg "}>Let's Go <TbLocation size={20} /></NavLink>
+                                    <NavLink className={"flex items-center gap-3 justify-between bg-primary py-4 px-5  text-secondary rounded-full hover:bg-secondary hover:text-primary duration-500 hover:border-primary border border-transparent hover:shadow-lg "}>Start now<TbLocation size={20} /></NavLink>
                                 </motion.div>
 
                                 <motion.div initial={{ y: 50, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.6 }}>
 
-                                    <NavLink className={"flex items-center gap-3 justify-between bg-secondary py-4 px-5 text-lg text-primary rounded-full border hover:border-primary duration-500 "}>Elevate Your Brand<RxArrowRight size={20} className='' /></NavLink>
+                                    <NavLink className={"flex items-center gap-3 justify-between bg-secondary py-4 px-5  text-primary rounded-full border hover:border-primary duration-500 "}>Schedule a Consultation<RxArrowRight size={20} className='' /></NavLink>
                                 </motion.div>
 
                             </div>
@@ -49,19 +117,11 @@ const Homepage = () => {
 
                     </div>
 
-                    <div className='hidden md:grid grid-cols-2 gap-5 pl-32 h-[60vh]'>
-
-                        <motion.div initial={{ y: 70, }} animate={{ y: 0 }} transition={{ delay: 0.1, duration: 0.4 }} className="border-primary border  rounded-md overflow-hidden">
-                            <img src="https://images.pexels.com/photos/7959665/pexels-photo-7959665.jpeg" className='w-[100%] h-[100%] object-cover' alt="" />
-                        </motion.div>
-
-
-                        <motion.div initial={{ y: -60 }} animate={{ y: 0 }} transition={{ delay: 0.15, duration: 0.5 }} className="border-primary border  rounded-md overflow-hidden relative top-14">
-                            <img src="https://images.pexels.com/photos/2489295/pexels-photo-2489295.jpeg?auto=compress&cs=tinysrgb&w=600" className='w-[100%] h-[100%] object-cover' alt="" />
-                        </motion.div>
-                        {/* <div className="border-black border"></div>
-                <div className="border-black border"></div> */}
+                    <div className='absolute w-[100%] h-[100%] top-0 left-0'>
+                        <div className='absolute w-[100%] h-[100%] ' style={{ background: "linear-gradient(to right, rgba(0,0,0,.65) 40%, rgba(0,0,0,.45))" }}></div>
+                        <video src="https://videos.pexels.com/video-files/9365552/9365552-sd_640_360_25fps.mp4" className='w-[100%] h-[100%] object-cover' autoPlay muted loop></video>
                     </div>
+
                 </div>
             </header>
             {/* Landing page ends*/}
@@ -97,19 +157,19 @@ const Homepage = () => {
             {/* Trusted By */}
             <section className='py-5 px-5  md:py-5 md:px-20'>
 
-
+                {/* Why we do what we do */}
                 <div className='grid grid-cols-1 items-start md:grid-cols-2 font-Barlow py-24'>
                     <motion.div initial={{ x: 50, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }}>
                         <div className='text-lg flex items-center gap-x-3 '>
                             <div className='w-5 h-5 bg-purple rounded-xl'></div>
-                            <p>About</p>
+                            {/* <p>About</p> */}
                         </div>
                     </motion.div>
 
                     <motion.div initial={{ y: 30, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ delay: 0.25 }} className=''>
-                        <h1 className='text-4xl font-bold capitalize mb-5'> When you use <b className='text-primary'>JARGS</b>, Revenue Goes Up.</h1>
+                        <h1 className='text-4xl font-bold capitalize mb-5'> Why We Do What We Do</h1>
                         <p className='text-xl'>
-                            You read Building a Jargs and then wondered… what’s next? Just understanding the Jargs Framework doesn’t help your bottom line. It’s time to implement Jargs in your business.
+                            We’re here to help vision-driven entrepreneurs and businesses gain the recognition they deserve. Achieving greatness is no small feat—we understand the challenges, and that’s why we’re committed to being your trusted partner every step of the way.
                         </p>
 
 
@@ -117,67 +177,48 @@ const Homepage = () => {
 
 
                 </div>
-                <div className='grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-10 mb-20'>
-                    <motion.div initial={{ x: -30 }} viewport={{ amount: 0.3 }} whileInView={{ x: 0 }} transition={{ delay: 0.1 }}>
-                        <div className='bg-[#fafafa] p-10 rounded-3xl'>
-                            <div className='flex justify-between'>
-                                <h1 className='text-6xl font-Barlow opacity-30 text-primary'>01</h1>
-                            </div>
-                            <div className='mt-20 font-Mulish'>
-                                <h1 className='text-xl mb-5'>Choose Your Path</h1>
-                                <p className=''>
-                                    Are you overwhelmed trying to grow your marketing business? Struggling to align your team? Looking to inspire an audience with the power of story? Choose your path below.
-                                </p>
-                            </div>
-                        </div>
-                    </motion.div>
-                    <motion.div initial={{ x: 50 }} viewport={{ amount: 0.2 }} whileInView={{ x: 0 }} transition={{ delay: 0.15 }}>
-                        <div className='bg-[#fafafa] p-10 rounded-3xl'>
-                            <div className='flex justify-between'>
-                                <h1 className='text-6xl font-Barlow opacity-30 text-primary'>02</h1>
-                            </div>
-                            <div className='mt-20 font-Mulish'>
-                                <h1 className='text-xl mb-5'>Choose Your Path</h1>
-                                <p className=''>
-                                    Are you overwhelmed trying to grow your marketing business? Struggling to align your team? Looking to inspire an audience with the power of story? Choose your path below.
-                                </p>
-                            </div>
-                        </div>
-                    </motion.div>
+                <hr className='mb-20' />
+                {/* How jargs comark can help you succeed */}
+                <motion.div initial={{ y: 50, opacity: 0 }} viewport={{ amount: 0.5, once: true }} whileInView={{ y: 0, opacity: 1 }} className='grid grid-cols-1 md:grid-cols-3  mb-20 items-center'>
+                    <div>
+                        <h1 className='font-Barlow text-4xl mb-5 capitalize'>
+                            The more visible your brand, the more opportunities
 
-                    <motion.div initial={{ x: -30 }} viewport={{ amount: 0.3 }} whileInView={{ x: 0 }} transition={{ delay: 0.1 }}>
-                        <div className='bg-[#fafafa] p-10 rounded-3xl'>
-                            <div className='flex justify-between'>
-                                <h1 className='text-6xl font-Barlow opacity-30 text-primary'>03</h1>
-                            </div>
-                            <div className='mt-20 font-Mulish'>
-                                <h1 className='text-xl mb-5'>Choose Your Path</h1>
-                                <p className=''>
-                                    Are you overwhelmed trying to grow your marketing business? Struggling to align your team? Looking to inspire an audience with the power of story? Choose your path below.
-                                </p>
-                            </div>
-                        </div>
-                    </motion.div>
+                            <b className='text-primary'> you create to scale your revenue.</b>
+                        </h1>
 
-                    <motion.div initial={{ x: 50 }} viewport={{ amount: 0.2 }} whileInView={{ x: 0 }} transition={{ delay: 0.15 }}>
-                        <div className='bg-[#fafafa] p-10 rounded-3xl'>
-                            <div className='flex justify-between'>
-                                <h1 className='text-6xl font-Barlow opacity-30 text-primary'>04</h1>
-                            </div>
-                            <div className='mt-20 font-Mulish'>
-                                <h1 className='text-xl mb-5'>Choose Your Path</h1>
-                                <p className=''>
-                                    Are you overwhelmed trying to grow your marketing business? Struggling to align your team? Looking to inspire an audience with the power of story? Choose your path below.
-                                </p>
-                            </div>
-                        </div>
-                    </motion.div>
+                    </div>
+                    <div></div>
+                    <div>
+                        <h1 className='font-Barlow text-2xl mb-5'> How Can Jargs Cormark Help You Succeed?</h1>
+                        <p className='font-Mulish mb-6'>Visibility drives growth. Jargs Cormark ensures you’re seen where it matters</p>
+                        <ul className='font-Mulish list-disc flex flex-col gap-y-5 mb-10'>
+                            <li><b className='font-semibold'>Boost Your Online Presence:</b> Increase visibility across platforms with tailored strategies
+                            </li>
 
-                </div>
+                            <li>
+                                <b className='font-semibold'>Attract New Customers:</b>  Engage your ideal audience with compelling content and targeted ads.
 
-                <div>
+                            </li>
+
+                            <li>
+                                <b className='font-semibold'>   Turn Visibility into Profit: </b>
+
+                                Build trust, convert attention into sales, and scale sustainably.
+                            </li>
+
+                        </ul>
+
+
+                        <NavLink to={"/services"} className={"flex w-[100%] items-center gap-3 justify-center bg-primary py-4 px-5 text-lg text-secondary rounded-full hover:bg-secondary hover:text-primary duration-500 hover:border-primary border border-transparent hover:shadow-lg"}>Get Started Today </NavLink>
+                    </div>
+                </motion.div>
+
+
+                <motion.div className='mb-10' initial={{ y: 50, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ delay: 0.1, duration: 0.3 }}>
                     <div className='flex justify-center'>
-                        <h1 className='text-lg capitalize font-Mulish'>Trusted By Over <b className='text-purple'>{numberOfCompanies}+</b> top brands worldwide</h1>
+                        <h1 className='text-lg capitalize font-Mulish mb-4'>Chosen by Entrepreneurs Who
+                            <b className='text-purple'> Dare to Dream</b> Bigger</h1>
                     </div>
                     <div className='flex flex-wrap justify-between grayscale' id=''>
 
@@ -210,53 +251,336 @@ const Homepage = () => {
 
 
                     </div>
-                </div>
-            </section>
+                </motion.div>
 
-            {/* Our services */}
-            <section className='font-Mulish py-10 md:py-32 px-5 md:px-24 grid grid-cols-1 md:grid-cols-3 gap-20   capitalize'>
+                {/* Testimonial */}
+                <div className='grid gap-y-10 md:grid-cols-3 my-20 items-center'>
+                    <div>
+                        <h1 className='font-Barlow text-5xl mb-3'>From our <b>Community.</b></h1>
+                        <p className='font-Mulish text-lg mb-6'>Here's what our client's have to say about our services</p>
+
+                        <NavLink to={"/a"} className={"w-fit flex items-center gap-3 justify-between bg-secondary py-4 px-5 font-Mulish text-primary text-sm rounded-full border border-primary duration-500 capitalize"}>Boost your brand visibility</NavLink>
+                    </div>
+                    <div></div>
+                    <div>
+                        <Swiper className='w-[100%] h-[300px]' slidesPerView={1} modules={[Autoplay]} autoplay direction='vertical' centeredSlides={true} loop>
+                            {
+                                testimonials.map(({ image, name, role, text }, index) => index + 1 <= 3 && <SwiperSlide>
+                                    <div>
+                                        <h1 className='font-Barlow text-xl mb-5'>
+                                            {text}
+                                        </h1>
+                                        <div className='flex gap-5'>
+                                            <div className='w-12 h-12'>
+                                                <img src={image} className='rounded-full w-[100%] h-[100%] object-cover' alt="" />
+                                            </div>
+                                            <div>
+                                                <h1 className='font-Barlow font-bold'>{name}</h1>
+                                                <p className='text-sm font-Mulish'>{role}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </SwiperSlide>)
+                            }
+
+                        </Swiper>
+                    </div>
+                </div>
+
+                {/* Our services */}
+                <section className='font-Mulish py-10 md:py-32 grid grid-cols-1 md:grid-cols-2 gap-20   capitalize'>
+                    <motion.div initial={{ y: 50, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} viewport={{ amount: 0.5 }}>
+                        <h1 className='text-3xl mb-3'>Our <br /> <b className='font-extrabold text-primary'>services</b> </h1>
+                        <p className='mb-6'>At Jargs Cormark, we specialize in helping high performing businesses and entrepreneurs like you break barriers, build connections, and transform potential into profits. From creating compelling content to designing conversion-driven campaigns, we’re here to turn your vision into a thriving reality.
+                        </p>
+                        <NavLink to={"/services"} className={"flex w-[50%] items-center gap-3 justify-center bg-primary py-4 px-5 text-lg text-secondary rounded-full hover:bg-secondary hover:text-primary duration-500 hover:border-primary border border-transparent hover:shadow-lg"}>Discover More </NavLink>
+                    </motion.div>
+
+                    <div className='md:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-5 md:px-20'>
+                        {
+                            services.map(({ header, priceRange, subtext }, index) => <motion.div className='border border-primary rounded-2xl flex flex-col p-5 justify-end  ' key={index} initial={{ x: index % 2 == 0 ? 20 : -20, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} viewport={{ amount: 0.5, once: true }}>
+                                <div className='mb-20 flex'>
+                                    <span className='border text-sm py-1 px-5 rounded-full border-black'>{!header.includes("Social") && "From"} {priceRange}</span>
+                                </div>
+                                <h1 className='text-2xl font-bold font-Barlow mb-5 text-primary'>{header}</h1>
+                                <p>
+                                    {subtext}
+                                </p>
+                            </motion.div>)
+                        }
+                        {/* <div className='border border-primary rounded-2xl flex flex-col p-5 justify-end  h-fit md:h-[250px]'>
+                            <h1 className='text-2xl font-bold font-Barlow mb-5 text-primary'>Rebranding</h1>
+                            <p>
+                                redefine your brand for today’s market while keeping its core values intact.
+                            </p>
+                        </div>
+                        <div className='border bg-primary text-white border-primary rounded-2xl flex flex-col p-5 justify-end h-fit md:h-[350px]'>
+                            <h1 className='text-2xl font-bold font-Barlow mb-5 '>Digital Marketing</h1>
+                            <p>
+                                Amplify your brand’s reach through SEO, SEM, email marketing, and influencer campaigns, ensuring your brand gets noticed in the digital landscape.
+                            </p>
+                        </div>
+                        <div className='border border-primary rounded-2xl flex flex-col p-5 justify-end h-fit'>
+                            <h1 className='text-2xl font-bold font-Barlow mb-5 text-primary'> Content Creation</h1>
+                            <p>
+                                We deliver top-notch materials that convey your brand’s story and engage your target market.
+                            </p>
+                        </div> */}
+                    </div>
+                </section>
+
+                {/* The longer you wait */}
+                <motion.div initial={{ y: 50, opacity: 0 }} viewport={{ amount: 0.5, once: true }} whileInView={{ y: 0, opacity: 1 }} className='grid grid-cols-1 md:grid-cols-3  mb-20 items-center'>
+                    <div>
+                        <h1 className='font-Barlow text-5xl mb-5 capitalize'>The Longer you wait, <b className='text-primary'>the harder it becomes.</b></h1>
+
+                        <NavLink to={"/services"} className={"flex w-[100%] items-center gap-3 justify-center bg-primary py-4 px-5 text-lg text-secondary rounded-full hover:bg-secondary hover:text-primary duration-500 hover:border-primary border border-transparent hover:shadow-lg"}>Start Now </NavLink>
+                    </div>
+                    <div></div>
+                    <div>
+                        <h1 className='font-Barlow text-4xl mb-5'> Take action now or Risk:</h1>
+                        <ul className='font-Mulish list-disc flex flex-col gap-y-5'>
+                            <li>Falling behind competitors stealing your customers.
+                            </li>
+                            <li>
+                                Wasting time and resources on ineffective strategies.
+
+                            </li>
+                            <li>
+                                Losing trust and credibility with a weak online presence.
+
+                            </li>
+                        </ul>
+                    </div>
+                </motion.div>
+
+
+                {/* GET results in 3 steps */}
                 <div>
-                    <h1 className='text-3xl mb-3'>Our <br /> <b className='font-extrabold text-primary'>services</b> </h1>
-                    <p className='mb-6'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta tempora officiis, mollitia facilis quis delectus voluptatibus illo tempore quo illum esse dolores rerum id ipsa dolore necessitatibus voluptatum soluta maiores veniam!</p>
-                    <NavLink to={"/services"} className={"flex w-[50%] items-center gap-3 justify-center bg-primary py-3 px-5 text-sm text-secondary rounded-full hover:bg-secondary hover:text-primary duration-500 hover:border-primary border border-transparent hover:shadow-lg"}>Learn more</NavLink>
+                    <motion.div initial={{ x: 30, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} viewport={{ amount: 0.3, once: true }} className='mt-36 mb-10 grid grid-cols-2'>
+                        <div>
+                            <h1 className='font-Barlow text-4xl mb-5 capitalize '>Get results in 3 steps:</h1>
+
+
+
+                        </div>
+
+                    </motion.div>
+
+
+                    <div className='grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-10 mb-20'>
+                        <motion.div initial={{ x: -30 }} viewport={{ amount: 0.3, once: true }} whileInView={{ x: 0 }} >
+                            <div className='bg-[#fafafa] p-10 rounded-3xl'>
+                                <div className='flex justify-between'>
+                                    <h1 className='text-6xl font-Barlow opacity-30 text-primary'>01</h1>
+                                </div>
+                                <div className='mt-20 font-Mulish'>
+                                    <h1 className='text-xl mb-5'>Contact Us</h1>
+                                    <p className=''>
+                                        Start your journey with a personalized conversation. We’ll understand your challenges and craft a strategy tailored for your goals.
+                                    </p>
+                                </div>
+                            </div>
+                        </motion.div>
+                        <motion.div initial={{ x: 50 }} viewport={{ amount: 0.2 }} whileInView={{ x: 0 }} transition={{ delay: 0.15 }}>
+                            <div className='bg-[#fafafa] p-10 rounded-3xl'>
+                                <div className='flex justify-between'>
+                                    <h1 className='text-6xl font-Barlow opacity-30 text-primary'>02</h1>
+                                </div>
+                                <div className='mt-20 font-Mulish'>
+                                    <h1 className='text-xl mb-5'>Build a Funnel That Converts</h1>
+                                    <p className=''>
+                                        Turn prospects into loyal customers. Our data-driven funnels deliver measurable engagement and results.
+                                    </p>
+                                </div>
+                            </div>
+                        </motion.div>
+
+
+                        <motion.div initial={{ x: -30 }} viewport={{ amount: 0.3 }} whileInView={{ x: 0 }} transition={{ delay: 0.1 }}>
+                            <div className='bg-[#fafafa] p-10 rounded-3xl'>
+                                <div className='flex justify-between'>
+                                    <h1 className='text-6xl font-Barlow opacity-30 text-primary'>03</h1>
+                                </div>
+                                <div className='mt-20 font-Mulish'>
+                                    <h1 className='text-xl mb-5'>Scale Revenue, Watch Your Brand Thrive
+                                    </h1>
+                                    <p className=''>
+                                        With the right strategy in place, see your efforts translate into sustainable growth and success.
+
+                                    </p>
+                                </div>
+                            </div>
+                        </motion.div>
+
+
+                        <div className='md:col-span-3 '>
+                            <div className='flex  justify-center'>
+                                <NavLink to={"/services"} className={"flex w-[50%] items-center gap-3 justify-center bg-secondary py-4 px-5 text-sm rounded-full hover:bg-secondary hover:text-primary duration-500 border-primary border  hover:shadow-lg"}>Boost your brand visibility  </NavLink>
+                            </div>
+                        </div>
+
+                        {/* <motion.div initial={{ x: 50 }} viewport={{ amount: 0.2 }} whileInView={{ x: 0 }} transition={{ delay: 0.15 }}>
+                        <div className='bg-[#fafafa] p-10 rounded-3xl'>
+                            <div className='flex justify-between'>
+                                <h1 className='text-6xl font-Barlow opacity-30 text-primary'>04</h1>
+                            </div>
+                            <div className='mt-20 font-Mulish'>
+                                <h1 className='text-xl mb-5'>Choose Your Path</h1>
+                                <p className=''>
+                                    Are you overwhelmed trying to grow your marketing business? Struggling to align your team? Looking to inspire an audience with the power of story? Choose your path below.
+                                </p>
+                            </div>
+                        </div>
+                    </motion.div> */}
+
+                    </div>
+
                 </div>
 
-                <div className='md:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-5 md:pl-10'>
-                    <div className='border border-primary rounded-2xl flex flex-col p-5 justify-end h-fit md:h-[250px]'>
-                        <h1 className='text-2xl font-bold font-Barlow mb-5 text-primary'>Brand Strategy</h1>
-                        <p>
-                            Develop a comprehensive branding roadmap that aligns with your business goals.
+                {/* Testimonial */}
+                <div className='grid gap-32 md:grid-cols-3 mt-36 mb-20 items-center'>
+                    <div>
+                        <p className='font-Mulish mb-3'>Testimonial</p>
+                        <h1 className='font-Barlow text-4xl mb-3 font-semibold'>What People think about us</h1>
+                        <p className='font-Mulish'>
+                            Experiences shared by clients, showcasing how we've made a difference in their businesses.
                         </p>
+
                     </div>
-                    <div className='border border-primary rounded-2xl flex flex-col p-5 justify-end  h-fit md:h-[250px]'>
-                        <h1 className='text-2xl font-bold font-Barlow mb-5 text-primary'>Rebranding</h1>
-                        <p>
-                            redefine your brand for today’s market while keeping its core values intact.
-                        </p>
-                    </div>
-                    <div className='border bg-primary text-white border-primary rounded-2xl flex flex-col p-5 justify-end h-fit md:h-[350px]'>
-                        <h1 className='text-2xl font-bold font-Barlow mb-5 '>Digital Marketing</h1>
-                        <p>
-                            Amplify your brand’s reach through SEO, SEM, email marketing, and influencer campaigns, ensuring your brand gets noticed in the digital landscape.
-                        </p>
-                    </div>
-                    <div className='border border-primary rounded-2xl flex flex-col p-5 justify-end h-fit'>
-                        <h1 className='text-2xl font-bold font-Barlow mb-5 text-primary'> Content Creation</h1>
-                        <p>
-                            We deliver top-notch materials that convey your brand’s story and engage your target market.
-                        </p>
+
+                    <div className='md:col-span-2'>
+                        <Swiper className='w-[100%] h-fit py-20' autoplay slidesPerView={2} modules={[Autoplay]} direction='horizontal' centeredSlides={false} spaceBetween={30}>
+                            {
+                                testimonials.map(({ image, name, role, text }, index) => index + 1 > 3 && <SwiperSlide>
+                                    <div className='border h-[230px] p-5 pt-10 relative rounded-3xl flex flex-col justify-between'>
+                                        <div className="absolute top-[-15%] w-12 h-12 ">
+                                            <img src={image} alt="" className='rounded-full w-[100%] h-[100%] object-cover object-top' />
+                                        </div>
+                                        {/* <div className='flex gap-5'>
+                                            <div className='w-12 h-12'>
+                                                <img src={image} className='rounded-full w-[100%] h-[100%] object-cover' alt="" />
+                                            </div>
+                                            <div>
+                                                <h1 className='font-Barlow font-bold'>{name}</h1>
+                                                <p className='text-sm font-Mulish'>{role}</p>
+                                            </div>
+                                        </div> */}
+                                        <h1 className='font-Mulish text-sm mb-5'>
+                                            {text}
+                                        </h1>
+
+                                        <p className='font-Mulish text-sm italic'> - {name}, {role}</p>
+
+                                    </div>
+                                </SwiperSlide>)
+                            }
+
+                        </Swiper>
                     </div>
                 </div>
-            </section>
+
+                {/* Does this sound like you? */}
+
+                <div>
+                    <motion.div initial={{ x: 30, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} viewport={{ amount: 0.3, once: true }} className='mt-36 mb-10 grid grid-cols-2'>
+                        <div>
+                            <h1 className='font-Barlow text-4xl mb-5 capitalize '>Does this sound like you?</h1>
+                            {/* <p className='font-Mulish text-xl mb-6'>Achieve more with less effort.</p> */}
+
+
+                        </div>
+
+                    </motion.div>
+
+
+                    <div className='grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-10 mb-20'>
+                        <motion.div initial={{ x: -30 }} viewport={{ amount: 0.3, once: true }} whileInView={{ x: 0 }} >
+                            <div className='bg-[#fafafa] p-10 rounded-3xl'>
+                                <div className='flex justify-between'>
+                                    <h1 className='text-6xl font-Barlow opacity-30 text-primary'>01</h1>
+                                </div>
+                                <div className='mt-20 font-Mulish'>
+                                    <h1 className='text-xl mb-5'>It feel like no matter how hard you work, your brand is still invisible in the crowded market?</h1>
+                                    <p className=''>
+                                        Break through the noise with strategies that work.
+
+                                    </p>
+                                </div>
+                            </div>
+                        </motion.div>
+                        <motion.div initial={{ x: 50 }} viewport={{ amount: 0.2 }} whileInView={{ x: 0 }} transition={{ delay: 0.15 }}>
+                            <div className='bg-[#fafafa] p-10 rounded-3xl'>
+                                <div className='flex justify-between'>
+                                    <h1 className='text-6xl font-Barlow opacity-30 text-primary'>02</h1>
+                                </div>
+                                <div className='mt-20 font-Mulish'>
+                                    <h1 className='text-xl mb-5'>You’re tired of putting in relentless effort, only to see minimal results?</h1>
+                                    <p className=''>
+                                        Transform your efforts into measurable success with data-backed solutions.
+
+                                    </p>
+                                </div>
+                            </div>
+                        </motion.div>
+
+
+                        <motion.div initial={{ x: -30 }} viewport={{ amount: 0.3 }} whileInView={{ x: 0 }} transition={{ delay: 0.1 }}>
+                            <div className='bg-[#fafafa] p-10 rounded-3xl'>
+                                <div className='flex justify-between'>
+                                    <h1 className='text-6xl font-Barlow opacity-30 text-primary'>03</h1>
+                                </div>
+                                <div className='mt-20 font-Mulish'>
+                                    <h1 className='text-xl mb-5'>You feel overwhelmed trying to connect with the right audience?
+                                    </h1>
+                                    <p className=''>
+                                        Let’s help you reach the customers who truly need your solutions.
+
+                                    </p>
+                                </div>
+                            </div>
+                        </motion.div>
+
+
+                        <div className='md:col-span-3 '>
+                            <div className='flex  justify-center'>
+                                <NavLink to={"/services"} className={"flex w-[50%] items-center gap-3 justify-center bg-secondary py-4 px-5 text-sm rounded-full hover:bg-secondary hover:text-primary duration-500 border-primary border  hover:shadow-lg"}>Schedule a Consultation Today</NavLink>
+                            </div>
+                        </div>
+
+                        {/* <motion.div initial={{ x: 50 }} viewport={{ amount: 0.2 }} whileInView={{ x: 0 }} transition={{ delay: 0.15 }}>
+                        <div className='bg-[#fafafa] p-10 rounded-3xl'>
+                            <div className='flex justify-between'>
+                                <h1 className='text-6xl font-Barlow opacity-30 text-primary'>04</h1>
+                            </div>
+                            <div className='mt-20 font-Mulish'>
+                                <h1 className='text-xl mb-5'>Choose Your Path</h1>
+                                <p className=''>
+                                    Are you overwhelmed trying to grow your marketing business? Struggling to align your team? Looking to inspire an audience with the power of story? Choose your path below.
+                                </p>
+                            </div>
+                        </div>
+                    </motion.div> */}
+
+                    </div>
+
+                </div>
+
+
+
+
+            </section >
+
+
 
             {/* Key Features */}
 
-            <section className='font-Mulish py-10  px-5 md:px-24    capitalize'>
-                <div className='grid grid-cols-1 md:grid-cols-2 mb-10'>
+            < section className='font-Mulish py-10  px-5 md:px-24    capitalize' >
+                {/* <div className='grid grid-cols-1 md:grid-cols-2 mb-10'>
                     <div>
                         <h1 className='text-3xl mb-3'>How Can <i>JARGS</i> Help  <b className='font-extrabold text-primary'> You Make Money?</b> </h1>
                         <p className='mb-6'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta tempora officiis, mollitia facilis quis delectus voluptatibus illo tempore quo illum esse dolores rerum id ipsa dolore necessitatibus voluptatum soluta maiores veniam!</p>
-                        {/* <NavLink to={"/services"} className={"flex w-[50%] items-center gap-3 justify-center bg-primary py-3 px-5 text-sm text-secondary rounded-full hover:bg-secondary hover:text-primary duration-500 hover:border-primary border border-transparent hover:shadow-lg"}>Learn more</NavLink> */}
+
                     </div>
                 </div>
 
@@ -272,50 +596,63 @@ const Homepage = () => {
                             As a Certified Guide, you’ll get extensive training and exclusive rights to use the StoryBrand framework with your clients to get results every time. You’ll also receive ongoing education and support to generate more leads, automate your marketing, and steadily grow your business.
                         </p>
                     </div>
-                </div>
+                </div> */}
 
-                <div className='grid grid-cols-1 md:grid-cols-2 items-center gap-10  border-primary md:p-10 rounded-3xl mb-14 md:mb-5'>
-                    <div className='order-1 md:order-2'>
-                        <img src="https://images.pexels.com/photos/2041627/pexels-photo-2041627.jpeg?auto=compress&cs=tinysrgb&w=600" className='rounded-xl' alt="" />
-                    </div>
-                    <div className='order-2 md:order-1'>
-                        <h1 className='text-2xl font-bold mb-5'>Are you stretched thin running your marketing business?</h1>
+                <div className='grid grid-cols-1 md:grid-cols-2 mb-10'>
+                    <div>
+                        <h1 className='text-3xl mb-3'>Looking to  Your Marketing  <i>Improve</i>   <b className='font-extrabold text-primary'> Without a Long-Term Commitment?</b> </h1>
+                        <p className='mb-4'>We understand that sometimes all you need is expert insight to steer your efforts in the right direction.
 
-                        <p className='italic'>
-                            The StoryBrand Certified Guide Program can help you level up and scale your marketing business to 6 figures and beyond.
-                            As a Certified Guide, you’ll get extensive training and exclusive rights to use the StoryBrand framework with your clients to get results every time. You’ll also receive ongoing education and support to generate more leads, automate your marketing, and steadily grow your business.
                         </p>
+                        <p>At Jargs Cormark, we provide tailored marketing audits to help you:</p>
+
                     </div>
                 </div>
 
-                <div className='grid grid-cols-1 md:grid-cols-2 items-center gap-10  border-primary md:p-10 rounded-3xl mb-14 md:mb-5'>
-                    <div className='order-1 md:order-1'>
-                        <img src="https://images.pexels.com/photos/2041627/pexels-photo-2041627.jpeg?auto=compress&cs=tinysrgb&w=600" className='rounded-xl' alt="" />
-                    </div>
-                    <div className='order-2 md:order-2'>
-                        <h1 className='text-2xl font-bold mb-5'>Are you stretched thin running your marketing business?</h1>
+                <div className='grid md:grid-cols-3 gap-10 mb-10'>
+                    <div className='bg-[#fcfcfc] p-6 rounded-3xl border border-black flex flex-col justify-between'>
+                        <div className='flex justify-between'>
+                            <h1 className='text-4xl font-Barlow  text-primary'>01</h1>
+                        </div>
+                        <div className=' font-Mulish'>
+                            <h1 className='text-lg mb-5'>Identify gaps in your current strategy</h1>
 
-                        <p className='italic'>
-                            The StoryBrand Certified Guide Program can help you level up and scale your marketing business to 6 figures and beyond.
-                            As a Certified Guide, you’ll get extensive training and exclusive rights to use the StoryBrand framework with your clients to get results every time. You’ll also receive ongoing education and support to generate more leads, automate your marketing, and steadily grow your business.
+                        </div>
+                    </div>
+
+                    <div className='bg-[#fcfcfc] p-6 rounded-3xl border border-black flex flex-col justify-between'>
+                        <div className='flex justify-between'>
+                            <h1 className='text-4xl font-Barlow  text-primary'>02</h1>
+                        </div>
+                        <div className='mt-10 font-Mulish'>
+                            <h1 className='text-lg mb-5'>Explore untapped opportunities to boost visibility and engagement</h1>
+
+                        </div>
+                    </div>
+
+                    <div className='bg-[#fcfcfc] p-6 rounded-3xl border border-black flex flex-col justify-between'>
+                        <div className='flex justify-between'>
+                            <h1 className='text-4xl font-Barlow  text-primary'>03</h1>
+                        </div>
+                        <div className='mt-10 font-Mulish'>
+                            <h1 className='text-lg mb-5'>Craft actionable strategies designed to drive measurable results</h1>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div className='grid grid-cols-1 md:grid-cols-2 '>
+                    <div>
+                        <p className='mb-2'>Let’s work together to uncover what’s holding your business back and map out the steps to unlock its full potential.
                         </p>
+
+                        <h1 className='text-3xl mb-8'>Ready to gain clarity and start winning?
+                        </h1>
+                        <NavLink to={"/services"} className={"flex w-[50%] items-center gap-3 justify-center bg-secondary py-4 px-5 text-sm rounded-full hover:bg-secondary hover:text-primary duration-500 border-primary border  hover:shadow-lg"}>Schedule a Consultation Today</NavLink>
                     </div>
                 </div>
 
-                <div className='grid grid-cols-1 md:grid-cols-2 items-center gap-10  border-primary md:p-10 rounded-3xl mb-14 md:mb-5'>
-                    <div className='order-1 md:order-2'>
-                        <img src="https://images.pexels.com/photos/2041627/pexels-photo-2041627.jpeg?auto=compress&cs=tinysrgb&w=600" className='rounded-xl' alt="" />
-                    </div>
-                    <div className='order-2 md:order-1'>
-                        <h1 className='text-2xl font-bold mb-5'>Are you stretched thin running your marketing business?</h1>
-
-                        <p className='italic'>
-                            The StoryBrand Certified Guide Program can help you level up and scale your marketing business to 6 figures and beyond.
-                            As a Certified Guide, you’ll get extensive training and exclusive rights to use the StoryBrand framework with your clients to get results every time. You’ll also receive ongoing education and support to generate more leads, automate your marketing, and steadily grow your business.
-                        </p>
-                    </div>
-                </div>
-            </section>
+            </section >
         </>
     )
 }
