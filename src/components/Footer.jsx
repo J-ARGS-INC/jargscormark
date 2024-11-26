@@ -15,7 +15,7 @@ const Footer = () => {
                 <div className='text-white absolute w-[100%] h-[100%] top-0 left-0 grid md:grid-cols-2 items-center  px-5 md:px-24' style={{ background: "linear-gradient(to right,rgba(0,0,0,.9) 40%, rgba(0,0,0,.2))" }}>
                     <div>
                         <h1 className='text-4xl font-semibold mb-5'>Be part of <b className='text-primary '>Excellence</b></h1>
-                        <p className='text-lg font-thin'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque quisquam nesciunt reprehenderit doloribus. Quae eaque dignissimos quidem laborum at nesciunt facere vero aliquid id! Maiores omnis ipsa deleniti corrupti odio?</p>
+                        <p className='text-lg font-thin'>Join over 100 entrepreneurs and businesses who trust Jargs Cormark to deliver tailored strategies, measurable growth, and lasting impact. Let’s build your success story—together.</p>
 
                         <div className='grid grid-cols-1 md:grid-cols-2 mt-6'>
                             <NavLink className={"flex items-center gap-5 justify-center bg-primary py-3 px-5 text-lg text-secondary rounded-full hover:bg-secondary hover:text-primary duration-500 hover:border-primary border border-transparent hover:shadow-lg "}>Get Started <TbLocation size={20} /></NavLink>

@@ -20,28 +20,28 @@ import testimonial1 from "../assets/Images/testimonial1.jpg"
 const Homepage = () => {
     const testimonials = [
         {
-            text: "Jargs Cormark completely transformed the way we approach branding and marketing. Their innovative strategies and attention to detail helped us connect with our audience like never before. ",
-            image: "https://images.pexels.com/photos/2380795/pexels-photo-2380795.jpeg?auto=compress&cs=tinysrgb&w=800",
-            name: "Kyle weznick",
-            role: "Media director, Turn around music Group"
-        },
-        {
-            text: "Jargs Cormark completely transformed the way we approach branding and marketing. Their innovative strategies and attention to detail helped us connect with our audience like never before. ",
-            image: "https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=600",
-            name: "Kyle weznick",
-            role: "Media director, Turn around music Group"
-        },
-        {
-            text: "Jargs Cormark completely transformed the way we approach branding and marketing. Their innovative strategies and attention to detail helped us connect with our audience like never before. ",
-            image: "https://images.pexels.com/photos/733500/pexels-photo-733500.jpeg?auto=compress&cs=tinysrgb&w=600",
-            name: "Kyle weznick",
-            role: "Media director, Turn around music Group"
-        },
-        {
-            text: "Jargs Cormark made a remarkable impact on my business with their professionalism and tailored support. From clear strategies to tangible outcomes, their dedication ensured seamless and productive results. Truly invaluable! ",
-            image: testimonial1,
-            name: "Ololade",
+            text: "Jargs Cormark completely transformed our social media presence. Their strategic approach and creative ideas boosted our engagement by 300%! Their professionalism and dedication made the process enjoyable and stress-free",
+            image: "https://images.pexels.com/photos/17243573/pexels-photo-17243573/free-photo-of-a-woman-in-white-pants-and-a-black-top.jpeg?auto=compress&cs=tinysrgb&w=600",
+            name: "Sarah K.",
             role: "Canada"
+        },
+        {
+            text: "The team at Jargs Cormark truly understands branding. They helped refine my business identity with precision and clarity. Their insights were not just theoretical but actionable. My brand has never felt this aligned and impactful!",
+            image: "https://images.pexels.com/photos/2024901/pexels-photo-2024901.jpeg?auto=compress&cs=tinysrgb&w=600",
+            name: "Daniel M.",
+            role: "South Africa"
+        },
+        {
+            text: "Jargs Cormark delivered a stunning video that exceeded my expectations. From concept to execution, their attention to detail and commitment to quality stood out. I was kept involved every step of the way, and the results speak for themselves",
+            image: "https://images.pexels.com/photos/29515056/pexels-photo-29515056/free-photo-of-elegant-portrait-of-woman-in-black-hijab.jpeg?auto=compress&cs=tinysrgb&w=600",
+            name: "Aisha R.",
+            role: "United Kingdom"
+        },
+        {
+            text: "Jargs Cormark’s content writing service is exceptional. They captured my brand’s voice perfectly and delivered compelling copy that resonated with my audience. The turnaround time was impressive, and the quality unmatched.",
+            image: testimonial1,
+            name: "James O.",
+            role: "United Kingdom"
         },
         {
             text: "Working with Jargs Cormark has been a game-changer for our brand. Their ability to craft a tailored brand strategy helped us stand out in a crowded market. Highly recommend their expertise",
@@ -81,7 +81,7 @@ const Homepage = () => {
         {
             header: "Social Media Management",
             subtext: "Turn your social media channels into powerful tools for connection and growth. We create and manage tailored content strategies that resonate with your audience, drive engagement, and build a loyal community around your brand.",
-            priceRange: "Basic - $499, Standard - $799, Premium - $1299"
+            priceRange: "Premium - $1299, Standard - $799,Basic - $499 "
         },
     ]
     return (
@@ -92,7 +92,7 @@ const Homepage = () => {
 
                     <div className='font-Mulish relative z-10 text-white'>
 
-                        <motion.p initial={{ translateX: -200, opacity: 0 }} animate={{ translateX: 0, opacity: 1 }} className=''>Ready to ignite your business with <b className='text-purple'>JARGS?</b></motion.p>
+                        {/* <motion.p initial={{ translateX: -200, opacity: 0 }} animate={{ translateX: 0, opacity: 1 }} className=''>Ready to ignite your business with <b className='text-purple'>JARGS?</b></motion.p> */}
 
                         <div className='font-Barlow py-5'>
                             <motion.div initial={{ translateY: 30, opacity: 0 }} animate={{ translateY: 0, opacity: 1 }} transition={{ duration: 0.4, delay: 0.2 }}>
@@ -132,7 +132,7 @@ const Homepage = () => {
                     <BsChat className='text-primary' size={30} />
                     <div className=''>
                         <p>Step one: </p>
-                        <p>Clarify your message</p>
+                        <p>Contact us</p>
                     </div>
                 </div>
 
@@ -140,7 +140,8 @@ const Homepage = () => {
                     <PiFunnel className='text-primary' size={30} />
                     <div className=''>
                         <p>Step two: </p>
-                        <p>Funnel a sales launch</p>
+                        <p>Build a Funnel That Converts
+                        </p>
                     </div>
 
                 </div>
@@ -149,7 +150,7 @@ const Homepage = () => {
                     <MdShowChart className='text-primary' size={30} />
                     <div className=''>
                         <p>Step three: </p>
-                        <p>Watch revenue grow</p>
+                        <p>Scale Revenue, Watch Your Brand Thrive</p>
                     </div>
                 </div>
             </section>
@@ -186,7 +187,7 @@ const Homepage = () => {
                 <motion.div initial={{ y: 50, opacity: 0 }} viewport={{ amount: 0.5, once: true }} whileInView={{ y: 0, opacity: 1 }} className='grid grid-cols-1 md:grid-cols-3  mb-20 items-center'>
                     <div>
                         <h1 className='font-Barlow text-3xl md:text-4xl mb-5 capitalize'>
-                            The more visible your brand, the more opportunities
+                            The more visible your brand is, the more opportunities
 
                             <b className='text-primary'> you create to scale your revenue.</b>
                         </h1>
@@ -222,7 +223,7 @@ const Homepage = () => {
                 <motion.div className='mb-10' initial={{ y: 50, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ delay: 0.1, duration: 0.3 }}>
                     <div className='flex justify-center'>
                         <h1 className='text-lg capitalize font-Mulish mb-4'>Chosen by Entrepreneurs Who
-                            <b className='text-purple'> Dare to Dream</b> Bigger</h1>
+                            <b className='text-purple'> Dare to Dream</b> Big</h1>
                     </div>
                     <div className='flex flex-wrap justify-between grayscale' id=''>
 
@@ -454,10 +455,27 @@ const Homepage = () => {
                     </div>
 
                     <div className='md:col-span-2'>
-                        <Swiper className='w-[100%] h-fit py-20' autoplay slidesPerView={{
-                            320: 1,
-                            768: 2
-                        }} modules={[Autoplay]} direction='horizontal' centeredSlides={false} spaceBetween={30}>
+                        <Swiper className='w-[100%] h-fit py-20' autoplay
+                            breakpoints={{
+                                640: {
+                                    slidesPerView: 1,
+                                    spaceBetween: 20,
+                                },
+                                768: {
+                                    slidesPerView: 2,
+                                    spaceBetween: 20,
+                                },
+                                1024: {
+                                    slidesPerView: 2,
+                                    spaceBetween: 20,
+                                },
+                            }}
+                            modules={[Autoplay]}
+                            direction='horizontal'
+                            centeredSlides={false}
+                            spaceBetween={30}
+                            loop
+                        >
                             {
                                 testimonials.map(({ image, name, role, text }, index) => index + 1 > 3 && <SwiperSlide>
                                     <div className='border h-[230px] p-5 pt-10 relative rounded-3xl flex flex-col justify-between'>
@@ -490,10 +508,47 @@ const Homepage = () => {
                 {/* Does this sound like you? */}
 
                 <div>
-                    <motion.div initial={{ x: 30, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} viewport={{ amount: 0.3, once: true }} className='md:mt-36 mb-10 grid grid-cols-2'>
+
+                    <motion.div initial={{ y: 50, opacity: 0 }} viewport={{ amount: 0.5, once: true }} whileInView={{ y: 0, opacity: 1 }} className='grid grid-cols-1 md:grid-cols-2  mb-20 items-center gap-10 '>
+                        <div>
+                            <h1 className='font-Barlow text-5xl mb-5 capitalize'>Does this Sound  <b className='text-primary'>Like You?</b></h1>
+
+
+                        </div>
+                        <div>
+
+                            <ul className='font-Mulish list-disc flex flex-col gap-y-5 px-5 md:px-0 mb-10'>
+                                <li>
+                                    <span className='font-semibold'>It feel like no matter how hard you work, your brand is still invisible in the crowded market?</span>
+                                    <p>Break through the noise with strategies that work.
+                                    </p>
+                                </li>
+                                <li>
+                                    <span className='font-semibold'>"You’re tired of putting in relentless effort, only to see minimal results?"</span>
+                                    <p>
+                                        Transform your efforts into measurable success with data-backed solutions.
+
+                                    </p>
+
+                                </li>
+                                <li>
+                                    <span className='font-semibold'> "You feel overwhelmed trying to connect with the right audience?"
+                                    </span>
+                                    <p>
+                                        Transform your efforts into measurable success with data-backed solutions.
+
+                                    </p>
+
+                                </li>
+                            </ul>
+
+                            <NavLink to={"/services"} className={"flex w-[100%]  md:w-[50%] items-center gap-3 justify-center bg-secondary py-4 px-5 md:text-sm rounded-full hover:bg-secondary hover:text-primary duration-500 border-primary border  hover:shadow-lg"}>Schedule a Consultation Today</NavLink>
+                        </div>
+                    </motion.div>
+                    {/* <motion.div initial={{ x: 30, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} viewport={{ amount: 0.3, once: true }} className='md:mt-36 mb-10 grid grid-cols-2'>
                         <div>
                             <h1 className='font-Barlow text-3xl md:text-4xl mb-5 capitalize '>Does this sound like you?</h1>
-                            {/* <p className='font-Mulish text-xl mb-6'>Achieve more with less effort.</p> */}
+
 
 
                         </div>
@@ -555,7 +610,7 @@ const Homepage = () => {
                             </div>
                         </div>
 
-                    </div>
+                    </div> */}
 
                 </div>
 
@@ -593,7 +648,7 @@ const Homepage = () => {
 
                 <div className='grid grid-cols-1 md:grid-cols-2 mb-10'>
                     <div>
-                        <h1 className='text-3xl mb-5 md:mb-3'>Looking to  Your Marketing  <i>Improve</i>   <b className='font-extrabold text-primary'> Without a Long-Term Commitment?</b> </h1>
+                        <h1 className='text-3xl mb-5 md:mb-3'>Looking to  <i>Improve</i> Your Marketing     <b className='font-extrabold text-primary'> Without a Long-Term Commitment?</b> </h1>
                         <p className='mb-4'>We understand that sometimes all you need is expert insight to steer your efforts in the right direction.
 
                         </p>

@@ -48,10 +48,20 @@ const Header = () => {
                 setIsScroll(false)
             }
         }
+
+        // Showing popup after 5 seconds
         setTimeout(() => {
             setShowPopup(true)
             document.body.style.overflow = "hidden"
-        }, 300000)
+
+            // Showing popup after 5 minutes
+            setTimeout(() => {
+                setShowPopup(true)
+                document.body.style.overflow = "hidden"
+            }, 300000)
+
+        }, 5000);
+
         return () => { }
 
     }, [])
