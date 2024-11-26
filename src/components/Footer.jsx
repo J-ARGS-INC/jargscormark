@@ -31,10 +31,10 @@ const Footer = () => {
                 <div className='grid grid-cols-2 md:grid-cols-4 gap-10 my-10'>
                     <ul className='flex flex-col gap-3 text-sm'>
                         <li className='text-lg font-medium mb-1'>Pages</li>
-                        <li className='text-black/40'><NavLink className={'hover:underline'}>Home</NavLink></li>
-                        <li className='text-black/40'><NavLink className={'hover:underline'}>Services</NavLink></li>
-                        <li className='text-black/40'><NavLink className={'hover:underline'}>About</NavLink></li>
-                        <li className='text-black/40'><NavLink className={'hover:underline'}>Blog</NavLink></li>
+                        <li className='text-black/40'><NavLink to={"/"} className={'hover:underline'}>Home</NavLink></li>
+                        <li className='text-black/40'><NavLink to={"/services"} className={'hover:underline'}>Services</NavLink></li>
+                        <li className='text-black/40'><NavLink to={"/about"} className={'hover:underline'}>About</NavLink></li>
+                        <li className='text-black/40'><NavLink to={"/blog"} className={'hover:underline'}>Blog</NavLink></li>
                     </ul>
 
                     <ul className='flex flex-col gap-3 text-sm'>

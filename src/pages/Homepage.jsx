@@ -519,7 +519,7 @@ const Homepage = () => {
 
                             <ul className='font-Mulish list-disc flex flex-col gap-y-5 px-5 md:px-0 mb-10'>
                                 <li>
-                                    <span className='font-semibold'>It feel like no matter how hard you work, your brand is still invisible in the crowded market?</span>
+                                    <span className='font-semibold'>"It feel like no matter how hard you work, your brand is still invisible in the crowded market?"</span>
                                     <p>Break through the noise with strategies that work.
                                     </p>
                                 </li>

@@ -83,13 +83,13 @@ const Header = () => {
         }
     }, [showNav])
 
-
+    console.log(location.pathname)
     return (
         <>
             {/* Large Screens */}
-            <nav className={` md:px-20 py-3   justify-between items-center fixed  w-[100%] hidden md:flex  z-50  ${isScroll ? 'shadow-sm border bg-white/80 backdrop-blur-md top-0' : '-top-1 text-white'} `}>
+            <nav className={` md:px-20 py-3   justify-between items-center fixed  w-[100%] hidden md:flex  z-50  ${isScroll ? 'shadow-sm border bg-white/80 backdrop-blur-md top-0' : `-top-1 ${location.pathname == "/" && "text-white"}`} `}>
                 <ul>
-                    <NavLink to={"/"}> <img src={isScroll ? logo : logo1} className="object-contain  w-10" alt="" /></NavLink>
+                    <NavLink to={"/"}> <img src={isScroll ? logo : location.pathname == "/" ? logo1 : logo} className="object-contain  w-10" alt="" /></NavLink>
                 </ul>
                 <ul className='flex justify-between gap-14 font-Barlow'>
                     <li><NavLink to={"/"}>Home</NavLink></li>
