@@ -17,6 +17,8 @@ import Img5 from "../assets/Images/clientLogo5.png"
 import Img6 from "../assets/Images/clientLogo6.png"
 import Img7 from "../assets/Images/clientLogo7.png"
 import testimonial1 from "../assets/Images/testimonial1.jpg"
+import testimonial2 from "../assets/Images/testimonial2.jpg"
+
 const Homepage = () => {
     const testimonials = [
         {
@@ -44,10 +46,10 @@ const Homepage = () => {
             role: "United Kingdom"
         },
         {
-            text: "Working with Jargs Cormark has been a game-changer for our brand. Their ability to craft a tailored brand strategy helped us stand out in a crowded market. Highly recommend their expertise",
-            image: "https://images.pexels.com/photos/7450281/pexels-photo-7450281.jpeg?auto=compress&cs=tinysrgb&w=600",
-            name: "Mrs Helen",
-            role: "USA"
+            text: "Working with Jargs Cormark was a seamless experience. From the well-thought-out video plan to their proactive follow-up and responsiveness to feedback, they ensured every detail was perfect. I’m thrilled with the final product!",
+            image: testimonial2,
+            name: "Blessing",
+            role: " Nigeria"
         },
         {
             text: "From creative content to precise social media management, they’ve elevated our presence and driven consistent engagement. ",
@@ -298,7 +300,7 @@ const Homepage = () => {
                         <h1 className='text-3xl mb-3'>Our <br /> <b className='font-extrabold text-primary'>services</b> </h1>
                         <p className='mb-6'>At Jargs Cormark, we specialize in helping high performing businesses and entrepreneurs like you break barriers, build connections, and transform potential into profits. From creating compelling content to designing conversion-driven campaigns, we’re here to turn your vision into a thriving reality.
                         </p>
-                        <NavLink to={"/services"} className={"flex w-[100%]  md:w-[50%] items-center gap-3 justify-center bg-primary py-4 px-5 text-lg text-secondary rounded-full hover:bg-secondary hover:text-primary duration-500 hover:border-primary border border-transparent hover:shadow-lg"}>Discover More </NavLink>
+
                     </motion.div>
 
                     <div className='md:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-5 md:px-20'>
@@ -313,25 +315,14 @@ const Homepage = () => {
                                 </p>
                             </motion.div>)
                         }
-                        {/* <div className='border border-primary rounded-2xl flex flex-col p-5 justify-end  h-fit md:h-[250px]'>
-                            <h1 className='text-2xl font-bold font-Barlow mb-5 text-primary'>Rebranding</h1>
-                            <p>
-                                redefine your brand for today’s market while keeping its core values intact.
-                            </p>
+
+
+                        <div className='md:col-span-2 mt-10 flex justify-center'>
+
+                            <NavLink to={"/services"} className={"flex w-[100%]  md:w-[50%] items-center gap-3 justify-center bg-primary py-4 px-5 text-lg text-secondary rounded-full hover:bg-secondary hover:text-primary duration-500 hover:border-primary border border-transparent hover:shadow-lg"}>Read More </NavLink>
                         </div>
-                        <div className='border bg-primary text-white border-primary rounded-2xl flex flex-col p-5 justify-end h-fit md:h-[350px]'>
-                            <h1 className='text-2xl font-bold font-Barlow mb-5 '>Digital Marketing</h1>
-                            <p>
-                                Amplify your brand’s reach through SEO, SEM, email marketing, and influencer campaigns, ensuring your brand gets noticed in the digital landscape.
-                            </p>
-                        </div>
-                        <div className='border border-primary rounded-2xl flex flex-col p-5 justify-end h-fit'>
-                            <h1 className='text-2xl font-bold font-Barlow mb-5 text-primary'> Content Creation</h1>
-                            <p>
-                                We deliver top-notch materials that convey your brand’s story and engage your target market.
-                            </p>
-                        </div> */}
                     </div>
+
                 </section>
 
                 {/* The longer you wait */}
@@ -519,7 +510,7 @@ const Homepage = () => {
 
                             <ul className='font-Mulish list-disc flex flex-col gap-y-5 px-5 md:px-0 mb-10'>
                                 <li>
-                                    <span className='font-semibold'>"It feel like no matter how hard you work, your brand is still invisible in the crowded market?"</span>
+                                    <span className='font-semibold'>"It feels like no matter how hard you work, your brand is still invisible in the crowded market?"</span>
                                     <p>Break through the noise with strategies that work.
                                     </p>
                                 </li>
@@ -652,7 +643,7 @@ const Homepage = () => {
                         <p className='mb-4'>We understand that sometimes all you need is expert insight to steer your efforts in the right direction.
 
                         </p>
-                        <p>At Jargs Cormark, we provide tailored marketing audits to help you:</p>
+                        <p>At Jargs Cormark, we provide tailored marketing insights to help you:</p>
 
                     </div>
                 </div>

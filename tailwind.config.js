@@ -7,8 +7,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        "Barlow": "Barlow, sans-serif",
-        "Mulish": "Mulish, sans-serif"
+        "Barlow": "Poppins, sans-serif",
+        "Mulish": "Poppins, sans-serif"
       },
       colors: {
         primary: "#0E28C3",
