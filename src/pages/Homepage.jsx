@@ -41,9 +41,15 @@ const Homepage = () => {
         },
         {
             text: "Jargs Cormark’s content writing service is exceptional. They captured my brand’s voice perfectly and delivered compelling copy that resonated with my audience. The turnaround time was impressive, and the quality unmatched.",
-            image: testimonial1,
+            image: "https://images.pexels.com/photos/6584748/pexels-photo-6584748.jpeg?auto=compress&cs=tinysrgb&w=600",
             name: "James O.",
             role: "United Kingdom"
+        },
+        {
+            text: "Jargs Cormark made a remarkable impact on my business with their professionalism and tailored support. From clear strategies to tangible outcomes, their dedication ensured seamless and productive results. Truly invaluable!",
+            image: testimonial1,
+            name: "Olalode R.",
+            role: "Canada"
         },
         {
             text: "Working with Jargs Cormark was a seamless experience. From the well-thought-out video plan to their proactive follow-up and responsiveness to feedback, they ensured every detail was perfect. I’m thrilled with the final product!",
@@ -68,22 +74,26 @@ const Homepage = () => {
         {
             header: "Brand Strategy & Positioning",
             subtext: "Stand out with strategies that build trust and highlight your unique value.",
+            id: "brand_strategy",
             priceRange: "$999"
         },
         {
             header: "Digital Marketing",
             subtext: "Reach your audience where they are with campaigns that drive results, from social media, email, website, or targeted ads. This is our full digital marketing package for you on a monthly basis. ",
-            priceRange: "$2299"
+            id: "digital_marketing",
+            priceRange: "$2299",
         },
         {
             header: "Content Creation and Video Production",
             subtext: "Engage, inspire, and convert with high-quality, impactful Storytelling content. ",
-            priceRange: "$99"
+            id: "content_creation",
+            priceRange: "$99",
         },
         {
             header: "Social Media Management",
             subtext: "Turn your social media channels into powerful tools for connection and growth. We create and manage tailored content strategies that resonate with your audience, drive engagement, and build a loyal community around your brand.",
-            priceRange: "Premium - $1299, Standard - $799,Basic - $499 "
+            id: "social_media",
+            priceRange: "Premium - $1299, Standard - $799,Basic - $499 ",
         },
     ]
     return (
@@ -305,15 +315,21 @@ const Homepage = () => {
 
                     <div className='md:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-5 md:px-20'>
                         {
-                            services.map(({ header, priceRange, subtext }, index) => <motion.div className='border border-primary rounded-2xl flex flex-col p-5 justify-end  ' key={index} initial={{ x: index % 2 == 0 ? 20 : -20, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} viewport={{ amount: 0.5, once: true }}>
-                                <div className='mb-20 flex'>
-                                    <span className='border md:text-sm py-1 px-5 rounded-full border-black'>{!header.includes("Social") && "From"} {priceRange}</span>
-                                </div>
-                                <h1 className='text-2xl font-bold font-Barlow mb-5 text-primary'>{header}</h1>
-                                <p>
-                                    {subtext}
-                                </p>
-                            </motion.div>)
+                            services.map(({ header, priceRange, subtext, id }, index) =>
+
+                                <NavLink to={`/services#${id}`} className={'border border-primary rounded-2xl '}>
+                                    <motion.div className='flex flex-col px-5 py-10 justify-between  h-[100%]' key={index} initial={{ x: index % 2 == 0 ? 20 : -20, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} viewport={{ amount: 0.5, once: true }}>
+                                        <div className='mb-10'>
+                                            <h1 className='text-2xl font-bold font-Barlow mb-5 text-primary'>{header}</h1>
+                                            <p>
+                                                {subtext}
+                                            </p>
+                                        </div>
+
+                                        <p className='font-Mulish text-sm italic underline'>Read more...</p>
+                                    </motion.div>
+                                </NavLink>
+                            )
                         }
 
 
@@ -637,7 +653,7 @@ const Homepage = () => {
                     </div>
                 </div> */}
 
-                <div className='grid grid-cols-1 md:grid-cols-2 mb-10'>
+                < div className='grid grid-cols-1 md:grid-cols-2 mb-10' >
                     <div>
                         <h1 className='text-3xl mb-5 md:mb-3'>Looking to  <i>Improve</i> Your Marketing     <b className='font-extrabold text-primary'> Without a Long-Term Commitment?</b> </h1>
                         <p className='mb-4'>We understand that sometimes all you need is expert insight to steer your efforts in the right direction.
@@ -646,7 +662,7 @@ const Homepage = () => {
                         <p>At Jargs Cormark, we provide tailored marketing insights to help you:</p>
 
                     </div>
-                </div>
+                </div >
 
                 <div className='grid grid-cols-1 md:grid-cols-3 gap-10 mb-10'>
                     <div className='bg-[#fcfcfc] p-6 rounded-3xl border border-black flex flex-col justify-between'>

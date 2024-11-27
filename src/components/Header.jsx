@@ -67,9 +67,19 @@ const Header = () => {
     }, [])
 
     useEffect(() => {
-        if (scrollY > 0) {
-            window.scroll({ top: 0, behavior: "smooth" })
+        const hash = location.hash;
+        if (hash) {
+            const element = document.querySelector(hash);
+            if (element) {
+                // element.scrollIntoView({ behavior: "smooth" });
+                window.scroll({ top: element.offsetTop - 100, behavior: "smooth" })
+            }
+        } else {
+            if (scrollY > 0) {
+                window.scroll({ top: 0, behavior: "smooth" })
+            }
         }
+
         // closing nav when user goes to a different page
         setShowNav(false)
     }, [location.pathname])
@@ -82,8 +92,6 @@ const Header = () => {
             document.body.style.overflow = "auto"
         }
     }, [showNav])
-
-    console.log(location.pathname)
     return (
         <>
             {/* Large Screens */}

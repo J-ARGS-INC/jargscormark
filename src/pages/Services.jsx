@@ -8,24 +8,29 @@ const Services = () => {
     const [videoIsPlayed, setVIdeoIsPlayed] = useState(false);
     const services = [
         {
-            header: "Branding",
-            subtext: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, at, omnis inventore possimus et modi eaque eligendi officia ex, sapiente eum nam consectetur. Corrupti dolor tempora itaque quis tempore facilis aspernatur officia, dolore hic, vero voluptatibus, exercitationem quam ullam non natus animi quia iste atque quasi voluptas earum magnam? Culpa id itaque, corporis ea officiis quidem voluptatum ullam placeat maiores ex reiciendis dicta tenetur, inventore, ad sint! Earum odio ullam debitis voluptatibus maiores quisquam explicabo facilis eveniet assumenda? Aliquam, asperiores?",
+            header: "Brand Strategy & Positioning",
+            subtext: "Stand out with strategies that build trust and highlight your unique value.",
+            id: "brand_strategy",
             img: "https://images.pexels.com/photos/2421374/pexels-photo-2421374.jpeg",
+
         },
         {
-            header: "Content Creating",
-            subtext: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati, eligendi minus? At ducimus magni, laboriosam debitis unde facilis, fugiat reprehenderit delectus alias error aliquid doloremque consequatur mollitia. Vitae eligendi nesciunt ut beatae molestias veniam quae praesentium facilis modi, ducimus laboriosam hic fuga delectus maiores consequatur dignissimos perferendis, est omnis, rem autem aperiam reprehenderit voluptatum aut. Voluptatibus accusamus eveniet explicabo rerum, tempore maiores, minus eligendi dolor, expedita necessitatibus velit. Modi impedit qui saepe ex, atque nam eos sunt repellendus, inventore, dignissimos quidem ullam quasi ratione accusantium commodi provident recusandae tempora? Architecto, commodi explicabo! Reprehenderit laborum omnis voluptates tempora, assumenda quis deleniti!",
+            header: "Digital Marketing",
+            subtext: "Reach your audience where they are with campaigns that drive results, from social media, email, website, or targeted ads. This is our full digital marketing package for you on a monthly basis. ",
+            id: "digital_marketing",
             img: "https://images.pexels.com/photos/7243115/pexels-photo-7243115.jpeg",
         },
 
         {
-            header: "Web Development",
-            subtext: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo, autem sit reiciendis ea placeat provident repellendus impedit ab iste tempore, et sequi voluptas dolore nemo? Nemo suscipit quidem earum a animi consectetur maxime rerum laudantium. Dolorum quaerat vero tempore enim? Distinctio quos, quo laboriosam totam quisquam saepe assumenda quidem natus dicta maiores animi asperiores, tempora, culpa quam est expedita quaerat impedit officiis voluptas. Vel esse beatae, sed architecto sit atque optio deleniti placeat ea hic minima nihil quis dolorem ab error quasi doloremque doloribus sunt quam quod non saepe? Nam provident recusandae dolorum delectus earum esse ut fugiat eius nihil. Excepturi quis iste qui maxime inventore, beatae tempore nobis quisquam. Quia magni obcaecati repudiandae natus iusto maxime repellat quibusdam illum.",
+            header: "Content Creation and Video Production",
+            subtext: "Engage, inspire, and convert with high-quality, impactful Storytelling content. ",
+            id: "content_creation",
             img: "https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg",
         },
         {
-            header: "Digital Marketing",
-            subtext: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum, voluptas et, perspiciatis tempore, qui ea incidunt veniam excepturi fugit quaerat neque distinctio deleniti. Reprehenderit numquam provident quod necessitatibus ullam deleniti dicta, delectus perferendis quis. Fugit eos beatae perferendis inventore illum. Cum harum dignissimos, saepe praesentium quia optio nostrum magnam doloremque.",
+            header: "Social Media Management",
+            subtext: "Turn your social media channels into powerful tools for connection and growth. We create and manage tailored content strategies that resonate with your audience, drive engagement, and build a loyal community around your brand.",
+            id: "social_media",
             img: "https://images.pexels.com/photos/3194521/pexels-photo-3194521.jpeg",
         }
     ]
@@ -68,12 +73,12 @@ const Services = () => {
 
 
                 {
-                    services.map(({ header, subtext, img }, index) =>
-                        <div className='grid grid-cols-1 md:grid-cols-3 gap-y-10 md:gap-y-10 my-20  '>
+                    services.map(({ header, subtext, img, id }, index) =>
+                        <div className=' grid grid-cols-1 md:grid-cols-3 gap-y-10 md:gap-y-10 my-20  ' id={id} key={index}>
                             <div className='font-Barlow'>
                                 <span className='text-lg py-2 px-4 rounded-full border-primary text-primary border'>{index + 1 < 10 ? `0${index + 1}` : index + 1}</span>
                             </div>
-                            <div className='md:col-span-2'>
+                            <div className='md:col-span-2' >
                                 <h1 className='font-Barlow text-4xl font-semibold mb-5'>{header}</h1>
                                 <p className='font-Mulish'>{subtext}</p>
 
