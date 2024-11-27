@@ -305,7 +305,7 @@ const Homepage = () => {
                 </div>
 
                 {/* Our services */}
-                <section className='font-Mulish py-10 md:py-32 grid grid-cols-1 md:grid-cols-2 gap-20   capitalize'>
+                <section className='font-Mulish py-20 md:py-5 grid grid-cols-1 md:grid-cols-2 gap-20   capitalize'>
                     <motion.div initial={{ y: 50, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} viewport={{ amount: 0.5 }}>
                         <h1 className='text-3xl mb-3'>Our <br /> <b className='font-extrabold text-primary'>services</b> </h1>
                         <p className='mb-6'>At Jargs Cormark, we specialize in helping high performing businesses and entrepreneurs like you break barriers, build connections, and transform potential into profits. From creating compelling content to designing conversion-driven campaigns, we’re here to turn your vision into a thriving reality.
@@ -335,14 +335,14 @@ const Homepage = () => {
 
                         <div className='md:col-span-2 mt-10 flex justify-center'>
 
-                            <NavLink to={"/services"} className={"flex w-[100%]  md:w-[50%] items-center gap-3 justify-center bg-primary py-4 px-5 text-lg text-secondary rounded-full hover:bg-secondary hover:text-primary duration-500 hover:border-primary border border-transparent hover:shadow-lg"}>Read More </NavLink>
+                            <NavLink to={"/services"} className={"flex w-[100%]  md:w-[50%] items-center gap-3 justify-center bg-primary py-4 px-5 text-lg text-secondary rounded-full hover:bg-secondary hover:text-primary duration-500 hover:border-primary border border-transparent hover:shadow-lg"}>Discover      </NavLink>
                         </div>
                     </div>
 
                 </section>
 
                 {/* The longer you wait */}
-                <motion.div initial={{ y: 50, opacity: 0 }} viewport={{ amount: 0.5, once: true }} whileInView={{ y: 0, opacity: 1 }} className='grid grid-cols-1 md:grid-cols-3  mb-20 items-center gap-10 '>
+                <motion.div initial={{ y: 50, opacity: 0 }} viewport={{ amount: 0.5, once: true }} whileInView={{ y: 0, opacity: 1 }} className='grid grid-cols-1 md:grid-cols-3  mb-20 mt-20 items-center gap-10 '>
                     <div>
                         <h1 className='font-Barlow text-5xl mb-5 capitalize'>The Longer you wait, <b className='text-primary'>the harder it becomes.</b></h1>
 
