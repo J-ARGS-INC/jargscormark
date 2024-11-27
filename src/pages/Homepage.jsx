@@ -132,7 +132,7 @@ const Homepage = () => {
 
                     <div className='absolute w-[100%] h-[100%] top-0 left-0'>
                         <div className='absolute w-[100%] h-[100%] ' style={{ background: "linear-gradient(to right, rgba(0,0,0,.65) 40%, rgba(0,0,0,.45))" }}></div>
-                        <video src="https://videos.pexels.com/video-files/9365552/9365552-sd_640_360_25fps.mp4" className='w-[100%] h-[100%] object-cover' autoPlay={true} muted={true} loop={true} playsInline></video>
+                        <video src="https://videos.pexels.com/video-files/9365552/9365552-sd_640_360_25fps.mp4" className='w-[100%] h-[100%] object-cover' autoPlay={true} muted={true} loop={true} playsInline preload='auto'></video>
                     </div>
 
                 </div>
