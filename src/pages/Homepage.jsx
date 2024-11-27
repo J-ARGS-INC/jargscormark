@@ -326,7 +326,7 @@ const Homepage = () => {
                                             </p>
                                         </div>
 
-                                        <p className='font-Mulish text-sm italic underline'>Read more...</p>
+                                        <p className='font-Mulish text-sm italic underline font-light'>Read more...</p>
                                     </motion.div>
                                 </NavLink>
                             )
