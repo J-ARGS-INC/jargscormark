@@ -280,7 +280,7 @@ const Homepage = () => {
                     </div>
                     <div></div>
                     <div>
-                        <Swiper className='w-[100%] h-[300px]' slidesPerView={1} modules={[Autoplay]} autoplay direction='vertical' centeredSlides={true} loop>
+                        <Swiper className='w-[100%] h-[400px]' slidesPerView={1} modules={[Autoplay]} autoplay direction='vertical' centeredSlides={true} loop>
                             {
                                 testimonials.map(({ image, name, role, text }, index) => index + 1 <= 3 && <SwiperSlide>
                                     <div>
