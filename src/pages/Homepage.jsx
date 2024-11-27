@@ -20,6 +20,7 @@ import testimonial1 from "../assets/Images/testimonial1.jpg"
 import testimonial2 from "../assets/Images/testimonial2.jpg"
 
 const Homepage = () => {
+    // let video = use
     const testimonials = [
         {
             text: "Jargs Cormark completely transformed our social media presence. Their strategic approach and creative ideas boosted our engagement by 300%! Their professionalism and dedication made the process enjoyable and stress-free",
@@ -131,7 +132,7 @@ const Homepage = () => {
 
                     <div className='absolute w-[100%] h-[100%] top-0 left-0'>
                         <div className='absolute w-[100%] h-[100%] ' style={{ background: "linear-gradient(to right, rgba(0,0,0,.65) 40%, rgba(0,0,0,.45))" }}></div>
-                        <video src="https://videos.pexels.com/video-files/9365552/9365552-sd_640_360_25fps.mp4" className='w-[100%] h-[100%] object-cover' autoPlay muted loop></video>
+                        <video src="https://videos.pexels.com/video-files/9365552/9365552-sd_640_360_25fps.mp4" className='w-[100%] h-[100%] object-cover' autoPlay={true} muted={true} loop={true} playsInline></video>
                     </div>
 
                 </div>
@@ -278,9 +279,9 @@ const Homepage = () => {
 
                         <NavLink to={"/a"} className={"w-fit flex items-center gap-3 justify-between bg-secondary py-4 px-5 font-Mulish text-primary md:text-sm rounded-full border border-primary duration-500 capitalize"}>Boost your brand visibility</NavLink>
                     </div>
-                    <div></div>
+
                     <div>
-                        <Swiper className='w-[100%] h-[400px]' slidesPerView={1} modules={[Autoplay]} autoplay direction='vertical' centeredSlides={true} loop>
+                        <Swiper className='w-[100%] h-[350px] ' slidesPerView={1} modules={[Autoplay]} autoplay direction='vertical' centeredSlides={true} loop>
                             {
                                 testimonials.map(({ image, name, role, text }, index) => index + 1 <= 3 && <SwiperSlide>
                                     <div>
@@ -305,7 +306,7 @@ const Homepage = () => {
                 </div>
 
                 {/* Our services */}
-                <section className='font-Mulish py-20 md:py-5 grid grid-cols-1 md:grid-cols-2 gap-20   capitalize'>
+                <section className='font-Mulish py-10 md:py-5 grid grid-cols-1 md:grid-cols-2 gap-20   capitalize'>
                     <motion.div initial={{ y: 50, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} viewport={{ amount: 0.5 }}>
                         <h1 className='text-3xl mb-3'>Our <br /> <b className='font-extrabold text-primary'>services</b> </h1>
                         <p className='mb-6'>At Jargs Cormark, we specialize in helping high performing businesses and entrepreneurs like you break barriers, build connections, and transform potential into profits. From creating compelling content to designing conversion-driven campaigns, we’re here to turn your vision into a thriving reality.
@@ -485,8 +486,8 @@ const Homepage = () => {
                         >
                             {
                                 testimonials.map(({ image, name, role, text }, index) => index + 1 > 3 && <SwiperSlide>
-                                    <div className='border h-[230px] p-5 pt-10 relative rounded-3xl flex flex-col justify-between'>
-                                        <div className="absolute top-[-15%] w-12 h-12 ">
+                                    <div className='border h-[350px] p-5 pt-10 relative rounded-3xl flex flex-col justify-between'>
+                                        <div className="absolute top-[-10%] w-12 h-12 ">
                                             <img src={image} alt="" className='rounded-full w-[100%] h-[100%] object-cover object-top' />
                                         </div>
                                         {/* <div className='flex gap-5'>
