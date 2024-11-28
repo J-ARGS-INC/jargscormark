@@ -33,6 +33,11 @@ const Header = () => {
             text: "Blog",
             Icon: FaRegNewspaper,
             to: "/blog"
+        },
+        {
+            text: "Contact Us",
+            Icon: FaRegNewspaper,
+            to: "/contact_us"
         }
     ]
     const handleShowNav = () => {
@@ -103,10 +108,7 @@ const Header = () => {
                     <NavLink to={"/"}> <img src={isScroll ? logo : location.pathname == "/" ? logo1 : logo} className="object-contain  w-10" alt="" /></NavLink>
                 </ul>
                 <ul className='flex justify-between gap-14 font-Barlow'>
-                    <li><NavLink to={"/"}>Home</NavLink></li>
-                    <li><NavLink to={"/services"}>Services</NavLink></li>
-                    <li><NavLink to={"/about"}>About</NavLink></li>
-                    <li><NavLink to={"/blog"}>Blog</NavLink></li>
+                    {nav.map(({ text, Icon, to }, index) => <li key={index}  ><NavLink to={to} className={'flex items-center gap-3 font-light '}><Icon size={20} className='hidden' /> {text}</NavLink></li>)}
                 </ul>
                 <ul></ul>
             </nav>
