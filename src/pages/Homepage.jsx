@@ -280,6 +280,8 @@ const Homepage = () => {
                         <NavLink to={"/a"} className={"w-fit flex items-center gap-3 justify-between bg-secondary py-4 px-5 font-Mulish text-primary md:text-sm rounded-full border border-primary duration-500 capitalize"}>Boost your brand visibility</NavLink>
                     </div>
 
+                    <div></div>
+
                     <div>
                         <Swiper className='w-[100%] h-[350px] ' slidesPerView={1} modules={[Autoplay]} autoplay direction='vertical' centeredSlides={true} loop>
                             {
