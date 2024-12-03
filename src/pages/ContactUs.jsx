@@ -175,7 +175,7 @@ const ContactUs = () => {
                     <p></p>
                     <motion.div initial={{ translateX: 30, opacity: 0 }} whileInView={{ translateX: 0, opacity: 1 }} transition={{ duration: 0.4, delay: 0.2 }}>
                         <div>
-                            <p className=' mb-4'>Take the first step toward growth with our free consultation. This call helps us understand your goals and challenges to determine if we’re the perfect fit for your business.
+                            <p className=' mb-4'>Take the first step toward growth with our free consultation. This call helps us understand your goals and challenges to help both parties determine if we’re the perfect fit for a partnership.
                             </p>
 
                             <p className='font-light mb-7'>
