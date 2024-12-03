@@ -9,6 +9,9 @@ import { MdFormatListNumbered } from "react-icons/md";
 import { LuClock10 } from "react-icons/lu";
 import { NavLink } from 'react-router-dom';
 import { RxArrowRight } from 'react-icons/rx';
+import { CgSpinnerTwoAlt } from "react-icons/cg";
+
+import { send } from "@emailjs/browser"
 
 const ContactUs = () => {
 
@@ -67,14 +70,51 @@ const ContactUs = () => {
         ]
 
     )
+    let [sendingMail, setSendingMail] = useState(false);
+    let [emailData, setEmailData] = useState({
+        from_email: "",
+        message: ""
+    })
+    const handleChangeEmailData = (e) => {
+        setEmailData(prev => ({ ...prev, [e.target.name]: e.target.value }))
+    }
+    const data = {
+        service_id: 'service_w97qels',
+        template_id: 'template_ihruyox',
+        user_id: 'S9h_PgXnBQk0X3am8',
+        template_params: emailData
+    }
+    const sendEmail = (e) => {
+        e.preventDefault();
+        if (!sendingMail) {
+            setSendingMail(true);
+            send("service_w97qels", "template_9swvl8x", emailData, { publicKey: "S9h_PgXnBQk0X3am8" }).then(res => res.status).then(res => {
+                if (res == 200) {
+                    alert("Email Sent")
+                    setEmailData({
+                        from_email: "",
+                        message: ""
+                    })
+                }
+            }).catch(err => {
+                alert(err.text)
+            }).finally(() => {
+                setSendingMail(false);
+            })
+
+        } else {
+            alert("Email is sending, please wait");
+        }
+
+    }
     return (
         <div className='font-Mulish'>
-            <div className=' py-10 px-5  md:py-[18vh] md:px-20   '>
+            <div className=' py-10 px-5  md:py-[18vh] md:px-20   text-xl '>
                 <div className='grid grid-cols-1  md:grid-cols-2 items-end gap-20 mb-20 md:mb-32'>
                     <motion.div initial={{ translateY: 30, opacity: 0 }} whileInView={{ translateY: 0, opacity: 1 }} transition={{ duration: 0.4, delay: 0.2 }}>
                         <h1 className='text-4xl font-bold font-Barlow mb-3'>
                             Got Questions?
-                            Get in touch with us.
+                            <span className='text-primary'>  Get in touch with us.</span>
                         </h1>
                         <p className='font-Barlow font-light'>
                             Contact us today, and let’s discuss how we can drive your brand forward.
@@ -92,7 +132,7 @@ const ContactUs = () => {
                 </div>
 
                 <motion.div initial={{ translateY: 30, opacity: 0 }} whileInView={{ translateY: 0, opacity: 1 }} transition={{ duration: 0.4, delay: 0.2 }} className='mb-20 md:mb-32'>
-                    <h1 className='text-xl mb-5 font-medium '>How It works</h1>
+                    <h1 className='text-3xl mb-5 font-bold '>How It works</h1>
                     <div className='grid grid-cols-1 md:grid-cols-3 font-Mulish border p-5 rounded-2xl gap-10'>
                         <div className='flex gap-5 items-center'>
                             <MdFormatListNumbered className='text-primary' size={30} />
@@ -127,7 +167,7 @@ const ContactUs = () => {
 
                 <div className=' border-b pb-20 grid grid-cols-1 md:grid-cols-3 items-center mb-20 md:mb-32'>
                     <motion.div initial={{ translateX: -30, opacity: 0 }} whileInView={{ translateX: 0, opacity: 1 }} transition={{ duration: 0.4, delay: 0.2 }}>
-                        <h1 class="font-Barlow text-3xl md:text-3xl mb-5 capitalize">
+                        <h1 className="font-Barlow text-3xl md:text-3xl mb-5 capitalize">
                             Book a Free Discovery Call
                         </h1>
                     </motion.div>
@@ -135,7 +175,7 @@ const ContactUs = () => {
                     <p></p>
                     <motion.div initial={{ translateX: 30, opacity: 0 }} whileInView={{ translateX: 0, opacity: 1 }} transition={{ duration: 0.4, delay: 0.2 }}>
                         <div>
-                            <p className='font-light mb-4'>Take the first step toward growth with our free consultation. This call helps us understand your goals and challenges to determine if we’re the perfect fit for your business.
+                            <p className=' mb-4'>Take the first step toward growth with our free consultation. This call helps us understand your goals and challenges to determine if we’re the perfect fit for your business.
                             </p>
 
                             <p className='font-light mb-7'>
@@ -154,7 +194,7 @@ const ContactUs = () => {
 
                 <div className='border-b pb-20 grid grid-cols-1 md:grid-cols-3 items-center mb-20 md:mb-32'>
                     <motion.div initial={{ translateX: -30, opacity: 0 }} whileInView={{ translateX: 0, opacity: 1 }} transition={{ duration: 0.4, delay: 0.2 }}>
-                        <h1 class="font-Barlow text-3xl md:text-3xl mb-5 capitalize">
+                        <h1 className="font-Barlow text-3xl md:text-3xl mb-5 capitalize">
                             Schedule a Paid Consultation
 
                         </h1>
@@ -182,7 +222,7 @@ const ContactUs = () => {
 
                 <div className='border-b pb-20 grid grid-cols-1 md:grid-cols-3 items-center mb-20 md:mb-32'>
                     <motion.div initial={{ translateX: -30, opacity: 0 }} whileInView={{ translateX: 0, opacity: 1 }} transition={{ duration: 0.4, delay: 0.2 }}>
-                        <h1 class="font-Barlow text-3xl md:text-3xl mb-5 capitalize">
+                        <h1 className="font-Barlow text-3xl md:text-3xl mb-5 capitalize">
                             Already Know What You Need?
                         </h1>
                     </motion.div>
@@ -193,16 +233,21 @@ const ContactUs = () => {
                             <p className='font-light mb-4'>
                                 Skip the formalities and get straight to the point. Drop us a message with your specific requirements, and we’ll connect with you promptly.
                             </p>
+                            <form action='' onSubmit={sendEmail}>
+                                <input type="email" className='border py-3 px-5 outline-none text-sm w-[100%] rounded-xl font-light' placeholder='Enter Your Email' value={emailData.from_email} name='from_email' onChange={handleChangeEmailData} required />
 
-                            <p className='font-light mb-7'>
-                                With this session, you’ll receive our undivided attention and proven strategies to achieve measurable growth.
+                                <textarea name="message" onChange={handleChangeEmailData} id="" className='border outline-none resize-none w-[100%] h-[150px] my-5 p-5 text-sm  rounded-xl font-light' placeholder='Enter Message' required value={emailData.message}></textarea>
 
-                            </p>
+                                <button className={"md:w-[80%] flex items-center gap-3 justify-center bg-primary py-4 px-8  text-white rounded-full border hover:border-primary duration-500 "}>
+                                    {!sendingMail ? <>
+                                        Send Now
+                                        <RxArrowRight size={20} className='' />
+                                    </> : <>Sending <CgSpinnerTwoAlt size={20} className='animate-spin' /></>}
+                                </button>
+                            </form>
 
 
-                            <NavLink className={"md:w-[80%] flex items-center gap-3 justify-center bg-primary py-4 px-8  text-white rounded-full border hover:border-primary duration-500 "}>
-                                Send Now
-                                <RxArrowRight size={20} className='' /></NavLink>
+
                         </div>
                     </motion.div>
 
@@ -214,14 +259,19 @@ const ContactUs = () => {
 
 
 
-            <div className='md:px-10 '>
+            <div className='md:px-10 px-5'>
+                <h1 className='mb-10 text-2xl font-semibold capitalize'>
+                    Jargs Cormark <span className='text-primary'>
+                        frequently asked questions
+                    </span>
+                </h1>
                 <div className='bg-[#fafafafa] p-10 rounded-xl grid grid-cols-1 md:grid-cols-2 gap-10'>
                     {
                         faq.map(({ question, answer, show }, index) => <div key={index} className={`bg-white p-5 duration-150 rounded-2xl ${!show ? "h-32 md:h-24 border overflow-hidden" : "h-[350px] md:h-[250px] border border-primary shadow-lg"} cursor-pointer`} onClick={() => {
                             setFaq(prev => prev.map(faq => ({ ...faq, show: faq.question == question ? !faq.show : false })))
                         }}>
-                            <div className='grid grid-cols-6 items-center justify-between mb-5'>
-                                <h1 className='md:text-lg font-light col-span-5'>{question}</h1>
+                            <div className='grid grid-cols-6 md:grid-cols-10 items-center justify-between mb-5'>
+                                <h1 className='md:text-lg font-light col-span-5 md:col-span-9'>{question}</h1>
                                 <IoIosArrowDown />
                             </div>
                             <p className={`${!show ? 'opacity-0' : 'opacity-100 '}`}>{answer}</p>
