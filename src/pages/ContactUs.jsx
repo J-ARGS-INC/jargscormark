@@ -73,17 +73,13 @@ const ContactUs = () => {
     let [sendingMail, setSendingMail] = useState(false);
     let [emailData, setEmailData] = useState({
         from_email: "",
-        message: ""
+        message: "",
+        fullname: ""
     })
     const handleChangeEmailData = (e) => {
         setEmailData(prev => ({ ...prev, [e.target.name]: e.target.value }))
     }
-    const data = {
-        service_id: 'service_w97qels',
-        template_id: 'template_ihruyox',
-        user_id: 'S9h_PgXnBQk0X3am8',
-        template_params: emailData
-    }
+
     const sendEmail = (e) => {
         e.preventDefault();
         if (!sendingMail) {
@@ -92,6 +88,7 @@ const ContactUs = () => {
                 if (res == 200) {
                     alert("Email Sent")
                     setEmailData({
+                        fullname: "",
                         from_email: "",
                         message: ""
                     })
@@ -234,6 +231,8 @@ const ContactUs = () => {
                                 Skip the formalities and get straight to the point. Drop us a message with your specific requirements, and we’ll connect with you promptly.
                             </p>
                             <form action='' onSubmit={sendEmail}>
+                                <input type="text" className='border py-3 px-5 outline-none text-sm w-[100%] rounded-xl font-light mb-5' placeholder='Enter Your Fullname' value={emailData.fullname} name='fullname' onChange={handleChangeEmailData} required />
+
                                 <input type="email" className='border py-3 px-5 outline-none text-sm w-[100%] rounded-xl font-light' placeholder='Enter Your Email' value={emailData.from_email} name='from_email' onChange={handleChangeEmailData} required />
 
                                 <textarea name="message" onChange={handleChangeEmailData} id="" className='border outline-none resize-none w-[100%] h-[150px] my-5 p-5 text-sm  rounded-xl font-light' placeholder='Enter Message' required value={emailData.message}></textarea>
