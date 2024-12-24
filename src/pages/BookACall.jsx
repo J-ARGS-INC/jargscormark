@@ -44,7 +44,8 @@ const BookACall = () => {
                             </div>
 
                             <div>
-                                <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0L6xaO8BLVZJdtkZS4ZRz85PjjHnmtRtVxjU3s6eh5uLrcKJ__UrPX4HOYN2YXCuksRlAOD0D8?gv=true" style={{ border: 0 }} width="100%" height="600" frameborder="0"></iframe>
+                                <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0L6xaO8BLVZJdtkZS4ZRz85PjjHnmtRtVxjU3s6eh5uLrcKJ__UrPX4HOYN2YXCuksRlAOD0D8?gv=true" style={{ border: 0 }} width="100%" height="600" frameborder="0">
+                                </iframe>
 
                             </div>
                         </>
