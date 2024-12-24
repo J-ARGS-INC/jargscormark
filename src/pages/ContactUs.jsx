@@ -182,7 +182,7 @@ const ContactUs = () => {
                             </p>
 
 
-                            <NavLink className={"md:w-[80%] flex items-center gap-3 justify-center bg-primary py-4 px-8  text-white rounded-full border hover:border-primary duration-500 "}>Book Now<RxArrowRight size={20} className='' /></NavLink>
+                            <NavLink className={"md:w-[80%] flex items-center gap-3 justify-center bg-primary py-4 px-8  text-white rounded-full border hover:border-primary duration-500 "} to={"/book_a_call/free"}>Book Now<RxArrowRight size={20} className='' /></NavLink>
                         </div>
                     </motion.div>
 
@@ -210,7 +210,7 @@ const ContactUs = () => {
                             </p>
 
 
-                            <NavLink className={"md:w-[80%] flex items-center gap-3 justify-center bg-primary py-4 px-8  text-white rounded-full border hover:border-primary duration-500 "}>Schedule a Consultation<RxArrowRight size={20} className='' /></NavLink>
+                            <NavLink className={"md:w-[80%] flex items-center gap-3 justify-center bg-primary py-4 px-8  text-white rounded-full border hover:border-primary duration-500 "} to={"/book_a_call/paid"}>Schedule a Consultation<RxArrowRight size={20} className='' /></NavLink>
                         </div>
                     </motion.div>
 

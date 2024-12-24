@@ -4,6 +4,7 @@ import Homepage from "../pages/Homepage";
 import Services from "../pages/Services";
 import About from "../pages/About";
 import ContactUs from "../pages/ContactUs";
+import BookACall from "../pages/BookACall";
 export const router = createBrowserRouter([
     {
         path: "/",
@@ -24,6 +25,10 @@ export const router = createBrowserRouter([
             {
                 path: "contact_us",
                 element: <ContactUs />
+            },
+            {
+                path: "book_a_call/:type",
+                element: <BookACall />
             }
         ]
     }
