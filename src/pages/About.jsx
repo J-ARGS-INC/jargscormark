@@ -46,7 +46,7 @@ const About = () => {
         <div>
             <div className=' py-10 px-5  md:py-[18vh] md:px-20   '>
                 <div className='grid grid-cols-1  md:grid-cols-2  gap-20 mb-20'>
-                    <motion.div initial={{ translateY: 30, opacity: 0 }} whileInView={{ translateY: 0, opacity: 1 }} transition={{ duration: 0.4, delay: 0.2 }}>
+                    <motion.div initial={{ translateY: 30, opacity: 0 }} whileInView={{ translateY: 0, opacity: 1 }} transition={{ duration: 0.4, delay: 0.2 }} viewport={{ once: true }}>
                         <h1 className='text-4xl font-bold font-Barlow'>
                             More Than Marketing: We're Your Trusted Business Growth Partner
                         </h1>
@@ -94,7 +94,7 @@ const About = () => {
                     </div>
                 </div>
 
-                <div className='grid  grid-cols-1 md:grid-cols-3 mb-20 gap-10'>
+                <div className='grid  grid-cols-1 md:grid-cols-3 mb-20 gap-10 overflow-hidden'>
                     <div className='md:col-span-2'>
                         <motion.div initial={{ opacity: 0, y: 100 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }} viewport={{ once: true }}>
                             <h1 className='text-4xl md:text-5xl font-Barlow capitalize font-medium mb-10'>With Over a Decade of  <span className='text-primary'>Experience</span></h1>
@@ -107,30 +107,35 @@ const About = () => {
 
                     </div>
 
-                    <div className='grid  gap-5'>
-                        <div className='border border-primary h-fit rounded-2xl p-5'>
-                            <h1 className='font-Barlow mb-2'>Projects Done</h1>
-                            <h1 className='text-2xl font-Mulish text-primary'>120+</h1>
-                        </div>
+                    <motion.div initial={{ opacity: 0, x: 100 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.2, delay: 0.2 }} viewport={{ once: true }}>
+                        <div className='grid  gap-5'>
+                            <div className='border border-primary h-fit rounded-2xl p-5'>
+                                <h1 className='font-Barlow mb-2'>Projects Done</h1>
+                                <h1 className='text-2xl font-Mulish text-primary'>120+</h1>
+                            </div>
 
-                        <div className='border border-primary h-fit rounded-2xl p-5'>
-                            <h1 className='font-Barlow mb-2'>Satisfied Customers</h1>
-                            <h1 className='text-2xl font-Mulish text-primary'>50+</h1>
-                        </div>
+                            <div className='border border-primary h-fit rounded-2xl p-5'>
+                                <h1 className='font-Barlow mb-2'>Satisfied Customers</h1>
+                                <h1 className='text-2xl font-Mulish text-primary'>50+</h1>
+                            </div>
 
-                        <div className='border h-fit rounded-2xl p-5 shadow-2xl shadow-black/10'>
-                            <h1 className='font-Barlow mb-2'>Trusted Partners</h1>
-                            <h1 className='text-2xl font-Mulish text-primary'>20+</h1>
+                            <div className='border h-fit rounded-2xl p-5 shadow-2xl shadow-black/10'>
+                                <h1 className='font-Barlow mb-2'>Trusted Partners</h1>
+                                <h1 className='text-2xl font-Mulish text-primary'>20+</h1>
+                            </div>
                         </div>
-                    </div>
+                    </motion.div>
+
 
                 </div>
 
                 {/* Our Vision */}
-                <div className='grid grid-cols-1 md:grid-cols-3 gap-12 mb-20'>
+                <div className='grid grid-cols-1 md:grid-cols-3 gap-12 mb-20 overflow-hidden'>
                     <div className='md:col-span-2'>
-                        <h1 className='text-4xl font-Barlow mb-10'>Our Vision</h1>
-                        <p className='font-Mulish'>To be the trusted and indispensable partner for ambitious entrepreneurs and forward-thinking companies, delivering innovative and data-driven marketing solutions that empower them to transcend limitations, overcome challenges, and achieve remarkable, sustainable growth. We are committed to helping our partners not only excel in competitive markets but also create a meaningful, lasting impact that drives progress, fosters innovation, and inspires future generations of business leaders. Through collaboration, creativity, and a relentless pursuit of excellence, we aim to be the catalyst that turns visionary ideas into extraordinary success stories.</p>
+                        <motion.div initial={{ opacity: 0, x: -100 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.2, delay: 0.2 }} viewport={{ once: true }}>
+                            <h1 className='text-4xl font-Barlow mb-10'>Our Vision</h1>
+                            <p className='font-Mulish'>To be the trusted and indispensable partner for ambitious entrepreneurs and forward-thinking companies, delivering innovative and data-driven marketing solutions that empower them to transcend limitations, overcome challenges, and achieve remarkable, sustainable growth. We are committed to helping our partners not only excel in competitive markets but also create a meaningful, lasting impact that drives progress, fosters innovation, and inspires future generations of business leaders. Through collaboration, creativity, and a relentless pursuit of excellence, we aim to be the catalyst that turns visionary ideas into extraordinary success stories.</p>
+                        </motion.div>
                     </div>
 
                     <motion.div initial={{ opacity: 0, y: 100 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }} viewport={{ once: true }}>
@@ -155,14 +160,17 @@ const About = () => {
                         </motion.div>
                     </div>
 
-                    <div className='grid gap-3 '>
-                        <div className=' h-[150px] '>
-                            <img src="https://images.pexels.com/photos/3184420/pexels-photo-3184420.jpeg" className='w-[100%] h-[100%] object-cover object-top' alt="" />
+                    <motion.div initial={{ opacity: 0, x: 100 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.2, delay: 0.2 }} viewport={{ once: true }}>
+
+                        <div className='grid gap-3 '>
+                            <div className=' h-[150px] '>
+                                <img src="https://images.pexels.com/photos/3184420/pexels-photo-3184420.jpeg" className='w-[100%] h-[100%] object-cover object-top' alt="" />
+                            </div>
+                            <div className=' h-[150px] '>
+                                <img src="https://images.pexels.com/photos/3184634/pexels-photo-3184634.jpeg" className='w-[100%] h-[100%] object-cover object-' alt="" />
+                            </div>
                         </div>
-                        <div className=' h-[150px] '>
-                            <img src="https://images.pexels.com/photos/3184634/pexels-photo-3184634.jpeg" className='w-[100%] h-[100%] object-cover object-' alt="" />
-                        </div>
-                    </div>
+                    </motion.div>
                 </div>
 
                 <div className='mt-28'>
