@@ -228,7 +228,7 @@ const Homepage = () => {
                         </ul>
 
 
-                        <NavLink to={"/services"} className={"flex w-[100%] items-center gap-3 justify-center bg-primary py-4 px-5 text-lg text-secondary rounded-full hover:bg-secondary hover:text-primary duration-500 hover:border-primary border border-transparent hover:shadow-lg"}>Get Started Today </NavLink>
+                        <NavLink to={"/grow_your_sales"} className={"flex w-[100%] items-center gap-3 justify-center bg-primary py-4 px-5 text-lg text-secondary rounded-full hover:bg-secondary hover:text-primary duration-500 hover:border-primary border border-transparent hover:shadow-lg"}>Get Started Today </NavLink>
                     </div>
                 </motion.div>
 
@@ -320,7 +320,7 @@ const Homepage = () => {
                         {
                             services.map(({ header, priceRange, subtext, id }, index) =>
 
-                                <NavLink to={`/services#${id}`} className={'border border-primary rounded-2xl '}>
+                                <NavLink to={`/grow_your_sales#${id}`} className={'border border-primary rounded-2xl '}>
                                     <motion.div className='flex flex-col px-5 py-10 justify-between  h-[100%]' key={index} initial={{ x: index % 2 == 0 ? 20 : -20, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} viewport={{ amount: 0.5, once: true }}>
                                         <div className='mb-10'>
                                             <h1 className='text-2xl font-bold font-Barlow mb-5 text-primary'>{header}</h1>
@@ -338,7 +338,7 @@ const Homepage = () => {
 
                         <div className='md:col-span-2 mt-10 flex justify-center'>
 
-                            <NavLink to={"/services"} className={"flex w-[100%]  md:w-[50%] items-center gap-3 justify-center bg-primary py-4 px-5 text-lg text-secondary rounded-full hover:bg-secondary hover:text-primary duration-500 hover:border-primary border border-transparent hover:shadow-lg"}>Discover      </NavLink>
+                            <NavLink to={"/grow_your_sales"} className={"flex w-[100%]  md:w-[50%] items-center gap-3 justify-center bg-primary py-4 px-5 text-lg text-secondary rounded-full hover:bg-secondary hover:text-primary duration-500 hover:border-primary border border-transparent hover:shadow-lg"}>Discover      </NavLink>
                         </div>
                     </div>
 
@@ -349,7 +349,7 @@ const Homepage = () => {
                     <div>
                         <h1 className='font-Barlow text-5xl mb-5 capitalize'>The Longer you wait, <b className='text-primary'>the harder it becomes.</b></h1>
 
-                        <NavLink to={"/services"} className={"flex w-[100%] items-center gap-3 justify-center bg-primary py-4 px-5 text-lg text-secondary rounded-full hover:bg-secondary hover:text-primary duration-500 hover:border-primary border border-transparent hover:shadow-lg"}>Start Now </NavLink>
+                        <NavLink to={"/grow_your_sales"} className={"flex w-[100%] items-center gap-3 justify-center bg-primary py-4 px-5 text-lg text-secondary rounded-full hover:bg-secondary hover:text-primary duration-500 hover:border-primary border border-transparent hover:shadow-lg"}>Start Now </NavLink>
                     </div>
                     <div></div>
                     <div>
@@ -431,7 +431,7 @@ const Homepage = () => {
 
                         <div className='md:col-span-3 '>
                             <div className='flex  justify-center'>
-                                <NavLink to={"/services"} className={"flex w-[100%]  md:w-[50%] items-center gap-3 justify-center bg-secondary py-4 px-5 md:text-sm rounded-full hover:bg-secondary hover:text-primary duration-500 border-primary border  hover:shadow-lg"}>Boost your brand visibility  </NavLink>
+                                <NavLink to={"/grow_your_sales"} className={"flex w-[100%]  md:w-[50%] items-center gap-3 justify-center bg-secondary py-4 px-5 md:text-sm rounded-full hover:bg-secondary hover:text-primary duration-500 border-primary border  hover:shadow-lg"}>Boost your brand visibility  </NavLink>
                             </div>
                         </div>
 
@@ -552,7 +552,7 @@ const Homepage = () => {
                                 </li>
                             </ul>
 
-                            <NavLink to={"/services"} className={"flex w-[100%]  md:w-[50%] items-center gap-3 justify-center bg-secondary py-4 px-5 md:text-sm rounded-full hover:bg-secondary hover:text-primary duration-500 border-primary border  hover:shadow-lg"}>Schedule a Consultation Today</NavLink>
+                            <NavLink to={"/grow_your_sales"} className={"flex w-[100%]  md:w-[50%] items-center gap-3 justify-center bg-secondary py-4 px-5 md:text-sm rounded-full hover:bg-secondary hover:text-primary duration-500 border-primary border  hover:shadow-lg"}>Schedule a Consultation Today</NavLink>
                         </div>
                     </motion.div>
                     {/* <motion.div initial={{ x: 30, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} viewport={{ amount: 0.3, once: true }} className='md:mt-36 mb-10 grid grid-cols-2'>
@@ -616,7 +616,7 @@ const Homepage = () => {
 
                         <div className='md:col-span-3 '>
                             <div className='flex  justify-center'>
-                                <NavLink to={"/services"} className={"flex w-[100%]  md:w-[50%] items-center gap-3 justify-center bg-secondary py-4 px-5 md:text-sm rounded-full hover:bg-secondary hover:text-primary duration-500 border-primary border  hover:shadow-lg"}>Schedule a Consultation Today</NavLink>
+                                <NavLink to={"/grow_your_sales"} className={"flex w-[100%]  md:w-[50%] items-center gap-3 justify-center bg-secondary py-4 px-5 md:text-sm rounded-full hover:bg-secondary hover:text-primary duration-500 border-primary border  hover:shadow-lg"}>Schedule a Consultation Today</NavLink>
                             </div>
                         </div>
 
@@ -706,7 +706,7 @@ const Homepage = () => {
 
                         <h1 className='text-3xl mb-8'>Ready to gain clarity and start winning ?
                         </h1>
-                        <NavLink to={"/services"} className={"flex w-[100%]  md:w-[50%] items-center gap-3 justify-center bg-secondary py-4 px-5 md:text-sm rounded-full hover:bg-secondary hover:text-primary duration-500 border-primary border  hover:shadow-lg"}>Schedule a Consultation Today</NavLink>
+                        <NavLink to={"/grow_your_sales"} className={"flex w-[100%]  md:w-[50%] items-center gap-3 justify-center bg-secondary py-4 px-5 md:text-sm rounded-full hover:bg-secondary hover:text-primary duration-500 border-primary border  hover:shadow-lg"}>Schedule a Consultation Today</NavLink>
                     </div>
                 </div>
 
