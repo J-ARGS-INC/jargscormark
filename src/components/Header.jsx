@@ -29,11 +29,11 @@ const Header = () => {
             Icon: FaUsersRays,
             to: "/about"
         },
-        {
-            text: "Blog",
-            Icon: FaRegNewspaper,
-            to: "/blog"
-        },
+        // {
+        //     text: "Blog",
+        //     Icon: FaRegNewspaper,
+        //     to: "/blog"
+        // },
         {
             text: "Contact Us",
             Icon: FaRegNewspaper,
