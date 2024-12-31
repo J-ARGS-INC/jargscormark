@@ -20,9 +20,9 @@ const Header = () => {
             to: "/"
         },
         {
-            text: "Services",
+            text: "Grow Your Sales",
             Icon: GrServices,
-            to: "/services"
+            to: "/grow_your_sales"
         },
         {
             text: "About",

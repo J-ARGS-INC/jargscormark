@@ -15,7 +15,7 @@ export const router = createBrowserRouter([
                 element: <Homepage />
             },
             {
-                path: "services",
+                path: "grow_your_sales",
                 element: <Services />
             },
             {

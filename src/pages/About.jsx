@@ -82,7 +82,7 @@ const About = () => {
                         <motion.div initial={{ y: 100, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ delay: 0.2 }} viewport={{ once: true }}>
                             <h1 className='text-3xl mb-10'>A Story from Our <i className='text-primary'>Founder’s</i> Voice
                             </h1>
-                            <p className='font-light mb-2'>
+                            <p className='font-light mb-2 '>
                                 "A lot of people might wonder: Why run a digital marketing and branding agency? Why not something else? For me, it all started with a story—one that shaped my mission and continues to inspire the work we do at Jargs Cormark today.
                                 Growing up, I always felt there was something bigger waiting for me. That belief was tested when my family’s stability was disrupted by unexpected government policies. Watching my father, once so active, forced into idleness, and my mother take on new responsibilities was a turning point. It was painful, but it gave me a purpose: to create a life where my family, my community, and anyone connected to me wouldn’t have to face such hardships.
                                 Entrepreneurship became my path to this mission. I realized that the core of any successful business is marketing; which when done well, it generates one of the most essential drivers of business growth: ‘cash flow’. By empowering business owners, entrepreneurs, and companies with strategic marketing solutions, I could help prevent others from enduring the struggles I witnessed in my own life.
