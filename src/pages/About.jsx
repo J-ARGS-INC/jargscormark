@@ -96,12 +96,14 @@ const About = () => {
 
                 <div className='grid  grid-cols-1 md:grid-cols-3 mb-20 gap-10'>
                     <div className='md:col-span-2'>
-                        <h1 className='text-4xl md:text-5xl font-Barlow capitalize font-medium mb-10'>With Over a Decade of  <span className='text-primary'>Experience</span></h1>
+                        <motion.div initial={{ opacity: 0, y: 100 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }} viewport={{ once: true }}>
+                            <h1 className='text-4xl md:text-5xl font-Barlow capitalize font-medium mb-10'>With Over a Decade of  <span className='text-primary'>Experience</span></h1>
 
-                        <div className='flex  items-center gap-5'>
-                            <hr className='hidden md:block w-[25%] border-primary' />
-                            <p className='font-Mulish'>At Jargs Cormark, we proudly bring over a decade of dedicated expertise in empowering businesses to not only survive but thrive in today’s highly competitive markets. Our journey has been marked by relentless innovation, meaningful collaboration, and an unwavering commitment to excellence in delivering impactful marketing solutions. Over the years, we have partnered with a diverse range of entrepreneurs and companies, understanding their unique challenges and crafting tailored strategies that drive measurable results. From building brand visibility to fostering meaningful connections with target audiences, our mission has always been to guide businesses toward achieving sustainable growth and long-term success. Through a combination of deep industry knowledge, creative problem-solving, and a passion for empowering our clients, Jargs Cormark continues to be a trusted partner for those looking to break barriers, create value, and leave a lasting mark in their industries.</p>
-                        </div>
+                            <div className='flex  items-center gap-5'>
+                                <hr className='hidden md:block w-[25%] border-primary' />
+                                <p className='font-Mulish'>At Jargs Cormark, we proudly bring over a decade of dedicated expertise in empowering businesses to not only survive but thrive in today’s highly competitive markets. Our journey has been marked by relentless innovation, meaningful collaboration, and an unwavering commitment to excellence in delivering impactful marketing solutions. Over the years, we have partnered with a diverse range of entrepreneurs and companies, understanding their unique challenges and crafting tailored strategies that drive measurable results. From building brand visibility to fostering meaningful connections with target audiences, our mission has always been to guide businesses toward achieving sustainable growth and long-term success. Through a combination of deep industry knowledge, creative problem-solving, and a passion for empowering our clients, Jargs Cormark continues to be a trusted partner for those looking to break barriers, create value, and leave a lasting mark in their industries.</p>
+                            </div>
+                        </motion.div>
 
                     </div>
 
@@ -131,21 +133,26 @@ const About = () => {
                         <p className='font-Mulish'>To be the trusted and indispensable partner for ambitious entrepreneurs and forward-thinking companies, delivering innovative and data-driven marketing solutions that empower them to transcend limitations, overcome challenges, and achieve remarkable, sustainable growth. We are committed to helping our partners not only excel in competitive markets but also create a meaningful, lasting impact that drives progress, fosters innovation, and inspires future generations of business leaders. Through collaboration, creativity, and a relentless pursuit of excellence, we aim to be the catalyst that turns visionary ideas into extraordinary success stories.</p>
                     </div>
 
-                    <div className='grid gap-3 '>
-                        <div className=' h-[150px] '>
-                            <img src="https://images.pexels.com/photos/28338137/pexels-photo-28338137/free-photo-of-a-woman-with-short-hair-and-a-black-top-is-smiling.jpeg" className='w-[100%] h-[100%] object-cover ' alt="" />
+                    <motion.div initial={{ opacity: 0, y: 100 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }} viewport={{ once: true }}>
+                        <div className='grid gap-3 '>
+                            <div className=' h-[150px] '>
+                                <img src="https://images.pexels.com/photos/28338137/pexels-photo-28338137/free-photo-of-a-woman-with-short-hair-and-a-black-top-is-smiling.jpeg" className='w-[100%] h-[100%] object-cover ' alt="" />
+                            </div>
+                            <div className=' h-[150px] '>
+                                <img src="https://media.istockphoto.com/id/1432226243/photo/happy-young-woman-of-color-smiling-at-the-camera-in-a-studio.jpg?b=1&s=612x612&w=0&k=20&c=Kj3jyq1gGT6qciGM-3cPQTUtLyQeJgUOUYQXj64F-E8=" className='w-[100%] h-[100%] object-cover ' alt="" />
+                            </div>
                         </div>
-                        <div className=' h-[150px] '>
-                            <img src="https://media.istockphoto.com/id/1432226243/photo/happy-young-woman-of-color-smiling-at-the-camera-in-a-studio.jpg?b=1&s=612x612&w=0&k=20&c=Kj3jyq1gGT6qciGM-3cPQTUtLyQeJgUOUYQXj64F-E8=" className='w-[100%] h-[100%] object-cover ' alt="" />
-                        </div>
-                    </div>
+                    </motion.div>
                 </div>
 
                 {/* Our Mission */}
                 <div className='grid grid-cols-1  md:grid-cols-3 gap-12'>
                     <div className='md:col-span-2'>
-                        <h1 className='text-4xl font-Barlow mb-10'>Our Mission</h1>
-                        <p className='font-Mulish'>Our mission is to empower ambitious and high-performing entrepreneurs, as well as forward-thinking companies, by providing them with cutting-edge, innovative, and data-driven marketing solutions. These solutions are meticulously designed to enhance their visibility, build strong and meaningful connections with their audiences, and drive sustainable growth that aligns with their long-term objectives. We strive to equip our partners with the tools, strategies, and insights they need to not only navigate but excel in highly competitive markets. By fostering collaboration, creativity, and a results-oriented approach, we aim to be a driving force behind their success, helping them achieve their goals, transform their visions into reality, and make a lasting impact in their industries.</p>
+                        <motion.div initial={{ opacity: 0, y: 100 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }} viewport={{ once: true }}>
+
+                            <h1 className='text-4xl font-Barlow mb-10'>Our Mission</h1>
+                            <p className='font-Mulish'>Our mission is to empower ambitious and high-performing entrepreneurs, as well as forward-thinking companies, by providing them with cutting-edge, innovative, and data-driven marketing solutions. These solutions are meticulously designed to enhance their visibility, build strong and meaningful connections with their audiences, and drive sustainable growth that aligns with their long-term objectives. We strive to equip our partners with the tools, strategies, and insights they need to not only navigate but excel in highly competitive markets. By fostering collaboration, creativity, and a results-oriented approach, we aim to be a driving force behind their success, helping them achieve their goals, transform their visions into reality, and make a lasting impact in their industries.</p>
+                        </motion.div>
                     </div>
 
                     <div className='grid gap-3 '>
