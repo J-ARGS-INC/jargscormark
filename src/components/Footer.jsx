@@ -2,7 +2,7 @@ import React from 'react'
 import { TbLocation } from 'react-icons/tb'
 import { NavLink } from 'react-router-dom'
 import { FaFacebook, FaLinkedin } from "react-icons/fa";
-import { PiTwitterLogo } from 'react-icons/pi';
+import { PiInstagramLogo, PiTwitterLogo } from 'react-icons/pi';
 
 const Footer = () => {
     return (
@@ -34,29 +34,29 @@ const Footer = () => {
                         <li className='text-black/40'><NavLink to={"/"} className={'hover:underline'}>Home</NavLink></li>
                         <li className='text-black/40'><NavLink to={"/grow_your_sales"} className={'hover:underline'}>Services</NavLink></li>
                         <li className='text-black/40'><NavLink to={"/about"} className={'hover:underline'}>About</NavLink></li>
-                        <li className='text-black/40'><NavLink to={"/blog"} className={'hover:underline'}>Blog</NavLink></li>
+                        {/* <li className='text-black/40'><NavLink to={"/blog"} className={'hover:underline'}>Blog</NavLink></li> */}
                     </ul>
 
                     <ul className='flex flex-col gap-3 text-sm'>
                         <li className='text-lg font-medium mb-1'>Quick Links</li>
-                        <li className='text-black/40'><NavLink className={'hover:underline'}>Web development </NavLink></li>
-                        <li className='text-black/40'><NavLink className={'hover:underline'}>Digital marketing </NavLink></li>
-                        <li className='text-black/40'><NavLink className={'hover:underline'}>Rebranding</NavLink></li>
-                        <li className='text-black/40'><NavLink className={'hover:underline'}>Content Creation</NavLink></li>
+                        <li className='text-black/40'><NavLink to={"/grow_your_sales#brand_strategy"} className={'hover:underline'}>Brand Strategy </NavLink></li>
+                        <li className='text-black/40'><NavLink to={"/grow_your_sales#web_development"} className={'hover:underline'}>Web development </NavLink></li>
+                        <li className='text-black/40'><NavLink to={"/grow_your_sales#digital_marketing"} className={'hover:underline'}>Social Media Marketing </NavLink></li>
+                        <li className='text-black/40'><NavLink to={"/grow_your_sales#social_ads"} className={'hover:underline'}>Facebook & Instagram Ads </NavLink></li>
                     </ul>
 
                     <ul className='flex flex-col gap-3 text-sm'>
                         <li className='text-lg font-medium mb-1'>Company</li>
                         <li className='text-black/40'><NavLink to={"/contact_us#faq"} className={'hover:underline'}>FAQ </NavLink></li>
-                        <li className='text-black/40'><NavLink className={'hover:underline'}>Terms </NavLink></li>
+                        {/* <li className='text-black/40'><NavLink className={'hover:underline'}>Terms </NavLink></li> */}
                         <li className='text-black/40'><NavLink className={'hover:underline'} to={"/contact_us"}>Contact Us</NavLink></li>
                     </ul>
 
                     <ul className='flex flex-col gap-3 text-sm'>
                         <li className='text-lg font-medium mb-1'>Resources</li>
-                        <li className='text-black/40'><NavLink className={'hover:underline'}>Blog </NavLink></li>
-                        <li className='text-black/40'><NavLink className={'hover:underline'}>Portfolio </NavLink></li>
-                        <li className='text-black/40'><NavLink className={'hover:underline'}>Freebie</NavLink></li>
+                        <li className='text-black/40'><NavLink to={"https://whatsapp.com/channel/0029Vb0ZqJn6LwHkmXNPBX2u"} target='_blank' className={'hover:underline'}>Join Our Builders  Community </NavLink></li>
+                        {/* <li className='text-black/40'><NavLink className={'hover:underline'}>Portfolio </NavLink></li>
+                        <li className='text-black/40'><NavLink className={'hover:underline'}>Freebie</NavLink></li> */}
                     </ul>
 
 
@@ -66,17 +66,19 @@ const Footer = () => {
                 <div className='flex justify-between items-center font-Barlow'>
                     <p className='text-sm'>Copyright &copy; JARGS 2024</p>
                     <div className='flex gap-5'>
-                        <NavLink>
+                        <NavLink to={"https://www.instagram.com/jargs_cormark/profilecard"} target='_blank'>
+                            <PiInstagramLogo size={20} />
+                        </NavLink>
+                        <NavLink to={"https://www.linkedin.com/company/jargs-cormark/"} target='_blank'>
+                            <FaLinkedin size={20} />
+                        </NavLink>
+                        <NavLink to={"https://www.facebook.com/share/q6HXuHJTW549pFLi/?mibextid=LQQJ4d"} target='_blank'>
                             <FaFacebook size={20} />
                         </NavLink>
 
-                        <NavLink>
-                            <PiTwitterLogo size={20} />
-                        </NavLink>
 
-                        <NavLink>
-                            <FaLinkedin size={20} />
-                        </NavLink>
+
+
                     </div>
                 </div>
             </footer>

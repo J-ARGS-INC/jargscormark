@@ -87,7 +87,7 @@ const Homepage = () => {
         {
             header: "Content Creation and Video Production",
             subtext: "Engage, inspire, and convert with high-quality, impactful Storytelling content. ",
-            id: "content_creation",
+            id: "web_development",
             priceRange: "$99",
         },
         {

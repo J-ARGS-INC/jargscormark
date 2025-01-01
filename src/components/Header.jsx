@@ -77,6 +77,7 @@ const Header = () => {
         const hash = location.hash;
         if (hash) {
             const element = document.querySelector(hash);
+            console.log(element)
             if (element) {
                 // element.scrollIntoView({ behavior: "smooth" });
                 window.scroll({ top: element.offsetTop - 100, behavior: "smooth" })
@@ -150,7 +151,7 @@ const Header = () => {
 
                     </p>
 
-                    <NavLink to={"book_a_call/free"} className={"w-fit flex items-center gap-3 justify-between bg-secondary py-4 px-5 font-Mulish text-primary text-sm rounded-full border border-primary duration-500 text-center "}>Get Your Free Marketing Audit Today</NavLink>
+                    <NavLink to={"https://forms.gle/469U4WEdYrPfJ8PcA"} className={"w-fit flex items-center gap-3 justify-between bg-secondary py-4 px-5 font-Mulish text-primary text-sm rounded-full border border-primary duration-500 text-center "}>Get Your Free Marketing Audit Today</NavLink>
                 </div>
             </div>
         </>

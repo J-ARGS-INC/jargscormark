@@ -1,4 +1,3 @@
-import React, { useRef, useState } from 'react'
 import brand_strategy from "@assets/Images/Brand_Strategy.jpg"
 import social_media from "@assets/Images/social_media.jpg"
 import landing_page from "@assets/Images/landing_page.jpg"
@@ -6,8 +5,6 @@ import facebook_ad from "@assets/Images/facebook_ad.jpg"
 import { motion } from 'framer-motion';
 import { NavLink } from 'react-router-dom';
 const Services = () => {
-    const video = useRef()
-    const [videoIsPlayed, setVIdeoIsPlayed] = useState(false);
     const services = [
         {
             header: "Branding & Marketing Strategy",
@@ -69,7 +66,7 @@ const Services = () => {
         {
             header: "High-Converting Landing Pages",
             subtext: "Make your website work smarter, not harder: ",
-            id: "content_creation",
+            id: "web_development",
             img: landing_page,
             list: [
                 {
@@ -128,15 +125,7 @@ const Services = () => {
             last_text: "Grow your revenue with precision.  "
         }
     ]
-    const playVIdeo = () => {
-        if (!videoIsPlayed) {
-            video.current.play()
-            setVIdeoIsPlayed(true);
-        } else {
-            video.current.pause()
-            setVIdeoIsPlayed(false);
-        }
-    }
+
 
     return (
 
@@ -172,7 +161,7 @@ const Services = () => {
 
                 {
                     services.map(({ header, subtext, img, id, list, last_text }, index) =>
-                        <motion.div initial={{ y: 30, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ duration: 0.1, delay: 0.1 }}>
+                        <motion.div initial={{ y: 30, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ duration: 0.1, delay: 0.1 }} key={index}>
                             <div className=' grid grid-cols-1 md:grid-cols-3 gap-y-10 md:gap-y-10 my-20  ' id={id} key={index}>
                                 <div className='font-Barlow'>
                                     {/* displaying 01 - 09 instead of 1 - 9 */}

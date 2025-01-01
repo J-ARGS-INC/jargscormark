@@ -73,6 +73,10 @@ const About = () => {
 
                 <div className='grid grid-cols-1 md:grid-cols-3 mb-24 gap-20 items-center'>
                     <div className='overflow-hidden'>
+                        <motion.div initial={{ y: 100, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ delay: 0.2 }} viewport={{ once: true }}>
+                            <h1 className='block md:hidden text-3xl font-bold mb-10 font-Barlow'>A Story from Our <i className='text-primary'>Founder’s</i> Voice
+                            </h1>
+                        </motion.div>
                         <motion.div initial={{ x: -300, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} viewport={{ once: true }}>
                             <div className='h-[300px] md:w-[300px]  rounded-full  '>
                                 <img src={founderStory} alt="" className='w-[100%] h-[100%] object-contain object-top  md:object-center ' />
@@ -81,7 +85,7 @@ const About = () => {
                     </div>
                     <div className='md:col-span-2 font-Barlow'>
                         <motion.div initial={{ y: 100, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ delay: 0.2 }} viewport={{ once: true }}>
-                            <h1 className='text-3xl font-bold mb-10'>A Story from Our <i className='text-primary'>Founder’s</i> Voice
+                            <h1 className='hidden md:block text-3xl font-bold mb-10'>A Story from Our <i className='text-primary'>Founder’s</i> Voice
                             </h1>
                             <p className='font-light mb-2 '>
                                 "A lot of people might wonder: Why run a digital marketing and branding agency? Why not something else? For me, it all started with a story—one that shaped my mission and continues to inspire the work we do at Jargs Cormark today.
