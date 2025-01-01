@@ -69,6 +69,7 @@ const Header = () => {
 
             }, 5000);
         }
+
         return () => { }
 
     }, [])
@@ -93,6 +94,13 @@ const Header = () => {
         if (location.pathname != "/") {
             setShowPopup(false)
         }
+        // changing title based on current page
+        nav.forEach(item => {
+            if (item.to == location.pathname) {
+                document.title = `Jargs Cormark - ${item.text}`
+            }
+        })
+
 
     }, [location.pathname])
 
@@ -151,7 +159,7 @@ const Header = () => {
 
                     </p>
 
-                    <NavLink to={"https://forms.gle/469U4WEdYrPfJ8PcA"} className={"w-fit flex items-center gap-3 justify-between bg-secondary py-4 px-5 font-Mulish text-primary text-sm rounded-full border border-primary duration-500 text-center "}>Get Your Free Marketing Audit Today</NavLink>
+                    <NavLink target='_blank' to={"https://forms.gle/469U4WEdYrPfJ8PcA"} className={"w-fit flex items-center gap-3 justify-between bg-secondary py-4 px-5 font-Mulish text-primary text-sm rounded-full border border-primary duration-500 text-center "}>Get Your Free Marketing Audit Today</NavLink>
                 </div>
             </div>
         </>
