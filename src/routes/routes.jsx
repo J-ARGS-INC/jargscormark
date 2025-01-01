@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Navigate } from "react-router-dom";
 import Container from "../components/Container";
 import Homepage from "../pages/Homepage";
 import Services from "../pages/Services";
@@ -29,6 +29,11 @@ export const router = createBrowserRouter([
             {
                 path: "book_a_call/:type",
                 element: <BookACall />
+            },
+            {
+                path: "*",
+                element: <Navigate to={"/"} replace />
+
             }
         ]
     }
