@@ -53,7 +53,7 @@ const Header = () => {
                 setIsScroll(false)
             }
         }
-
+        console.log(location.pathname)
         // showing popup only on home page
         if (location.pathname == "/") {
             // Showing popup after 5 seconds
@@ -69,7 +69,6 @@ const Header = () => {
 
             }, 5000);
         }
-
         return () => { }
 
     }, [])
@@ -90,6 +89,10 @@ const Header = () => {
 
         // closing nav when user goes to a different page
         setShowNav(false)
+        if (location.pathname != "/") {
+            setShowPopup(false)
+        }
+
     }, [location.pathname])
 
     // disabling scrolling when nav is opened
@@ -147,7 +150,7 @@ const Header = () => {
 
                     </p>
 
-                    <NavLink className={"w-fit flex items-center gap-3 justify-between bg-secondary py-4 px-5 font-Mulish text-primary text-sm rounded-full border border-primary duration-500 "}>Get Your Free Marketing Audit Today</NavLink>
+                    <NavLink to={"book_a_call/free"} className={"w-fit flex items-center gap-3 justify-between bg-secondary py-4 px-5 font-Mulish text-primary text-sm rounded-full border border-primary duration-500 text-center "}>Get Your Free Marketing Audit Today</NavLink>
                 </div>
             </div>
         </>

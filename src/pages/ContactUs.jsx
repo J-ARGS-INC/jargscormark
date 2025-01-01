@@ -258,7 +258,7 @@ const ContactUs = () => {
 
 
 
-            <div className='md:px-10 px-5'>
+            <div className='md:px-10 px-5' id='faq'>
                 <h1 className='mb-10 text-2xl font-semibold capitalize'>
                     Jargs Cormark <span className='text-primary'>
                         frequently asked questions

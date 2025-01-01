@@ -285,7 +285,7 @@ const Homepage = () => {
                     <div>
                         <Swiper className='w-[100%] h-[350px] ' slidesPerView={1} modules={[Autoplay]} autoplay direction='vertical' centeredSlides={true} loop>
                             {
-                                testimonials.map(({ image, name, role, text }, index) => index + 1 <= 3 && <SwiperSlide>
+                                testimonials.map(({ image, name, role, text }, index) => index + 1 <= 3 && <SwiperSlide key={index}>
                                     <div>
                                         <h1 className='font-Barlow text-xl mb-5'>
                                             {text}
@@ -320,7 +320,7 @@ const Homepage = () => {
                         {
                             services.map(({ header, priceRange, subtext, id }, index) =>
 
-                                <NavLink to={`/grow_your_sales#${id}`} className={'border border-primary rounded-2xl '}>
+                                <NavLink key={index} to={`/grow_your_sales#${id}`} className={'border border-primary rounded-2xl '}>
                                     <motion.div className='flex flex-col px-5 py-10 justify-between  h-[100%]' key={index} initial={{ x: index % 2 == 0 ? 20 : -20, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} viewport={{ amount: 0.5, once: true }}>
                                         <div className='mb-10'>
                                             <h1 className='text-2xl font-bold font-Barlow mb-5 text-primary'>{header}</h1>
@@ -487,7 +487,7 @@ const Homepage = () => {
                             loop
                         >
                             {
-                                testimonials.map(({ image, name, role, text }, index) => index + 1 > 3 && <SwiperSlide>
+                                testimonials.map(({ image, name, role, text }, index) => index + 1 > 3 && <SwiperSlide key={index}>
                                     <div className='border h-[350px] p-5 pt-10 relative rounded-3xl flex flex-col justify-between'>
                                         <div className="absolute top-[-10%] w-12 h-12 ">
                                             <img src={image} alt="" className='rounded-full w-[100%] h-[100%] object-cover object-top' />

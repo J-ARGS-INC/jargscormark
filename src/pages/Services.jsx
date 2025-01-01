@@ -194,7 +194,7 @@ const Services = () => {
                                             <div className='h-[350px]'>
                                                 <img src={img} alt="" className='w-[100%] h-[100%] object-cover object-top' />
                                             </div>
-                                            <p className='my-10 font-Barlow'>💡 {last_text} <NavLink to={"/contact_us"} className={"italic font-light underline text-primary"}>Contact our team</NavLink></p>
+                                            <p className='my-10 font-Barlow'>💡 {last_text} <NavLink to={"/contact_us"} className={" font-bold  underline text-primary text-lg"}>Contact our team</NavLink></p>
                                             <div className='border'></div>
                                         </div>
                                     </div>
