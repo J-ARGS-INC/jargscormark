@@ -117,12 +117,12 @@ const Homepage = () => {
                             </motion.div>
                             <div className='grid grid-cols-1 md:grid-cols-2 gap-[5vw]'>
                                 <motion.div initial={{ y: 50, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.5 }}>
-                                    <NavLink className={"flex items-center gap-3 justify-between bg-primary py-4 px-5  text-secondary rounded-full hover:bg-secondary hover:text-primary duration-500 hover:border-primary border border-transparent hover:shadow-lg "}>Start now<TbLocation size={20} /></NavLink>
+                                    <NavLink to={"/contact_us"} className={"flex items-center gap-3 justify-between bg-primary py-4 px-5  text-secondary rounded-full hover:bg-secondary hover:text-primary duration-500 hover:border-primary border border-transparent hover:shadow-lg "}>Start now<TbLocation size={20} /></NavLink>
                                 </motion.div>
 
                                 <motion.div initial={{ y: 50, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.6 }}>
 
-                                    <NavLink className={"flex items-center gap-3 justify-between bg-secondary py-4 px-5  text-primary rounded-full border hover:border-primary duration-500 "}>Schedule a Consultation<RxArrowRight size={20} className='' /></NavLink>
+                                    <NavLink to={"/contact_us"} className={"flex items-center gap-3 justify-between bg-secondary py-4 px-5  text-primary rounded-full border hover:border-primary duration-500 "}>Schedule a Consultation<RxArrowRight size={20} className='' /></NavLink>
                                 </motion.div>
 
                             </div>
@@ -153,7 +153,7 @@ const Homepage = () => {
                     <PiFunnel className='text-primary' size={30} />
                     <div className=''>
                         <p>Step two: </p>
-                        <p>Build a Funnel That Converts
+                        <p>Get tailored strategy and solutions
                         </p>
                     </div>
 

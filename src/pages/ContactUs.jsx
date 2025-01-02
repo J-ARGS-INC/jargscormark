@@ -1,17 +1,13 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion';
 import { IoIosArrowDown } from "react-icons/io";
-import { BsChat } from 'react-icons/bs';
-import { PiFunnel } from 'react-icons/pi';
-import { MdShowChart } from 'react-icons/md';
 import { BsCardChecklist, BsClock } from "react-icons/bs";
 import { MdFormatListNumbered } from "react-icons/md";
-import { LuClock10 } from "react-icons/lu";
 import { NavLink } from 'react-router-dom';
 import { RxArrowRight } from 'react-icons/rx';
 import { CgSpinnerTwoAlt } from "react-icons/cg";
-
 import { send } from "@emailjs/browser"
+import { ToastContainer, toast } from 'react-toastify';
 
 const ContactUs = () => {
 
@@ -86,7 +82,16 @@ const ContactUs = () => {
             setSendingMail(true);
             send("service_w97qels", "template_9swvl8x", emailData, { publicKey: "S9h_PgXnBQk0X3am8" }).then(res => res.status).then(res => {
                 if (res == 200) {
-                    alert("Email Sent")
+                    toast.success('Email Sent Successfully', {
+                        position: "top-right",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: false,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "light",
+                    });
                     setEmailData({
                         fullname: "",
                         from_email: "",
@@ -100,7 +105,16 @@ const ContactUs = () => {
             })
 
         } else {
-            alert("Email is sending, please wait");
+            toast.warn('Email is sending, please wait.', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
         }
 
     }
@@ -278,6 +292,7 @@ const ContactUs = () => {
                     }
                 </div>
             </div>
+            <ToastContainer />
         </div>
     )
 }

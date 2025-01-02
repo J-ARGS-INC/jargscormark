@@ -53,7 +53,6 @@ const Header = () => {
                 setIsScroll(false)
             }
         }
-        console.log(location.pathname)
         // showing popup only on home page
         if (location.pathname == "/") {
             // Showing popup after 5 seconds
