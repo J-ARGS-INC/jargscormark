@@ -5,6 +5,8 @@ import { FaFacebook, FaLinkedin } from "react-icons/fa";
 import { PiInstagramLogo, PiTwitterLogo } from 'react-icons/pi';
 
 const Footer = () => {
+    const date = new Date()
+
     return (
         <div>
             {/* News Letter */}
@@ -64,7 +66,7 @@ const Footer = () => {
 
                 <hr className='mb-5' />
                 <div className='flex justify-between items-center font-Barlow'>
-                    <p className='text-sm'>Copyright &copy; JARGS 2024</p>
+                    <p className='text-sm'>Copyright &copy; JARGS {date.getFullYear()}</p>
                     <div className='flex gap-5'>
                         <NavLink to={"https://www.instagram.com/jargs_cormark/profilecard"} target='_blank'>
                             <PiInstagramLogo size={20} />
