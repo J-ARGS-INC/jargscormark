@@ -5,6 +5,8 @@ import Services from "../pages/Services";
 import About from "../pages/About";
 import ContactUs from "../pages/ContactUs";
 import BookACall from "../pages/BookACall";
+import CaseStudies from "../pages/CaseStudies";
+import CaseStudy from "../pages/CaseStudy";
 export const router = createBrowserRouter([
     {
         path: "/",
@@ -29,6 +31,14 @@ export const router = createBrowserRouter([
             {
                 path: "book_a_call/:type",
                 element: <BookACall />
+            },
+            {
+                path: "case_studies",
+                element: <CaseStudies />
+            },
+            {
+                path: "case_studies/:id",
+                element: <CaseStudy />
             },
             {
                 path: "*",
