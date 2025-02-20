@@ -8,7 +8,13 @@ const authenticate = require("./middleware/auth");
 require("./config/db");
 
 // Fixing CORS
-app.use(cors());
+app.use(cors(
+    {
+        origin: '*', // Allow frontend requests
+        methods: 'GET, POST, PUT, DELETE',
+        allowedHeaders: 'Content-Type, Authorization'
+    }
+));
 
 
 // parsing data
