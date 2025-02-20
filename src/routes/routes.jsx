@@ -7,6 +7,10 @@ import ContactUs from "../pages/ContactUs";
 import BookACall from "../pages/BookACall";
 import CaseStudies from "../pages/CaseStudies";
 import CaseStudy from "../pages/CaseStudy";
+import Case_Study from "../pages/admin/CaseStudy";
+import Login from "../pages/admin/Login";
+import Dashboard from "../pages/admin/Dashboard";
+import { UserProvider } from "../context/user";
 export const router = createBrowserRouter([
     {
         path: "/",
@@ -45,6 +49,30 @@ export const router = createBrowserRouter([
                 element: <Navigate to={"/"} replace />
 
             }
+        ]
+    },
+    {
+        path: "/admin",
+        children: [
+            {
+                path: "",
+                element: <UserProvider>
+                    <Login />
+                </UserProvider>
+            },
+            {
+                path: "dashboard",
+                element: <UserProvider>
+                    <Dashboard />
+                </UserProvider>,
+                children: [
+                    {
+                        path: "",
+                        element: <Case_Study />
+                    }
+                ]
+            }
+
         ]
     }
 ])
