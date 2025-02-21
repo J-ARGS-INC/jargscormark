@@ -48,9 +48,8 @@ const CaseStudies = () => {
             <div>
                 {response ? (<div className='md:px-20 md:py-32 grid md:grid-cols-7 gap-5 font-Barlow'>
                     {
-                        response.map(({ _id, image, name, services, description }, index) => {
-                            const fileId = image;
-                            // const fileUrl = useQuery(api.messages.getFileUrl, { fileId });
+                        response.map(({ _id, name, services, description }, index) => {
+
                             return <div key={index}
                                 className={`p-5 flex flex-col border border-primary rounded-sm h-[800px] ${(index + 1) % 2 == 0 ? "md:col-span-4"
                                     : (index + 1) % 3 == 0 ? "md:col-span-4"
