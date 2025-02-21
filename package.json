@@ -13,6 +13,7 @@
     "@emailjs/browser": "^4.4.1",
     "@tinymce/tinymce-react": "^5.1.1",
     "axios": "^1.7.9",
+    "convex": "^1.19.2",
     "firebase": "^11.3.1",
     "firebase-tools": "^13.31.2",
     "framer-motion": "^11.11.13",

@@ -7,6 +7,7 @@ const Dashboard = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const { user } = useContext(UserContext)
+
     useEffect(() => {
         if (!user) {
             navigate("/admin")

@@ -1,25 +1,25 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { NavLink } from 'react-router-dom'
 import { MdArrowOutward } from "react-icons/md";
+import { useRequest } from '../hooks/requests';
+import { useQueries, useQuery } from 'convex/react';
+import { api } from "../../convex/_generated/api";
 
 const CaseStudies = () => {
-    const arr = [
-        {
-            id: 1,
-            img: "https://images.pexels.com/photos/3992656/pexels-photo-3992656.png",
-            name: "Jonas Winkler",
-            desc: "Jonas is an influencer in the woodworking industry in Germany. Before working with us– he was stuck at 10,000 followers on Instagram, confused about who his audience was, and struggled to find his unique advantages/strengths.",
-            services: ["Brand Strategy", "Brand Strategy & Identity", "Graphic Design"]
-        },
-        {
-            id: 2,
-            img: "https://images.pexels.com/photos/1036622/pexels-photo-1036622.jpeg",
-            name: "Jonas Winkler",
-            desc: "Jonas is an influencer in the woodworking industry in Germany. Before working with us– he was stuck at 10,000 followers on Instagram, confused about who his audience was, and struggled to find his unique advantages/strengths.",
-            services: ["Brand Strategy", "Brand Strategy & Identity", "Graphic Design"]
+    const { data: { loading, response }, Get } = useRequest();
+    const [storageIds, setStorageIds] = useState([])
+    const imageUrls = useQuery(api.messages.getImageUrls, { storageIds });
+
+    useEffect(() => {
+        Get("/api/user/casestudy", false)
+    }, [])
+
+    useEffect(() => {
+        if (response) {
+            setStorageIds(response.map(({ image }) => image));
         }
-    ]
+    }, [response])
 
     return (
         <div>
@@ -46,16 +46,18 @@ const CaseStudies = () => {
 
             </div>
             <div>
-                <div className='md:px-20 md:py-32 grid md:grid-cols-7 gap-5 font-Barlow'>
+                {response ? (<div className='md:px-20 md:py-32 grid md:grid-cols-7 gap-5 font-Barlow'>
                     {
-                        arr.map(({ id, img, name, services, desc }, index) =>
-                            <div key={index}
+                        response.map(({ _id, image, name, services, description }, index) => {
+                            const fileId = image;
+                            // const fileUrl = useQuery(api.messages.getFileUrl, { fileId });
+                            return <div key={index}
                                 className={`p-5 flex flex-col border border-primary rounded-sm h-[800px] ${(index + 1) % 2 == 0 ? "md:col-span-4"
                                     : (index + 1) % 3 == 0 ? "md:col-span-4"
                                         : "md:col-span-3"}`}>
-                                <img src={img} className='w-[100%] h-[50%] object-cover rounded-sm' alt="" />
+                                <img src={imageUrls && imageUrls[index]} className='w-[100%] h-[50%] object-cover rounded-sm' alt="" />
                                 <h1 className='mt-5 mb-3 font-Barlow text-xl font-semibold'>{name}</h1>
-                                <p className='font-light'>{desc}</p>
+                                <p className='font-light'>{description}</p>
                                 <div className='flex flex-wrap text-xs pt-6 gap-3 mb-6'>
                                     {
                                         services.map((item, index) => <span className='border border-black rounded-full py-2 px-3' key={index}>{item}</span>)
@@ -63,14 +65,15 @@ const CaseStudies = () => {
                                 </div>
 
                                 <div className='h-[100%] flex items-end'>
-                                    <NavLink to={`/case_studies/${id}`} className={"flex gap-1 text-primary"}>
+                                    <NavLink to={`/case_studies/${_id}`} className={"flex gap-1 text-primary"}>
                                         <span>View Case Study</span>
                                         <MdArrowOutward size={20} />
                                     </NavLink>
                                 </div>
-                            </div>)
+                            </div>
+                        })
                     }
-                </div>
+                </div>) : ""}
             </div>
 
 

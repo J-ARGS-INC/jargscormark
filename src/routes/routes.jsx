@@ -10,7 +10,6 @@ import CaseStudy from "../pages/CaseStudy";
 import Case_Study from "../pages/admin/CaseStudy";
 import Login from "../pages/admin/Login";
 import Dashboard from "../pages/admin/Dashboard";
-import { UserProvider } from "../context/user";
 export const router = createBrowserRouter([
     {
         path: "/",
@@ -56,15 +55,14 @@ export const router = createBrowserRouter([
         children: [
             {
                 path: "",
-                element: <UserProvider>
+                element:
                     <Login />
-                </UserProvider>
             },
             {
                 path: "dashboard",
-                element: <UserProvider>
+                element:
                     <Dashboard />
-                </UserProvider>,
+                ,
                 children: [
                     {
                         path: "",

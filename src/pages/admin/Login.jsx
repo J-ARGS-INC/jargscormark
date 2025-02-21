@@ -20,19 +20,14 @@ const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (!loading) Post("/api/auth/admin", input);
-        sessionStorage.setItem("admin", response)
-        setUser(response);
+        if (response) {
+            sessionStorage.setItem("admin", response)
+            setUser(response);
+            navigate("/admin/dashboard");
+        }
     }
 
-    useEffect(() => {
-        if (response) {
-            toast("sucess", { type: "success" });
-            setUser(response)
-            navigate("/admin/dashboard");
 
-        }
-
-    }, [response])
     return (
         <div className='flex justify-center items-center h-[100vh]'>
             <div className='font-Barlow'>
