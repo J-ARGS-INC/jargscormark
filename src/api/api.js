@@ -1,5 +1,5 @@
 import axios from "axios";
-let env = "local";
+let env = "not local";
 const globalUrl = env == "local" ? "http://localhost:3001" : "https://jargscormark-backend.vercel.app";
 
 export const getItemInDB = (url, config) => axios.get(globalUrl + url, config).then(res => res.data)
