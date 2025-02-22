@@ -17,8 +17,7 @@ const CaseStudies = () => {
 
     useEffect(() => {
         if (response) {
-            console.log(response)
-            // setStorageIds(response.map(({ image }) => image));
+            setStorageIds(response.map(({ image }) => image));
         }
     }, [response])
 
@@ -47,7 +46,7 @@ const CaseStudies = () => {
 
             </div>
             <div>
-                {/* {response ? (<div className='md:px-20 md:py-32 grid md:grid-cols-7 gap-5 font-Barlow'>
+                {response ? (<div className='md:px-20 md:py-32 grid md:grid-cols-7 gap-5 font-Barlow'>
                     {
                         response.map(({ _id, name, services, description }, index) => {
 
@@ -73,7 +72,7 @@ const CaseStudies = () => {
                             </div>
                         })
                     }
-                </div>) : ""} */}
+                </div>) : ""}
             </div>
 
 
