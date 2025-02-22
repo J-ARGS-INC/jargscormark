@@ -21,7 +21,7 @@ const authAdmin = async (req, res) => {
         }
 
         // comparing input password with stored password
-        if (!bcrypt.compare(password, user.password)) {
+        if (!await bcrypt.compare(password, user.password)) {
             return res.status(400).json("Incorrect username or password");
         }
         const token = jsonwebtoken.sign({ id: user._id }, process.env.JWT_SECRET);

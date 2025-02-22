@@ -8,13 +8,7 @@ const authenticate = require("./middleware/auth");
 require("./config/db");
 
 // Fixing CORS
-app.use(cors(
-    {
-        origin: '*', // Allow frontend requests
-        methods: 'GET, POST, PUT, DELETE',
-        allowedHeaders: 'Content-Type, Authorization'
-    }
-));
+app.use(cors());
 
 
 // parsing data
@@ -26,7 +20,7 @@ app.get("/", (req, res) => res.json("This is working fine"));
 
 // unprotected  route
 app.use("/api/auth", require("./routes/auth"));
-
+app.use("/api/user", require("./routes/user"));
 // protected routes
 app.use("/api/admin", authenticate, require("./routes/admin"));
 // running server

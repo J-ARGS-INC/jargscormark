@@ -1,35 +1,20 @@
 const mongoose = require("mongoose");
 
 const caseStudySchema = mongoose.Schema({
-    name: {
-        type: String,
-        required: true,
-    },
-    description: {
-        type: String,
-        required: true
-    },
-    services: {
-        type: [String],
-        required: true
-    },
-    results: {
-        type: [String],
-        required: true
-    },
-    link: {
-        linkType: String,
-        address: String
-    },
+    name: String,
+    description: String,
+    services: [String],
+    results: [String],
+    links: [String],
+    image: String,
+    details: [
+        {
+            title: String,
+            subtitle: String,
+            images: [String]
+        }
+    ]
 
-    image: {
-        type: String,
-        required: true
-    },
-    details: {
-        type: String,
-        required: true
-    }
 })
 
 module.exports = {
