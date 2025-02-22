@@ -23,5 +23,5 @@ app.use("/api/auth", require("./routes/auth"));
 app.use("/api/user", require("./routes/user"));
 // protected routes
 app.use("/api/admin", authenticate, require("./routes/admin"));
-// running server
+// running serve
 app.listen(port, () => console.log(`http://localhost/${port}`))
