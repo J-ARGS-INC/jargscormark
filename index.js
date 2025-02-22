@@ -7,10 +7,11 @@ const authenticate = require("./middleware/auth");
 // connecting to DB
 require("./config/db");
 
-// Fixing CORS
+// Allow requests from your frontend
+app.use(cors({ origin: "https://jargscormark.vercel.app" }));
+
+// OR allow all origins (for testing, not recommended for production)
 app.use(cors());
-
-
 // parsing data
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }));
