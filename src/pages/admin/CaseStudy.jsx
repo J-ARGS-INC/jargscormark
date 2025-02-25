@@ -142,7 +142,7 @@ const Case_Study = () => {
         Get("/api/admin/casestudy", true)
     }, [])
     return (
-        <div className='grid grid-cols-1 md:grid-cols-2 md:gap-20 py-10 font-Barlow'>
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 py-10 font-Barlow'>
             <div>
                 <form action="" className=' flex flex-col gap-5' onSubmit={handleSubmit}>
                     <div className='flex flex-col gap-1'>
