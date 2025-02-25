@@ -19,12 +19,16 @@ const Login = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if (!loading) Post("/api/auth/admin", input);
-        if (response) {
-            sessionStorage.setItem("admin", response)
-            setUser(response);
-            navigate("/admin/dashboard");
+        if (!loading) {
+            let resp = await Post("/api/auth/admin", input);
+            if (resp) {
+                sessionStorage.setItem("admin", resp)
+                setUser(resp);
+                navigate("/admin/dashboard");
+            }
         }
+
+
     }
 
 

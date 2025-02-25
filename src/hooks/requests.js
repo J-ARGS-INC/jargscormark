@@ -1,6 +1,6 @@
 
 import { useContext, useState } from "react"
-import { createItemInDB, getItemInDB } from "../api/api"
+import { createItemInDB, deleteItemInDb, getItemInDB } from "../api/api"
 import { toast } from 'react-toastify';
 import { UserContext } from "../context/user";
 
@@ -26,7 +26,7 @@ export const useRequest = () => {
         try {
             let config = getConfig(true);
             let resp = await createItemInDB(url, data, config);
-            setData(prev => ({ ...prev, response: resp }))
+            return resp
         } catch (err) {
             toast(err.response.data, { position: "top-right", type: "error" })
             console.error(err);
@@ -48,11 +48,25 @@ export const useRequest = () => {
             setData(prev => ({ ...prev, loading: false }))
         }
     }
+
+    const Delete = async (url, isProtected) => {
+        setData(prev => ({ ...prev, loading: true }));
+        try {
+            let config = getConfig(isProtected);
+            let resp = await deleteItemInDb(url, config)
+            return true
+        } catch (err) {
+            toast(err.response.data, { position: "top-right", type: "error" })
+            console.error(err);
+        } finally {
+            setData(prev => ({ ...prev, loading: false }))
+        }
+    }
     const changeLoading = (value) => {
         setData(prev => ({ ...prev, loading: value }))
     }
 
-    return { data, Get, Post, changeLoading }
+    return { data, Get, Post, Delete, changeLoading }
 }
 
 
