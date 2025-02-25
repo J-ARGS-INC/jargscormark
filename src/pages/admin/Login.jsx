@@ -4,7 +4,7 @@ import { FaSpinner } from "react-icons/fa6";
 import { toast, ToastContainer } from 'react-toastify';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { UserContext } from '../../context/user';
-import logo from "@assets/images/main_logo.png";
+import logo from "../../assets/images/main_logo.png";
 const Login = () => {
     const { data: { response, loading }, Post } = useRequest();
     const { setUser } = useContext(UserContext)
