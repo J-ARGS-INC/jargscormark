@@ -4,7 +4,7 @@ import { GrHomeRounded } from "react-icons/gr";
 import { GrServices } from "react-icons/gr";
 import { FaUsersRays } from "react-icons/fa6";
 import { FaRegNewspaper } from "react-icons/fa";
-import logo from "../assets/Images/main_logo.png"
+import logo from "../assets/Images/logo.png"
 import logo1 from "../assets/Images/main_logo_1.png"
 import { MdCancel } from "react-icons/md";
 
