@@ -89,30 +89,25 @@ const Case_Study = () => {
                     })
                 }
 
-                try {
-
-                    let POSTDB = await Post("/api/admin/casestudy", data)
-                    if (POSTDB) {
-                        setInputs({
-                            name: "",
-                            desc: "",
-                            services: "",
-                            links: "",
-                            results: "",
-                            image: {},
-                            details: [
-                                {
-                                    title: "",
-                                    subtitle: "",
-                                    images: {}
-                                }
-                            ]
-                        })
-                        toast(`${data.name} Created Successfully`, { position: "top-right", type: "success" });
-                        Get("/api/admin/casestudy", true)
-                    }
-                } catch (err) {
-
+                let POSTDB = await Post("/api/admin/casestudy", data)
+                if (POSTDB) {
+                    setInputs({
+                        name: "",
+                        desc: "",
+                        services: "",
+                        links: "",
+                        results: "",
+                        image: {},
+                        details: [
+                            {
+                                title: "",
+                                subtitle: "",
+                                images: {}
+                            }
+                        ]
+                    })
+                    toast(`${data.name} Created Successfully`, { position: "top-right", type: "success" });
+                    Get("/api/admin/casestudy", true)
                 }
             });
         })
@@ -125,7 +120,7 @@ const Case_Study = () => {
             // deleting images from convex
             const deletImages = await deleteFiles({ storageIds: images });
             if (deletImages) {
-                const deleteFromDB = await Delete("/api/admin/casestudy", true);
+                const deleteFromDB = await Delete(`/api/admin/casestudy/${id}`, true);
                 if (deleteFromDB) {
                     toast(`${selectedCaseStudy.name} Deleted Successfully`, { position: "top-right", type: "success" })
                     Get("/api/admin/casestudy", true)
