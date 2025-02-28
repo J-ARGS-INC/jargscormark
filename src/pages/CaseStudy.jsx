@@ -97,8 +97,7 @@ const CaseStudy = () => {
                                     <div className={`my-20 grid grid-cols-1 ${imageUrls ? imageUrls.length >= 3 ? "md:grid-cols-2" : "md:grid-cols-2" : ""} gap-10`}>
                                         {
                                             imageUrls && imageUrls.slice(startIndex, endIndex).map((item, index) => {
-                                                console.log(item)
-                                                return <div key={index} className={`${imageUrls.length >= 3 ? `${index % 3 == 0 ? "md:col-span-2" : index == imageUrls.length - 1 && index % 2 == 0 ? "md:col-span-2" : ""}` : index``}`}>
+                                                return <div key={index} className={`${imageUrls.length >= 3 ? `${index % 3 == 0 ? "md:col-span-2" : index == imageUrls.length - 1 && index % 2 == 0 ? "md:col-span-2" : ""}` : index}`}>
                                                     {/* <h1>{imag}</h1> */}
                                                     <img src={item} className={`w-[100%] h-[400px] object-cover rounded-sm `} alt="" onLoad={() => setLoadedImages(prev => ({ ...prev, images: prev.images + 1 }))} />
                                                 </div>
