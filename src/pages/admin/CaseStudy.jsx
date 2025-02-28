@@ -78,9 +78,9 @@ const Case_Study = () => {
                 let data = {
                     name: inputs.name,
                     description: inputs.desc,
-                    services: inputs.services.split(",,").filter(item => item == ""),
-                    results: inputs.results.split(",,").filter(item => item == ""),
-                    links: inputs.links.split(",,").filter(item => item == ""),
+                    services: inputs.services.split(",,").filter(item => item != ""),
+                    results: inputs.results.split(",,").filter(item => item != ""),
+                    links: inputs.links.split(",,").filter(item => item != ""),
                     image: cover_image[0],
                     details: inputs.details.map((item, index) => {
                         let startIndex = index > 0 ? inputs.details[index - 1].images.target.files.length : 0;
@@ -88,6 +88,8 @@ const Case_Study = () => {
                         return { ...item, images: section_images.flat().slice(startIndex, endIndex) }
                     })
                 }
+                console.log(data)
+                return
 
                 let POSTDB = await Post("/api/admin/casestudy", data)
                 if (POSTDB) {

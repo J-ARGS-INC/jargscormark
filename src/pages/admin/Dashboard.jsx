@@ -5,7 +5,6 @@ import { UserContext } from '../../context/user';
 import logo from "@assets/Images/logo.png"
 const Dashboard = () => {
     const navigate = useNavigate();
-    const location = useLocation();
     const { user } = useContext(UserContext)
 
     useEffect(() => {
@@ -13,6 +12,9 @@ const Dashboard = () => {
             navigate("/admin")
         }
     }, [])
+    if (!user) {
+        return <></>
+    }
     return (
         <div className='md:p-[2vw] p-5'>
             <NavLink to={"/"}> <img src={logo} className="object-contain  w-10" alt="" /></NavLink>
