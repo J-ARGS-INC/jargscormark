@@ -7,6 +7,7 @@ const caseStudySchema = mongoose.Schema({
     results: [String],
     links: [String],
     image: String,
+    youtubeVideo: String,
     details: [
         {
             title: String,
