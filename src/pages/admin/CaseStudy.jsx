@@ -78,9 +78,9 @@ const Case_Study = () => {
                 let data = {
                     name: inputs.name,
                     description: inputs.desc,
-                    services: !inputs.services ? [] : inputs.services.split(",,").map(item => item != ""),
-                    results: !inputs.results ? [] : inputs.results.split(",,").map(item => item != ""),
-                    links: !inputs.services ? [] : inputs.links.split(",,").map(item => item != ""),
+                    services: inputs.services.split(",,").filter(item => item == ""),
+                    results: inputs.results.split(",,").filter(item => item == ""),
+                    links: inputs.links.split(",,").filter(item => item == ""),
                     image: cover_image[0],
                     details: inputs.details.map((item, index) => {
                         let startIndex = index > 0 ? inputs.details[index - 1].images.target.files.length : 0;
