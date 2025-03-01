@@ -5,8 +5,8 @@ import Services from "../pages/Services";
 import About from "../pages/About";
 import ContactUs from "../pages/ContactUs";
 import BookACall from "../pages/BookACall";
-import Offers from "../pages/Offers";
-import SocialMediaMarketing from "../pages/SocialMediaMarketing";
+import Offers from "../pages/admin/Offers";
+import SocialMediaMarketing from "../pages/admin/SocialMediaMarketing";
 
 import CaseStudies from "../pages/CaseStudies";
 import CaseStudy from "../pages/CaseStudy";

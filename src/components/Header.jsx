@@ -30,7 +30,6 @@ const Header = () => {
             to: "/about"
         },
         {
-<<<<<<< HEAD
             text: "Offers",
             Icon: FaUsersRays,
             to: "/offers"
@@ -39,13 +38,12 @@ const Header = () => {
         //     text: "Blog",
         //     Icon: FaRegNewspaper,
         //     to: "/blog"
-        // },
-=======
+    // },
+    {
             text: "Case Studies",
             Icon: FaUsersRays,
             to: "/case_studies"
         },
->>>>>>> 71adad8b3160b89c6a0bc43b1b0cf43fcd91b676
         {
             text: "Contact Us",
             Icon: FaRegNewspaper,
