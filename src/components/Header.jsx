@@ -29,6 +29,11 @@ const Header = () => {
             Icon: FaUsersRays,
             to: "/about"
         },
+        {
+            text: "Offers",
+            Icon: FaUsersRays,
+            to: "/offers"
+        },
         // {
         //     text: "Blog",
         //     Icon: FaRegNewspaper,
