@@ -4,7 +4,7 @@ import { GrHomeRounded } from "react-icons/gr";
 import { GrServices } from "react-icons/gr";
 import { FaUsersRays } from "react-icons/fa6";
 import { FaRegNewspaper } from "react-icons/fa";
-import logo from "../assets/Images/main_logo.png"
+import logo from "../assets/Images/logo.png"
 import logo1 from "../assets/Images/main_logo_1.png"
 import { MdCancel } from "react-icons/md";
 
@@ -30,6 +30,7 @@ const Header = () => {
             to: "/about"
         },
         {
+<<<<<<< HEAD
             text: "Offers",
             Icon: FaUsersRays,
             to: "/offers"
@@ -39,6 +40,12 @@ const Header = () => {
         //     Icon: FaRegNewspaper,
         //     to: "/blog"
         // },
+=======
+            text: "Case Studies",
+            Icon: FaUsersRays,
+            to: "/case_studies"
+        },
+>>>>>>> 71adad8b3160b89c6a0bc43b1b0cf43fcd91b676
         {
             text: "Contact Us",
             Icon: FaRegNewspaper,

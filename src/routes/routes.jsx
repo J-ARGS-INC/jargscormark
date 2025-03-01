@@ -8,6 +8,11 @@ import BookACall from "../pages/BookACall";
 import Offers from "../pages/Offers";
 import SocialMediaMarketing from "../pages/SocialMediaMarketing";
 
+import CaseStudies from "../pages/CaseStudies";
+import CaseStudy from "../pages/CaseStudy";
+import Case_Study from "../pages/admin/CaseStudy";
+import Login from "../pages/admin/Login";
+import Dashboard from "../pages/admin/Dashboard";
 export const router = createBrowserRouter([
     {
         path: "/",
@@ -40,12 +45,41 @@ export const router = createBrowserRouter([
             {
                 path: "offers/social-media-marketing",
                 element: <SocialMediaMarketing />
+                path: "case_studies",
+                element: <CaseStudies />
+            },
+            {
+                path: "case_studies/:id",
+                element: <CaseStudy />
             },
             {
                 path: "*",
                 element: <Navigate to={"/"} replace />
 
             }
+        ]
+    },
+    {
+        path: "/admin",
+        children: [
+            {
+                path: "",
+                element:
+                    <Login />
+            },
+            {
+                path: "dashboard",
+                element:
+                    <Dashboard />
+                ,
+                children: [
+                    {
+                        path: "",
+                        element: <Case_Study />
+                    }
+                ]
+            }
+
         ]
     }
 ])
