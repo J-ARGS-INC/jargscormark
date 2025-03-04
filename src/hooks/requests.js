@@ -3,7 +3,7 @@ import { useContext, useState } from "react"
 import { createItemInDB, deleteItemInDb, getItemInDB } from "../api/api"
 import { toast } from 'react-toastify';
 import { UserContext } from "../context/user";
-
+console.log(import.meta.env.VITE_DEV_ENV)
 export const useRequest = () => {
     const { user } = useContext(UserContext)
     const getConfig = (isProtected, contentType) => {

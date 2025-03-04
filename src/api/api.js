@@ -1,4 +1,5 @@
 import axios from "axios";
+console.log(import.meta.env.VITE_DEV_ENV)
 let env = "local";
 export const globalUrl = env == "local" ? "http://localhost:3001" : "https://jargscormark-backend.vercel.app";
 

@@ -1,27 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { NavLink } from 'react-router-dom'
 import { MdArrowOutward } from "react-icons/md";
 import { useRequest } from '../hooks/requests';
 import { globalUrl } from '../api/api';
-// import { useQueries, useQuery } from 'convex/react';
-// import { api } from "../../convex/_generated/api";
-
 const CaseStudies = () => {
     const { data: { loading, response }, Get } = useRequest();
-    // const [storageIds, setStorageIds] = useState([])
-    // const imageUrls = useQuery(api.messages.getImageUrls, { storageIds });
-
     useEffect(() => {
         Get("/api/user/casestudy", false)
     }, [])
 
-    // useEffect(() => {
-    //     if (response) {
-    //         setStorageIds(response.map(({ image }) => image));
-    //     }
-    // }, [response])
-    // console.log(response)
     return (
         <div>
             <div className='  py-10 px-5  md:py-[18vh] md:px-20 bg-[#fdfdfd]'>
