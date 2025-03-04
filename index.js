@@ -17,7 +17,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }));
 
 // testing route
-app.get("/", (req, res) => res.json("This is working fine"));
+app.get("/", (req, res) => res.json("This is working fne"));
 
 // unprotected  route
 app.use("/api/auth", require("./routes/auth"));
