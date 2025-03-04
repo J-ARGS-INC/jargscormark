@@ -3,24 +3,25 @@ import { motion } from 'framer-motion'
 import { NavLink } from 'react-router-dom'
 import { MdArrowOutward } from "react-icons/md";
 import { useRequest } from '../hooks/requests';
-import { useQueries, useQuery } from 'convex/react';
-import { api } from "../../convex/_generated/api";
+import { globalUrl } from '../api/api';
+// import { useQueries, useQuery } from 'convex/react';
+// import { api } from "../../convex/_generated/api";
 
 const CaseStudies = () => {
     const { data: { loading, response }, Get } = useRequest();
-    const [storageIds, setStorageIds] = useState([])
-    const imageUrls = useQuery(api.messages.getImageUrls, { storageIds });
+    // const [storageIds, setStorageIds] = useState([])
+    // const imageUrls = useQuery(api.messages.getImageUrls, { storageIds });
 
     useEffect(() => {
         Get("/api/user/casestudy", false)
     }, [])
 
-    useEffect(() => {
-        if (response) {
-            setStorageIds(response.map(({ image }) => image));
-        }
-    }, [response])
-
+    // useEffect(() => {
+    //     if (response) {
+    //         setStorageIds(response.map(({ image }) => image));
+    //     }
+    // }, [response])
+    // console.log(response)
     return (
         <div>
             <div className='  py-10 px-5  md:py-[18vh] md:px-20 bg-[#fdfdfd]'>
@@ -46,15 +47,19 @@ const CaseStudies = () => {
 
             </div>
             <div>
+
                 {response ? (<div className='md:px-20 md:py-32 grid md:grid-cols-7 gap-5 font-Barlow'>
                     {
-                        response.map(({ _id, name, services, description }, index) => {
+                        response.map(({ _id, name, services, description, youtubeVideos, image }, index) => {
 
                             return <div key={index}
                                 className={`p-5 flex flex-col border border-primary rounded-sm h-[800px] ${(index + 1) % 2 == 0 ? "md:col-span-4"
                                     : (index + 1) % 3 == 0 ? "md:col-span-4"
                                         : "md:col-span-3"}`}>
-                                <img src={imageUrls && imageUrls[index]} className='w-[100%] h-[50%] object-cover rounded-sm' alt="" />
+
+
+                                {youtubeVideos ? <iframe src={youtubeVideos} height={1400}></iframe> : <img src={`${globalUrl}${image}`} className='w-[100%] h-[50%] object-cover rounded-sm' alt="" />}
+
                                 <h1 className='mt-5 mb-3 font-Barlow text-xl font-semibold'>{name}</h1>
                                 <p className='font-light'>{description}</p>
                                 <div className='flex flex-wrap text-xs pt-6 gap-3 mb-6'>

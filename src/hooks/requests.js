@@ -6,10 +6,9 @@ import { UserContext } from "../context/user";
 
 export const useRequest = () => {
     const { user } = useContext(UserContext)
-    const getConfig = (isProtected) => {
+    const getConfig = (isProtected, contentType) => {
         let config = !isProtected ? {} : {
             headers: {
-                "Content-Type": "application/json",
                 "Authorization": `Bearer ${user}`,
             }
         }
@@ -21,10 +20,10 @@ export const useRequest = () => {
         loading: false
     })
 
-    const Post = async (url, data) => {
+    const Post = async (url, data, isProtected) => {
         setData(prev => ({ ...prev, loading: true }))
         try {
-            let config = getConfig(true);
+            let config = getConfig(isProtected, url.includes("upload") ? "multipart/form-data" : null);
             let resp = await createItemInDB(url, data, config);
             return resp
         } catch (err) {

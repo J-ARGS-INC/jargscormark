@@ -21,7 +21,7 @@ const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (!loading) {
-            let resp = await Post("/api/auth/admin", input);
+            let resp = await Post("/api/auth/admin", input, false);
             if (resp) {
                 sessionStorage.setItem("admin", resp)
                 setUser(resp);

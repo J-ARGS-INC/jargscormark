@@ -8,30 +8,21 @@ import { useRequest } from '../hooks/requests';
 import { useQuery } from 'convex/react';
 import { api } from "../../convex/_generated/api";
 import { FaSpinner } from "react-icons/fa6";
+import { globalUrl } from '../api/api';
 
 const CaseStudy = () => {
     const { id } = useParams();
     const { data: { response, loading }, Get } = useRequest()
-    const [storageIds, setStorageIds] = useState([]);
-    const imageUrls = useQuery(api.messages.getImageUrls, { storageIds });
-    const [loadedImages, setLoadedImages] = useState({
-        isLoaded: false,
-        images: 0
-    });
+
     useEffect(() => {
         Get(`/api/user/casestudy/${id}`, false)
     }, [])
 
-    useEffect(() => {
-        if (response) {
-            setStorageIds(response.details.map(({ images }) => images).flat())
-            if (loadedImages.images == storageIds.length) setLoadedImages(prev => ({ ...prev, isLoaded: true }))
-        }
-    }, [response])
+
     return (
         <div>
             <div className='  py-10 px-10  md:py-[18vh] md:px-[10vw] bg-[#fdfdfd] font-Barlow'>
-                {response && loadedImages.isLoaded ? (<div className='grid grid-cols-1  md:grid-cols-1 items-end gap-5 mb-20'>
+                {response ? (<div className='grid grid-cols-1  md:grid-cols-1 items-end gap-5 mb-20'>
                     <motion.div initial={{ translateY: 30, opacity: 0 }} whileInView={{ translateY: 0, opacity: 1 }} transition={{ duration: 0.4, delay: 0.2 }} viewport={{ once: true }}>
 
                         <h1 className='text-4xl font-bold font-Barlow'>
@@ -89,17 +80,16 @@ const CaseStudy = () => {
                     <div className=''>
                         {
                             response.details.map(({ title, subtitle, images }, index) => {
-                                let startIndex = index > 0 ? response.details[index - 1].images.length : 0;
-                                let endIndex = index > 0 ? images.length + startIndex : images.length;
+
                                 return <div className='' key={index}>
                                     <h1 className='text-xl font-bold font-Barlow mb-5'>{title}</h1>
                                     <p>{subtitle}</p>
-                                    <div className={`my-20 grid grid-cols-1 ${imageUrls ? imageUrls.length >= 3 ? "md:grid-cols-2" : "md:grid-cols-2" : ""} gap-10`}>
+                                    <div className={`my-20 grid grid-cols-1 ${images.length >= 3 ? "md:grid-cols-2" : "md:grid-cols-2"} gap-10`}>
                                         {
-                                            imageUrls && imageUrls.slice(startIndex, endIndex).map((item, index) => {
-                                                return <div key={index} className={`${imageUrls.length >= 3 ? `${index % 3 == 0 ? "md:col-span-2" : index == imageUrls.length - 1 && index % 2 == 0 ? "md:col-span-2" : ""}` : index}`}>
-                                                    {/* <h1>{imag}</h1> */}
-                                                    <img src={item} className={`w-[100%] h-[400px] object-cover rounded-sm `} alt="" onLoad={() => setLoadedImages(prev => ({ ...prev, images: prev.images + 1 }))} />
+                                            images.map((image, index) => {
+                                                return <div key={index} className={`${images.length >= 3 ? `${index % 3 == 0 ? "md:col-span-2" : index == images.length - 1 && index % 2 == 0 ? "md:col-span-1" : ""}` : index}`}>
+
+                                                    <img src={`${globalUrl}${image}`} className={`w-[100%] h-[400px] object-cover rounded-sm `} alt="" />
                                                 </div>
                                             })
                                         }

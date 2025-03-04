@@ -1,16 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { CiSquarePlus } from "react-icons/ci";
-import { useMutation } from "convex/react";
-import { api } from "../../../convex/_generated/api";
 import { useRequest } from '../../hooks/requests';
 import { FaSpinner } from 'react-icons/fa';
 import { AiOutlineDelete } from "react-icons/ai";
 import { toast } from 'react-toastify';
 
 const Case_Study = () => {
-    const generateUploadUrl = useMutation(api.messages.generateUploadUrl);
-    const deleteFiles = useMutation(api.messages.deleteFiles);
 
+    const [showYoutube, setShowYoutube] = useState(false);
     const { Post, Get, changeLoading, Delete, data: { loading, response } } = useRequest()
     const [inputs, setInputs] = useState({
         name: "",
@@ -18,6 +14,7 @@ const Case_Study = () => {
         services: "",
         links: "",
         results: "",
+        youtubeVideo: "",
         image: {},
         details: [
             {
@@ -48,96 +45,76 @@ const Case_Study = () => {
         setInputs(prev => ({ ...prev, [e.target.name]: e.target.value }))
     }
 
-    const uploadImages = async (e) => {
-        let addresses = []
-        for (let i = 0; i < e.target.files.length; i++) {
-            const image = e.target.files[i];
-
-
-            const postUrl = await generateUploadUrl();
-            const result = await fetch(postUrl, {
-                method: "POST",
-                headers: { "Content-Type": image.type },
-                body: image,
-            });
-            const { storageId } = await result.json();
-            addresses.push(storageId)
-        }
-
-        return addresses
-
+    const uploadImages = async (files) => {
+        const formData = new FormData();
+        files.forEach(fileList => {
+            Array.from(fileList).forEach(file => {
+                formData.append("files", file)
+            })
+        })
+        const imageUrls = await Post("/api/admin/upload", formData, true);
+        return imageUrls
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
         changeLoading(true);
-        uploadImages(inputs.image).then(cover_image => {
-            const uploadPromises = inputs.details.map(({ images }) => uploadImages(images));
-            // Wait for all images to upload
-            Promise.all(uploadPromises).then(async (section_images) => {
-                let data = {
-                    name: inputs.name,
-                    description: inputs.desc,
-                    services: inputs.services.split(",,").filter(item => item != ""),
-                    results: inputs.results.split(",,").filter(item => item != ""),
-                    links: inputs.links.split(",,").filter(item => item != ""),
-                    image: cover_image[0],
-                    details: inputs.details.map((item, index) => {
-                        let startIndex = index > 0 ? inputs.details[index - 1].images.target.files.length : 0;
-                        let endIndex = index > 0 ? item.images.target.files.length + startIndex : item.images.target.files.length;
-                        return { ...item, images: section_images.flat().slice(startIndex, endIndex) }
-                    })
-                }
-                console.log(data)
-                return
+        const files = [inputs.image, ...inputs.details.map(({ images }) => images)];
+        const imagesUrl = await uploadImages(files);
+        if (imagesUrl) {
+            let data = {
+                name: inputs.name,
+                description: inputs.desc,
+                services: inputs.services.split(",,").filter(item => item != ""),
+                results: inputs.results.split(",,").filter(item => item != ""),
+                links: inputs.links.split(",,").filter(item => item != ""),
+                youtubeVideo: inputs.youtubeVideo ? inputs.youtubeVideo.replace(/"/g, "'") : null,
+                image: inputs.image ? imagesUrl[0] : null,
+                details: inputs.details.map((item, index) => {
+                    let startIndex = index > 0 ? inputs.details[index].images.length : inputs.image ? index + 1 : index;
+                    let endIndex = index > 0 ? item.images.length + startIndex : inputs.image ? item.images.length + 1 : item.images.length;
+                    return { ...item, images: imagesUrl.flat().slice(startIndex, endIndex) }
+                })
+            }
 
-                let POSTDB = await Post("/api/admin/casestudy", data)
-                if (POSTDB) {
-                    setInputs({
-                        name: "",
-                        desc: "",
-                        services: "",
-                        links: "",
-                        results: "",
-                        image: {},
-                        details: [
-                            {
-                                title: "",
-                                subtitle: "",
-                                images: {}
-                            }
-                        ]
-                    })
-                    toast(`${data.name} Created Successfully`, { position: "top-right", type: "success" });
-                    Get("/api/admin/casestudy", true)
-                }
-            });
-        })
+
+            let POSTDB = await Post("/api/admin/casestudy", data, true);
+            if (POSTDB) {
+                setInputs({
+                    name: "",
+                    desc: "",
+                    services: "",
+                    links: "",
+                    results: "",
+                    image: {},
+                    youtubeVideo: "",
+                    details: [
+                        {
+                            title: "",
+                            subtitle: "",
+                            images: {}
+                        }
+                    ]
+                })
+                // inputFileRef.current.value = "";
+                toast(`${data.name} Created Successfully`, { position: "top-right", type: "success" });
+
+                Get("/api/admin/casestudy", true)
+            }
+        }
     }
 
     const deleteCase = async (id) => {
         const selectedCaseStudy = response.find(item => item._id == id);
-        if (selectedCaseStudy) {
-            const images = [selectedCaseStudy.image, ...selectedCaseStudy.details.map(item => item.images).flat()]
-            // deleting images from convex
-            const deletImages = await deleteFiles({ storageIds: images });
-            if (deletImages) {
-                const deleteFromDB = await Delete(`/api/admin/casestudy/${id}`, true);
-                if (deleteFromDB) {
-                    toast(`${selectedCaseStudy.name} Deleted Successfully`, { position: "top-right", type: "success" })
-                    Get("/api/admin/casestudy", true)
-
-                }
-
-            } else {
-                toast(`Couldn't delete images`, { position: "top-right", type: "error" })
-            }
-
+        const deleteFromDB = await Delete(`/api/admin/casestudy/${id}`, true);
+        if (deleteFromDB) {
+            toast(`${selectedCaseStudy.name} Deleted Successfully`, { position: "top-right", type: "success" })
+            Get("/api/admin/casestudy", true)
         }
     }
     useEffect(() => {
         Get("/api/admin/casestudy", true)
-    }, [])
+    }, []);
     return (
         <div className='grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 py-10 font-Barlow'>
             <div>
@@ -172,11 +149,26 @@ const Case_Study = () => {
                         <textarea required name="links" id="" className='outline-0 border w-[100%] border-black py-3 px-5 resize-none' onChange={handleInputChange} value={inputs.links} placeholder='Item 1,, Item 2'></textarea>
                     </div>
 
-
                     <div className='flex flex-col gap-1'>
-                        <label htmlFor="">Cover Image</label>
-                        <input required type="file" className='border p-3' name='cover_image' onChange={e => setInputs(prev => ({ ...prev, image: e }))} />
+                        <label htmlFor="">Choose Cover</label>
+                        <select name="" id="" className='outline-0 border w-[100%] border-black py-3 px-5 resize-none' onChange={e => setShowYoutube(e.target.value == "youtube" ? true : false)}>
+                            <option value="image">Image</option>
+                            <option value="youtube">Video</option>
+
+                        </select>
                     </div>
+                    {
+                        showYoutube ?
+                            <div className='flex flex-col gap-1'>
+                                <label htmlFor="">Youtube Link</label>
+                                <input required type="text" placeholder='Enter Youtube Embed' className='outline-0 border w-[100%] border-black py-3 px-5' name='youtubeVideo' onChange={handleInputChange} value={inputs.youtubeVideo} />
+                            </div> :
+
+                            <div className='flex flex-col gap-1'>
+                                <label htmlFor="">Cover Image</label>
+                                <input required type="file" className='border p-3' name='cover_image' onChange={e => setInputs(prev => ({ ...prev, image: e.target.files }))} />
+                            </div>
+                    }
 
 
                     <div className='flex justify-end'>
@@ -203,7 +195,7 @@ const Case_Study = () => {
                                     <label htmlFor="">Section Image</label>
                                 </div>
                                 <input required key={index} type="file" className='border p-3' name='url' multiple onChange={e => {
-                                    let details = inputs.details.map((item, iten_index) => iten_index == index ? { ...item, images: e } : item);
+                                    let details = inputs.details.map((item, iten_index) => iten_index == index ? { ...item, images: e.target.files } : item);
                                     setInputs(prev => ({ ...prev, details }))
 
                                 }} />
