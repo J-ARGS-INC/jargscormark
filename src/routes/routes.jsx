@@ -5,6 +5,9 @@ import Services from "../pages/Services";
 import About from "../pages/About";
 import ContactUs from "../pages/ContactUs";
 import BookACall from "../pages/BookACall";
+import Offers from "../pages/Offers";
+import SocialMediaMarketing from "../pages/SocialMediaMarketing";
+
 import CaseStudies from "../pages/CaseStudies";
 import CaseStudy from "../pages/CaseStudy";
 import Case_Study from "../pages/admin/CaseStudy";
@@ -34,6 +37,14 @@ export const router = createBrowserRouter([
             {
                 path: "book_a_call/:type",
                 element: <BookACall />
+            },
+            {
+                path: "offers",
+                element: <Offers />
+            },
+            {
+                path: "offers/social-media-marketing",
+                element: <SocialMediaMarketing />,
             },
             {
                 path: "case_studies",

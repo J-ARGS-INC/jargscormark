@@ -30,6 +30,16 @@ const Header = () => {
             to: "/about"
         },
         {
+            text: "Offers",
+            Icon: FaUsersRays,
+            to: "/offers"
+        },
+        // {
+        //     text: "Blog",
+        //     Icon: FaRegNewspaper,
+        //     to: "/blog"
+    // },
+    {
             text: "Case Studies",
             Icon: FaUsersRays,
             to: "/case_studies"

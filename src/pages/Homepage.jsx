@@ -153,7 +153,7 @@ const Homepage = () => {
                     <PiFunnel className='text-primary' size={30} />
                     <div className=''>
                         <p>Step two: </p>
-                        <p>Get tailored strategy and solutions
+                        <p>Get tailored strategy and solutions
                         </p>
                     </div>
 
