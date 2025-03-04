@@ -1,7 +1,5 @@
 import axios from "axios";
-console.log(import.meta.env.VITE_DEV_ENV)
-let env = "local";
-export const globalUrl = env == "local" ? "http://localhost:3001" : "https://jargscormark-backend.vercel.app";
+export const globalUrl = env == import.meta.env.VITE_DEV_ENV ? "http://localhost:3001" : "https://jargscormark-backend.vercel.app";
 
 export const getItemInDB = (url, config) => axios.get(globalUrl + url, config).then(res => res.data)
 export const createItemInDB = (url, data, config) => axios.post(globalUrl + url, data, config).then(res => res.data);
