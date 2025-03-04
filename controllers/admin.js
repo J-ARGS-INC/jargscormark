@@ -1,4 +1,7 @@
-const { CaseStudy } = require("../models/admin")
+const { CaseStudy } = require("../models/admin");
+const multer = require("multer");
+const fs = require('fs');
+const path = require('path');
 const getAllCaseStudy = async (req, res) => {
     try {
         const cases = await CaseStudy.find();
@@ -56,7 +59,19 @@ const updateCaseStudy = async (req, res) => {
 const deleteCaseStudy = async (req, res) => {
     let id = req.params.id;
     if (!id) return res.status(400).json("Case Id is required");
+
     try {
+        // deleteing files 
+        const selectedCase = await CaseStudy.findById(id);
+        if (!selectedCase) return res.status(404).json("Invalid Case Id");
+        const images = [selectedCase.image, ...selectedCase.details.map(item => item.images).flat(2)];
+        images.forEach(image => {
+            let fileName = image.split("/")[2]; // /uploads/filename => filename
+            let filePath = path.join(__dirname, '..', "uploads", fileName);
+            fs.unlink(filePath, (err) => {
+                if (err) return res.status(400).json(err);
+            });
+        })
         await CaseStudy.findByIdAndDelete(id);
         return res.json("Case Deleted Successfully");
     } catch (err) {
@@ -73,6 +88,63 @@ const deleteAllCaseStudy = async (req, res) => {
 
     }
 }
+const folderPath = path.join(__dirname, '..', 'uploads');
+const storage = multer.diskStorage({
+    destination: folderPath,
+    filename: (req, file, cb) => {
+        cb(null, `${generateRandom(10)}${path.extname(file.originalname)}`)
+    }
+})
+
+const upload = multer({
+    storage,
+    limits: { fileSize: 5 * 1024 * 1024 },
+    fileFilter: (req, file, cb) => {
+        const fileTypes = /jpeg|jpg|png|gif/;
+        const extname = fileTypes.test(path.extname(file.originalname).toLowerCase());
+        const mimetype = fileTypes.test(file.mimetype);
+
+        if (mimetype && extname) {
+            return cb(null, true);
+        } else {
+            cb('Error: Images Only');
+        }
+    }
+})
+
+const uploadFile = async (req, res) => {
+    try {
+
+        if (!fs.existsSync(folderPath)) {
+            fs.mkdirSync(folderPath)
+        }
+        upload.array('files')(req, res, (err) => {
+            if (err) {
+                return res.status(400).json(err.message || 'File upload failed');
+            }
+
+            if (!req.files || req.files.length == 0) {
+                return res.status(400).json('No file uploaded');
+            }
+            let files = req.files.map(file => `/uploads/${file.filename}`)
+            res.json(files);
+        });
+    } catch (err) {
+        res.status(400).json(err.message)
+    }
+}
+
+
+
+const generateRandom = (length) => {
+    const characters = "abcdefghijklmnopqrstuvwzyz0123456789";
+    let random = ""
+    for (let i = 1; i <= length; i++) {
+        random += characters[Math.floor(Math.random() * characters.length)]
+    }
+
+    return random;
+}
 
 module.exports = {
     getAllCaseStudy,
@@ -80,5 +152,6 @@ module.exports = {
     addCaseStudy,
     updateCaseStudy,
     deleteCaseStudy,
-    deleteAllCaseStudy
+    deleteAllCaseStudy,
+    uploadFile
 }

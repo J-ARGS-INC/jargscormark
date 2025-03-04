@@ -22,7 +22,8 @@ app.get("/", (req, res) => res.json("This is working fine"));
 // unprotected  route
 app.use("/api/auth", require("./routes/auth"));
 app.use("/api/user", require("./routes/user"));
+app.use('/uploads', express.static('uploads'));
 // protected routes
 app.use("/api/admin", authenticate, require("./routes/admin"));
 // running serve
-app.listen(port, () => console.log(`http://localhost/${port}`))
+app.listen(port, () => console.log(`http://localhost:${port}`))
