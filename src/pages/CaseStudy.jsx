@@ -21,7 +21,7 @@ const CaseStudy = () => {
 
     return (
         <div>
-            <div className='  py-10 px-10  md:py-[18vh] md:px-[10vw] bg-[#fdfdfd] font-Barlow'>
+            <div className='  py-10 px-10  md:py-[18vh] md:px-[10vw] bg-[#fdfdfd] font-Barlow '>
                 {response ? (<div className='grid grid-cols-1  md:grid-cols-1 items-end gap-5 mb-20'>
                     <motion.div initial={{ translateY: 30, opacity: 0 }} whileInView={{ translateY: 0, opacity: 1 }} transition={{ duration: 0.4, delay: 0.2 }} viewport={{ once: true }}>
 
