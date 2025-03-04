@@ -5,8 +5,6 @@ import { LuCheckCircle } from "react-icons/lu";
 import { TbSquareCheck } from "react-icons/tb";
 import { useParams } from 'react-router-dom';
 import { useRequest } from '../hooks/requests';
-import { useQuery } from 'convex/react';
-import { api } from "../../convex/_generated/api";
 import { FaSpinner } from "react-icons/fa6";
 import { globalUrl } from '../api/api';
 
