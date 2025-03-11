@@ -5,7 +5,7 @@ import { AiOutlineDelete } from "react-icons/ai";
 import { toast } from 'react-toastify';
 import { FiEdit3 } from "react-icons/fi";
 
-const Case_Study = () => {
+const EditCaseStudy = () => {
 
     const [showYoutube, setShowYoutube] = useState(false);
     const { Post, Get, changeLoading, Delete, data: { loading, response } } = useRequest()
@@ -25,7 +25,6 @@ const Case_Study = () => {
             }
         ]
     })
-    const [isEdit, setIsEdit] = useState(false);
     const handleAddSection = () => {
         let details = [...inputs.details, {
             title: "",
@@ -112,13 +111,6 @@ const Case_Study = () => {
             toast(`${selectedCaseStudy.name} Deleted Successfully`, { position: "top-right", type: "success" })
             Get("/api/admin/casestudy", true)
         }
-    }
-
-    const editCase = (id) => {
-        let { name, description, details, links, results, } = response.find(item => item._id == id);
-
-        setInputs(prev => ({ ...prev, name: name, desc: description, details, youtubeVideo }))
-
     }
     useEffect(() => {
         Get("/api/admin/casestudy", true)
@@ -249,9 +241,8 @@ const Case_Study = () => {
                             <td className='border py-5 px-5'>{name}</td>
                             <td className='border px-5'>
                                 <div className='flex justify-end gap-5'>
-                                    <FiEdit3 size={20} className='text-green-500 cursor-pointer' onClick={() => editCase(_id)} />
-
                                     <AiOutlineDelete size={20} className='text-red-500 cursor-pointer' onClick={() => deleteCase(_id)} />
+                                    <FiEdit3 size={20} className='text-green-500 cursor-pointer' />
 
                                 </div>
                             </td>
@@ -267,4 +258,4 @@ const Case_Study = () => {
     )
 }
 
-export default Case_Study
+export default EditCaseStudy
