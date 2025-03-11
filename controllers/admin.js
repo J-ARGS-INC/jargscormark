@@ -24,15 +24,9 @@ const getCaseStudy = async (req, res) => {
 }
 
 const addCaseStudy = async (req, res) => {
-    let err = false;
-    Object.entries(req.body).forEach(item => {
-        if (!item) {
-            err = true
-        }
-    })
+    const { name, description, services, results, links, details } = req.body
+    if (!name || !description || !services || !results || !links || !details) return res.status(400).json("All inputs are required");
 
-
-    if (err || !req.body.name) return res.status(400).json("All inputs are required");
     try {
         const alreadyExists = await CaseStudy.findOne({ name: req.body.name })
         if (alreadyExists) return res.status(400).json("Already Exists");

@@ -26,4 +26,4 @@ app.use('/uploads', express.static('uploads'));
 // protected routes
 app.use("/api/admin", authenticate, require("./routes/admin"));
 // running serve
-app.listen(port, () => console.log(`http://localhost:${port}`))
+app.listen(port, () => console.log(`http://localhost:${port}`))  
