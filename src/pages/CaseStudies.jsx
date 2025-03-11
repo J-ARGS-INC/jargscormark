@@ -38,15 +38,14 @@ const CaseStudies = () => {
 
                 {response ? (<div className='md:px-20 md:py-32 grid md:grid-cols-7 gap-5 font-Barlow'>
                     {
-                        response.map(({ _id, name, services, description, youtubeVideos, image }, index) => {
-
+                        response.map(({ _id, name, services, description, youtubeVideo, image }, index) => {
                             return <div key={index}
                                 className={`p-5 flex flex-col border border-primary rounded-sm h-[800px] ${(index + 1) % 2 == 0 ? "md:col-span-4"
                                     : (index + 1) % 3 == 0 ? "md:col-span-4"
                                         : "md:col-span-3"}`}>
 
 
-                                {youtubeVideos ? <iframe src={youtubeVideos} height={1400}></iframe> : <img src={`${globalUrl}${image}`} className='w-[100%] h-[50%] object-cover rounded-sm' alt="" />}
+                                {youtubeVideo ? <iframe src={youtubeVideo} height={1400}></iframe> : <img src={`${globalUrl}${image}`} className='w-[100%] h-[50%] object-cover rounded-sm' alt="" />}
 
                                 <h1 className='mt-5 mb-3 font-Barlow text-xl font-semibold'>{name}</h1>
                                 <p className='font-light'>{description}</p>

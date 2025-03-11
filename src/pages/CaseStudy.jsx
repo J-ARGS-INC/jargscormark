@@ -75,6 +75,10 @@ const CaseStudy = () => {
                         </div>
                     </div>
                     <hr className='my-10' />
+                    <div className='w-[100%]'>
+                        {response.youtubeVideo ? <iframe src={response.youtubeVideo} height={400} className='w-[100%]'></iframe> : <img src={`${globalUrl}${response.image}`} className='w-[100%] h-[50%] object-cover rounded-sm' alt="" />}
+                    </div>
+                    <hr className='my-10' />
                     <div className=''>
                         {
                             response.details.map(({ title, subtitle, images }, index) => {

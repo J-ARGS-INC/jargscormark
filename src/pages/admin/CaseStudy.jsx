@@ -15,12 +15,12 @@ const Case_Study = () => {
         links: "",
         results: "",
         youtubeVideo: "",
-        image: {},
+        image: null,
         details: [
             {
                 title: "",
                 subtitle: "",
-                images: {}
+                images: null
             }
         ]
     })
@@ -59,49 +59,48 @@ const Case_Study = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         changeLoading(true);
-        const files = [inputs.image, ...inputs.details.map(({ images }) => images)];
-        const imagesUrl = await uploadImages(files);
-        if (imagesUrl) {
-            let data = {
-                name: inputs.name,
-                description: inputs.desc,
-                services: inputs.services.split(",,").filter(item => item != ""),
-                results: inputs.results.split(",,").filter(item => item != ""),
-                links: inputs.links.split(",,").filter(item => item != ""),
-                youtubeVideo: inputs.youtubeVideo ? inputs.youtubeVideo.replace(/"/g, "'") : null,
-                image: inputs.image ? imagesUrl[0] : null,
-                details: inputs.details.map((item, index) => {
-                    let startIndex = index > 0 ? inputs.details[index].images.length : inputs.image ? index + 1 : index;
-                    let endIndex = index > 0 ? item.images.length + startIndex : inputs.image ? item.images.length + 1 : item.images.length;
-                    return { ...item, images: imagesUrl.flat().slice(startIndex, endIndex) }
-                })
-            }
+        const files = inputs.image ? [inputs.image, ...inputs.details.map(({ images }) => images)] : [...inputs.details.map(({ images }) => images)];
+        const imagesUrl = await uploadImages(files); //uploading images
 
-
-            let POSTDB = await Post("/api/admin/casestudy", data, true);
-            if (POSTDB) {
-                setInputs({
-                    name: "",
-                    desc: "",
-                    services: "",
-                    links: "",
-                    results: "",
-                    image: {},
-                    youtubeVideo: "",
-                    details: [
-                        {
-                            title: "",
-                            subtitle: "",
-                            images: {}
-                        }
-                    ]
-                })
-                // inputFileRef.current.value = "";
-                toast(`${data.name} Created Successfully`, { position: "top-right", type: "success" });
-
-                Get("/api/admin/casestudy", true)
-            }
+        let data = {
+            name: inputs.name,
+            description: inputs.desc,
+            services: inputs.services.split(",,").filter(item => item != ""),
+            results: inputs.results.split(",,").filter(item => item != ""),
+            links: inputs.links.split(",,").filter(item => item != ""),
+            youtubeVideo: inputs.youtubeVideo ? inputs.youtubeVideo.replace(/"/g, "'") : null,
+            image: inputs.image ? imagesUrl[0] : null,
+            details: inputs.details.map((item, index) => {
+                let startIndex = index > 0 ? inputs.details[index].images.length : inputs.image ? index + 1 : index;
+                let endIndex = index > 0 ? item.images.length + startIndex : inputs.image ? item.images.length + 1 : item.images.length;
+                return { ...item, images: imagesUrl.flat().slice(startIndex, endIndex) }
+            })
         }
+
+        let saveToDb = await Post("/api/admin/casestudy", data, true);  // sending to database
+        if (saveToDb) {
+            console.log(saveToDb)
+            setInputs({
+                name: "",
+                desc: "",
+                services: "",
+                links: "",
+                results: "",
+                image: {},
+                youtubeVideo: "",
+                details: [
+                    {
+                        title: "",
+                        subtitle: "",
+                        images: {}
+                    }
+                ]
+            })
+            Get("/api/admin/casestudy", true)
+            toast(`${data.name} Created Successfully`, { position: "top-right", type: "success" });
+        }
+
+
     }
 
     const deleteCase = async (id) => {
@@ -115,6 +114,8 @@ const Case_Study = () => {
     useEffect(() => {
         Get("/api/admin/casestudy", true)
     }, []);
+
+    // console.log(inputs.youtubeVideo)
     return (
         <div className='grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 py-10 font-Barlow'>
             <div>
@@ -166,7 +167,7 @@ const Case_Study = () => {
 
                             <div className='flex flex-col gap-1'>
                                 <label htmlFor="">Cover Image</label>
-                                <input required type="file" className='border p-3' name='cover_image' onChange={e => setInputs(prev => ({ ...prev, image: e.target.files }))} />
+                                <input required type="file" className='border p-3' name='image' onChange={e => setInputs(prev => ({ ...prev, image: e.target.files }))} />
                             </div>
                     }
 
