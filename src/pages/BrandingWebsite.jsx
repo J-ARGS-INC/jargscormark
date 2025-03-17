@@ -21,13 +21,13 @@ const BrandingWebsite = () => {
             className="text-[38px] font-extrabold font-Barlow leading-tight md:text-5xl md:mb-2"
             style={{ color: "#000" }}
           >
-            ELEVATE YOUR {" "}
+            REBOOST YOUR BRAND,  {" "}
             {/* <br /> */}
-            BUSINESS WITH
+            BUILD A COMMUNITY, &
             <br />
-            <span style={{ color: "#052DA8" }}>SOCIAL MEDIA </span>
+            <span style={{ color: "#052DA8" }}>INCREASE SALES </span>
             {/* <br /> */}
-            <span style={{ color: "#052DA8" }}>MARKETING</span>
+            {/* <span style={{ color: "#052DA8" }}>MARKETING</span> */}
           </h1>
         </motion.div>
 
@@ -43,10 +43,7 @@ const BrandingWebsite = () => {
             className="font-Mulish text-lg text-center md:text-left md:mt-5 md:text-xl "
             style={{ color: "#000" }}
           >
-            At Jargs Cormark, we understand how frustrating it is when customers
-            can't find you online or when you're stuck figuring out how to
-            dominate the digital space. That's why we've developed proven
-            solutions to help ambitious business owners like you succeed.
+            Attention, Founders & Business Owners! It’s time to revolutionize how your customers perceive, trust, and engage with your brand. Transform your brand identity, brand strategy, and messaging to help you thrive in 2025.
           </p>
 
           {/* Button */}
@@ -87,26 +84,15 @@ const BrandingWebsite = () => {
       </div>
       <div className="bg-[#000] relative text-center bg-center -mx-5 py-4 px-12 text-[23px] font-bold md:-mx-20 md:py-6">
         <p className="text-white text-center md:text-4xl">
-          You have <span className="text-orange-400 font-bold">too BIG</span> of a GOAL to
-          let SOCIAL MEDIA hold{" "}
-          <span className="text-orange-400 font-bold">you back</span>
+          You have <span className="text-orange-400 font-extrabold">too BIG</span> of a
+          story to have a{" "}
+          <span className="text-orange-400 font-extrabold">small brand</span>
         </p>
       </div>
-      <div className="text-left py-8 md:flex md:justify-between md:px-72 md:py-32 md:items-center">
-        <h2 className="text-4xl text-black font-extrabold pb-2 md:text-5xl md:w-2/4">This Offer is for if <br /><span className="text-[#052DA8]">You're in;</span></h2>
-        <ul className="text-xl list-disc px-5 pt-2 md:text-2xl md:relative left-20">
-          <li className="pb-1">Real Estate</li>
-          <li className="pb-1">Hotel & Restaurants</li>
-          <li className="pb-1">E-commerce</li>
-          <li className="pb-1">Professional services</li>
-          <li className="pb-1">Local Businesses</li>
-          <li >& if you're Ambitious & Impact driven</li>
-        </ul>
-      </div>
 
-      <div className="bg-black text-white text-center px-3 py-4 mb-6 md:-mx-20 md:py-6">
-        <h3 className="text-[22px] font-extrabold pb-2 md:text-4xl">Our <span className="text-orange-400">Social Media Marketing</span> Packages</h3>
-        <p className="text-base md:text-2xl md:pt-2">Here's how you can attract more customers online whikle you partner with us</p>
+      <div className="bg-black text-white text-center px-3 py-4 my-6 md:-mx-20 md:py-6">
+        <h3 className="text-[22px] font-extrabold pb-2 md:text-4xl"><span className="text-orange-400">Our Solutions</span></h3>
+        <p className="text-base md:text-2xl md:pt-2">This is how you can Reboost Your Brand, build a community of loyal customers, and Increase sales</p>
       </div>
 
       <div className="basic md:my-8">
@@ -115,14 +101,14 @@ const BrandingWebsite = () => {
             <img src={basic} alt="" className="size-5/6 self-center md:size-96 md:gap-10" />
           </div>
           <div className="flex flex-col justify-center md:w-2/4">
-            <h3 className="text-[#052DA8] pt-4 px-6 text-xl font-extrabold font-Barlow md:text-[28px]">For businesses ready to build a srong online presence:</h3>
+          <h2 className="text-[#052DA8] pt-4 text-center px-6 text-2xl font-extrabold font-Barlow md:text-[28px]">BASIC REBOOST</h2>
+            <h3 className="text-[#052DA8] pt-4 px-2 text-xl font-extrabold font-Barlow md:text-[28px]">For businesses that wants to start with a clean professional visual for their brand:</h3>
             <FiArrowDown size={45} className="flex self-center md:text-[#fafafa] md:display" />
             <ul className="text-xl px-2 md:pb-4">
-              <li><FiCheck size={45} className="inline mr-2" />Complete review of your social media presence</li>
-              <li><FiCheck size={45} className="inline mr-2" />Content plan that connects you with customers</li>
-              <li><FiCheck size={45} className="inline mr-2" />Social media setup and optimization</li>
-              <li><FiCheck size={45} className="inline mr-2" />Clear performance tracking</li>
-              <li><FiCheck size={45} className="inline mr-2" />Monthly planning sessions</li>
+              <li><FiCheck size={45} className="inline mr-2" />Logo.</li>
+              <li><FiCheck size={45} className="inline mr-2" />Brand guidelines</li>
+              <li><FiCheck size={45} className="inline mr-2" />Brand identity design or revamp.</li>
+              <li><FiCheck size={45} className="inline mr-2" />Perfect For: A quick, professional visual upgrade.</li>
             </ul>
 
             <motion.div
@@ -138,7 +124,7 @@ const BrandingWebsite = () => {
                   hover: { backgroundColor: "#052DA8" },
                 }}
               >
-                BOOK A CALL TO SEE IF BASIC IS THE RIGHT FOR YOU
+                CLICK TO VIEW OUR PRICES AND AVAILABILITY
               </button>
             </motion.div>
           </div>
@@ -154,14 +140,15 @@ const BrandingWebsite = () => {
           </div>
 
           <div className="flex flex-col justify-center md:w-2/4">
-            <h3 className="text-[#052DA8] pt-4 px-6 text-xl font-extrabold font-Barlow md:text-[28px]">For businesses ready to build a srong online presence:</h3>
+          <h2 className="text-[#052DA8] pt-4 text-center px-6 text-2xl font-extrabold font-Barlow md:text-[28px]">ESSENTIAL REBOOST</h2>
+            <h3 className="text-[#052DA8] pt-4 px-6 text-xl font-extrabold font-Barlow md:text-[28px]">For businesses ready to combine visuals and a sales funnel to look more professional and covert sales:</h3>
             <FiArrowDown size={45} className="flex self-center md:text-[#fafafa]" />
             <ul className="text-xl px-2 md:pb-4">
-              <li><FiCheck size={45} className="inline mr-2" />Everything in Basic, plus:</li>
-              <li><FiCheck size={45} className="inline mr-2" />Strategy for multiple social platforms</li>
-              <li><FiCheck size={45} className="inline mr-2" />High-quality content creation</li>
-              <li><FiCheck size={45} className="inline mr-2" />Analysis of your competitors</li>
-              <li><FiCheck size={45} className="inline mr-2" />Managed Social media advertising</li>
+              <li><FiCheck size={45} className="inline mr-2" />Everything in Basic Reboot, plus:</li>
+              <li><FiCheck size={45} className="inline mr-2" />Website & SEO</li>
+              <li><FiCheck size={45} className="inline mr-2" />Sales Funnel</li>
+              <li><FiCheck size={45} className="inline mr-2" />Recommended Automations</li>
+              <li><FiCheck size={45} className="inline mr-2" />Website Copywriting</li>
             </ul>
 
             <motion.div
@@ -177,7 +164,7 @@ const BrandingWebsite = () => {
                   hover: { backgroundColor: "#052DA8" },
                 }}
               >
-                BOOK A CALL TO SEE IF PREMIUM IS THE RIGHT FOR YOU
+                CLICK TO VIEW OUR PRICES AND AVAILABILITY
               </button>
             </motion.div>
           </div>
@@ -194,14 +181,11 @@ const BrandingWebsite = () => {
             <h3 className="text-[#052DA8] pt-4 px-6 text-xl font-extrabold font-Barlow text-center md:text-left md:text-[28px]">Complete solution for market dominance</h3>
           <FiArrowDown size={45} className="flex self-center md:text-[#fafafa]" />
           <ul className="text-xl px-2 md:pb-4">
-            <li><FiCheck size={45} className="inline mr-2" />Everything in Premium, plus:</li>
-            <li><FiCheck size={45} className="inline mr-2" />Reputaion protection planning</li>
-            <li><FiCheck size={45} className="inline mr-2" />In-depth market research</li>
-            <li><FiCheck size={45} className="inline mr-2" />Priority support</li>
-            <li><FiCheck size={45} className="inline mr-2" />Quarterly business reviews</li>
-            <li><FiCheck size={45} className="inline mr-2" />Advanced marketing automation</li>
-            <li><FiCheck size={45} className="inline mr-2" />Brand Management Support</li>
-            <li><FiCheck size={45} className="inline mr-2" />Complete market leadership strategy</li>
+            <li><FiCheck size={45} className="inline mr-2" />Everything in Basic & Essential Reboot:</li>
+            <li><FiCheck size={45} className="inline mr-2" />Brand Strategy</li>
+            <li><FiCheck size={45} className="inline mr-2" />Brand Messaging</li>
+            <li><FiCheck size={45} className="inline mr-2" />Brand Positioning</li>
+            <li><FiCheck size={45} className="inline mr-2" />6 weeks Brand Coaching and implementation guidlines</li>
           </ul>
 
           <motion.div
@@ -224,14 +208,25 @@ const BrandingWebsite = () => {
         </div>
       </div>
 
-      <div className="bg-black text-white text-left px-6 py-5 mt-10 md:w-6/12 md:self-center">
-        <h3 className="text-4xl font-extrabold pb-2 text-red-700 md:text-[40px]">Don't Miss Out</h3>
-        <p className="text-2xl my-2">Everyday without a strong social media strategy means:</p>
-        <ul className="list-disc px-4 text-2xl">
-          <li>Lost customers</li>
-          <li>Missed sales oppurtunities</li>
-          <li>Higher costs to get new customers</li>
-          <li>Weaker brand repuation</li>
+      <div className="text-left py-8 md:flex md:justify-between md:px-72 md:py-32 md:items-center">
+        <h2 className="text-3xl text-black font-extrabold pb-2 md:text-5xl md:w-2/4">Our 5-Step Process to <br /><span className="text-[#052DA8]">Get You Results</span></h2>
+        <ul className="text-xl list-disc px-5 pt-2 md:text-2xl md:relative left-20">
+          <li className="pb-1"><span className="font-extrabold">Discovery Session:</span> We Access & Understand your business, goals and market audience.</li>
+          <li className="pb-1"><span className="font-extrabold">Audit & Analysis:</span> We Pinpoint gaps in your branding.</li>
+          <li className="pb-1"><span className="font-extrabold">Strategy Design:</span>  We Craft a tailored branding roadmap.</li>
+          <li className="pb-1"><span className="font-extrabold">Execution:</span> We Design and implement branding assets.</li>
+          <li className=""><span className="font-extrabold">Refinement & Delivery:</span> We optimize the results for maximum impact.</li>
+        </ul>
+      </div>
+
+      <div className="bg-black text-white text-left px-6 py-5 mt-5 md:w-6/12 md:self-center">
+      <h2 className="text-3xl  font-extrabold pb-2 md:text-5xl md:w-2/4 text-red-800">The Risks of Not <br /><span className="">Branding Properly</span></h2>
+      <ul className="text-2xl list-disc px-5 pt-2 md:text-2xl md:relative left-20">
+          <li className="pb-1">Loss of revenue due to inconsistent or outdated branding</li>
+          <li className="pb-1">Struggling with customer trust and loyalty.</li>
+          <li className="pb-1">Missed opportunities in competitive markets.</li>
+          <li className="pb-1">Ineffective communication of your brand’s value and story.</li>
+          <li className="pb-1">Difficulty attracting your ideal clients.</li>
         </ul>
       </div>
 
