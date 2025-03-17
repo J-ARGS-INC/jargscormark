@@ -13,6 +13,8 @@ import CaseStudy from "../pages/CaseStudy";
 import Case_Study from "../pages/admin/CaseStudy";
 import Login from "../pages/admin/Login";
 import Dashboard from "../pages/admin/Dashboard";
+import MetaAds from "../pages/MetaAds";
+import BrandingWebsite from "../pages/BrandingWebsite";
 export const router = createBrowserRouter([
     {
         path: "/",
@@ -45,6 +47,14 @@ export const router = createBrowserRouter([
             {
                 path: "offers/social-media-marketing",
                 element: <SocialMediaMarketing />,
+            },
+            {
+                path: "offers/meta-ads",
+                element: <MetaAds />,
+            },
+            {
+                path: "offers/branding-website",
+                element: <BrandingWebsite />,
             },
             {
                 path: "case_studies",

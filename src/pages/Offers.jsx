@@ -10,11 +10,11 @@ const Offers = () => {
     },
     {
       title: "Sponsored Ads",
-      link: "/sponsored-ads"
+      link: "meta-ads"
     },
     {
       title: "Branding",
-      link: "/branding"
+      link: "branding-website"
     },
   ];
 

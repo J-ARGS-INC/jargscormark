@@ -5,7 +5,7 @@ import premium from "../assets/Images/SMM-09.jpg";
 import legacy from "../assets/Images/SMM-08.jpg";
 import { FiArrowDown, FiCheck } from "react-icons/fi";
 
-const SocialMediaMarketing = () => {
+const BrandingWebsite = () => {
   return (
     <div className="py-10 px-5 md:py-[18vh] md:px-20 bg-[#fafafa] flex flex-col font-Barlow">
       <div className="max-w-6xl mx-auto bg-white md:gap-10 lg:bg-[#fafafa] py-4 md:w-full md:pl-20">
@@ -287,4 +287,4 @@ const SocialMediaMarketing = () => {
   );
 };
 
-export default SocialMediaMarketing;
+export default BrandingWebsite;

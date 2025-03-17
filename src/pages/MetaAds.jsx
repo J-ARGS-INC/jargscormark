@@ -5,7 +5,7 @@ import premium from "../assets/Images/SMM-09.jpg";
 import legacy from "../assets/Images/SMM-08.jpg";
 import { FiArrowDown, FiCheck } from "react-icons/fi";
 
-const SocialMediaMarketing = () => {
+const MetaAds = () => {
   return (
     <div className="py-10 px-5 md:py-[18vh] md:px-20 bg-[#fafafa] flex flex-col font-Barlow">
       <div className="max-w-6xl mx-auto bg-white md:gap-10 lg:bg-[#fafafa] py-4 md:w-full md:pl-20">
@@ -21,14 +21,25 @@ const SocialMediaMarketing = () => {
             className="text-[38px] font-extrabold font-Barlow leading-tight md:text-5xl md:mb-2"
             style={{ color: "#000" }}
           >
-            ELEVATE YOUR {" "}
+            GET FAST {" "}
             {/* <br /> */}
-            BUSINESS WITH
+            ROI USING
             <br />
-            <span style={{ color: "#052DA8" }}>SOCIAL MEDIA </span>
+            <span style={{ color: "#052DA8" }}>SPONSORED ADS </span>
             {/* <br /> */}
-            <span style={{ color: "#052DA8" }}>MARKETING</span>
           </h1>
+        </motion.div>
+
+        <motion.div initial={{ y: 30, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.8 }} className="px-12 text-xl pt-6">
+          <ul className="list-disc text-xl">
+            <li>Struggling with rising ad costs</li>
+            <li>Getting inconsistent results from your campaigns</li>
+            <li>Wasting money on the wrong audiences</li>
+            <li>Fighting with constant platform changes</li>
+            <li>Missing out on potential customers</li>
+          </ul>
         </motion.div>
 
         {/* Right Column (Paragraph and Button) */}
@@ -36,17 +47,14 @@ const SocialMediaMarketing = () => {
           initial={{ translateX: -20, opacity: 0 }}
           animate={{ translateX: 0, opacity: 1 }}
           transition={{ delay: 0.4 }}
-          className="md:w-4/5 mt-8 md:mt-0 text-center"
+          className="md:w-4/5 mt-6 md:mt-0 text-center"
         >
           {/* Paragraph */}
           <p
-            className="font-Mulish text-lg text-center md:text-left md:mt-5 md:text-xl "
+            className="font-Mulish text-lg text-left md:text-left md:mt-5 md:text-xl px-4"
             style={{ color: "#000" }}
           >
-            At Jargs Cormark, we understand how frustrating it is when customers
-            can't find you online or when you're stuck figuring out how to
-            dominate the digital space. That's why we've developed proven
-            solutions to help ambitious business owners like you succeed.
+            At Jargs Cormark, we understand the frustration of seeing your ad budget drain away without clear returns. That's why we've developed proven sponsored Ads solutions for emerging & growing businesses like yours.
           </p>
 
           {/* Button */}
@@ -85,11 +93,11 @@ const SocialMediaMarketing = () => {
           className="w-[100%] h-[100%]"
         ></iframe>
       </div>
-      <div className="bg-[#000] relative text-center bg-center -mx-5 py-4 px-12 text-[23px] font-bold md:-mx-20 md:py-6">
+      <div className="bg-[#000] relative text-center bg-center -mx-5 py-4 px-10 text-[20px] font-bold md:-mx-20 md:py-6">
         <p className="text-white text-center md:text-4xl">
           You have <span className="text-orange-400 font-bold">too BIG</span> of a GOAL to
-          let SOCIAL MEDIA hold{" "}
-          <span className="text-orange-400 font-bold">you back</span>
+          not leverage on{" "}
+          <span className="text-orange-400 font-bold">SPONSORED ADS</span>
         </p>
       </div>
       <div className="text-left py-8 md:flex md:justify-between md:px-72 md:py-32 md:items-center">
@@ -97,16 +105,35 @@ const SocialMediaMarketing = () => {
         <ul className="text-xl list-disc px-5 pt-2 md:text-2xl md:relative left-20">
           <li className="pb-1">Real Estate</li>
           <li className="pb-1">Hotel & Restaurants</li>
-          <li className="pb-1">E-commerce</li>
-          <li className="pb-1">Professional services</li>
+          <li className="pb-1">High value Professional Services</li>
+          <li className="pb-1">Retail</li>
           <li className="pb-1">Local Businesses</li>
-          <li >& if you're Ambitious & Impact driven</li>
+          <li >Or if you're Ambitious & Impact driven</li>
+        </ul>
+      </div>
+
+      <div className="text-left pb-8 md:flex md:justify-between md:px-72 md:py-32 md:items-center">
+        <h2 className="text-3xl text-black font-extrabold pb-2 md:text-5xl md:w-2/4">The Real Cost of not running Sponsored Ads <span className="text-[#052DA8]">with an expert Strategy</span></h2>
+        <ul className="text-xl list-disc px-5 pt-2 md:text-2xl md:relative left-20">
+          <li className="pb-1">Lost sales to competitors</li>
+          <li className="pb-1">Wasted advertising budget</li>
+          <li className="pb-1">Missed targeting opportunities</li>
+          <li className="">Declining return on investment</li>
+        </ul>
+      </div>
+
+      <div className="text-left pb-8 md:flex md:justify-between md:px-72 md:py-32 md:items-center">
+        <h2 className="text-[28px] text-black font-extrabold pb-2 md:text-5xl md:w-2/4">Here’s What You Can Accomplish When You  <span className="text-[#052DA8]">Trust Us With Your Brand</span></h2>
+        <ul className="text-xl list-disc px-5 pt-2 md:text-2xl md:relative left-20">
+          <li className="pb-1">50% lower cost per acquisition</li>
+          <li className="pb-1">3x return on ad spend</li>
+          <li className="pb-1">2x conversion rates</li>
         </ul>
       </div>
 
       <div className="bg-black text-white text-center px-3 py-4 mb-6 md:-mx-20 md:py-6">
-        <h3 className="text-[22px] font-extrabold pb-2 md:text-4xl">Our <span className="text-orange-400">Social Media Marketing</span> Packages</h3>
-        <p className="text-base md:text-2xl md:pt-2">Here's how you can attract more customers online whikle you partner with us</p>
+        <h3 className="text-[22px] font-extrabold pb-2 md:text-4xl">Our <span className="text-orange-400">Sponsored Ads Packages</span> Packages</h3>
+        <p className="text-base md:text-2xl md:pt-2">Here’s how we can get you customers who are desperately searching for what you sell</p>
       </div>
 
       <div className="basic md:my-8">
@@ -115,14 +142,16 @@ const SocialMediaMarketing = () => {
             <img src={basic} alt="" className="size-5/6 self-center md:size-96 md:gap-10" />
           </div>
           <div className="flex flex-col justify-center md:w-2/4">
-            <h3 className="text-[#052DA8] pt-4 px-6 text-xl font-extrabold font-Barlow md:text-[28px]">For businesses ready to build a srong online presence:</h3>
+            <h3 className="text-[#052DA8] pt-4 px-6 text-xl font-extrabold font-Barlow md:text-[28px]">For businesses ready to reach a larger audience and build awareness for their brand:</h3>
             <FiArrowDown size={45} className="flex self-center md:text-[#fafafa] md:display" />
             <ul className="text-xl px-2 md:pb-4">
-              <li><FiCheck size={45} className="inline mr-2" />Complete review of your social media presence</li>
-              <li><FiCheck size={45} className="inline mr-2" />Content plan that connects you with customers</li>
-              <li><FiCheck size={45} className="inline mr-2" />Social media setup and optimization</li>
-              <li><FiCheck size={45} className="inline mr-2" />Clear performance tracking</li>
-              <li><FiCheck size={45} className="inline mr-2" />Monthly planning sessions</li>
+              <li><FiCheck size={45} className="inline mr-2" />Creation of sponsored ads account if needed</li>
+              <li><FiCheck size={45} className="inline mr-2" />Basic audience targeting setup</li>
+              <li><FiCheck size={45} className="inline mr-2" />Performance tracking </li>
+              <li><FiCheck size={45} className="inline mr-2" />Monthly optimization updates</li>
+              <li><FiCheck size={45} className="inline mr-2" />Regular performance reviews</li>
+              <li><FiCheck size={45} className="inline mr-2" />Mainly for awareness, but can bring in sales</li>
+              <li><FiCheck size={45} className="inline mr-2" />Additional cost for custom creative</li>
             </ul>
 
             <motion.div
@@ -154,14 +183,16 @@ const SocialMediaMarketing = () => {
           </div>
 
           <div className="flex flex-col justify-center md:w-2/4">
-            <h3 className="text-[#052DA8] pt-4 px-6 text-xl font-extrabold font-Barlow md:text-[28px]">For businesses ready to build a srong online presence:</h3>
+            <h3 className="text-[#052DA8] pt-4 px-6 text-xl font-extrabold font-Barlow md:text-[28px]">For businesses ready to makes sales from people ready to buy now:</h3>
             <FiArrowDown size={45} className="flex self-center md:text-[#fafafa]" />
             <ul className="text-xl px-2 md:pb-4">
               <li><FiCheck size={45} className="inline mr-2" />Everything in Basic, plus:</li>
-              <li><FiCheck size={45} className="inline mr-2" />Strategy for multiple social platforms</li>
-              <li><FiCheck size={45} className="inline mr-2" />High-quality content creation</li>
-              <li><FiCheck size={45} className="inline mr-2" />Analysis of your competitors</li>
-              <li><FiCheck size={45} className="inline mr-2" />Managed Social media advertising</li>
+              <li><FiCheck size={45} className="inline mr-2" />Advanced targeting strategies</li>
+              <li><FiCheck size={45} className="inline mr-2" />Custom 2 Creative Videos strictly to attract buyers</li>
+              <li><FiCheck size={45} className="inline mr-2" />Custom audience building</li>
+              <li><FiCheck size={45} className="inline mr-2" />Retargeting campaign setup</li>
+              <li><FiCheck size={45} className="inline mr-2" />Weekly performance reviews</li>
+              <li><FiCheck size={45} className="inline mr-2" />Conversion tracking </li>
             </ul>
 
             <motion.div
@@ -192,54 +223,53 @@ const SocialMediaMarketing = () => {
 
           <div className="flex flex-col justify-center md:w-2/4">
             <h3 className="text-[#052DA8] pt-4 px-6 text-xl font-extrabold font-Barlow text-center md:text-left md:text-[28px]">Complete solution for market dominance</h3>
-          <FiArrowDown size={45} className="flex self-center md:text-[#fafafa]" />
-          <ul className="text-xl px-2 md:pb-4">
-            <li><FiCheck size={45} className="inline mr-2" />Everything in Premium, plus:</li>
-            <li><FiCheck size={45} className="inline mr-2" />Reputaion protection planning</li>
-            <li><FiCheck size={45} className="inline mr-2" />In-depth market research</li>
-            <li><FiCheck size={45} className="inline mr-2" />Priority support</li>
-            <li><FiCheck size={45} className="inline mr-2" />Quarterly business reviews</li>
-            <li><FiCheck size={45} className="inline mr-2" />Advanced marketing automation</li>
-            <li><FiCheck size={45} className="inline mr-2" />Brand Management Support</li>
-            <li><FiCheck size={45} className="inline mr-2" />Complete market leadership strategy</li>
-          </ul>
+            <FiArrowDown size={45} className="flex self-center md:text-[#fafafa]" />
+            <ul className="text-xl px-2 md:pb-4">
+              <li><FiCheck size={45} className="inline mr-2" />Everything in Premium, plus:</li>
+              <li><FiCheck size={45} className="inline mr-2" />Multi-channel ad strategy</li>
+              <li><FiCheck size={45} className="inline mr-2" />Dynamic ad optimization</li>
+              <li><FiCheck size={45} className="inline mr-2" />Priority support</li>
+              <li><FiCheck size={45} className="inline mr-2" />Scaling strategy development</li>
+              <li><FiCheck size={45} className="inline mr-2" />Custom 3 Creative Videos strictly to attract buyers Daily campaign monitoring</li>
+            </ul>
 
-          <motion.div
-          initial={{ y: 30, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.4, delay: 0.6 }}
-          className="mt-5"
-        >
-          <button
-            className="px-4 py-4 font-Barlow font-extrabold text-white transition-all duration-300 text-[19px] md:text-xl md:self-center"
-            style={{
-              backgroundColor: "#0E28C3",
-              hover: { backgroundColor: "#052DA8" },
-            }}
-          >
-            BOOK A CALL TO SEE IF LEGACY IS THE RIGHT FOR YOU
-          </button>
-        </motion.div>
+            <motion.div
+              initial={{ y: 30, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.4, delay: 0.6 }}
+              className="mt-5"
+            >
+              <button
+                className="px-4 py-4 font-Barlow font-extrabold text-white transition-all duration-300 text-[19px] md:text-xl md:self-center"
+                style={{
+                  backgroundColor: "#0E28C3",
+                  hover: { backgroundColor: "#052DA8" },
+                }}
+              >
+                BOOK A CALL TO SEE IF LEGACY IS THE RIGHT FOR YOU
+              </button>
+            </motion.div>
           </div>
         </div>
       </div>
 
       <div className="bg-black text-white text-left px-6 py-5 mt-10 md:w-6/12 md:self-center">
-        <h3 className="text-4xl font-extrabold pb-2 text-red-700 md:text-[40px]">Don't Miss Out</h3>
-        <p className="text-2xl my-2">Everyday without a strong social media strategy means:</p>
+        <h3 className="text-3xl font-extrabold pb-2 text-red-700 md:text-[40px] ">Don't Keep Losing Money on Poor Sponsored Ad Campaigns</h3>
+        <p className="text-2xl my-2">Everyday with underperforming ads means:</p>
         <ul className="list-disc px-4 text-2xl">
-          <li>Lost customers</li>
-          <li>Missed sales oppurtunities</li>
-          <li>Higher costs to get new customers</li>
-          <li>Weaker brand repuation</li>
+          <li>Money wasted on wrong audiences</li>
+          <li>Higher customer acquisition costs</li>
+          <li>Lost customers/clients</li>
+          <li>Missed sales opportunities</li>
+          <li>Declining return on ad spend</li>
         </ul>
       </div>
 
-      <div className="bg-[#0E28C3] relative text-center bg-center -mx-5 py-4 px-12 text-[24px] font-normal md:-mx-20">
+      <div className="bg-[#0E28C3] relative text-center bg-center -mx-5 py-4 px-12 text-[20px] font-normal md:-mx-20">
         <p className="text-white text-center">
           You have <span className="text-orange-400 font-bold">too BIG</span> of a GOAL to
-          let SOCIAL MEDIA hold{" "}
-          <span className="text-orange-400 font-bold">you back</span>
+          not leverage on {" "}
+          <span className="text-orange-400 font-bold">SPONSORED ADS</span> with the right strategy
         </p>
       </div>
 
@@ -255,18 +285,30 @@ const SocialMediaMarketing = () => {
       <div className="md:w-2/3 md:flex md:flex-col md:self-center md:my-6">
         <div className="bg-black text-white text-left px-8 py-10 mt-10 -mx-7 rounded-[70px] relative z-50 md:rounded-[0]">
           <h3 className="text-4xl font-extrabold pb-2 text-red-700 text-center">Special Offer - Limited Time Only</h3>
-          <p className="text-2xl my-3">Act before February 28th, 2025, and receive:</p>
+          <p className="text-2xl my-3">Act before March 28th, 2025, and receive:</p>
           <ul className="list-disc px-4 text-2xl">
-            <li>Tailored Marketing and Brand Research</li>
-            <li>Tailored Marketing and Brand Strategy</li>
+            <li>Free Meta Ads Account Audit and creation </li>
+            <li>Free Custom Campaign Strategy </li>
+            <li>Free Audience Building Staregy</li>
           </ul>
-          <p className="text-2xl my-3">All to kick start your brand and online presence with full energy!</p>
+          <p className="text-2xl my-3">All as a Bonus!</p>
         </div>
 
         <div className="text-center relative bg-[#0E28C3] text-white -mx-6 pt-14 pb-6 bottom-10 -z-0">
           <h3 className="text-3xl font-extrabold my-2">60 Days Money Back Guarantee !</h3>
           <p className="text-2xl">If you're not satisfied working with us</p>
         </div>
+      </div>
+
+      <div className="text-left pb-8 md:flex md:justify-between md:px-72 md:py-32 md:items-center">
+        <h2 className="text-3xl text-black font-extrabold pb-2 md:text-5xl md:w-2/4">During your strategy call, <span className="text-[#052DA8]">We'll:</span></h2>
+        <ul className="text-xl list-decimal px-5 pt-2 md:text-2xl md:relative left-20">
+          <li className="pb-1">Review your current ad performance</li>
+          <li className="pb-1">Identify your biggest opportunities</li>
+          <li className="pb-1">Spot costly mistakes to fix</li>
+          <li className="pb-1">Create your custom optimization plan</li>
+          <li className="pb-1">Recommend the right package for you</li>
+        </ul>
       </div>
 
       <div className="flex flex-col">
@@ -280,11 +322,8 @@ const SocialMediaMarketing = () => {
           Let&apos;s Get you More Customers, Increase your Brand Visibility & contribute to your Success.
         </p>
       </div>
-
-
-
     </div>
   );
 };
 
-export default SocialMediaMarketing;
+export default MetaAds;
