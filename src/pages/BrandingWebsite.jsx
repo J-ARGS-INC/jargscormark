@@ -90,6 +90,21 @@ const BrandingWebsite = () => {
         </p>
       </div>
 
+      <div className="testimonials">
+
+      </div>
+
+      <div className="text-left py-8 md:flex md:justify-between md:px-72 md:py-32 md:items-center">
+        <h2 className="text-3xl text-black font-extrabold pb-2 md:text-5xl md:w-2/4">Our 5-Step Process to <br /><span className="text-[#052DA8]">Get You Results</span></h2>
+        <ul className="text-xl list-disc px-5 pt-2 md:text-2xl md:relative left-40">
+          <li className="pb-1"><span className="font-extrabold">Discovery Session:</span> We Access & Understand your business, goals and market audience.</li>
+          <li className="pb-1"><span className="font-extrabold">Audit & Analysis:</span> We Pinpoint gaps in your branding.</li>
+          <li className="pb-1"><span className="font-extrabold">Strategy Design:</span>  We Craft a tailored branding roadmap.</li>
+          <li className="pb-1"><span className="font-extrabold">Execution:</span> We Design and implement branding assets.</li>
+          <li className=""><span className="font-extrabold">Refinement & Delivery:</span> We optimize the results for maximum impact.</li>
+        </ul>
+      </div>
+
       <div className="bg-black text-white text-center px-3 py-4 my-6 md:-mx-20 md:py-6">
         <h3 className="text-[22px] font-extrabold pb-2 md:text-4xl"><span className="text-orange-400">Our Solutions</span></h3>
         <p className="text-base md:text-2xl md:pt-2">This is how you can Reboost Your Brand, build a community of loyal customers, and Increase sales</p>
@@ -208,20 +223,11 @@ const BrandingWebsite = () => {
         </div>
       </div>
 
-      <div className="text-left py-8 md:flex md:justify-between md:px-72 md:py-32 md:items-center">
-        <h2 className="text-3xl text-black font-extrabold pb-2 md:text-5xl md:w-2/4">Our 5-Step Process to <br /><span className="text-[#052DA8]">Get You Results</span></h2>
-        <ul className="text-xl list-disc px-5 pt-2 md:text-2xl md:relative left-20">
-          <li className="pb-1"><span className="font-extrabold">Discovery Session:</span> We Access & Understand your business, goals and market audience.</li>
-          <li className="pb-1"><span className="font-extrabold">Audit & Analysis:</span> We Pinpoint gaps in your branding.</li>
-          <li className="pb-1"><span className="font-extrabold">Strategy Design:</span>  We Craft a tailored branding roadmap.</li>
-          <li className="pb-1"><span className="font-extrabold">Execution:</span> We Design and implement branding assets.</li>
-          <li className=""><span className="font-extrabold">Refinement & Delivery:</span> We optimize the results for maximum impact.</li>
-        </ul>
-      </div>
+      
 
       <div className="bg-black text-white text-left px-6 py-5 mt-5 md:w-6/12 md:self-center">
-      <h2 className="text-3xl  font-extrabold pb-2 md:text-5xl md:w-2/4 text-red-800">The Risks of Not <br /><span className="">Branding Properly</span></h2>
-      <ul className="text-2xl list-disc px-5 pt-2 md:text-2xl md:relative left-20">
+      <h2 className="text-3xl font-extrabold pb-2 md:text-5xl md:text-center text-red-800">The Risks of Not <br /><span className="">Branding Properly</span></h2>
+      <ul className="text-2xl list-disc px-5 pt-2 md:text-2xl ">
           <li className="pb-1">Loss of revenue due to inconsistent or outdated branding</li>
           <li className="pb-1">Struggling with customer trust and loyalty.</li>
           <li className="pb-1">Missed opportunities in competitive markets.</li>
