@@ -1,62 +1,77 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import React from "react";
+import { NavLink } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Offers = () => {
   const offers = [
     {
       title: "Social Media Marketing",
-      link: "social-media-marketing"
+      link: "social-media-marketing",
     },
     {
       title: "Sponsored Ads",
-      link: "meta-ads"
+      link: "meta-ads",
     },
     {
-      title: "Branding",
-      link: "branding-website"
+      title: "Branding & Website",
+      link: "branding-website",
     },
   ];
 
   return (
-    <div className='py-10 px-5 md:py-[18vh] md:px-20 bg-[#fafafa]'>
-      <div className='grid grid-cols-1 md:grid-cols-2 items-end gap-5 mb-10'>
-        <motion.div initial={{ translateY: 30, opacity: 0 }} whileInView={{ translateY: 0, opacity: 1 }} transition={{ duration: 0.4, delay: 0.2 }} viewport={{ once: true }}>
-          <h1 className='text-4xl font-bold font-Barlow text-center py-2' style={{ color: '#052DA8' }}>JARGS CORMARK</h1>
-          <h1 className='text-3xl font-bold font-Barlow text-center' style={{ color: '#C0272D' }}>
-            Exciting February
-          </h1>
-        </motion.div>
-
-        <motion.div initial={{ translateX: -20, opacity: 0 }} animate={{ translateX: 0, opacity: 1 }} transition={{ delay: 0.4 }}>
-          <p className='font-Mulish' style={{ color: '#05058E' }}>
-            Explore our exclusive offers designed to elevate your business. From social media marketing to premium ad packages, we have everything you need to succeed.
-          </p>
-        </motion.div>
+    <div className="relative py-20 px-8 md:py-[15vh] md:px-32 bg-white text-black">
+      {/* Header Section */}
+      <div className="relative text-center">
+        <motion.h1
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="text-5xl md:text-6xl font-extrabold font-Barlow text-[#0E28C3]"
+        >
+          JARGS CORMARK
+        </motion.h1>
+        <motion.h2
+          initial={{ y: -10, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.3, duration: 0.5, ease: "easeOut" }}
+          className="text-3xl md:text-4xl font-bold font-Barlow text-[#C0272D] mt-3"
+        >
+          Best Sellers
+        </motion.h2>
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6, duration: 0.5, ease: "easeOut" }}
+          className="text-lg font-Mulish mt-6 max-w-3xl mx-auto"
+        >
+          Elevate your business with premium digital solutions. Unlock the power of targeted ads, branding, and online marketing today.
+        </motion.p>
       </div>
 
-      <div className='my-5'>
-        <div className='grid grid-cols-1 gap-y-10'>
-          {offers.map((offer, index) => (
-            <motion.div key={index} initial={{ y: 30, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ duration: 0.1, delay: 0.1 * index }}>
-              <NavLink to={offer.link} className='block'>
-                <button
-                  className='w-full text-center p-4 rounded-full shadow-md transition-all duration-300'
-                  style={{
-                    backgroundColor: '#0E28C3',
-                    color: 'white',
-                    border: '2px solid #052DA8',
-                    hover: { backgroundColor: '#052DA8' }
-                  }}
-                  onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#052DA8'}
-                  onMouseOut={(e) => e.currentTarget.style.backgroundColor = '#0E28C3'}
-                >
-                  <h2 className='font-Barlow text-2xl font-semibold mb-2'>{offer.title}</h2>
-                </button>
-              </NavLink>
-            </motion.div>
-          ))}
-        </div>
+      {/* Offers Section */}
+      <div className="relative mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+        {offers.map((offer, index) => (
+          <motion.div
+            key={index}
+            initial={{ y: 30, opacity: 0, scale: 0.95 }}
+            whileInView={{ y: 0, opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 * index, ease: "easeOut" }}
+            whileHover={{ scale: 1.05, rotate: 1 }}
+            className="relative group"
+          >
+            <NavLink to={offer.link} className="block">
+              <motion.button
+                className="relative w-full p-6 text-center rounded-xl bg-[#F9F9F9] text-[#0E28C3] font-Barlow text-2xl font-semibold border-2 border-[#0E28C3] shadow-md transition-all overflow-hidden group-hover:bg-[#0E28C3] group-hover:text-white"
+                whileHover={{
+                  scale: 1.05,
+                  boxShadow: "0px 8px 30px rgba(0, 0, 0, 0.15)",
+                }}
+              >
+                <span className="relative z-10">{offer.title}</span>
+              </motion.button>
+            </NavLink>
+          </motion.div>
+        ))}
       </div>
     </div>
   );

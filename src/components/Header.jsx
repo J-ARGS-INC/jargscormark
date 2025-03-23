@@ -30,7 +30,7 @@ const Header = () => {
             to: "/about"
         },
         {
-            text: "Offers",
+            text: "Top Offers",
             Icon: FaUsersRays,
             to: "/offers"
         },
