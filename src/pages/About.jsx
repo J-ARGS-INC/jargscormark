@@ -187,10 +187,10 @@ const About = () => {
 
                     <div className='grid grid-cols-1 md:grid-cols-3 gap-10 mt-24'>
                         {
-                            team.map(({ image, name, role }, index) => <div key={index}>
-                                <div className='h-[300px] mb-4'>
+                            team.map(({ image, name, role }, index) => <div key={index} className='border px-4 py-5 rounded-lg'>
+                                {/* <div className='h-[300px] mb-4'>
                                     <img src={image} className='w-[100%] h-[100%] object-cover object-top' alt="" />
-                                </div>
+                                </div> */}
                                 <h1 className='font-Barlow text-xl font-medium mb-1'>{name}</h1>
                                 <p className='font-Barlow font-light text-sm capitalize'>{role}</p>
                             </div>)

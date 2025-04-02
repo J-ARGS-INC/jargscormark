@@ -1,14 +1,14 @@
 
 import { useContext, useState } from "react"
-import { createItemInDB, deleteItemInDb, getItemInDB } from "../api/api"
+import { createItemInDB, deleteItemInDb, getItemInDB, updateItemInDb } from "../api/api"
 import { toast } from 'react-toastify';
 import { UserContext } from "../context/user";
 export const useRequest = () => {
     const { user } = useContext(UserContext)
-    const getConfig = (isProtected, contentType) => {
+    const getConfig = (isProtected) => {
         let config = !isProtected ? {} : {
             headers: {
-                "Authorization": `Bearer ${user}`,
+                "Authorization": `Bearer ${user}`
             }
         }
 
@@ -19,10 +19,25 @@ export const useRequest = () => {
         loading: false
     })
 
+
+
+    const Get = async (url, isProtected) => {
+        setData(prev => ({ ...prev, loading: true }))
+        try {
+            let config = getConfig(isProtected);
+            let resp = await getItemInDB(url, config)
+            setData(prev => ({ ...prev, response: resp }))
+        } catch (err) {
+            toast(err.response.data, { position: "top-right", type: "error" })
+            console.error(err);
+        } finally {
+            setData(prev => ({ ...prev, loading: false }))
+        }
+    }
     const Post = async (url, data, isProtected) => {
         setData(prev => ({ ...prev, loading: true }))
         try {
-            let config = getConfig(isProtected, url.includes("upload") ? "multipart/form-data" : null);
+            let config = getConfig(isProtected);
             let resp = await createItemInDB(url, data, config);
             return resp
         } catch (err) {
@@ -32,13 +47,12 @@ export const useRequest = () => {
             setData(prev => ({ ...prev, loading: false }))
         }
     }
-
-    const Get = async (url, isProtected) => {
-        setData(prev => ({ ...prev, loading: true }))
+    const Update = async (url, data, isProtected) => {
+        setData(prev => ({ ...prev, loading: true }));
         try {
             let config = getConfig(isProtected);
-            let resp = await getItemInDB(url, config)
-            setData(prev => ({ ...prev, response: resp }))
+            let resp = await updateItemInDb(url, data, config)
+            return resp.data
         } catch (err) {
             toast(err.response.data, { position: "top-right", type: "error" })
             console.error(err);
@@ -60,11 +74,13 @@ export const useRequest = () => {
             setData(prev => ({ ...prev, loading: false }))
         }
     }
+
+
     const changeLoading = (value) => {
         setData(prev => ({ ...prev, loading: value }))
     }
 
-    return { data, Get, Post, Delete, changeLoading }
+    return { data, Get, Post, Delete, Update, changeLoading }
 }
 
 

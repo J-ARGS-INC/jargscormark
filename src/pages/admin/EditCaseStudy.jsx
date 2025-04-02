@@ -4,11 +4,13 @@ import { FaSpinner } from 'react-icons/fa';
 import { AiOutlineDelete } from "react-icons/ai";
 import { toast } from 'react-toastify';
 import { FiEdit3 } from "react-icons/fi";
+import { useNavigate, useParams } from 'react-router-dom';
 
 const EditCaseStudy = () => {
-
+    const navigate = useNavigate()
     const [showYoutube, setShowYoutube] = useState(false);
-    const { Post, Get, changeLoading, Delete, data: { loading, response } } = useRequest()
+    const { id } = useParams()
+    const { Update, Get, data: { loading, response } } = useRequest()
     const [inputs, setInputs] = useState({
         name: "",
         desc: "",
@@ -59,10 +61,6 @@ const EditCaseStudy = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        changeLoading(true);
-        const files = inputs.image ? [inputs.image, ...inputs.details.map(({ images }) => images)] : [...inputs.details.map(({ images }) => images)];
-        const imagesUrl = await uploadImages(files); //uploading images
-
         let data = {
             name: inputs.name,
             description: inputs.desc,
@@ -70,53 +68,90 @@ const EditCaseStudy = () => {
             results: inputs.results.split(",,").filter(item => item != ""),
             links: inputs.links.split(",,").filter(item => item != ""),
             youtubeVideo: inputs.youtubeVideo ? inputs.youtubeVideo.replace(/"/g, "'") : null,
-            image: inputs.image ? imagesUrl[0] : null,
-            details: inputs.details.map((item, index) => {
-                let startIndex = index > 0 ? inputs.details[index].images.length : inputs.image ? index + 1 : index;
-                let endIndex = index > 0 ? item.images.length + startIndex : inputs.image ? item.images.length + 1 : item.images.length;
-                return { ...item, images: imagesUrl.flat().slice(startIndex, endIndex) }
-            })
+            image: inputs.image,
+            details: inputs.details
         }
 
-        let saveToDb = await Post("/api/admin/casestudy", data, true);  // sending to database
-        if (saveToDb) {
-            console.log(saveToDb)
-            setInputs({
-                name: "",
-                desc: "",
-                services: "",
-                links: "",
-                results: "",
-                image: {},
-                youtubeVideo: "",
-                details: [
-                    {
-                        title: "",
-                        subtitle: "",
-                        images: {}
-                    }
-                ]
-            })
-            Get("/api/admin/casestudy", true)
-            toast(`${data.name} Created Successfully`, { position: "top-right", type: "success" });
-        }
+        // const formData = new FormData();
+        // Object.entries(data).forEach(item => {
+        //     formData.append(item[0], item[1])
+        // })
+
+        let updateDB = await Update(`/api/admin/casestudy/${id}`, data, true);
+        console.log(updateDB);
+        // changeLoading(true);
+        // const files = inputs.image ? [inputs.image, ...inputs.details.map(({ images }) => images)] : [...inputs.details.map(({ images }) => images)];
+        // const imagesUrl = await uploadImages(files); //uploading images
+        // let data = {
+        //     name: inputs.name,
+        //     description: inputs.desc,
+        //     services: inputs.services.split(",,").filter(item => item != ""),
+        //     results: inputs.results.split(",,").filter(item => item != ""),
+        //     links: inputs.links.split(",,").filter(item => item != ""),
+        //     youtubeVideo: inputs.youtubeVideo ? inputs.youtubeVideo.replace(/"/g, "'") : null,
+        //     image: inputs.image ? imagesUrl[0] : null,
+        //     details: inputs.details.map((item, index) => {
+        //         let startIndex = index > 0 ? inputs.details[index].images.length : inputs.image ? index + 1 : index;
+        //         let endIndex = index > 0 ? item.images.length + startIndex : inputs.image ? item.images.length + 1 : item.images.length;
+        //         return { ...item, images: imagesUrl.flat().slice(startIndex, endIndex) }
+        //     })
+        // }
+
+        // let saveToDb = await Post("/api/admin/casestudy", data, true);  // sending to database
+        // if (saveToDb) {
+        //     console.log(saveToDb)
+        //     setInputs({
+        //         name: "",
+        //         desc: "",
+        //         services: "",
+        //         links: "",
+        //         results: "",
+        //         image: {},
+        //         youtubeVideo: "",
+        //         details: [
+        //             {
+        //                 title: "",
+        //                 subtitle: "",
+        //                 images: {}
+        //             }
+        //         ]
+        //     })
+        //     Get("/api/admin/casestudy", true)
+        //     toast(`${data.name} Created Successfully`, { position: "top-right", type: "success" });
+        // }
 
 
     }
 
-    const deleteCase = async (id) => {
-        const selectedCaseStudy = response.find(item => item._id == id);
-        const deleteFromDB = await Delete(`/api/admin/casestudy/${id}`, true);
-        if (deleteFromDB) {
-            toast(`${selectedCaseStudy.name} Deleted Successfully`, { position: "top-right", type: "success" })
-            Get("/api/admin/casestudy", true)
-        }
-    }
+
+
     useEffect(() => {
         Get("/api/admin/casestudy", true)
     }, []);
 
-    // console.log(inputs.youtubeVideo)
+    useEffect(() => {
+        if (response) {
+            if (!response.find(item => item._id == id)) {
+                navigate("/admin/dashboard");
+                return
+            }
+            const { name, description, services, results, links, youtubeVideo, details } = response.find(item => item._id == id);
+
+            setInputs(prev => ({
+                ...prev,
+                name,
+                desc: description,
+                services: services.join(",,"),
+                results: results.join(",,"), links: links.join(",,"),
+                youtubeVideo: youtubeVideo ?? "",
+                details
+            }))
+
+            if (youtubeVideo) {
+                setShowYoutube(true);
+            }
+        }
+    }, [response])
     return (
         <div className='grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 py-10 font-Barlow'>
             <div>
@@ -153,9 +188,9 @@ const EditCaseStudy = () => {
 
                     <div className='flex flex-col gap-1'>
                         <label htmlFor="">Choose Cover</label>
-                        <select name="" id="" className='outline-0 border w-[100%] border-black py-3 px-5 resize-none' onChange={e => setShowYoutube(e.target.value == "youtube" ? true : false)}>
-                            <option value="image">Image</option>
-                            <option value="youtube">Video</option>
+                        <select name="" id="" className='outline-0 border w-[100%] border-black py-3 px-5 resize-none' onChange={e => setShowYoutube(e.target.value == "youtube" ? true : false)} defaultValue={inputs.youtubeVideo ? "youtube" : "image"}>
+                            <option value="image" >Image</option>
+                            <option value="youtube" >Video</option>
 
                         </select>
                     </div>
@@ -168,7 +203,7 @@ const EditCaseStudy = () => {
 
                             <div className='flex flex-col gap-1'>
                                 <label htmlFor="">Cover Image</label>
-                                <input required type="file" className='border p-3' name='image' onChange={e => setInputs(prev => ({ ...prev, image: e.target.files }))} />
+                                <input type="file" className='border p-3' name='image' onChange={e => setInputs(prev => ({ ...prev, image: e.target.files }))} />
                             </div>
                     }
 
@@ -196,7 +231,7 @@ const EditCaseStudy = () => {
                                 <div className='flex justify-between items-center'>
                                     <label htmlFor="">Section Image</label>
                                 </div>
-                                <input required key={index} type="file" className='border p-3' name='url' multiple onChange={e => {
+                                <input key={index} type="file" className='border p-3' name='url' multiple onChange={e => {
                                     let details = inputs.details.map((item, iten_index) => iten_index == index ? { ...item, images: e.target.files } : item);
                                     setInputs(prev => ({ ...prev, details }))
 
@@ -209,51 +244,11 @@ const EditCaseStudy = () => {
                     <button className='p-3 bg-primary text-white flex justify-center'>
                         {loading ? <FaSpinner size={25} className='animate-spin' /> : <span>Create Case</span>}
                     </button>
-                    {/* <input required type="text" placeholder='Enter Results' className='outline-0 border w-[100%] border-black py-3 px-5' name='results' /> */}
 
-                    {/* 
-                <Editor
-                    apiKey="sqv2eqk1gf12p0we96b3x46ym0i1vl9wr4oqvsysbaq0h105" // Get a free API key at https://www.tiny.cloud/
-                    initialValue=""
-
-                    init={{
-                        height: 500,
-                        menubar: false,
-                        plugins: ["image", "lists", "link"],
-                        toolbar: "undo redo | formatselect | bold italic | alignleft aligncenter alignright | bullist numlist outdent indent | image",
-                    }}
-                    onEditorChange={(newContent) => setContent(newContent)}
-                /> */}
                 </form>
             </div>
 
-            <div>
-                <table className='border w-[100%]'>
-                    <thead>
-                        <tr className='text-xs'>
-                            <td className='border py-4 px-5'>Brand Name</td>
-                            <td className='border px-5'></td>
-                        </tr>
-                    </thead>
 
-                    <tbody>
-                        {response?.length > 0 ? response.map(({ name, _id }, index) => <tr key={index}>
-                            <td className='border py-5 px-5'>{name}</td>
-                            <td className='border px-5'>
-                                <div className='flex justify-end gap-5'>
-                                    <AiOutlineDelete size={20} className='text-red-500 cursor-pointer' onClick={() => deleteCase(_id)} />
-                                    <FiEdit3 size={20} className='text-green-500 cursor-pointer' />
-
-                                </div>
-                            </td>
-                        </tr>) : <tr>
-                            <td colSpan={2}>
-                                <div className='h-[100px] flex justify-center items-center'>No Case Study Created</div>
-                            </td>
-                        </tr>}
-                    </tbody>
-                </table>
-            </div>
         </div>
     )
 }

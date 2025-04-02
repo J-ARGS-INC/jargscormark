@@ -4,10 +4,12 @@ import { FaSpinner } from 'react-icons/fa';
 import { AiOutlineDelete } from "react-icons/ai";
 import { toast } from 'react-toastify';
 import { FiEdit3 } from "react-icons/fi";
+import { NavLink } from 'react-router-dom';
 
 const Case_Study = () => {
 
     const [showYoutube, setShowYoutube] = useState(false);
+
     const { Post, Get, changeLoading, Delete, data: { loading, response } } = useRequest()
     const [inputs, setInputs] = useState({
         name: "",
@@ -25,7 +27,7 @@ const Case_Study = () => {
             }
         ]
     })
-    const [isEdit, setIsEdit] = useState(false);
+
     const handleAddSection = () => {
         let details = [...inputs.details, {
             title: "",
@@ -124,7 +126,6 @@ const Case_Study = () => {
         Get("/api/admin/casestudy", true)
     }, []);
 
-    // console.log(inputs.youtubeVideo)
     return (
         <div className='grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 py-10 font-Barlow'>
             <div>
@@ -188,8 +189,6 @@ const Case_Study = () => {
                         inputs.details.map(({ images, title, subtitle }, index) => <div className='flex flex-col gap-5' key={index}>
 
                             <hr className='my-5' />
-
-
                             <div className='flex flex-col gap-1'>
                                 <label htmlFor="">Section Title</label>
                                 <input required type="text" placeholder='Enter Name' className='outline-0 border w-[100%] border-black py-3 px-5' name='title' onChange={e => handleDetailsInput(e, index)} value={title} />
@@ -249,7 +248,9 @@ const Case_Study = () => {
                             <td className='border py-5 px-5'>{name}</td>
                             <td className='border px-5'>
                                 <div className='flex justify-end gap-5'>
-                                    <FiEdit3 size={20} className='text-green-500 cursor-pointer' onClick={() => editCase(_id)} />
+                                    <NavLink to={`/admin/dashboard/${_id}`}>
+                                        <FiEdit3 size={20} className='text-green-500 cursor-pointer' />
+                                    </NavLink>
 
                                     <AiOutlineDelete size={20} className='text-red-500 cursor-pointer' onClick={() => deleteCase(_id)} />
 

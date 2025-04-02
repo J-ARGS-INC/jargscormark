@@ -13,6 +13,7 @@ import CaseStudy from "../pages/CaseStudy";
 import Case_Study from "../pages/admin/CaseStudy";
 import Login from "../pages/admin/Login";
 import Dashboard from "../pages/admin/Dashboard";
+import EditCaseStudy from "../pages/admin/EditCaseStudy";
 export const router = createBrowserRouter([
     {
         path: "/",
@@ -78,6 +79,10 @@ export const router = createBrowserRouter([
                     {
                         path: "",
                         element: <Case_Study />
+                    },
+                    {
+                        path: ":id",
+                        element: <EditCaseStudy />
                     }
                 ]
             }
