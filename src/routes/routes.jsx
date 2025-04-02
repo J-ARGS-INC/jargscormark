@@ -15,6 +15,7 @@ import Login from "../pages/admin/Login";
 import Dashboard from "../pages/admin/Dashboard";
 import MetaAds from "../pages/MetaAds";
 import BrandingWebsite from "../pages/BrandingWebsite";
+import EditCaseStudy from "../pages/admin/EditCaseStudy";
 export const router = createBrowserRouter([
     {
         path: "/",
