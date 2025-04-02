@@ -5,7 +5,7 @@ import premium from "../assets/Images/SMM-09.jpg";
 import legacy from "../assets/Images/SMM-08.jpg";
 import { FiArrowDown, FiCheck } from "react-icons/fi";
 
-const SocialMediaMarketing = () => {
+const BrandingWebsite = () => {
   return (
     <div className="py-10 px-5 md:py-[18vh] md:px-20 bg-[#fafafa] flex flex-col font-Barlow">
       {/* Hero Section */}
@@ -19,8 +19,8 @@ const SocialMediaMarketing = () => {
           className="md:w-1/2 text-center md:text-left"
         >
           <h1 className="text-[38px] font-extrabold leading-tight md:text-5xl md:mb-3 text-black">
-            ELEVATE YOUR BUSINESS WITH <br />
-            <span className="text-[#052DA8]">SOCIAL MEDIA MARKETING</span>
+            REBOOST YOUR BRAND, BUILD A COMMUNITY, &{" "}
+            <span className="text-[#052DA8]">INCREASE SALES</span>
           </h1>
         </motion.div>
 
@@ -33,10 +33,10 @@ const SocialMediaMarketing = () => {
         >
           {/* Paragraph */}
           <p className="text-lg md:text-xl text-black">
-            At Jargs Cormark, we understand how frustrating it is when customers
-            can't find you online or when you're stuck figuring out how to
-            dominate the digital space. That's why we've developed proven
-            solutions to help ambitious business owners like you succeed.
+            Attention, Founders & Business Owners! It’s time to revolutionize how
+            your customers perceive, trust, and engage with your brand. Transform
+            your brand identity, brand strategy, and messaging to help you thrive
+            in 2025.
           </p>
 
           {/* Button */}
@@ -61,7 +61,7 @@ const SocialMediaMarketing = () => {
       {/* Video Section */}
       <div className="h-[450px] relative mt-14 bg-[#fafafa] md:w-2/3 self-center">
         <iframe
-          src="https://youtu.be/Nc9P5e429DE?si=O_rWtQwkgzgX5Mtk"
+          src="https://youtu.be/GviXadNi0ug"
           title="YouTube video player"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -74,39 +74,36 @@ const SocialMediaMarketing = () => {
       {/* Banner Section */}
       <div className="bg-[#000] relative text-center bg-center -mx-5 py-4 px-10 text-[20px] font-bold md:-mx-20 md:py-6">
         <p className="text-white text-center md:text-4xl">
-          You have <span className="text-orange-400 font-bold">too BIG</span> of a GOAL to
-          let SOCIAL MEDIA hold{" "}
-          <span className="text-orange-400 font-bold">you back</span>
+          You have <span className="text-orange-400 font-bold">too BIG</span> of a
+          story to have a{" "}
+          <span className="text-orange-400 font-bold">small brand</span>
         </p>
       </div>
 
-      {/* Offer Section */}
-      <div className="relative bg-gray-50 py-16 md:px-32 md:py-28 md:flex md:items-center md:gap-20 shadow-md rounded-xl">
-        <h2 className="text-4xl font-extrabold text-black md:text-6xl md:w-2/5 leading-tight md:relative md:left-20">
-          This Offer is for if{" "}
-          <span className="text-[#052DA8] block md:inline">You're in;</span>
+      {/* 5-Step Process Section */}
+      <div className="text-left py-8 md:flex md:justify-between md:px-32 md:py-28 md:items-center">
+        <h2 className="text-[32px] font-extrabold text-black md:text-6xl md:w-2/5 leading-tight md:relative md:left-20">
+          Our 5-Step Process to{" "}
+          <span className="text-[#052DA8] block md:inline">Get You Results</span>
         </h2>
 
         <div className="relative md:w-2/5 md:left-20">
           <div className="absolute -top-5 -left-5 w-16 h-16 bg-[#052DA8] opacity-20 rounded-full blur-xl"></div>
-          <ul className="grid grid-cols-2 gap-4 text-lg md:text-2xl bg-white shadow-lg p-6 rounded-lg border-l-8 border-[#052DA8]">
+          <ul className="text-lg md:text-2xl bg-white shadow-lg p-6 rounded-lg border-l-8 border-[#052DA8]">
             <li className="flex items-center gap-3">
-              <span className="text-[#052DA8] text-3xl">🏢</span> Real Estate
+              <span className="text-[#052DA8] text-3xl">1</span> Discovery Session
             </li>
             <li className="flex items-center gap-3">
-              <span className="text-[#052DA8] text-3xl">🍽</span> Hotel & Restaurants
+              <span className="text-[#052DA8] text-3xl">2</span> Audit & Analysis
             </li>
             <li className="flex items-center gap-3">
-              <span className="text-[#052DA8] text-3xl">💼</span> Professional Services
+              <span className="text-[#052DA8] text-3xl">3</span> Strategy Design
             </li>
             <li className="flex items-center gap-3">
-              <span className="text-[#052DA8] text-3xl">🛍</span> Retail
+              <span className="text-[#052DA8] text-3xl">4</span> Execution
             </li>
             <li className="flex items-center gap-3">
-              <span className="text-[#052DA8] text-3xl">📍</span> Local Businesses
-            </li>
-            <li className="flex items-center gap-3 text-lg italic text-gray-500">
-              "Or if you're Ambitious & Impact-driven" 🚀
+              <span className="text-[#052DA8] text-3xl">5</span> Refinement & Delivery
             </li>
           </ul>
         </div>
@@ -115,10 +112,11 @@ const SocialMediaMarketing = () => {
       {/* Packages Section */}
       <div className="bg-black text-white text-center px-3 py-4 mb-6 md:-mx-20 md:py-6">
         <h3 className="text-[22px] font-extrabold pb-2 md:text-4xl">
-          Our <span className="text-orange-400">Social Media Marketing</span> Packages
+          Our <span className="text-orange-400">Branding Solutions</span>
         </h3>
         <p className="text-base md:text-2xl md:pt-2">
-          Here's how you can attract more customers online while you partner with us
+          This is how you can Reboost Your Brand, build a community of loyal
+          customers, and Increase sales
         </p>
       </div>
 
@@ -133,24 +131,25 @@ const SocialMediaMarketing = () => {
           {/* Content Section */}
           <div className="flex flex-col justify-center md:w-2/4 p-6">
             <h3 className="text-[#052DA8] pt-4 text-xl font-extrabold font-Barlow md:text-[28px] leading-snug">
-              For businesses ready to build a strong online presence
+              BASIC REBOOST
             </h3>
+            <p className="text-lg md:text-xl text-black">
+              For businesses that want to start with a clean, professional visual
+              for their brand:
+            </p>
 
             <ul className="text-lg md:text-xl list-none space-y-4 bg-white shadow-md rounded-lg p-6 border-l-8 border-[#052DA8] mt-6">
               <li className="flex items-center gap-3">
-                <span className="text-[#052DA8] text-3xl">✔</span> Complete review of your social media presence
+                <span className="text-[#052DA8] text-3xl">✔</span> Logo
               </li>
               <li className="flex items-center gap-3">
-                <span className="text-[#052DA8] text-3xl">✔</span> Content plan that connects you with customers
+                <span className="text-[#052DA8] text-3xl">✔</span> Brand Guidelines
               </li>
               <li className="flex items-center gap-3">
-                <span className="text-[#052DA8] text-3xl">✔</span> Social media setup and optimization
+                <span className="text-[#052DA8] text-3xl">✔</span> Brand Identity Design or Revamp
               </li>
               <li className="flex items-center gap-3">
-                <span className="text-[#052DA8] text-3xl">✔</span> Clear performance tracking
-              </li>
-              <li className="flex items-center gap-3">
-                <span className="text-[#052DA8] text-3xl">✔</span> Monthly planning sessions
+                <span className="text-[#052DA8] text-3xl">✔</span> Perfect For: A quick, professional visual upgrade
               </li>
             </ul>
 
@@ -165,7 +164,7 @@ const SocialMediaMarketing = () => {
                 className="px-6 py-4 font-Barlow font-bold text-white text-lg md:text-xl rounded-lg transition-all duration-300 hover:bg-[#052DA8]"
                 style={{ backgroundColor: "#0E28C3" }}
               >
-                Let’s See If BASIC is Right for You – Book a Call
+                CLICK TO VIEW OUR PRICES AND AVAILABILITY
               </button>
             </motion.div>
           </div>
@@ -183,24 +182,28 @@ const SocialMediaMarketing = () => {
           {/* Content Section */}
           <div className="flex flex-col justify-center md:w-2/4 p-6">
             <h3 className="text-[#052DA8] pt-4 text-xl font-extrabold font-Barlow md:text-[28px] leading-snug">
-              Maximize Sales with Precision Targeting
+              ESSENTIAL REBOOST
             </h3>
+            <p className="text-lg md:text-xl text-black">
+              For businesses ready to combine visuals and a sales funnel to look
+              more professional and convert sales:
+            </p>
 
             <ul className="text-lg md:text-xl list-none space-y-4 bg-white shadow-md rounded-lg p-6 border-l-8 border-[#052DA8] mt-6">
               <li className="flex items-center gap-3">
-                <span className="text-[#052DA8] text-3xl">✔</span> Everything in Basic, plus:
+                <span className="text-[#052DA8] text-3xl">✔</span> Everything in Basic Reboot, plus:
               </li>
               <li className="flex items-center gap-3">
-                <span className="text-[#052DA8] text-3xl">✔</span> Strategy for multiple social platforms
+                <span className="text-[#052DA8] text-3xl">✔</span> Website & SEO
               </li>
               <li className="flex items-center gap-3">
-                <span className="text-[#052DA8] text-3xl">✔</span> High-quality content creation
+                <span className="text-[#052DA8] text-3xl">✔</span> Sales Funnel
               </li>
               <li className="flex items-center gap-3">
-                <span className="text-[#052DA8] text-3xl">✔</span> Analysis of your competitors
+                <span className="text-[#052DA8] text-3xl">✔</span> Recommended Automations
               </li>
               <li className="flex items-center gap-3">
-                <span className="text-[#052DA8] text-3xl">✔</span> Managed Social media advertising
+                <span className="text-[#052DA8] text-3xl">✔</span> Website Copywriting
               </li>
             </ul>
 
@@ -215,7 +218,7 @@ const SocialMediaMarketing = () => {
                 className="px-6 py-4 font-Barlow font-bold text-white text-lg md:text-xl rounded-lg transition-all duration-300 hover:bg-[#052DA8]"
                 style={{ backgroundColor: "#0E28C3" }}
               >
-                Let’s See If PREMIUM is Right for You – Book a Call
+                CLICK TO VIEW OUR PRICES AND AVAILABILITY
               </button>
             </motion.div>
           </div>
@@ -233,33 +236,28 @@ const SocialMediaMarketing = () => {
           {/* Content Section */}
           <div className="flex flex-col justify-center md:w-2/4 p-6">
             <h3 className="text-[#052DA8] pt-4 text-xl font-extrabold font-Barlow md:text-[28px] leading-snug">
-              Achieve Market Dominance & Scale with Confidence
+              COMPLETE REBOOST
             </h3>
+            <p className="text-lg md:text-xl text-black">
+              For businesses aiming for complete market dominance and building an
+              actual community behind their brand:
+            </p>
 
             <ul className="text-lg md:text-xl list-none space-y-4 bg-white shadow-md rounded-lg p-6 border-l-8 border-[#052DA8] mt-6">
               <li className="flex items-center gap-3">
-                <span className="text-[#052DA8] text-3xl">✔</span> Everything in Premium, plus:
+                <span className="text-[#052DA8] text-3xl">✔</span> Everything in Basic & Essential Reboot, plus:
               </li>
               <li className="flex items-center gap-3">
-                <span className="text-[#052DA8] text-3xl">✔</span> Reputation protection planning
+                <span className="text-[#052DA8] text-3xl">✔</span> Brand Strategy
               </li>
               <li className="flex items-center gap-3">
-                <span className="text-[#052DA8] text-3xl">✔</span> In-depth market research
+                <span className="text-[#052DA8] text-3xl">✔</span> Brand Messaging
               </li>
               <li className="flex items-center gap-3">
-                <span className="text-[#052DA8] text-3xl">✔</span> Priority support
+                <span className="text-[#052DA8] text-3xl">✔</span> Brand Positioning
               </li>
               <li className="flex items-center gap-3">
-                <span className="text-[#052DA8] text-3xl">✔</span> Quarterly business reviews
-              </li>
-              <li className="flex items-center gap-3">
-                <span className="text-[#052DA8] text-3xl">✔</span> Advanced marketing automation
-              </li>
-              <li className="flex items-center gap-3">
-                <span className="text-[#052DA8] text-3xl">✔</span> Brand Management Support
-              </li>
-              <li className="flex items-center gap-3">
-                <span className="text-[#052DA8] text-3xl">✔</span> Complete market leadership strategy
+                <span className="text-[#052DA8] text-3xl">✔</span> 6 Weeks Brand Coaching and Implementation Guidelines
               </li>
             </ul>
 
@@ -274,14 +272,14 @@ const SocialMediaMarketing = () => {
                 className="px-6 py-4 font-Barlow font-bold text-white text-lg md:text-xl rounded-lg transition-all duration-300 hover:bg-[#052DA8]"
                 style={{ backgroundColor: "#0E28C3" }}
               >
-                Let’s See If LEGACY is Right for You – Book a Call
+                BOOK A CALL TO SEE IF LEGACY IS RIGHT FOR YOU
               </button>
             </motion.div>
           </div>
         </div>
       </div>
 
-      {/* Don't Miss Out Section */}
+      {/* Risks Section */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -289,23 +287,25 @@ const SocialMediaMarketing = () => {
         className="bg-black text-white text-left px-6 py-10 mt-10 rounded-t-2xl md:w-6/12 md:self-center shadow-lg"
       >
         <h3 className="text-4xl text-balance font-extrabold pb-2 text-red-600 md:text-[40px] leading-tight">
-          Don't Keep Losing Money on Poor Social Media Strategies
+          The Risks of Not Branding Properly
         </h3>
-        <p className="text-2xl my-4 text-gray-300">Everyday with underperforming social media means:</p>
         <ul className="list-disc px-5 text-xl md:text-2xl space-y-3 text-gray-100">
-          <li className="hover:text-red-500 transition-all">💸 Lost customers</li>
-          <li className="hover:text-red-500 transition-all">📈 Missed sales opportunities</li>
-          <li className="hover:text-red-500 transition-all">🚫 Higher costs to get new customers</li>
-          <li className="hover:text-red-500 transition-all">📉 Weaker brand reputation</li>
+          <li className="hover:text-red-500 transition-all">
+            💸 Loss of revenue due to inconsistent or outdated branding
+          </li>
+          <li className="hover:text-red-500 transition-all">
+            📈 Struggling with customer trust and loyalty
+          </li>
+          <li className="hover:text-red-500 transition-all">
+            🚫 Missed opportunities in competitive markets
+          </li>
+          <li className="hover:text-red-500 transition-all">
+            📉 Ineffective communication of your brand’s value and story
+          </li>
+          <li className="hover:text-red-500 transition-all">
+            ⚠️ Difficulty attracting your ideal clients
+          </li>
         </ul>
-
-        {/* Optional Call-to-Action Button */}
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          className="mt-6 bg-red-600 text-white text-lg font-bold px-6 py-3 rounded-lg transition-all hover:bg-red-700"
-        >
-          Fix Your Social Media Now
-        </motion.button>
       </motion.div>
 
       {/* Final Banner Section */}
@@ -340,13 +340,16 @@ const SocialMediaMarketing = () => {
           <h3 className="text-4xl font-extrabold pb-2 text-red-700 text-center">
             🚀 Special Offer - Limited Time Only
           </h3>
-          <p className="text-2xl my-3 text-center">Act before <span className="font-bold text-orange-400">March 28th, 2025</span>, and receive:</p>
+          <p className="text-2xl my-3 text-center">
+            Act before <span className="font-bold text-orange-400">March 28th, 2025</span>, and receive:
+          </p>
           <ul className="list-disc px-6 text-2xl space-y-2">
-            <li> Free Meta Ads Account Audit & Creation</li>
-            <li> Free Custom Campaign Strategy</li>
-            <li> Free Audience Building Strategy</li>
+            <li>Tailored Marketing and Brand Research</li>
+            <li>Tailored Marketing and Brand Strategy</li>
           </ul>
-          <p className="text-2xl mt-4 text-center font-semibold text-green-400">🎁 All as a Bonus!</p>
+          <p className="text-2xl mt-4 text-center font-semibold text-green-400">
+            🎁 All as a Bonus!
+          </p>
         </motion.div>
 
         {/* 60 Days Money-Back Guarantee */}
@@ -354,27 +357,31 @@ const SocialMediaMarketing = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-center bg-gradient-to-r from-[#0E28C3] to-[#052DA8] text-white -mx-4 pt-12 pb-6 -mt-6 rounded-lg shadow-md"
+          className="text-center bg-gradient-to-r from-[#0E28C3] to-[#052DA8] text-white -mx-4 pt-14 pb-6 -mt-6 rounded-lg shadow-md"
         >
           <h3 className="text-3xl font-extrabold my-2">💰 60 Days Money-Back Guarantee!</h3>
-          <p className="text-xl">If you're not satisfied working with us, we’ll refund you!</p>
+          <p className="text-xl">If you don’t start getting results</p>
         </motion.div>
       </div>
 
       {/* Final Call to Action */}
       <div className="flex flex-col">
         <button
-          className="px-4 py-3 font-Barlow font-extrabold text-[#0E28C3] transition-all duration-300 text-[28px] w-11/12 rounded-3xl self-center border border-blue-800 hover:bg-[#052DA8] hover:text-[#fafafa] md:w-1/3 md:self-center"
+          className="px-4 py-3 mt-8 font-Barlow font-extrabold text-[#0E28C3] transition-all duration-300 text-[28px] w-11/12 rounded-3xl self-center border border-blue-800 hover:bg-[#052DA8] hover:text-[#fafafa] md:w-1/3 md:self-center"
         >
           BOOK A CALL NOW
         </button>
 
         <p className="text-[23px] px-4 pt-4 text-center text-[#05058E] font-medium">
-          Let&apos;s Get you More Customers, Increase your Brand Visibility & contribute to your Success.
+          Limited spots available to ensure quality service
+        </p>
+
+        <p className="text-[18px] px-4 pt-4 text-center text-black font-medium">
+          "The Year Is Already Moving Fast—Don’t Let Your Brand Fall Behind."
         </p>
       </div>
     </div>
   );
 };
 
-export default SocialMediaMarketing;
+export default BrandingWebsite;
