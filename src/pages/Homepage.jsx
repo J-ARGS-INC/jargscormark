@@ -1,718 +1,386 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
-import { RxArrowRight } from "react-icons/rx";
-import { TbLocation } from "react-icons/tb";
-import { BsChat } from "react-icons/bs";
-import { PiFunnel } from "react-icons/pi";
-import { MdShowChart } from "react-icons/md";
-import { Autoplay, Pagination, Navigation } from 'swiper/modules';
-import { SwiperSlide, Swiper } from 'swiper/react'
+import React from 'react';
+import { NavLink } from 'react-router-dom';
 import { motion } from 'framer-motion';
-
-import Img1 from "../assets/Images/clientLogo.png"
-import Img2 from "../assets/Images/clientLogo2.png"
-import Img3 from "../assets/Images/clientLogo3.png"
-import Img4 from "../assets/Images/clientLogo4.png"
-import Img5 from "../assets/Images/clientLogo5.png"
-import Img6 from "../assets/Images/clientLogo6.png"
-import Img7 from "../assets/Images/clientLogo7.png"
-import testimonial1 from "../assets/Images/testimonial1.jpg"
-import testimonial2 from "../assets/Images/testimonial2.jpg"
+import { RxArrowRight } from 'react-icons/rx';
+import { 
+  HiOutlinePhone, 
+  HiOutlineLightningBolt, 
+  HiOutlineCube,
+  HiOutlineGlobeAlt,
+  HiOutlineCode,
+  HiOutlineLightBulb,
+  HiOutlineCheckCircle,
+  HiOutlineSparkles
+} from 'react-icons/hi';
+import { 
+  FaHospital, 
+  FaChartLine, 
+  FaShoppingCart, 
+  FaTruck, 
+  FaHome, 
+  FaBuilding 
+} from 'react-icons/fa';
+import VideoHero from '../components/VideoHero';
 
 const Homepage = () => {
-    // let video = use
-    const testimonials = [
-        {
-            text: "Jargs Cormark completely transformed our social media presence. Their strategic approach and creative ideas boosted our engagement by 300%! Their professionalism and dedication made the process enjoyable and stress-free",
-            image: "https://images.pexels.com/photos/17243573/pexels-photo-17243573/free-photo-of-a-woman-in-white-pants-and-a-black-top.jpeg?auto=compress&cs=tinysrgb&w=600",
-            name: "Sarah K.",
-            role: "Canada"
-        },
-        {
-            text: "The team at Jargs Cormark truly understands branding. They helped refine my business identity with precision and clarity. Their insights were not just theoretical but actionable. My brand has never felt this aligned and impactful!",
-            image: "https://images.pexels.com/photos/2024901/pexels-photo-2024901.jpeg?auto=compress&cs=tinysrgb&w=600",
-            name: "Daniel M.",
-            role: "South Africa"
-        },
-        {
-            text: "Jargs Cormark delivered a stunning video that exceeded my expectations. From concept to execution, their attention to detail and commitment to quality stood out. I was kept involved every step of the way, and the results speak for themselves",
-            image: "https://images.pexels.com/photos/29515056/pexels-photo-29515056/free-photo-of-elegant-portrait-of-woman-in-black-hijab.jpeg?auto=compress&cs=tinysrgb&w=600",
-            name: "Aisha R.",
-            role: "United Kingdom"
-        },
-        {
-            text: "Jargs Cormark’s content writing service is exceptional. They captured my brand’s voice perfectly and delivered compelling copy that resonated with my audience. The turnaround time was impressive, and the quality unmatched.",
-            image: "https://images.pexels.com/photos/6584748/pexels-photo-6584748.jpeg?auto=compress&cs=tinysrgb&w=600",
-            name: "James O.",
-            role: "United Kingdom"
-        },
-        {
-            text: "Jargs Cormark made a remarkable impact on my business with their professionalism and tailored support. From clear strategies to tangible outcomes, their dedication ensured seamless and productive results. Truly invaluable!",
-            image: testimonial1,
-            name: "Olalode R.",
-            role: "Canada"
-        },
-        {
-            text: "Working with Jargs Cormark was a seamless experience. From the well-thought-out video plan to their proactive follow-up and responsiveness to feedback, they ensured every detail was perfect. I’m thrilled with the final product!",
-            image: testimonial2,
-            name: "Blessing",
-            role: " Nigeria"
-        },
-        {
-            text: "From creative content to precise social media management, they’ve elevated our presence and driven consistent engagement. ",
-            image: "https://images.pexels.com/photos/2921045/pexels-photo-2921045.jpeg?auto=compress&cs=tinysrgb&w=600",
-            name: "Kouamé",
-            role: "Ghana"
-        },
-        {
-            text: "Our website looks amazing, since launching it with Jargs Cormark, we look more presentable and our sales have grown significantly",
-            image: "https://images.pexels.com/photos/2327283/pexels-photo-2327283.jpeg?auto=compress&cs=tinysrgb&w=600",
-            name: "Clinton",
-            role: "Rwanda"
+  const industries = [
+    { icon: FaHome, name: 'Real Estate' },
+    { icon: FaHospital, name: 'Healthcare' },
+    { icon: FaBuilding, name: 'Professional Services' },
+    { icon: FaShoppingCart, name: 'E-commerce' },
+    { icon: FaTruck, name: 'Home Services' },
+    { icon: FaChartLine, name: 'Finance' },
+  ];
+
+  const services = [
+    {
+      icon: HiOutlinePhone,
+      title: 'AI Voice Agents',
+      description: 'Deploy voice agents that answer calls, qualify leads, and book appointments 24/7.',
+      outcome: '80% faster response time'
+    },
+    {
+      icon: HiOutlineLightningBolt,
+      title: 'Workflow Automation',
+      description: 'Connect your apps and automate repetitive tasks with n8n and Make.',
+      outcome: '60% less manual work'
+    },
+    {
+      icon: HiOutlineCube,
+      title: 'MCP Integration',
+      description: 'Give AI agents secure access to your databases and business systems.',
+      outcome: 'AI that acts on real data'
+    },
+    {
+      icon: HiOutlineGlobeAlt,
+      title: 'AI Lead Generation',
+      description: 'High-converting websites with AI-powered chat and automated follow-up.',
+      outcome: '3x more qualified leads'
+    },
+    {
+      icon: HiOutlineCode,
+      title: 'Custom Software',
+      description: 'Tailored web applications, dashboards, and internal tools for your business.',
+      outcome: 'Built for your needs'
+    },
+    {
+      icon: HiOutlineLightBulb,
+      title: 'AI Consulting',
+      description: 'Strategic guidance on implementing AI automation in your business.',
+      outcome: 'Clear roadmap to results'
+    },
+  ];
+
+  const stats = [
+    { value: '50+', label: 'Automations Deployed' },
+    { value: '10K+', label: 'Hours Saved Monthly' },
+    { value: '95%', label: 'Client Retention' },
+    { value: '24/7', label: 'AI Availability' },
+  ];
+
+  const benefits = [
+    'We deploy AI, we don\'t build it—faster results, lower costs',
+    'Production-ready systems, not experiments',
+    'End-to-end delivery from strategy to deployment',
+    'Ongoing support and optimization included'
+  ];
+
+  const techStack = [
+    { name: 'VAPI', category: 'Voice AI' },
+    { name: 'n8n', category: 'Automation' },
+    { name: 'MCP', category: 'AI Integration' },
+    { name: 'Make', category: 'Automation' },
+    { name: 'GoHighLevel', category: 'CRM' },
+    { name: 'OpenAI', category: 'AI' },
+  ];
+
+  return (
+    <div className="min-h-screen bg-white">
+      {/* Hero Section with Video Background */}
+      <VideoHero
+        title={
+          <>
+            We Deploy AI That{' '}
+            <span className="gradient-text-animated">Runs Your Business</span>
+          </>
         }
-    ]
-    const services = [
-        {
-            header: "Brand Strategy & Positioning",
-            subtext: "Stand out with strategies that build trust and highlight your unique value.",
-            id: "brand_strategy",
-            priceRange: "$999"
-        },
-        {
-            header: "Digital Marketing",
-            subtext: "Reach your audience where they are with campaigns that drive results, from social media, email, website, or targeted ads. This is our full digital marketing package for you on a monthly basis. ",
-            id: "digital_marketing",
-            priceRange: "$2299",
-        },
-        {
-            header: "Content Creation and Video Production",
-            subtext: "Engage, inspire, and convert with high-quality, impactful Storytelling content. ",
-            id: "web_development",
-            priceRange: "$99",
-        },
-        {
-            header: "Social Media Management",
-            subtext: "Turn your social media channels into powerful tools for connection and growth. We create and manage tailored content strategies that resonate with your audience, drive engagement, and build a loyal community around your brand.",
-            id: "social_media",
-            priceRange: "Premium - $1299, Standard - $799,Basic - $499 ",
-        },
-    ]
-    return (
-        <>
-            {/* Landing page */}
-            <header>
-                <div className='md:h-[95vh] grid grid-cols-1  md:grid-cols-2 py-10 px-5  md:py-[18vh] md:px-20 bg-[#f5f5f5] relative'>
+        subtitle="AI automation using VAPI, n8n, and MCP—so you can scale without adding headcount."
+        ctaText="Book Free Strategy Call"
+        ctaLink="/book-consultation"
+        secondaryCtaText="View Our Services"
+        secondaryCtaLink="/services"
+      />
 
-                    <div className='font-Mulish relative z-10 text-white'>
+      {/* Tech Stack Banner */}
+      <section className="py-8 bg-gray-50 border-y border-gray-200">
+        <div className="container-main">
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
+            <span className="text-sm font-medium text-gray-500 mr-2">Powered by:</span>
+            {techStack.map((tech, index) => (
+              <motion.div
+                key={tech.name}
+                className="tech-badge"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.05 }}
+              >
+                {tech.name}
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-                        {/* <motion.p initial={{ translateX: -200, opacity: 0 }} animate={{ translateX: 0, opacity: 1 }} className=''>Ready to ignite your business with <b className='text-purple'>JARGS?</b></motion.p> */}
-
-                        <div className='font-Barlow py-5'>
-                            <motion.div initial={{ translateY: 30, opacity: 0 }} animate={{ translateY: 0, opacity: 1 }} transition={{ duration: 0.4, delay: 0.2 }}>
-                                <h1 className='text-5xl md:text-6xl font-bold capitalize mb-3' >Empower Your Brand & Sell More</h1>
-                            </motion.div>
-                            <motion.div initial={{ translateX: -20, opacity: 0 }} animate={{ translateX: 0, opacity: 1 }} transition={{ delay: 0.4 }}>
-                                <p className='text-xl mb-8'>We’re a Digital Marketing and Branding Agency that wants Your business to stand out, dominate markets, and achieve lasting success with purpose-driven strategies.
-                                </p>
-                            </motion.div>
-                            <div className='grid grid-cols-1 md:grid-cols-2 gap-[5vw]'>
-                                <motion.div initial={{ y: 50, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.5 }}>
-                                    <NavLink to={"/contact_us"} className={"flex items-center gap-3 justify-between bg-primary py-4 px-5  text-secondary rounded-full hover:bg-secondary hover:text-primary duration-500 hover:border-primary border border-transparent hover:shadow-lg "}>Start now<TbLocation size={20} /></NavLink>
-                                </motion.div>
-
-                                <motion.div initial={{ y: 50, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.6 }}>
-
-                                    <NavLink to={"/contact_us"} className={"flex items-center gap-3 justify-between bg-secondary py-4 px-5  text-primary rounded-full border hover:border-primary duration-500 "}>Schedule a Consultation<RxArrowRight size={20} className='' /></NavLink>
-                                </motion.div>
-
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div className='absolute w-[100%] h-[100%] top-0 left-0'>
-                        <div className='absolute w-[100%] h-[100%] ' style={{ background: "linear-gradient(to right, rgba(0,0,0,.65) 40%, rgba(0,0,0,.45))" }}></div>
-                        <video src="https://videos.pexels.com/video-files/9365552/9365552-sd_640_360_25fps.mp4" className='w-[100%] h-[100%] object-cover' autoPlay={true} muted={true} loop={true} playsInline preload='auto'></video>
-                    </div>
-
+      {/* Trusted Industries Banner */}
+      <section className="py-12 bg-blue-subtle border-b border-gray-200">
+        <div className="container-main">
+          <div className="text-center mb-8">
+            <p className="text-sm font-semibold text-gray-600 uppercase tracking-wider">
+              Trusted Across Industries
+            </p>
+          </div>
+          <div className="flex flex-wrap justify-center gap-8 md:gap-12">
+            {industries.map((industry, index) => (
+              <motion.div
+                key={industry.name}
+                className="flex flex-col items-center gap-2 group cursor-pointer"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <div className="w-14 h-14 flex items-center justify-center rounded-xl bg-gray-100 text-gray-700 group-hover:bg-indigo-100 group-hover:text-indigo-600 transition-all duration-300">
+                  <industry.icon size={24} />
                 </div>
-            </header>
-            {/* Landing page ends*/}
+                <span className="text-sm font-medium text-gray-700 group-hover:text-indigo-600 transition-colors">
+                  {industry.name}
+                </span>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-            {/* Steps */}
-            <section className='font-Mulish py-5 px-5 md:px-24 grid grid-cols-1 md:grid-cols-3 gap-10 border-b text-lg capitalize'>
-                <div className='flex gap-5 items-center'>
-                    <BsChat className='text-primary' size={30} />
-                    <div className=''>
-                        <p>Step one: </p>
-                        <p>Contact us</p>
-                    </div>
+      {/* Services Section */}
+      <section className="section bg-subtle">
+        <div className="container-main">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <motion.div
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-4 glow-border"
+              style={{ 
+                background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(56, 189, 248, 0.05))',
+              }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <HiOutlineSparkles className="text-indigo-500" />
+              <span className="text-sm font-medium text-indigo-600">
+                Our Services
+              </span>
+            </motion.div>
+            <motion.h2
+              className="text-headline mb-4"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              AI Automation That Delivers{' '}
+              <span className="gradient-text">Real Results</span>
+            </motion.h2>
+            <motion.p
+              className="text-body-lg"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              We deploy proven AI systems that automate your operations, qualify leads, 
+              and scale your business—without custom model building or R&D experiments.
+            </motion.p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            {services.map((service, index) => (
+              <motion.div
+                key={service.title}
+                className="card-futuristic group"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <div className="icon-futuristic mb-4">
+                  <service.icon size={24} />
                 </div>
-
-                <div className='flex gap-5 items-center'>
-                    <PiFunnel className='text-primary' size={30} />
-                    <div className=''>
-                        <p>Step two: </p>
-                        <p>Get tailored strategy and solutions
-                        </p>
-                    </div>
-
+                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                  {service.title}
+                </h3>
+                <p className="text-gray-600 mb-3">
+                  {service.description}
+                </p>
+                <div className="flex items-center gap-2 text-sm text-indigo-600 font-medium">
+                  <HiOutlineCheckCircle size={16} />
+                  <span>{service.outcome}</span>
                 </div>
+              </motion.div>
+            ))}
+          </div>
 
-                <div className='flex gap-5 items-center'>
-                    <MdShowChart className='text-primary' size={30} />
-                    <div className=''>
-                        <p>Step three: </p>
-                        <p>Scale Revenue, Watch Your Brand Thrive</p>
-                    </div>
+          {/* Benefits List */}
+          <motion.div
+            className="card-futuristic p-8 max-w-3xl mx-auto"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+              The Jargs Cormark Difference
+            </h3>
+            <div className="grid md:grid-cols-2 gap-4">
+              {benefits.map((benefit, index) => (
+                <div key={index} className="flex items-start gap-3">
+                  <div className="w-5 h-5 rounded-full bg-indigo-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <HiOutlineCheckCircle className="text-indigo-600" size={16} />
+                  </div>
+                  <span className="text-gray-700">{benefit}</span>
                 </div>
-            </section>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
 
-            {/* Trusted By */}
-            <section className='py-5 px-5  md:py-5 md:px-20'>
-
-                {/* Why we do what we do */}
-                <div className='grid grid-cols-1 gap-10 items-start md:grid-cols-2 font-Barlow py-24'>
-                    <div>
-                        <motion.div initial={{ x: 50, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }}>
-                            <div className='text-lg flex items-center gap-x-3 '>
-                                <div className='w-5 h-5 bg-purple rounded-xl'></div>
-                                {/* <p>About</p> */}
-                            </div>
-                        </motion.div>
-
-                    </div>
-                    <div>
-                        <motion.div initial={{ y: 30, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ delay: 0.25 }} className=''>
-                            <h1 className='text-3xl md:text-4xl font-bold capitalize mb-5'> Why We Do What We Do</h1>
-                            <p className='text-xl'>
-                                We’re here to help vision-driven entrepreneurs and businesses gain the recognition they deserve. Achieving greatness is no small feat—we understand the challenges, and that’s why we’re committed to being your trusted partner every step of the way.
-                            </p>
-
-
-                        </motion.div>
-
-                    </div>
-
+      {/* Stats Section */}
+      <section className="py-16 bg-gray-900 relative overflow-hidden">
+        <div className="absolute inset-0 bg-dots-futuristic opacity-30" />
+        <motion.div 
+          className="absolute top-0 left-1/4 w-96 h-96 bg-indigo-500/20 rounded-full blur-3xl"
+          animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.3, 0.2] }}
+          transition={{ duration: 8, repeat: Infinity }}
+        />
+        <div className="container-main relative z-10">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {stats.map((stat, index) => (
+              <motion.div
+                key={stat.label}
+                className="text-center"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <div className="text-4xl md:text-5xl font-bold gradient-text mb-2">
+                  {stat.value}
                 </div>
-                <hr className='mb-20' />
-                {/* How jargs comark can help you succeed */}
-                <motion.div initial={{ y: 50, opacity: 0 }} viewport={{ amount: 0.5, once: true }} whileInView={{ y: 0, opacity: 1 }} className='grid grid-cols-1 md:grid-cols-3  mb-20 items-center'>
-                    <div>
-                        <h1 className='font-Barlow text-3xl md:text-4xl mb-5 capitalize'>
-                            The more visible your brand is, the more opportunities
-
-                            <b className='text-primary'> you create to scale your revenue.</b>
-                        </h1>
-
-                    </div>
-                    <div></div>
-                    <div>
-                        <h1 className='font-Barlow text-2xl mb-5'> How Can Jargs Cormark Help You Succeed?</h1>
-                        <p className='font-Mulish mb-6'>Visibility drives growth. Jargs Cormark ensures you’re seen where it matters</p>
-                        <ul className='font-Mulish list-disc flex flex-col gap-y-5 mb-10 px-5 md:px-0'>
-                            <li><b className='font-semibold'>Boost Your Online Presence:</b> Increase visibility across platforms with tailored strategies
-                            </li>
-
-                            <li>
-                                <b className='font-semibold'>Attract New Customers:</b>  Engage your ideal audience with compelling content and targeted ads.
-
-                            </li>
-
-                            <li>
-                                <b className='font-semibold'>   Turn Visibility into Profit: </b>
-
-                                Build trust, convert attention into sales, and scale sustainably.
-                            </li>
-
-                        </ul>
-
-
-                        <NavLink to={"/grow_your_sales"} className={"flex w-[100%] items-center gap-3 justify-center bg-primary py-4 px-5 text-lg text-secondary rounded-full hover:bg-secondary hover:text-primary duration-500 hover:border-primary border border-transparent hover:shadow-lg"}>Get Started Today </NavLink>
-                    </div>
-                </motion.div>
-
-
-                <motion.div className='mb-10' initial={{ y: 50, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ delay: 0.1, duration: 0.3 }}>
-                    <div className='flex justify-center'>
-                        <h1 className='text-lg capitalize font-Mulish mb-4'>Chosen by Entrepreneurs Who
-                            <b className='text-purple'> Dare to Dream</b> Big</h1>
-                    </div>
-                    <div className='flex flex-wrap justify-between grayscale' id=''>
-
-                        <>
-                            <img src={Img1} alt="" className='w-24 h-24 object-contain' />
-                        </>
-                        <>
-                            <img src={Img2} alt="" className='w-24 h-24 object-contain' /></>
-                        <>
-                            <img src={Img3} alt="" className='w-24 h-24 object-contain' />
-                        </>
-
-                        <>
-                            <img src={Img4} alt="" className='w-24 h-24 object-contain' />
-
-                        </>
-                        <>
-                            <img src={Img5} alt="" className='w-24 h-24 object-contain' />
-                        </>
-                        <>
-                            <img src={Img6} alt="" className='w-24 h-24 object-contain' />
-                        </>
-                        <>
-                            <img src={Img7} alt="" className='w-24 h-24 object-contain' />
-                        </>
-
-
-
-
-
-
-                    </div>
-                </motion.div>
-
-                {/* Testimonial */}
-                <div className='grid gap-y-10 grid-cols-1 md:grid-cols-3 my-20 items-center'>
-                    <div>
-                        <h1 className='font-Barlow text-5xl mb-3'>From our <b>Community.</b></h1>
-                        <p className='font-Mulish text-lg mb-6'>Here's what our client's have to say about our services</p>
-
-                        <NavLink to={"/a"} className={"w-fit flex items-center gap-3 justify-between bg-secondary py-4 px-5 font-Mulish text-primary md:text-sm rounded-full border border-primary duration-500 capitalize"}>Boost your brand visibility</NavLink>
-                    </div>
-
-                    <div></div>
-
-                    <div>
-                        <Swiper className='w-[100%] h-[350px] ' slidesPerView={1} modules={[Autoplay]} autoplay direction='vertical' centeredSlides={true} loop>
-                            {
-                                testimonials.map(({ image, name, role, text }, index) => index + 1 <= 3 && <SwiperSlide key={index}>
-                                    <div>
-                                        <h1 className='font-Barlow text-xl mb-5'>
-                                            {text}
-                                        </h1>
-                                        <div className='flex gap-5'>
-                                            <div className='w-12 h-12'>
-                                                <img src={image} className='rounded-full w-[100%] h-[100%] object-cover' alt="" />
-                                            </div>
-                                            <div>
-                                                <h1 className='font-Barlow font-bold'>{name}</h1>
-                                                <p className='md:text-sm font-Mulish'>{role}</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </SwiperSlide>)
-                            }
-
-                        </Swiper>
-                    </div>
+                <div className="text-gray-400 text-sm md:text-base font-medium">
+                  {stat.label}
                 </div>
-
-                {/* Our services */}
-                <section className='font-Mulish py-10 md:py-5 grid grid-cols-1 md:grid-cols-2 gap-20   capitalize'>
-                    <motion.div initial={{ y: 50, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} viewport={{ amount: 0.5 }}>
-                        <h1 className='text-3xl mb-3'>Our <br /> <b className='font-extrabold text-primary'>services</b> </h1>
-                        <p className='mb-6'>At Jargs Cormark, we specialize in helping high performing businesses and entrepreneurs like you break barriers, build connections, and transform potential into profits. From creating compelling content to designing conversion-driven campaigns, we’re here to turn your vision into a thriving reality.
-                        </p>
-
-                    </motion.div>
-
-                    <div className='md:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-5 md:px-20'>
-                        {
-                            services.map(({ header, priceRange, subtext, id }, index) =>
-
-                                <NavLink key={index} to={`/grow_your_sales#${id}`} className={'border border-primary rounded-2xl '}>
-                                    <motion.div className='flex flex-col px-5 py-10 justify-between  h-[100%]' key={index} initial={{ x: index % 2 == 0 ? 20 : -20, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} viewport={{ amount: 0.5, once: true }}>
-                                        <div className='mb-10'>
-                                            <h1 className='text-2xl font-bold font-Barlow mb-5 text-primary'>{header}</h1>
-                                            <p>
-                                                {subtext}
-                                            </p>
-                                        </div>
-
-                                        <p className='font-Mulish text-sm italic underline font-light'>Read more...</p>
-                                    </motion.div>
-                                </NavLink>
-                            )
-                        }
-
-
-                        <div className='md:col-span-2 mt-10 flex justify-center'>
-
-                            <NavLink to={"/grow_your_sales"} className={"flex w-[100%]  md:w-[50%] items-center gap-3 justify-center bg-primary py-4 px-5 text-lg text-secondary rounded-full hover:bg-secondary hover:text-primary duration-500 hover:border-primary border border-transparent hover:shadow-lg"}>Discover      </NavLink>
-                        </div>
-                    </div>
-
-                </section>
-
-                {/* The longer you wait */}
-                <motion.div initial={{ y: 50, opacity: 0 }} viewport={{ amount: 0.5, once: true }} whileInView={{ y: 0, opacity: 1 }} className='grid grid-cols-1 md:grid-cols-3  mb-20 mt-20 items-center gap-10 '>
-                    <div>
-                        <h1 className='font-Barlow text-5xl mb-5 capitalize'>The Longer you wait, <b className='text-primary'>the harder it becomes.</b></h1>
-
-                        <NavLink to={"/grow_your_sales"} className={"flex w-[100%] items-center gap-3 justify-center bg-primary py-4 px-5 text-lg text-secondary rounded-full hover:bg-secondary hover:text-primary duration-500 hover:border-primary border border-transparent hover:shadow-lg"}>Start Now </NavLink>
-                    </div>
-                    <div></div>
-                    <div>
-                        <h1 className='font-Barlow text-3xl md:text-4xl mb-5'> Take action now or Risk:</h1>
-                        <ul className='font-Mulish list-disc flex flex-col gap-y-5 px-5 md:px-0'>
-                            <li>Falling behind competitors stealing your customers.
-                            </li>
-                            <li>
-                                Wasting time and resources on ineffective strategies.
-
-                            </li>
-                            <li>
-                                Losing trust and credibility with a weak online presence.
-
-                            </li>
-                        </ul>
-                    </div>
-                </motion.div>
-
-
-                {/* GET results in 3 steps */}
-                <div>
-                    <motion.div initial={{ x: 30, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} viewport={{ amount: 0.3, once: true }} className='mt-36 mb-10 grid grid-cols-2'>
-                        <div>
-                            <h1 className='font-Barlow text-3xl md:text-4xl mb-5 capitalize '>Get results in 3 steps:</h1>
-
-
-
-                        </div>
-
-                    </motion.div>
-
-
-                    <div className='grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-10 mb-20'>
-                        <motion.div initial={{ x: -30 }} viewport={{ amount: 0.3, once: true }} whileInView={{ x: 0 }} >
-                            <div className='bg-[#fafafa] p-10 rounded-3xl'>
-                                <div className='flex justify-between'>
-                                    <h1 className='text-6xl font-Barlow opacity-30 text-primary'>01</h1>
-                                </div>
-                                <div className='mt-20 font-Mulish'>
-                                    <h1 className='text-xl mb-5'>Contact Us</h1>
-                                    <p className=''>
-                                        Start your journey with a personalized conversation. We’ll understand your challenges and craft a strategy tailored for your goals.
-                                    </p>
-                                </div>
-                            </div>
-                        </motion.div>
-                        <motion.div initial={{ x: 50 }} viewport={{ amount: 0.2 }} whileInView={{ x: 0 }} transition={{ delay: 0.15 }}>
-                            <div className='bg-[#fafafa] p-10 rounded-3xl'>
-                                <div className='flex justify-between'>
-                                    <h1 className='text-6xl font-Barlow opacity-30 text-primary'>02</h1>
-                                </div>
-                                <div className='mt-20 font-Mulish'>
-                                    <h1 className='text-xl mb-5'>Build a Funnel That Converts</h1>
-                                    <p className=''>
-                                        Turn prospects into loyal customers. Our data-driven funnels deliver measurable engagement and results.
-                                    </p>
-                                </div>
-                            </div>
-                        </motion.div>
-
-
-                        <motion.div initial={{ x: -30 }} viewport={{ amount: 0.3 }} whileInView={{ x: 0 }} transition={{ delay: 0.1 }}>
-                            <div className='bg-[#fafafa] p-10 rounded-3xl'>
-                                <div className='flex justify-between'>
-                                    <h1 className='text-6xl font-Barlow opacity-30 text-primary'>03</h1>
-                                </div>
-                                <div className='mt-20 font-Mulish'>
-                                    <h1 className='text-xl mb-5'>Scale Revenue, Watch Your Brand Thrive
-                                    </h1>
-                                    <p className=''>
-                                        With the right strategy in place, see your efforts translate into sustainable growth and success.
-
-                                    </p>
-                                </div>
-                            </div>
-                        </motion.div>
-
-
-                        <div className='md:col-span-3 '>
-                            <div className='flex  justify-center'>
-                                <NavLink to={"/grow_your_sales"} className={"flex w-[100%]  md:w-[50%] items-center gap-3 justify-center bg-secondary py-4 px-5 md:text-sm rounded-full hover:bg-secondary hover:text-primary duration-500 border-primary border  hover:shadow-lg"}>Boost your brand visibility  </NavLink>
-                            </div>
-                        </div>
-
-                        {/* <motion.div initial={{ x: 50 }} viewport={{ amount: 0.2 }} whileInView={{ x: 0 }} transition={{ delay: 0.15 }}>
-                        <div className='bg-[#fafafa] p-10 rounded-3xl'>
-                            <div className='flex justify-between'>
-                                <h1 className='text-6xl font-Barlow opacity-30 text-primary'>04</h1>
-                            </div>
-                            <div className='mt-20 font-Mulish'>
-                                <h1 className='text-xl mb-5'>Choose Your Path</h1>
-                                <p className=''>
-                                    Are you overwhelmed trying to grow your marketing business? Struggling to align your team? Looking to inspire an audience with the power of story? Choose your path below.
-                                </p>
-                            </div>
-                        </div>
-                    </motion.div> */}
-
-                    </div>
-
-                </div>
-
-                {/* Testimonial */}
-                <div className='grid md:gap-32 grid-cols-1 md:grid-cols-3 md:mt-36 md:mb-20 items-center'>
-                    <div>
-                        <p className='font-Mulish mb-3'>Testimonial</p>
-                        <h1 className='font-Barlow text-3xl md:text-4xl mb-3 font-semibold'>What People think about us</h1>
-                        <p className='font-Mulish'>
-                            Experiences shared by clients, showcasing how we've made a difference in their businesses.
-                        </p>
-
-                    </div>
-
-                    <div className='md:col-span-2'>
-                        <Swiper className='w-[100%] h-fit py-20' autoplay
-                            breakpoints={{
-                                640: {
-                                    slidesPerView: 1,
-                                    spaceBetween: 20,
-                                },
-                                768: {
-                                    slidesPerView: 2,
-                                    spaceBetween: 20,
-                                },
-                                1024: {
-                                    slidesPerView: 2,
-                                    spaceBetween: 20,
-                                },
-                            }}
-                            modules={[Autoplay]}
-                            direction='horizontal'
-                            centeredSlides={false}
-                            spaceBetween={30}
-                            loop
-                        >
-                            {
-                                testimonials.map(({ image, name, role, text }, index) => index + 1 > 3 && <SwiperSlide key={index}>
-                                    <div className='border h-[350px] p-5 pt-10 relative rounded-3xl flex flex-col justify-between'>
-                                        <div className="absolute top-[-10%] w-12 h-12 ">
-                                            <img src={image} alt="" className='rounded-full w-[100%] h-[100%] object-cover object-top' />
-                                        </div>
-                                        {/* <div className='flex gap-5'>
-                                            <div className='w-12 h-12'>
-                                                <img src={image} className='rounded-full w-[100%] h-[100%] object-cover' alt="" />
-                                            </div>
-                                            <div>
-                                                <h1 className='font-Barlow font-bold'>{name}</h1>
-                                                <p className='md:text-sm font-Mulish'>{role}</p>
-                                            </div>
-                                        </div> */}
-                                        <h1 className='font-Mulish md:text-sm mb-5'>
-                                            {text}
-                                        </h1>
-
-                                        <p className='font-Mulish md:text-sm italic'> - {name}, {role}</p>
-
-                                    </div>
-                                </SwiperSlide>)
-                            }
-
-                        </Swiper>
-                    </div>
-                </div>
-
-                {/* Does this sound like you? */}
-
-                <div>
-
-                    <motion.div initial={{ y: 50, opacity: 0 }} viewport={{ amount: 0.5, once: true }} whileInView={{ y: 0, opacity: 1 }} className='grid grid-cols-1 md:grid-cols-2  mb-20 items-center gap-10 '>
-                        <div>
-                            <h1 className='font-Barlow text-5xl mb-5 capitalize'>Does this Sound  <b className='text-primary'>Like You?</b></h1>
-
-
-                        </div>
-                        <div>
-
-                            <ul className='font-Mulish list-disc flex flex-col gap-y-5 px-5 md:px-0 mb-10'>
-                                <li>
-                                    <span className='font-semibold'>"It feels like no matter how hard you work, your brand is still invisible in the crowded market?"</span>
-                                    <p>Break through the noise with strategies that work.
-                                    </p>
-                                </li>
-                                <li>
-                                    <span className='font-semibold'>"You’re tired of putting in relentless effort, only to see minimal results?"</span>
-                                    <p>
-                                        Transform your efforts into measurable success with data-backed solutions.
-
-                                    </p>
-
-                                </li>
-                                <li>
-                                    <span className='font-semibold'> "You feel overwhelmed trying to connect with the right audience?"
-                                    </span>
-                                    <p>
-                                        Transform your efforts into measurable success with data-backed solutions.
-
-                                    </p>
-
-                                </li>
-                            </ul>
-
-                            <NavLink to={"/grow_your_sales"} className={"flex w-[100%]  md:w-[50%] items-center gap-3 justify-center bg-secondary py-4 px-5 md:text-sm rounded-full hover:bg-secondary hover:text-primary duration-500 border-primary border  hover:shadow-lg"}>Schedule a Consultation Today</NavLink>
-                        </div>
-                    </motion.div>
-                    {/* <motion.div initial={{ x: 30, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} viewport={{ amount: 0.3, once: true }} className='md:mt-36 mb-10 grid grid-cols-2'>
-                        <div>
-                            <h1 className='font-Barlow text-3xl md:text-4xl mb-5 capitalize '>Does this sound like you?</h1>
-
-
-
-                        </div>
-
-                    </motion.div>
-
-
-                    <div className='grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-10 mb-20'>
-                        <motion.div initial={{ x: -30 }} viewport={{ amount: 0.3, once: true }} whileInView={{ x: 0 }} >
-                            <div className='bg-[#fafafa] p-10 rounded-3xl'>
-                                <div className='flex justify-between'>
-                                    <h1 className='text-6xl font-Barlow opacity-30 text-primary'>01</h1>
-                                </div>
-                                <div className='mt-20 font-Mulish'>
-                                    <h1 className='text-xl mb-5'>It feel like no matter how hard you work, your brand is still invisible in the crowded market?</h1>
-                                    <p className=''>
-                                        Break through the noise with strategies that work.
-
-                                    </p>
-                                </div>
-                            </div>
-                        </motion.div>
-                        <motion.div initial={{ x: 50 }} viewport={{ amount: 0.2 }} whileInView={{ x: 0 }} transition={{ delay: 0.15 }}>
-                            <div className='bg-[#fafafa] p-10 rounded-3xl'>
-                                <div className='flex justify-between'>
-                                    <h1 className='text-6xl font-Barlow opacity-30 text-primary'>02</h1>
-                                </div>
-                                <div className='mt-20 font-Mulish'>
-                                    <h1 className='text-xl mb-5'>You’re tired of putting in relentless effort, only to see minimal results?</h1>
-                                    <p className=''>
-                                        Transform your efforts into measurable success with data-backed solutions.
-
-                                    </p>
-                                </div>
-                            </div>
-                        </motion.div>
-
-
-                        <motion.div initial={{ x: -30 }} viewport={{ amount: 0.3 }} whileInView={{ x: 0 }} transition={{ delay: 0.1 }}>
-                            <div className='bg-[#fafafa] p-10 rounded-3xl'>
-                                <div className='flex justify-between'>
-                                    <h1 className='text-6xl font-Barlow opacity-30 text-primary'>03</h1>
-                                </div>
-                                <div className='mt-20 font-Mulish'>
-                                    <h1 className='text-xl mb-5'>You feel overwhelmed trying to connect with the right audience?
-                                    </h1>
-                                    <p className=''>
-                                        Let’s help you reach the customers who truly need your solutions.
-
-                                    </p>
-                                </div>
-                            </div>
-                        </motion.div>
-
-
-                        <div className='md:col-span-3 '>
-                            <div className='flex  justify-center'>
-                                <NavLink to={"/grow_your_sales"} className={"flex w-[100%]  md:w-[50%] items-center gap-3 justify-center bg-secondary py-4 px-5 md:text-sm rounded-full hover:bg-secondary hover:text-primary duration-500 border-primary border  hover:shadow-lg"}>Schedule a Consultation Today</NavLink>
-                            </div>
-                        </div>
-
-                    </div> */}
-
-                </div>
-
-
-
-
-            </section >
-
-
-
-            {/* Key Features */}
-
-            < section className='font-Mulish py-10  px-5 md:px-24    capitalize' >
-                {/* <div className='grid grid-cols-1 md:grid-cols-2 mb-10'>
-                    <div>
-                        <h1 className='text-3xl mb-3'>How Can <i>JARGS</i> Help  <b className='font-extrabold text-primary'> You Make Money?</b> </h1>
-                        <p className='mb-6'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta tempora officiis, mollitia facilis quis delectus voluptatibus illo tempore quo illum esse dolores rerum id ipsa dolore necessitatibus voluptatum soluta maiores veniam!</p>
-
-                    </div>
-                </div>
-
-                <div className='grid grid-cols-1 md:grid-cols-2 items-center gap-10  border-primary md:p-10 rounded-3xl mb-14 md:mb-5'>
-                    <div className='order-1 md:order-1'>
-                        <img src="https://images.pexels.com/photos/2041627/pexels-photo-2041627.jpeg?auto=compress&cs=tinysrgb&w=600" className='rounded-xl' alt="" />
-                    </div>
-                    <div className='order-2 md:order-2'>
-                        <h1 className='text-2xl font-bold mb-5'>Are you stretched thin running your marketing business?</h1>
-
-                        <p className='italic'>
-                            The StoryBrand Certified Guide Program can help you level up and scale your marketing business to 6 figures and beyond.
-                            As a Certified Guide, you’ll get extensive training and exclusive rights to use the StoryBrand framework with your clients to get results every time. You’ll also receive ongoing education and support to generate more leads, automate your marketing, and steadily grow your business.
-                        </p>
-                    </div>
-                </div> */}
-
-                < div className='grid grid-cols-1 md:grid-cols-2 mb-10' >
-                    <div>
-                        <h1 className='text-3xl mb-5 md:mb-3'>Looking to  <i>Improve</i> Your Marketing     <b className='font-extrabold text-primary'> Without a Long-Term Commitment?</b> </h1>
-                        <p className='mb-4'>We understand that sometimes all you need is expert insight to steer your efforts in the right direction.
-
-                        </p>
-                        <p>At Jargs Cormark, we provide tailored marketing insights to help you:</p>
-
-                    </div>
-                </div >
-
-                <div className='grid grid-cols-1 md:grid-cols-3 gap-10 mb-10'>
-                    <div className='bg-[#fcfcfc] p-6 rounded-3xl border border-black flex flex-col justify-between'>
-                        <div className='flex justify-between'>
-                            <h1 className='text-3xl md:text-4xl font-Barlow  text-primary'>01</h1>
-                        </div>
-                        <div className=' font-Mulish'>
-                            <h1 className='text-lg mb-5'>Identify gaps in your current strategy</h1>
-
-                        </div>
-                    </div>
-
-                    <div className='bg-[#fcfcfc] p-6 rounded-3xl border border-black flex flex-col justify-between'>
-                        <div className='flex justify-between'>
-                            <h1 className='text-3xl md:text-4xl font-Barlow  text-primary'>02</h1>
-                        </div>
-                        <div className='mt-10 font-Mulish'>
-                            <h1 className='text-lg mb-5'>Explore untapped opportunities to boost visibility and engagement</h1>
-
-                        </div>
-                    </div>
-
-                    <div className='bg-[#fcfcfc] p-6 rounded-3xl border border-black flex flex-col justify-between'>
-                        <div className='flex justify-between'>
-                            <h1 className='text-3xl md:text-4xl font-Barlow  text-primary'>03</h1>
-                        </div>
-                        <div className='mt-10 font-Mulish'>
-                            <h1 className='text-lg mb-5'>Craft actionable strategies designed to drive measurable results</h1>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div className='grid grid-cols-1 md:grid-cols-2 '>
-                    <div>
-                        <p className='mb-2'>Let’s work together to uncover what’s holding your business back and map out the steps to unlock its full potential.
-                        </p>
-
-                        <h1 className='text-3xl mb-8'>Ready to gain clarity and start winning ?
-                        </h1>
-                        <NavLink to={"/grow_your_sales"} className={"flex w-[100%]  md:w-[50%] items-center gap-3 justify-center bg-secondary py-4 px-5 md:text-sm rounded-full hover:bg-secondary hover:text-primary duration-500 border-primary border  hover:shadow-lg"}>Schedule a Consultation Today</NavLink>
-                    </div>
-                </div>
-
-            </section >
-        </>
-    )
-}
-
-export default Homepage
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works */}
+      <section className="section bg-indigo-subtle">
+        <div className="container-main">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-4 glow-border"
+                style={{ 
+                  background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(56, 189, 248, 0.05))',
+                }}
+              >
+                <span className="text-sm font-medium text-indigo-600">How It Works</span>
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                From Discovery to Deployment in Weeks
+              </h2>
+              <p className="text-lg text-gray-600 mb-8">
+                We follow a proven process to deploy AI automation fast. Most clients 
+                see their first automation live within 2-4 weeks.
+              </p>
+              <ul className="space-y-4 mb-8">
+                {[
+                  '1. Discovery — Understand your goals and pain points',
+                  '2. Design — Architect the right automation solution',
+                  '3. Deploy — Build, test, and launch your AI systems',
+                  '4. Optimize — Monitor, improve, and scale',
+                ].map((item, index) => (
+                  <li key={index} className="flex items-center gap-3 text-gray-700">
+                    <div className="w-2 h-2 rounded-full bg-indigo-600" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <NavLink to="/services" className="btn-primary">
+                View Our Services
+                <RxArrowRight />
+              </NavLink>
+            </motion.div>
+
+            <motion.div
+              className="grid grid-cols-2 gap-4"
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <div className="card-futuristic p-6 text-center">
+                <div className="text-3xl font-bold gradient-text mb-2">2-4</div>
+                <div className="text-gray-600 text-sm">Weeks to Deploy</div>
+              </div>
+              <div className="card-futuristic p-6 text-center">
+                <div className="text-3xl font-bold gradient-text mb-2">24/7</div>
+                <div className="text-gray-600 text-sm">AI Availability</div>
+              </div>
+              <div className="card-futuristic p-6 text-center">
+                <div className="text-3xl font-bold gradient-text mb-2">60%</div>
+                <div className="text-gray-600 text-sm">Less Manual Work</div>
+              </div>
+              <div className="card-futuristic p-6 text-center">
+                <div className="text-3xl font-bold gradient-text mb-2">3x</div>
+                <div className="text-gray-600 text-sm">More Leads</div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="section bg-gradient-subtle">
+        <div className="container-main">
+          <motion.div
+            className="card-futuristic p-12 text-center max-w-3xl mx-auto"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Ready to Automate Your Business?
+            </h2>
+            <p className="text-lg text-gray-600 mb-8">
+              Book a free strategy call to discover which AI systems can 
+              save you 20+ hours per week and generate more qualified leads.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <NavLink to="/book-consultation" className="btn-glow text-lg px-8 py-4">
+                Book Free Strategy Call
+                <RxArrowRight className="text-xl" />
+              </NavLink>
+              <NavLink to="/case-studies" className="btn-outline text-lg px-8 py-4">
+                View Case Studies
+              </NavLink>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default Homepage;

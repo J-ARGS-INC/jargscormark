@@ -1,91 +1,218 @@
-import React from 'react'
-import { TbLocation } from 'react-icons/tb'
-import { NavLink } from 'react-router-dom'
-import { FaFacebook, FaLinkedin } from "react-icons/fa";
-import { PiInstagramLogo, PiTwitterLogo } from 'react-icons/pi';
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { 
+  FaLinkedin, 
+  FaTwitter,
+  FaYoutube
+} from 'react-icons/fa';
+import { HiOutlineMail, HiOutlineLocationMarker, HiOutlineShieldCheck } from 'react-icons/hi';
+import { RxArrowRight } from 'react-icons/rx';
+import logo from '../assets/Images/jc_logo.png';
 
 const Footer = () => {
-    const date = new Date()
+  const currentYear = new Date().getFullYear();
 
-    return (
-        <div>
-            {/* News Letter */}
-            <div className='my-5 relative font-Mulish'>
-                <div className='w-[100%] h-[70vh]'>
-                    <img src="https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg" className='w-[100%] h-[100%] object-cover' alt="" />
-                </div>
-                <div className='text-white absolute w-[100%] h-[100%] top-0 left-0 grid md:grid-cols-2 items-center  px-5 md:px-24' style={{ background: "linear-gradient(to right,rgba(0,0,0,.9) 40%, rgba(0,0,0,.2))" }}>
-                    <div>
-                        <h1 className='text-4xl font-semibold mb-5'>Be part of <b className='text-primary '>Excellence</b></h1>
-                        <p className='text-lg font-thin'>Join over 100 entrepreneurs and businesses who trust Jargs Cormark to deliver tailored strategies, measurable growth, and lasting impact. Let’s build your success story—together.</p>
+  const footerLinks = {
+    services: [
+      { text: 'AI Voice Agents', to: '/services#voice-agents' },
+      { text: 'Workflow Automation', to: '/services#workflow-automation' },
+      { text: 'MCP Integration', to: '/services#mcp-integration' },
+      { text: 'AI Lead Generation', to: '/services#ai-lead-generation' },
+      { text: 'Custom Software', to: '/services#software-development' },
+      { text: 'AI Consulting', to: '/services#consulting' },
+    ],
+    company: [
+      { text: 'About Us', to: '/about' },
+      { text: 'Services', to: '/services' },
+      { text: 'Industries', to: '/industries' },
+      { text: 'Case Studies', to: '/case-studies' },
+      { text: 'Contact', to: '/contact' },
+    ],
+    resources: [
+      { text: 'AI Agents', to: '/ai-agents' },
+      { text: 'Solutions', to: '/solutions' },
+      { text: 'Our Process', to: '/consulting-process' },
+      { text: 'Book Consultation', to: '/book-consultation' },
+    ],
+  };
 
-                        <div className='grid grid-cols-1 md:grid-cols-2 mt-6'>
-                            <NavLink to={"/contact_us"} className={"flex items-center gap-5 justify-center bg-primary py-3 px-5 text-lg text-secondary rounded-full hover:bg-secondary hover:text-primary duration-500 hover:border-primary border border-transparent hover:shadow-lg "}>Get Started <TbLocation size={20} /></NavLink>
-                        </div>
-                    </div>
-                </div>
+  const socialLinks = [
+    { icon: FaLinkedin, href: 'https://linkedin.com/company/jargs-cormark', label: 'LinkedIn' },
+    { icon: FaTwitter, href: 'https://twitter.com', label: 'Twitter' },
+    { icon: FaYoutube, href: 'https://youtube.com', label: 'YouTube' },
+  ];
+
+  const techStack = ['VAPI', 'n8n', 'MCP', 'Make', 'GoHighLevel'];
+
+  return (
+    <footer className="bg-gray-50 border-t border-gray-100">
+      {/* CTA Section */}
+      <div className="section-padding pb-12 relative overflow-hidden">
+        {/* Background */}
+        <div className="absolute inset-0 bg-futuristic" />
+        <div className="absolute inset-0 bg-mesh opacity-30" />
+        
+        <motion.div
+          className="card-futuristic p-10 md:p-14 text-center max-w-4xl mx-auto relative z-10"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4">
+            Ready to Automate Your Business with{' '}
+            <span className="gradient-text">AI?</span>
+          </h2>
+          <p className="text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed">
+            Book a free strategy call to discover which AI systems can save you 
+            20+ hours per week and generate more qualified leads.
+          </p>
+          <NavLink to="/book-consultation" className="btn-glow btn-lg group">
+            Book Free Strategy Call
+            <RxArrowRight className="text-lg group-hover:translate-x-1 transition-transform" />
+          </NavLink>
+          
+          {/* Tech badges */}
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
+            <span className="text-sm text-gray-500">Powered by:</span>
+            {techStack.map((tech) => (
+              <span key={tech} className="tech-badge text-xs">
+                {tech}
+              </span>
+            ))}
+          </div>
+        </motion.div>
+      </div>
+
+      {/* Main Footer */}
+      <div className="container-main py-12 md:py-16 bg-white border-t border-gray-100">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 lg:gap-12">
+          {/* Brand Column */}
+          <div className="col-span-2 lg:col-span-1">
+            <NavLink to="/" className="flex items-center gap-2 mb-4 group">
+              <img 
+                src={logo} 
+                alt="Jargs Cormark" 
+                className="h-14 w-auto transition-transform group-hover:scale-105" 
+              />
+            </NavLink>
+            <p className="text-gray-600 text-sm mb-4 leading-relaxed">
+              AI Automation & Intelligent Systems. We deploy AI that runs your business.
+            </p>
+            <div className="flex gap-3">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 flex items-center justify-center rounded-xl bg-gray-50 border border-gray-100 text-gray-500 hover:text-indigo-600 hover:border-indigo-200 hover:bg-indigo-50 transition-all duration-200"
+                  aria-label={social.label}
+                >
+                  <social.icon size={18} />
+                </a>
+              ))}
             </div>
+          </div>
 
-            {/* Footer */}
+          {/* Services */}
+          <div>
+            <h4 className="text-gray-900 font-semibold mb-4">Services</h4>
+            <ul className="space-y-2.5">
+              {footerLinks.services.map((link) => (
+                <li key={link.to}>
+                  <NavLink
+                    to={link.to}
+                    className="text-sm text-gray-600 hover:text-indigo-600 transition-colors"
+                  >
+                    {link.text}
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-            <footer className='px-5 md:px-24 py-5 font-Mulish'>
-                <h1 className='text-2xl mb'>How can we help? <i>Contact us.</i></h1>
-                <div className='grid grid-cols-2 md:grid-cols-4 gap-10 my-10'>
-                    <ul className='flex flex-col gap-3 text-sm'>
-                        <li className='text-lg font-medium mb-1'>Pages</li>
-                        <li className='text-black/40'><NavLink to={"/"} className={'hover:underline'}>Home</NavLink></li>
-                        <li className='text-black/40'><NavLink to={"/grow_your_sales"} className={'hover:underline'}>Services</NavLink></li>
-                        <li className='text-black/40'><NavLink to={"/about"} className={'hover:underline'}>About</NavLink></li>
-                        {/* <li className='text-black/40'><NavLink to={"/blog"} className={'hover:underline'}>Blog</NavLink></li> */}
-                    </ul>
+          {/* Company */}
+          <div>
+            <h4 className="text-gray-900 font-semibold mb-4">Company</h4>
+            <ul className="space-y-2.5">
+              {footerLinks.company.map((link) => (
+                <li key={link.to}>
+                  <NavLink
+                    to={link.to}
+                    className="text-sm text-gray-600 hover:text-indigo-600 transition-colors"
+                  >
+                    {link.text}
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-                    <ul className='flex flex-col gap-3 text-sm'>
-                        <li className='text-lg font-medium mb-1'>Quick Links</li>
-                        <li className='text-black/40'><NavLink to={"/grow_your_sales#brand_strategy"} className={'hover:underline'}>Brand Strategy </NavLink></li>
-                        <li className='text-black/40'><NavLink to={"/grow_your_sales#web_development"} className={'hover:underline'}>Web development </NavLink></li>
-                        <li className='text-black/40'><NavLink to={"/grow_your_sales#digital_marketing"} className={'hover:underline'}>Social Media Marketing </NavLink></li>
-                        <li className='text-black/40'><NavLink to={"/grow_your_sales#social_ads"} className={'hover:underline'}>Facebook & Instagram Ads </NavLink></li>
-                    </ul>
+          {/* Resources */}
+          <div>
+            <h4 className="text-gray-900 font-semibold mb-4">Resources</h4>
+            <ul className="space-y-2.5">
+              {footerLinks.resources.map((link) => (
+                <li key={link.to}>
+                  <NavLink
+                    to={link.to}
+                    className="text-sm text-gray-600 hover:text-indigo-600 transition-colors"
+                  >
+                    {link.text}
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-                    <ul className='flex flex-col gap-3 text-sm'>
-                        <li className='text-lg font-medium mb-1'>Company</li>
-                        <li className='text-black/40'><NavLink to={"/contact_us#faq"} className={'hover:underline'}>FAQ </NavLink></li>
-                        {/* <li className='text-black/40'><NavLink className={'hover:underline'}>Terms </NavLink></li> */}
-                        <li className='text-black/40'><NavLink className={'hover:underline'} to={"/contact_us"}>Contact Us</NavLink></li>
-                    </ul>
-
-                    <ul className='flex flex-col gap-3 text-sm'>
-                        <li className='text-lg font-medium mb-1'>Resources</li>
-                        <li className='text-black/40'><NavLink to={"https://whatsapp.com/channel/0029Vb0ZqJn6LwHkmXNPBX2u"} target='_blank' className={'hover:underline'}>Join Our Builders  Community </NavLink></li>
-                        {/* <li className='text-black/40'><NavLink className={'hover:underline'}>Portfolio </NavLink></li>
-                        <li className='text-black/40'><NavLink className={'hover:underline'}>Freebie</NavLink></li> */}
-                    </ul>
-
-
-                </div>
-
-                <hr className='mb-5' />
-                <div className='flex justify-between items-center font-Barlow'>
-                    <p className='text-sm'>Copyright &copy; JARGS {date.getFullYear()}</p>
-                    <div className='flex gap-5'>
-                        <NavLink to={"https://www.instagram.com/jargs_cormark/profilecard"} target='_blank'>
-                            <PiInstagramLogo size={20} />
-                        </NavLink>
-                        <NavLink to={"https://www.linkedin.com/company/jargs-cormark/"} target='_blank'>
-                            <FaLinkedin size={20} />
-                        </NavLink>
-                        <NavLink to={"https://www.facebook.com/share/q6HXuHJTW549pFLi/?mibextid=LQQJ4d"} target='_blank'>
-                            <FaFacebook size={20} />
-                        </NavLink>
-
-
-
-
-                    </div>
-                </div>
-            </footer>
+          {/* Contact */}
+          <div className="col-span-2 md:col-span-1">
+            <h4 className="text-gray-900 font-semibold mb-4">Contact</h4>
+            <ul className="space-y-3">
+              <li className="flex items-start gap-3 text-sm text-gray-600">
+                <HiOutlineMail className="mt-0.5 text-indigo-600" size={18} />
+                <a 
+                  href="mailto:info@jargscormark.com" 
+                  className="hover:text-indigo-600 transition-colors"
+                >
+                  info@jargscormark.com
+                </a>
+              </li>
+              <li className="flex items-start gap-3 text-sm text-gray-600">
+                <HiOutlineLocationMarker className="mt-0.5 text-indigo-600" size={18} />
+                <span>Global Remote Team</span>
+              </li>
+            </ul>
+            
+            {/* Trust indicator */}
+            <div className="mt-6 p-3 bg-indigo-50 rounded-xl border border-indigo-100">
+              <p className="text-xs text-indigo-700 font-medium flex items-center gap-2">
+                <HiOutlineShieldCheck size={14} />
+                Enterprise-grade AI automation
+              </p>
+            </div>
+          </div>
         </div>
-    )
-}
 
-export default Footer
+        {/* Divider */}
+        <div className="border-t border-gray-200 my-8" />
+
+        {/* Bottom Bar */}
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-500">
+          <p>© {currentYear} Jargs Cormark. All rights reserved.</p>
+          <div className="flex items-center gap-6">
+            <NavLink to="/privacy" className="hover:text-indigo-600 transition-colors">
+              Privacy Policy
+            </NavLink>
+            <NavLink to="/terms" className="hover:text-indigo-600 transition-colors">
+              Terms of Service
+            </NavLink>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;

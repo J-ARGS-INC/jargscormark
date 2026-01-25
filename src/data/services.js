@@ -1,0 +1,208 @@
+import {
+    HiOutlinePhone,
+    HiOutlineLightningBolt,
+    HiOutlineCube,
+    HiOutlineGlobeAlt,
+    HiOutlineCode,
+    HiOutlineLightBulb
+} from 'react-icons/hi';
+
+export const services = [
+    {
+        id: 'voice-agents',
+        icon: HiOutlinePhone,
+        title: 'AI Voice Agents',
+        shortDescription: 'Automated phone calls that sound human and convert leads.',
+        description: 'We deploy intelligent voice agents using VAPI that handle inbound and outbound calls 24/7—qualifying leads, booking appointments, and following up with prospects automatically.',
+        problem: 'Your team spends hours on repetitive phone calls, missing opportunities while leads go cold.',
+        solution: 'AI voice agents that answer instantly, qualify leads intelligently, and book appointments directly into your calendar.',
+        outcome: '80% reduction in response time and 3x more qualified appointments.',
+        deliverables: [
+            'Custom voice agent trained on your business',
+            'Appointment booking integration',
+            'Lead qualification workflows',
+            'Call recording & analytics dashboard',
+            'CRM integration (HubSpot, GoHighLevel, etc.)',
+        ],
+        tools: ['VAPI', 'Make', 'GoHighLevel'],
+        idealFor: [
+            'Real estate agencies',
+            'Healthcare practices',
+            'Home services companies',
+            'Sales teams',
+        ],
+    },
+    {
+        id: 'workflow-automation',
+        icon: HiOutlineLightningBolt,
+        title: 'Workflow Automation',
+        shortDescription: 'Connect your tools and automate repetitive business processes.',
+        description: 'We build powerful automation workflows using n8n that connect your apps, sync data, and eliminate manual work—saving your team hours every week.',
+        problem: 'Manual data entry, disconnected tools, and repetitive tasks are slowing your business down.',
+        solution: 'Automated workflows that move data between apps, trigger actions, and run your operations on autopilot.',
+        outcome: '60% reduction in manual tasks and zero data entry errors.',
+        deliverables: [
+            'Custom automation workflows',
+            'Multi-app integrations',
+            'Automated reporting & notifications',
+            'Error handling & monitoring',
+            'Documentation & training',
+        ],
+        tools: ['n8n', 'Make', 'Zapier'],
+        idealFor: [
+            'Operations teams',
+            'Marketing agencies',
+            'E-commerce businesses',
+            'Service providers',
+        ],
+    },
+    {
+        id: 'mcp-integration',
+        icon: HiOutlineCube,
+        title: 'MCP Integration',
+        shortDescription: 'Connect AI agents to your systems with Model Context Protocol.',
+        description: 'We implement MCP (Model Context Protocol) to give AI agents secure access to your databases, APIs, and internal tools—enabling truly intelligent automation.',
+        problem: 'AI tools are powerful but disconnected from your actual business data and systems.',
+        solution: 'MCP bridges that let AI agents read, write, and act on your real business data securely.',
+        outcome: 'AI that actually understands your business and takes meaningful actions.',
+        deliverables: [
+            'MCP server setup & configuration',
+            'Database & API connections',
+            'Custom tool development',
+            'Security & access controls',
+            'Agent orchestration workflows',
+        ],
+        tools: ['MCP', 'Claude', 'OpenAI'],
+        idealFor: [
+            'Tech-forward companies',
+            'Data-driven businesses',
+            'Enterprise teams',
+            'SaaS companies',
+        ],
+    },
+    {
+        id: 'ai-lead-generation',
+        icon: HiOutlineGlobeAlt,
+        title: 'AI Lead Generation',
+        shortDescription: 'AI-powered websites and funnels that capture and convert leads automatically.',
+        description: 'We build high-converting websites, landing pages, and sales funnels with AI-powered chat, follow-up, and nurturing systems that turn visitors into booked appointments.',
+        problem: 'Your website looks nice but doesn\'t generate enough leads or inquiries.',
+        solution: 'Conversion-optimized landing pages with AI-powered follow-up that turns visitors into booked calls.',
+        outcome: '3x increase in lead capture and 50% higher conversion rates.',
+        deliverables: [
+            'High-converting landing pages',
+            'Lead capture forms & funnels',
+            'Automated follow-up sequences',
+            'A/B testing & optimization',
+            'Analytics & conversion tracking',
+        ],
+        tools: ['Next.js', 'GoHighLevel', 'Framer'],
+        idealFor: [
+            'Service businesses',
+            'Coaches & consultants',
+            'Local businesses',
+            'B2B companies',
+        ],
+    },
+    {
+        id: 'software-development',
+        icon: HiOutlineCode,
+        title: 'Custom Software Solutions',
+        shortDescription: 'Tailored applications built for your specific business needs.',
+        description: 'We develop custom web applications, dashboards, and internal tools that solve your unique challenges—no compromises, no workarounds.',
+        problem: 'Off-the-shelf software doesn\'t fit your workflow, and you\'re stuck with manual processes.',
+        solution: 'Custom-built applications designed around your exact requirements and integrated with your existing tools.',
+        outcome: 'Software that works exactly how your business needs it to.',
+        deliverables: [
+            'Custom web applications',
+            'Admin dashboards & portals',
+            'API development & integrations',
+            'Database design & optimization',
+            'Ongoing maintenance & support',
+        ],
+        tools: ['React', 'Node.js', 'PostgreSQL'],
+        idealFor: [
+            'Growing businesses',
+            'Operations teams',
+            'Companies with unique processes',
+            'Startups',
+        ],
+    },
+    {
+        id: 'consulting',
+        icon: HiOutlineLightBulb,
+        title: 'AI Consulting & Strategy',
+        shortDescription: 'Expert guidance on implementing AI in your business.',
+        description: 'We help you identify the right AI opportunities for your business, select the best tools, and create a roadmap for implementation that delivers real ROI.',
+        problem: 'You know AI can help but don\'t know where to start or which tools to use.',
+        solution: 'Strategic consulting that cuts through the hype and gives you a clear, actionable plan.',
+        outcome: 'Clear AI roadmap with prioritized initiatives and realistic timelines.',
+        deliverables: [
+            'AI opportunity assessment',
+            'Tool & platform recommendations',
+            'Implementation roadmap',
+            'Team training & workshops',
+            'Ongoing advisory support',
+        ],
+        tools: ['Strategy', 'Training', 'Implementation'],
+        idealFor: [
+            'Business owners',
+            'Operations leaders',
+            'Marketing teams',
+            'Executive teams',
+        ],
+    },
+];
+
+export const stats = [
+    { value: '50+', label: 'Automations Deployed' },
+    { value: '10K+', label: 'Hours Saved Monthly' },
+    { value: '95%', label: 'Client Satisfaction' },
+    { value: '24/7', label: 'AI Availability' },
+];
+
+export const techStack = [
+    {
+        name: 'VAPI',
+        description: 'Voice AI platform for building phone agents',
+        category: 'Voice AI',
+    },
+    {
+        name: 'n8n',
+        description: 'Workflow automation with 400+ integrations',
+        category: 'Automation',
+    },
+    {
+        name: 'MCP',
+        description: 'Model Context Protocol for AI-system connectivity',
+        category: 'AI Integration',
+    },
+    {
+        name: 'Make',
+        description: 'Visual automation for complex workflows',
+        category: 'Automation',
+    },
+    {
+        name: 'GoHighLevel',
+        description: 'All-in-one CRM and marketing platform',
+        category: 'CRM',
+    },
+    {
+        name: 'OpenAI',
+        description: 'GPT models for intelligent processing',
+        category: 'AI',
+    },
+];
+
+export const companyInfo = {
+    name: 'Jargs Cormark',
+    tagline: 'AI Automation & Intelligent Systems',
+    mission: 'We design and deploy AI systems that automate business operations—so you can focus on growth, not busywork.',
+    markets: ['Africa', 'Middle East', 'Europe', 'Global'],
+    differentiators: [
+        'We deploy AI, not build it—faster results, lower costs',
+        'Production-ready systems, not experiments',
+        'End-to-end delivery from strategy to deployment',
+        'Ongoing support and optimization included',
+    ],
+};
