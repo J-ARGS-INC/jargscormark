@@ -29,7 +29,7 @@ const contactMethods = [
     },
 ];
 
-const WEB3FORMS_KEY = import.meta.env.VITE_WEB3FORMS_KEY || '550cfcff-a63e-464f-a133-5da7abd2074b';
+const WEB3FORMS_KEY = '550cfcff-a63e-464f-a133-5da7abd2074b';
 
 const Contact = () => {
     const [formData, setFormData] = useState({ name: '', email: '', company: '', subject: '', message: '' });
@@ -44,19 +44,20 @@ const Contact = () => {
         setIsSubmitting(true);
         setError('');
         try {
+            const data = new FormData();
+            data.append('access_key', WEB3FORMS_KEY);
+            data.append('subject', `Website Enquiry - ${formData.subject} from ${formData.name}`);
+            data.append('from_name', 'Jargs Cormark Website');
+            data.append('replyto', formData.email);
+            data.append('Name', formData.name);
+            data.append('Email', formData.email);
+            data.append('Company', formData.company);
+            data.append('Topic', formData.subject);
+            data.append('Message', formData.message);
+
             const res = await fetch('https://api.web3forms.com/submit', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-                body: JSON.stringify({
-                    access_key: WEB3FORMS_KEY,
-                    subject: `Website Enquiry — ${formData.subject} from ${formData.name}`,
-                    from_name: 'Jargs Cormark Website',
-                    Name: formData.name,
-                    Email: formData.email,
-                    Company: formData.company,
-                    Topic: formData.subject,
-                    Message: formData.message,
-                }),
+                body: data,
             });
             const json = await res.json();
             if (json.success) {

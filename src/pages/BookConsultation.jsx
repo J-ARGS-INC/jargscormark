@@ -4,12 +4,7 @@ import { RxCheckCircled, RxArrowRight, RxArrowLeft } from 'react-icons/rx';
 import { HiOutlineCalendar, HiOutlineBriefcase, HiOutlineClipboardCheck, HiOutlineShieldCheck } from 'react-icons/hi';
 import Section from '../components/layout/Section';
 
-// ---------------------------------------------------------------------------
-// Get your free key at https://web3forms.com — enter info@loopedai.io
-// then paste the key below. Web3Forms keys are public by design;
-// security is enforced by the allowed-domain setting in your dashboard.
-// ---------------------------------------------------------------------------
-const WEB3FORMS_KEY = import.meta.env.VITE_WEB3FORMS_KEY || '550cfcff-a63e-464f-a133-5da7abd2074b';
+const WEB3FORMS_KEY = '550cfcff-a63e-464f-a133-5da7abd2074b';
 
 const serviceOptions = [
     { id: 'consulting',    label: 'AI Consulting',        description: 'Strategy and roadmap for AI in your business' },
@@ -77,24 +72,25 @@ const BookConsultation = () => {
         setIsSubmitting(true);
         setError('');
         try {
+            const data = new FormData();
+            data.append('access_key', WEB3FORMS_KEY);
+            data.append('subject', `Consultation Request - ${formData.name} (${formData.company || 'no company'})`);
+            data.append('from_name', 'Jargs Cormark Website');
+            data.append('replyto', formData.email);
+            data.append('Service', serviceLabel);
+            data.append('Name', formData.name);
+            data.append('Email', formData.email);
+            data.append('Company', formData.company);
+            data.append('Role', formData.role);
+            data.append('Company size', formData.employees);
+            data.append('Challenge', formData.challenge);
+            data.append('Preferred date', dateLabel);
+            data.append('Preferred time', timeLabel);
+            data.append('Timezone', formData.timezone);
+
             const res = await fetch('https://api.web3forms.com/submit', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-                body: JSON.stringify({
-                    access_key: WEB3FORMS_KEY,
-                    subject: `Consultation Request — ${formData.name} (${formData.company || 'no company'})`,
-                    from_name: 'Jargs Cormark Website',
-                    Service: serviceLabel,
-                    Name: formData.name,
-                    Email: formData.email,
-                    Company: formData.company,
-                    Role: formData.role,
-                    'Company size': formData.employees,
-                    Challenge: formData.challenge,
-                    'Preferred date': dateLabel,
-                    'Preferred time': timeLabel,
-                    Timezone: formData.timezone,
-                }),
+                body: data,
             });
             const json = await res.json();
             if (json.success) {
@@ -124,11 +120,12 @@ const BookConsultation = () => {
                         </div>
                         <h1 className="text-2xl font-bold text-gray-900 mb-3">Request received</h1>
                         <p className="text-gray-500 mb-6 leading-relaxed">
-                            We have received your consultation request for{' '}
+                            Your preferred time is{' '}
                             <span className="font-semibold text-gray-900">{dateLabel}</span> at{' '}
                             <span className="font-semibold text-gray-900">{timeLabel}</span>.
-                            We will confirm within one business day at{' '}
-                            <span className="font-medium">{formData.email}</span>.
+                            We will review your request and get back to you at{' '}
+                            <span className="font-medium text-gray-700">{formData.email}</span>{' '}
+                            within one business day to confirm.
                         </p>
                         <div className="bg-gray-50 rounded-xl border border-gray-100 p-5 text-left">
                             <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">To prepare</p>
