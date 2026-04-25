@@ -2,10 +2,10 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { RxArrowRight, RxCheckCircled } from 'react-icons/rx';
-import { HiOutlineSparkles } from 'react-icons/hi';
 
 import Section from '../components/layout/Section';
 import CTASection from '../components/sections/CTASection';
+import PageHero from '../components/sections/PageHero';
 
 // Solution categories based on what we actually deliver
 const solutionCategories = [
@@ -98,64 +98,12 @@ const solutionCategories = [
 const Solutions = () => {
   return (
     <>
-      {/* Hero */}
-      <section className="pt-24 pb-12 sm:pt-28 sm:pb-16 md:pt-32 md:pb-20 lg:pt-40 lg:pb-24 relative overflow-hidden">
-        {/* Futuristic Background */}
-        <div className="absolute inset-0 bg-futuristic" />
-        <div className="absolute inset-0 bg-dots-futuristic opacity-50" />
-        <div className="absolute inset-0 bg-grid opacity-20" />
-        
-        {/* Floating Orbs */}
-        <motion.div 
-          className="absolute top-20 left-10 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl"
-          animate={{ y: [0, -20, 0], opacity: [0.3, 0.5, 0.3] }}
-          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-        />
-        <motion.div 
-          className="absolute bottom-20 right-10 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"
-          animate={{ y: [0, 20, 0], opacity: [0.2, 0.4, 0.2] }}
-          transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-        />
-        
-        <div className="container-main relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            {/* Badge */}
-            <motion.div
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 glow-border"
-              style={{ 
-                background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(56, 189, 248, 0.05))',
-              }}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-            >
-              <HiOutlineSparkles className="text-indigo-500" />
-              <span className="text-sm font-medium text-indigo-600">
-                AI Automation Solutions
-              </span>
-            </motion.div>
-            
-            <motion.h1
-              className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-6"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-            >
-              <span className="text-gray-900">Solutions That </span>
-              <span className="gradient-text-animated">Deliver Results</span>
-            </motion.h1>
-            
-            <motion.p
-              className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-            >
-              We organize our solutions around three outcomes: generating more leads, 
-              automating your operations, and deploying intelligent AI agents.
-            </motion.p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Solutions"
+        title="Solutions that"
+        accent="deliver results"
+        description="We organize our work around three outcomes: generating more leads, automating your operations, and deploying intelligent AI agents for your business."
+      />
 
       {/* Solution Categories */}
       {solutionCategories.map((category, catIndex) => (
@@ -182,7 +130,7 @@ const Solutions = () => {
             {category.solutions.map((solution, solIndex) => (
               <motion.div
                 key={solution.title}
-                className="card-futuristic"
+                className="bg-white rounded-2xl border border-gray-100 p-6"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -220,7 +168,7 @@ const Solutions = () => {
                     {solution.tools.map((tool) => (
                       <span 
                         key={tool} 
-                        className="tech-badge text-xs"
+                        className="inline-flex items-center px-2.5 py-1 rounded-lg bg-gray-100 text-gray-600 text-xs font-medium"
                       >
                         {tool}
                       </span>
@@ -234,9 +182,9 @@ const Solutions = () => {
       ))}
 
       {/* Engagement Options */}
-      <Section className="bg-gray-900 text-white overflow-hidden relative">
+      <Section className="bg-[#0a0e1a] text-white overflow-hidden relative">
         {/* Background Effects */}
-        <div className="absolute inset-0 bg-dots-futuristic opacity-30" />
+        <div className="absolute inset-0 opacity-[0.025]" style={{backgroundImage:"radial-gradient(circle at 1px 1px, #fff 1px, transparent 0)",backgroundSize:"32px 32px"}} />
         <motion.div 
           className="absolute top-0 left-1/4 w-96 h-96 bg-indigo-500/20 rounded-full blur-3xl"
           animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.3, 0.2] }}
@@ -287,7 +235,7 @@ const Solutions = () => {
             ].map((option, index) => (
               <motion.div
                 key={option.title}
-                className="card-futuristic"
+                className="bg-white rounded-2xl border border-gray-100 p-6"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}

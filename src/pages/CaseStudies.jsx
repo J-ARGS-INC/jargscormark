@@ -5,6 +5,7 @@ import { RxArrowRight, RxCheckCircled } from 'react-icons/rx';
 
 import Section from '../components/layout/Section';
 import CTASection from '../components/sections/CTASection';
+import PageHero from '../components/sections/PageHero';
 
 // Case studies with measurable results
 const caseStudies = [
@@ -59,7 +60,7 @@ const caseStudies = [
     region: 'Southern Africa',
     title: 'WhatsApp Customer Service Bot',
     challenge: 'Customer service team of 15 handling 2,000+ WhatsApp messages daily. Response times averaging 4 hours. Customers abandoning orders due to unanswered questions.',
-    solution: 'Built a conversational AI assistant for WhatsApp that handles order tracking, product questions, returns, and payment issues—with seamless handoff to human agents.',
+    solution: 'Built a conversational AI assistant for WhatsApp that handles order tracking, product questions, returns, and payment issues with seamless handoff to human agents.',
     implementation: [
       'Natural language processing for customer intent',
       'Integration with order management and inventory systems',
@@ -100,7 +101,7 @@ const caseStudies = [
     id: 'healthcare-claims',
     industry: 'Healthcare',
     client: 'Health Insurance Provider',
-    region: 'Kenya',
+    region: 'United Kingdom',
     title: 'Claims Processing Automation',
     challenge: 'Claims processing taking 5-7 days on average. High error rates causing rejections and resubmissions. Staff overwhelmed with backlog.',
     solution: 'Implemented AI system to extract data from claim forms and supporting documents, validate against policy terms, and auto-approve straightforward claims.',
@@ -123,42 +124,12 @@ const caseStudies = [
 const CaseStudies = () => {
   return (
     <>
-      {/* Hero */}
-      <section className="pt-24 pb-10 sm:pt-28 sm:pb-12 md:pt-32 md:pb-14 lg:pt-36 lg:pb-16 relative overflow-hidden">
-        <div className="absolute inset-0 bg-mesh" />
-        <div className="absolute inset-0 bg-grid opacity-30" />
-        
-        <div className="container-main relative z-10">
-          <div className="max-w-3xl">
-            <motion.p
-              className="text-primary-700 dark:text-primary-400 font-medium mb-4"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-            >
-              Case Studies
-            </motion.p>
-            
-            <motion.h1
-              className="text-display mb-6"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-            >
-              Real projects. Measurable results.
-            </motion.h1>
-            
-            <motion.p
-              className="text-body-lg"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-            >
-              These are examples of AI projects we have delivered for clients across Africa. 
-              Names anonymized for confidentiality, but the results are real.
-            </motion.p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Case Studies"
+        title="Real projects."
+        accent="Measurable results."
+        description="Examples of AI projects we have delivered for clients. Names are anonymized for confidentiality, but the results are real."
+      />
 
       {/* Case Studies */}
       <Section>
@@ -174,8 +145,8 @@ const CaseStudies = () => {
             >
               {/* Header */}
               <div className="flex flex-wrap gap-3 mb-4">
-                <span className="badge-muted">{study.industry}</span>
-                <span className="badge-muted">{study.region}</span>
+                <span className="inline-flex items-center px-2.5 py-1 rounded-full bg-gray-100 text-gray-600 text-xs font-medium">{study.industry}</span>
+                <span className="inline-flex items-center px-2.5 py-1 rounded-full bg-gray-100 text-gray-600 text-xs font-medium">{study.region}</span>
               </div>
               
               <h2 className="text-headline mb-6">{study.title}</h2>
@@ -184,21 +155,21 @@ const CaseStudies = () => {
                 {/* Left: Story */}
                 <div>
                   <div className="mb-6">
-                    <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-2 uppercase tracking-wide">
+                    <h3 className="text-sm font-semibold text-gray-900 mb-2 uppercase tracking-wide">
                       The Challenge
                     </h3>
                     <p className="text-body">{study.challenge}</p>
                   </div>
 
                   <div className="mb-6">
-                    <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-2 uppercase tracking-wide">
+                    <h3 className="text-sm font-semibold text-gray-900 mb-2 uppercase tracking-wide">
                       The Solution
                     </h3>
                     <p className="text-body mb-4">{study.solution}</p>
                     <ul className="space-y-2">
                       {study.implementation.map((item, i) => (
-                        <li key={i} className="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-400">
-                          <RxCheckCircled className="text-primary-600 flex-shrink-0 mt-0.5" />
+                        <li key={i} className="flex items-start gap-2 text-sm text-gray-600">
+                          <RxCheckCircled className="text-indigo-600 flex-shrink-0 mt-0.5" />
                           <span>{item}</span>
                         </li>
                       ))}
@@ -206,7 +177,7 @@ const CaseStudies = () => {
                   </div>
 
                   {study.testimonial && (
-                    <blockquote className="border-l-2 border-primary-600 pl-4 italic text-gray-600 dark:text-gray-400">
+                    <blockquote className="border-l-2 border-indigo-600 pl-4 italic text-gray-600">
                       "{study.testimonial}"
                     </blockquote>
                   )}
@@ -214,7 +185,7 @@ const CaseStudies = () => {
 
                 {/* Right: Results */}
                 <div>
-                  <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-4 uppercase tracking-wide">
+                  <h3 className="text-sm font-semibold text-gray-900 mb-4 uppercase tracking-wide">
                     Results
                   </h3>
                   <div className="grid grid-cols-2 gap-4">
@@ -224,7 +195,7 @@ const CaseStudies = () => {
                         className="card-elevated p-4 text-center"
                       >
                         <div className="stat-value text-2xl mb-1">{result.metric}</div>
-                        <div className="stat-label text-xs">{result.label}</div>
+                        <div className="text-xs text-gray-400 font-medium">{result.label}</div>
                       </div>
                     ))}
                   </div>
@@ -233,7 +204,7 @@ const CaseStudies = () => {
 
               {/* Divider */}
               {index < caseStudies.length - 1 && (
-                <hr className="mt-16 border-gray-200 dark:border-gray-800" />
+                <hr className="mt-16 border-gray-200" />
               )}
             </motion.article>
           ))}

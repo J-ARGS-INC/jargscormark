@@ -2,456 +2,207 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { RxArrowRight, RxCheckCircled } from 'react-icons/rx';
-import { 
-  HiOutlineLightningBolt,
-  HiOutlineGlobe,
-  HiOutlineShieldCheck,
-  HiOutlineSparkles,
-  HiOutlinePhone,
-  HiOutlineCube,
-  HiOutlineCode
+import {
+    HiOutlineLightningBolt,
+    HiOutlineGlobe,
+    HiOutlineShieldCheck,
+    HiOutlineRefresh,
 } from 'react-icons/hi';
 
-import Section from '../components/layout/Section';
 import CTASection from '../components/sections/CTASection';
+import PageHero from '../components/sections/PageHero';
 
-// Core values - what we stand for
-const coreValues = [
-  {
-    icon: HiOutlineShieldCheck,
-    title: 'Production-Ready Systems',
-    description: 'We deploy AI systems that work from day one—not experiments or prototypes. Everything we build is designed to run your business 24/7.',
-  },
-  {
-    icon: HiOutlineLightningBolt,
-    title: 'Speed to Value',
-    description: 'We use proven AI tools like VAPI and n8n to deliver results faster. No custom model training means you see ROI in weeks, not months.',
-  },
-  {
-    icon: HiOutlineGlobe,
-    title: 'Global Reach, Local Understanding',
-    description: 'We serve clients across Africa, the Middle East, Europe, and beyond—understanding the unique challenges of each market.',
-  },
-  {
-    icon: HiOutlineSparkles,
-    title: 'Continuous Optimization',
-    description: 'Our job doesn\'t end at deployment. We monitor, optimize, and improve your AI systems to ensure they keep delivering results.',
-  },
+const values = [
+    {
+        icon: HiOutlineShieldCheck,
+        title: 'Production systems, not prototypes',
+        description: 'Everything we build is designed to run reliably in production from day one. We do not hand over experiments.',
+    },
+    {
+        icon: HiOutlineLightningBolt,
+        title: 'Fast time to value',
+        description: 'We use proven tools rather than building from scratch. Most engagements are live within two to four weeks.',
+    },
+    {
+        icon: HiOutlineGlobe,
+        title: 'Honest about what works',
+        description: 'We tell clients when AI is not the right solution. Our goal is to solve the actual problem, not sell technology.',
+    },
+    {
+        icon: HiOutlineRefresh,
+        title: 'Ongoing, not one-off',
+        description: 'We stay involved after launch to monitor, improve, and extend what we build. Most clients keep us on retainer.',
+    },
 ];
 
-// What we actually do
 const expertise = [
-  {
-    category: 'AI Technologies We Deploy',
-    items: [
-      'VAPI Voice Agents',
-      'n8n Workflow Automation',
-      'MCP Integration',
-      'GoHighLevel CRM',
-      'OpenAI & Claude APIs',
-      'Custom Web Applications',
-    ],
-  },
-  {
-    category: 'Business Problems We Solve',
-    items: [
-      'Lead qualification & appointment booking',
-      'Manual data entry & repetitive tasks',
-      'Disconnected systems & tools',
-      'Slow customer response times',
-      'Inconsistent follow-up processes',
-      'Scaling operations without adding staff',
-    ],
-  },
-  {
-    category: 'Industries We Serve',
-    items: [
-      'Real Estate & Property Management',
-      'Healthcare & Medical Practices',
-      'Home Services & Contractors',
-      'Professional Services & Consulting',
-      'E-commerce & Retail',
-      'SaaS & Technology Companies',
-    ],
-  },
+    {
+        category: 'Technologies we deploy',
+        items: ['VAPI Voice Agents', 'n8n Workflow Automation', 'MCP Integration', 'GoHighLevel CRM', 'OpenAI and Claude APIs', 'React and Node.js'],
+    },
+    {
+        category: 'Problems we solve',
+        items: ['Lead qualification and booking', 'Manual data entry and repetitive tasks', 'Disconnected tools and systems', 'Slow customer response times', 'Inconsistent follow-up', 'Scaling without adding headcount'],
+    },
+    {
+        category: 'Industries we serve',
+        items: ['Real Estate', 'Healthcare', 'Home Services', 'Professional Services', 'E-commerce', 'SaaS and Technology'],
+    },
 ];
 
-// Track record
-const trackRecord = [
-  { value: '50+', label: 'Automations Deployed' },
-  { value: '10K+', label: 'Hours Saved Monthly' },
-  { value: '95%', label: 'Client Retention' },
-  { value: '24/7', label: 'AI Availability' },
+const partners = [
+    {
+        title: 'Marketing agencies',
+        description: 'Add AI lead generation and automation to your service offering. We handle the technical delivery.',
+    },
+    {
+        title: 'Business consultants',
+        description: 'Partner with us to deliver AI automation for your clients. We do the build, you manage the relationship.',
+    },
+    {
+        title: 'Technology integrators',
+        description: 'Extend your capabilities with voice agents, workflow automation, and MCP integrations.',
+    },
 ];
 
-// Tech stack
-const techStack = [
-  { name: 'VAPI', icon: HiOutlinePhone },
-  { name: 'n8n', icon: HiOutlineLightningBolt },
-  { name: 'MCP', icon: HiOutlineCube },
-  { name: 'React', icon: HiOutlineCode },
-];
-
-const About = () => {
-  return (
+const About = () => (
     <>
-      {/* Hero */}
-      <section className="pt-24 pb-12 sm:pt-28 sm:pb-16 md:pt-32 md:pb-20 lg:pt-40 lg:pb-24 relative overflow-hidden">
-        {/* Futuristic Background */}
-        <div className="absolute inset-0 bg-futuristic" />
-        <div className="absolute inset-0 bg-dots-futuristic opacity-50" />
-        <div className="absolute inset-0 bg-grid opacity-20" />
-        
-        {/* Floating Orbs */}
-        <motion.div 
-          className="absolute top-20 right-10 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl"
-          animate={{ y: [0, -20, 0], opacity: [0.3, 0.5, 0.3] }}
-          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+        <PageHero
+            eyebrow="About"
+            title="We build the AI systems"
+            accent="that run your business"
+            description="Jargs Cormark is an AI consulting firm. We help businesses integrate AI into their operations through consulting, automation, custom software, and website development. We also built LoopedAI, an AI immigration intelligence platform covering 190 countries."
         />
-        
-        <div className="container-main relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div>
-              {/* Badge */}
-              <motion.div
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 glow-border"
-                style={{ 
-                  background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(56, 189, 248, 0.05))',
-                }}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-              >
-                <HiOutlineSparkles className="text-indigo-500" />
-                <span className="text-sm font-medium text-indigo-600">
-                  About Jargs Cormark
-                </span>
-              </motion.div>
-              
-              <motion.h1
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1 }}
-              >
-                <span className="text-gray-900">We Deploy AI That </span>
-                <span className="gradient-text-animated">Runs Your Business</span>
-              </motion.h1>
-              
-              <motion.p
-                className="text-lg text-gray-600 mb-4"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
-              >
-                Jargs Cormark is an AI automation agency. We design and deploy AI systems 
-                using proven tools like VAPI, n8n, and MCP—so you can automate operations 
-                and scale without adding headcount.
-              </motion.p>
-              
-              <motion.p
-                className="text-body"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 }}
-              >
-                <strong>We don't build AI models.</strong> We deploy them. This means faster 
-                results, lower costs, and systems that work from day one.
-              </motion.p>
-            </div>
 
-            {/* Track Record */}
-            <motion.div
-              className="grid grid-cols-2 gap-4"
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.3 }}
-            >
-              {trackRecord.map((stat) => (
-                <div 
-                  key={stat.label} 
-                  className="card-futuristic p-6 text-center"
-                >
-                  <div className="text-3xl sm:text-4xl font-bold gradient-text mb-1">{stat.value}</div>
-                  <div className="text-sm text-gray-600">{stat.label}</div>
+        {/* Values */}
+        <section className="py-20 sm:py-24 bg-white">
+            <div className="container-main">
+                <div className="mb-10">
+                    <div className="w-8 h-0.5 bg-indigo-600 rounded-full mb-4" />
+                    <h2 className="text-3xl font-bold text-gray-900 tracking-tight mb-2">How we approach the work</h2>
+                    <p className="text-gray-500 max-w-lg">Four principles that shape every engagement we take on.</p>
                 </div>
-              ))}
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Tech Stack Banner */}
-      <section className="py-8 border-y border-gray-200 bg-gray-50/50">
-        <div className="container-main">
-          <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-8">
-            <span className="text-sm font-medium text-gray-500">Powered by:</span>
-            {techStack.map((tech, index) => (
-              <motion.div
-                key={tech.name}
-                className="tech-badge flex items-center gap-2"
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.05 }}
-              >
-                <tech.icon size={16} />
-                {tech.name}
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Our Approach */}
-      <Section className="bg-subtle">
-        <div className="max-w-3xl mb-12">
-          <motion.h2 
-            className="text-headline mb-4"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            Our Approach
-          </motion.h2>
-          <motion.p 
-            className="text-body-lg"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-          >
-            We don't sell technology for technology's sake. We solve business problems 
-            using AI systems that deliver measurable results.
-          </motion.p>
-        </div>
-        
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {coreValues.map((value, index) => (
-            <motion.div
-              key={value.title}
-              className="card-futuristic"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-            >
-              <div className="icon-futuristic mb-4">
-                <value.icon size={22} />
-              </div>
-              <h3 className="font-semibold text-gray-900 mb-2">
-                {value.title}
-              </h3>
-              <p className="text-sm text-gray-600">
-                {value.description}
-              </p>
-            </motion.div>
-          ))}
-        </div>
-      </Section>
-
-      {/* Expertise Grid */}
-      <Section>
-        <div className="max-w-3xl mb-12">
-          <motion.h2 
-            className="text-headline mb-4"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            What We Actually Do
-          </motion.h2>
-          <motion.p 
-            className="text-body-lg"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-          >
-            We deploy AI automation systems using the best tools available—no custom 
-            model building, no R&D experiments, just results.
-          </motion.p>
-        </div>
-        
-        <div className="grid md:grid-cols-3 gap-8">
-          {expertise.map((section, index) => (
-            <motion.div
-              key={section.category}
-              className="card-futuristic"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-            >
-              <h3 className="text-sm font-semibold text-indigo-600 mb-4 uppercase tracking-wide">
-                {section.category}
-              </h3>
-              <ul className="space-y-3">
-                {section.items.map((item) => (
-                  <li key={item} className="flex items-start gap-2 text-sm text-gray-600">
-                    <RxCheckCircled className="text-indigo-600 flex-shrink-0 mt-0.5" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          ))}
-        </div>
-      </Section>
-
-      {/* Why Organizations Choose Us */}
-      <Section className="bg-gray-900 text-white overflow-hidden relative">
-        {/* Background Effects */}
-        <div className="absolute inset-0 bg-dots-futuristic opacity-30" />
-        <motion.div 
-          className="absolute top-0 left-1/4 w-96 h-96 bg-indigo-500/20 rounded-full blur-3xl"
-          animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.3, 0.2] }}
-          transition={{ duration: 8, repeat: Infinity }}
-        />
-        
-        <div className="relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div>
-              <motion.h2 
-                className="text-3xl sm:text-4xl font-bold mb-8"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-              >
-                Why Businesses Choose Us
-              </motion.h2>
-              <div className="space-y-6">
-                {[
-                  {
-                    title: 'We Deploy, Not Build',
-                    description: 'Using proven tools like VAPI and n8n means faster implementation and lower costs than custom AI development.',
-                  },
-                  {
-                    title: 'Results in Weeks, Not Months',
-                    description: 'Most of our automations are live within 2-4 weeks. You start seeing ROI immediately.',
-                  },
-                  {
-                    title: 'End-to-End Ownership',
-                    description: 'From strategy to deployment to ongoing support—we handle everything so you can focus on your business.',
-                  },
-                  {
-                    title: 'Honest About What Works',
-                    description: 'If AI isn\'t the right solution for your problem, we\'ll tell you. Our goal is to solve problems, not sell technology.',
-                  },
-                ].map((item, index) => (
-                  <motion.div
-                    key={item.title}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
-                  >
-                    <h3 className="font-semibold text-white mb-1">
-                      {item.title}
-                    </h3>
-                    <p className="text-sm text-gray-400">
-                      {item.description}
-                    </p>
-                  </motion.div>
-                ))}
-              </div>
+                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                    {values.map((v, i) => (
+                        <motion.div
+                            key={v.title}
+                            className="bg-white rounded-2xl border border-gray-100 p-6 hover:border-indigo-100 hover:shadow-sm transition-all"
+                            initial={{ opacity: 0, y: 16 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: i * 0.08 }}
+                        >
+                            <div className="w-9 h-9 rounded-xl bg-indigo-50 border border-indigo-100 flex items-center justify-center mb-4">
+                                <v.icon className="text-indigo-600" size={18} />
+                            </div>
+                            <h3 className="font-semibold text-gray-900 text-[15px] mb-2">{v.title}</h3>
+                            <p className="text-sm text-gray-500 leading-relaxed">{v.description}</p>
+                        </motion.div>
+                    ))}
+                </div>
             </div>
+        </section>
 
-            <motion.div
-              className="card-futuristic p-8"
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Ready to automate your business?</h3>
-              <p className="text-gray-600 mb-6">
-                Book a free strategy call to discover which AI systems can save you 
-                20+ hours per week and generate more qualified leads.
-              </p>
-              <Link to="/book-consultation" className="btn-glow group">
-                Book Free Strategy Call
-                <RxArrowRight className="group-hover:translate-x-0.5 transition-transform" />
-              </Link>
-            </motion.div>
-          </div>
-        </div>
-      </Section>
+        {/* Expertise */}
+        <section className="py-20 sm:py-24 bg-gray-50 border-y border-gray-100">
+            <div className="container-main">
+                <div className="mb-10">
+                    <div className="w-8 h-0.5 bg-indigo-600 rounded-full mb-4" />
+                    <h2 className="text-3xl font-bold text-gray-900 tracking-tight mb-2">What we actually do</h2>
+                    <p className="text-gray-500">The technologies, problems, and industries we have real experience with.</p>
+                </div>
+                <div className="grid md:grid-cols-3 gap-5">
+                    {expertise.map((section, i) => (
+                        <motion.div
+                            key={section.category}
+                            className="bg-white rounded-2xl border border-gray-100 p-6"
+                            initial={{ opacity: 0, y: 16 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: i * 0.1 }}
+                        >
+                            <p className="text-xs font-semibold text-indigo-600 uppercase tracking-widest mb-4">{section.category}</p>
+                            <ul className="space-y-3">
+                                {section.items.map(item => (
+                                    <li key={item} className="flex items-start gap-2.5">
+                                        <RxCheckCircled className="text-indigo-500 mt-0.5 flex-shrink-0 text-sm" />
+                                        <span className="text-sm text-gray-600">{item}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </motion.div>
+                    ))}
+                </div>
+            </div>
+        </section>
 
-      {/* For Partners */}
-      <Section>
-        <div className="max-w-3xl mx-auto text-center mb-12">
-          <motion.h2 
-            className="text-headline mb-4"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            Partner With Us
-          </motion.h2>
-          <motion.p 
-            className="text-body-lg"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-          >
-            We work with agencies, consultants, and technology partners who want 
-            to offer AI automation services to their clients.
-          </motion.p>
-        </div>
-        
-        <div className="grid md:grid-cols-3 gap-8">
-          {[
-            {
-              title: 'Marketing Agencies',
-              description: 'Add AI lead generation and automation services to your offering. We provide white-label solutions.',
-            },
-            {
-              title: 'Business Consultants',
-              description: 'Partner with us to deliver AI automation for your clients. We handle the technical implementation.',
-            },
-            {
-              title: 'Technology Integrators',
-              description: 'Expand your capabilities with AI voice agents, workflow automation, and MCP integrations.',
-            },
-          ].map((item, index) => (
-            <motion.div
-              key={item.title}
-              className="card-futuristic text-center"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-            >
-              <h3 className="font-semibold text-gray-900 mb-2">
-                {item.title}
-              </h3>
-              <p className="text-sm text-gray-600">
-                {item.description}
-              </p>
-            </motion.div>
-          ))}
-        </div>
-        
-        <div className="text-center mt-8">
-          <Link 
-            to="/contact" 
-            className="text-indigo-600 font-medium hover:underline inline-flex items-center gap-1"
-          >
-            Get in touch to explore partnership opportunities
-            <RxArrowRight />
-          </Link>
-        </div>
-      </Section>
+        {/* LoopedAI callout */}
+        <section className="py-20 sm:py-24 bg-white">
+            <div className="container-main">
+                <div className="rounded-2xl bg-[#0a0e1a] p-10 sm:p-14 relative overflow-hidden">
+                    <div className="absolute top-0 right-0 w-[400px] h-[400px] opacity-10"
+                        style={{ background: 'radial-gradient(circle at top right, #6366f1, transparent 60%)' }} />
+                    <div className="relative z-10 max-w-xl">
+                        <p className="text-xs font-semibold text-indigo-400 uppercase tracking-widest mb-3">Case study</p>
+                        <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4">We built LoopedAI</h3>
+                        <p className="text-indigo-200 text-base leading-relaxed mb-7">
+                            LoopedAI is an AI immigration intelligence platform we designed and deployed.
+                            It reads official government portals in real time, reviews documents before submission,
+                            and sends daily briefings via Telegram. 190 countries covered. This is an example
+                            of the kind of AI product we can build for your business.
+                        </p>
+                        <div className="flex flex-wrap gap-3">
+                            <a href="https://www.loopedai.io" target="_blank" rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white text-indigo-700 font-semibold text-sm hover:bg-indigo-50 transition-all">
+                                Visit loopedai.io <RxArrowRight size={14} />
+                            </a>
+                            <Link to="/looped-ai"
+                                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white/10 border border-white/20 text-white font-medium text-sm hover:bg-white/15 transition-all">
+                                See how we built it
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-      {/* CTA */}
-      <CTASection
-        title="Ready to automate your business?"
-        subtitle="Book a free strategy call to discover which AI systems can save you 20+ hours per week."
-        primaryCta={{ text: 'Book Free Strategy Call', to: '/book-consultation' }}
-        secondaryCta={{ text: 'View Our Services', to: '/services' }}
-      />
+        {/* Partners */}
+        <section className="py-20 sm:py-24 bg-gray-50 border-t border-gray-100">
+            <div className="container-main">
+                <div className="mb-10">
+                    <div className="w-8 h-0.5 bg-indigo-600 rounded-full mb-4" />
+                    <h2 className="text-3xl font-bold text-gray-900 tracking-tight mb-2">Partner with us</h2>
+                    <p className="text-gray-500 max-w-lg">We work with agencies, consultants, and technology partners who want to deliver AI services to their clients.</p>
+                </div>
+                <div className="grid md:grid-cols-3 gap-5 mb-8">
+                    {partners.map((p, i) => (
+                        <motion.div
+                            key={p.title}
+                            className="bg-white rounded-2xl border border-gray-100 p-6 hover:border-indigo-100 transition-colors"
+                            initial={{ opacity: 0, y: 16 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: i * 0.1 }}
+                        >
+                            <h3 className="font-semibold text-gray-900 mb-2">{p.title}</h3>
+                            <p className="text-sm text-gray-500 leading-relaxed">{p.description}</p>
+                        </motion.div>
+                    ))}
+                </div>
+                <Link to="/contact"
+                    className="inline-flex items-center gap-1.5 text-sm font-medium text-indigo-600 hover:text-indigo-700 transition-colors">
+                    Get in touch to explore partnership opportunities <RxArrowRight size={14} />
+                </Link>
+            </div>
+        </section>
+
+        <CTASection
+            title="Ready to work together?"
+            subtitle="Tell us about your challenge. We will tell you honestly whether we can help and what we would build."
+            primaryCta={{ text: 'Book a consultation', to: '/book-consultation' }}
+            secondaryCta={{ text: 'View services', to: '/services' }}
+        />
     </>
-  );
-};
+);
 
 export default About;

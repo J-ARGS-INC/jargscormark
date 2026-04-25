@@ -13,6 +13,7 @@ import {
 
 import Section from '../components/layout/Section';
 import CTASection from '../components/sections/CTASection';
+import PageHero from '../components/sections/PageHero';
 
 // Industry data with African business context
 const industries = [
@@ -195,50 +196,19 @@ const industries = [
 const Industries = () => {
   return (
     <>
-      {/* Hero */}
-      <section className="pt-24 pb-10 sm:pt-28 sm:pb-12 md:pt-32 md:pb-14 lg:pt-36 lg:pb-16 relative overflow-hidden">
-        <div className="absolute inset-0 bg-mesh" />
-        <div className="absolute inset-0 bg-grid opacity-30" />
-        
-        <div className="container-main relative z-10">
-          <div className="max-w-3xl">
-            <motion.p
-              className="text-primary-700 dark:text-primary-400 font-medium mb-4"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-            >
-              Industry Solutions
-            </motion.p>
-            
-            <motion.h1
-              className="text-display mb-6"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-            >
-              AI solutions built for African business realities
-            </motion.h1>
-            
-            <motion.p
-              className="text-body-lg"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-            >
-              We understand the operational challenges of doing business in Africa—
-              infrastructure constraints, cost pressures, and the need to do more with less.
-              Our AI solutions are designed for these realities.
-            </motion.p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Industries"
+        title="AI solutions built for"
+        accent="African business realities"
+        description="We understand the operational challenges of doing business in Africa: infrastructure constraints, cost pressures, and the need to do more with less. Our AI solutions are designed for these realities."
+      />
 
       {/* Industry Sections */}
       {industries.map((industry, index) => (
         <Section 
           key={industry.id} 
           id={industry.id}
-          className={index % 2 === 1 ? 'bg-gray-50 dark:bg-gray-900' : ''}
+          className={index % 2 === 1 ? 'bg-gray-50' : ''}
         >
           <div className="grid lg:grid-cols-3 gap-12">
             {/* Industry Header */}
@@ -248,19 +218,19 @@ const Industries = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
               >
-                <div className="icon-box icon-box-lg icon-box-primary mb-6">
+                <div className="w-12 h-12 rounded-xl bg-indigo-50 border border-indigo-100 flex items-center justify-center text-indigo-600 mb-6">
                   <industry.icon size={28} />
                 </div>
                 <h2 className="text-headline mb-2">{industry.name}</h2>
                 <p className="text-muted mb-6">{industry.subtitle}</p>
                 
                 <div className="mb-6">
-                  <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-3">
+                  <h4 className="text-sm font-semibold text-gray-900 mb-3">
                     Common Challenges
                   </h4>
                   <ul className="space-y-2">
                     {industry.pain.map((item, i) => (
-                      <li key={i} className="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-400">
+                      <li key={i} className="flex items-start gap-2 text-sm text-gray-600">
                         <span className="text-gray-400 mt-1">•</span>
                         <span>{item}</span>
                       </li>
@@ -276,7 +246,7 @@ const Industries = () => {
                 {industry.solutions.map((solution, i) => (
                   <motion.div
                     key={solution.title}
-                    className="card-elevated p-6"
+                    className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
@@ -286,7 +256,7 @@ const Industries = () => {
                     <p className="text-body mb-4">{solution.description}</p>
                     <div className="flex items-center gap-2 text-sm">
                       <RxCheckCircled className="text-accent-600 flex-shrink-0" />
-                      <span className="font-medium text-accent-700 dark:text-accent-400">
+                      <span className="font-medium text-accent-700">
                         {solution.benefit}
                       </span>
                     </div>
@@ -325,13 +295,13 @@ const Industries = () => {
           ].map((item, index) => (
             <motion.div
               key={item.title}
-              className="card-elevated p-8"
+              className="bg-white rounded-2xl border border-gray-100 shadow-sm p-8"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
             >
-              <div className="w-8 h-8 rounded-full bg-primary-100 dark:bg-primary-900/50 flex items-center justify-center text-primary-700 dark:text-primary-300 font-semibold text-sm mb-4">
+              <div className="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-700 font-semibold text-sm mb-4">
                 {index + 1}
               </div>
               <h3 className="text-title mb-3">{item.title}</h3>

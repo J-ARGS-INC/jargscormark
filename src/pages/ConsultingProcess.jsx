@@ -14,6 +14,7 @@ import {
 import Section from '../components/layout/Section';
 import SectionHeader from '../components/sections/SectionHeader';
 import CTASection from '../components/sections/CTASection';
+import PageHero from '../components/sections/PageHero';
 
 const phases = [
   {
@@ -133,47 +134,12 @@ const faqs = [
 const ConsultingProcess = () => {
   return (
     <>
-      {/* Hero */}
-      <section className="pt-32 pb-16 lg:pt-40 lg:pb-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-white via-primary-50/30 to-white" />
-        <div className="absolute inset-0 bg-mesh" />
-        
-        <motion.div
-          className="absolute top-20 right-20 w-80 h-80 bg-primary-100/50 rounded-full blur-3xl"
-          animate={{ y: [0, -20, 0] }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        />
-        
-        <div className="container-main relative z-10">
-          <div className="max-w-3xl mx-auto text-center">
-            <motion.span
-              className="badge-primary mb-6 inline-block"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-            >
-              How We Work
-            </motion.span>
-            <motion.h1
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-            >
-              A Proven Process for{' '}
-              <span className="gradient-text">AI Success</span>
-            </motion.h1>
-            <motion.p
-              className="text-xl text-gray-600 leading-relaxed"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-            >
-              Our structured consulting methodology ensures every project delivers measurable value—
-              from initial discovery through ongoing optimization.
-            </motion.p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Our Process"
+        title="How we work"
+        accent="with clients"
+        description="A structured consulting methodology that ensures every project delivers measurable value, from initial discovery through ongoing optimisation."
+      />
 
       {/* Process Overview */}
       <Section>
@@ -187,10 +153,10 @@ const ConsultingProcess = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
             >
-              <div className="icon-box icon-box-lg icon-box-primary mx-auto mb-3">
+              <div className="w-12 h-12 rounded-xl bg-indigo-50 border border-indigo-100 flex items-center justify-center text-indigo-600 mx-auto mb-3">
                 <phase.icon size={24} />
               </div>
-              <div className="text-primary-600 font-bold text-sm mb-1">{phase.phase}</div>
+              <div className="text-indigo-600 font-bold text-sm mb-1">{phase.phase}</div>
               <div className="font-semibold text-gray-900 text-sm">{phase.title}</div>
               <div className="text-xs text-gray-500 mt-1">{phase.duration}</div>
             </motion.div>
@@ -202,7 +168,7 @@ const ConsultingProcess = () => {
       <Section background="gray">
         <SectionHeader
           badge="Detailed Process"
-          title={<>What to Expect at <span className="gradient-text">Each Phase</span></>}
+          title={<>What to Expect at <span className="bg-gradient-to-r from-indigo-600 to-blue-500 bg-clip-text text-transparent">Each Phase</span></>}
           subtitle="Transparency is core to how we work. Here's exactly what happens at each stage of our engagement."
         />
 
@@ -210,7 +176,7 @@ const ConsultingProcess = () => {
           {phases.map((phase, index) => (
             <motion.div
               key={phase.phase}
-              className="card-elevated p-8 hover:border-primary-200 transition-all duration-300"
+              className="bg-white rounded-2xl border border-gray-100 shadow-sm p-8 hover:border-indigo-100 transition-all duration-300"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -219,10 +185,10 @@ const ConsultingProcess = () => {
               <div className="grid lg:grid-cols-4 gap-8">
                 <div className="lg:col-span-1">
                   <div className="flex items-center gap-4 mb-4">
-                    <span className="text-4xl font-bold text-primary-100">{phase.phase}</span>
+                    <span className="text-4xl font-bold text-gray-200">{phase.phase}</span>
                     <div>
                       <h3 className="text-xl font-bold text-gray-900">{phase.title}</h3>
-                      <span className="text-sm text-primary-600 font-medium">{phase.duration}</span>
+                      <span className="text-sm text-indigo-600 font-medium">{phase.duration}</span>
                     </div>
                   </div>
                   <p className="text-gray-600 leading-relaxed">{phase.description}</p>
@@ -230,13 +196,13 @@ const ConsultingProcess = () => {
 
                 <div className="lg:col-span-2">
                   <h4 className="text-sm font-semibold text-gray-900 mb-3 flex items-center gap-2">
-                    <span className="w-6 h-0.5 bg-primary-600 rounded-full" />
+                    <span className="w-6 h-0.5 bg-indigo-600 rounded-full" />
                     Deliverables
                   </h4>
                   <div className="grid sm:grid-cols-2 gap-2">
                     {phase.deliverables.map((item) => (
                       <div key={item} className="flex items-center gap-2 text-sm text-gray-600">
-                        <RxCheckCircled className="text-primary-600 flex-shrink-0" />
+                        <RxCheckCircled className="text-indigo-600 flex-shrink-0" />
                         <span>{item}</span>
                       </div>
                     ))}
@@ -260,7 +226,7 @@ const ConsultingProcess = () => {
       <Section>
         <SectionHeader
           badge="Common Questions"
-          title={<>Frequently Asked <span className="gradient-text">Questions</span></>}
+          title={<>Frequently Asked <span className="bg-gradient-to-r from-indigo-600 to-blue-500 bg-clip-text text-transparent">Questions</span></>}
           subtitle="Answers to the questions we hear most often from prospective clients."
         />
 
@@ -269,7 +235,7 @@ const ConsultingProcess = () => {
             {faqs.map((faq, index) => (
               <motion.div
                 key={index}
-                className="card-elevated p-6 hover:border-primary-200 transition-all duration-300"
+                className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 hover:border-indigo-100 transition-all duration-300"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}

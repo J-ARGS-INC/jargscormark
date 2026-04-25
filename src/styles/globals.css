@@ -114,22 +114,22 @@
         @apply w-full max-w-3xl mx-auto px-4 sm:px-6;
     }
 
-    /* Section spacing - mobile first (generous for premium feel) */
+    /* Section spacing - mobile first */
     .section {
-        @apply py-14 sm:py-16 md:py-20 lg:py-24;
+        @apply py-12 sm:py-16 md:py-20 lg:py-24;
     }
 
     .section-large {
-        @apply py-20 sm:py-24 md:py-28 lg:py-32;
+        @apply py-16 sm:py-20 md:py-24 lg:py-32;
     }
 
     .section-small {
-        @apply py-10 sm:py-12 md:py-14;
+        @apply py-8 sm:py-10 md:py-12;
     }
 
-    /* Breathable section - extra spacing for key sections */
+    /* Breathable section */
     .section-breathable {
-        @apply py-16 sm:py-20 md:py-24 lg:py-28;
+        @apply py-14 sm:py-18 md:py-22 lg:py-28;
     }
 
     /* Section background variations */

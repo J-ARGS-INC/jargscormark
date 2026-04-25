@@ -1,4 +1,4 @@
-name: Generate a build and push to another branch
+name: Build and deploy to Hostinger
 
 on:
   push:
@@ -9,25 +9,26 @@ jobs:
   build:
     runs-on: ubuntu-latest
     name: Build and Push
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Install all dependencies
+      - name: Install dependencies
         run: npm install
 
-      - name: Create .env File
+      - name: Create .env file
         run: |
-          echo "VITE_DEV_ENV=${{ secrets.VITE_DEV_ENV }}" >> .env
+          echo "VITE_WEB3FORMS_KEY=${{ secrets.VITE_WEB3FORMS_KEY }}" >> .env
 
       - name: Build
-        run: npm run build # The build command of your project
+        run: npm run build
 
-      - name: Push Build Folder to Another Branch
+      - name: Push dist to build branch
         uses: s0/git-publish-subdir-action@develop
         env:
           REPO: self
-          BRANCH: build # The branch name where you want to push the assets
-          FOLDER: dist # The directory where your assets are generated
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub will automatically add this - you don't need to manually get a token
-          MESSAGE: "Build: ({sha}) {msg}" # The commit message
+          BRANCH: build
+          FOLDER: dist
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MESSAGE: "Build: ({sha}) {msg}"

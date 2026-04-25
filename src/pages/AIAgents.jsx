@@ -14,6 +14,7 @@ import {
 import Section from '../components/layout/Section';
 import SectionHeader from '../components/sections/SectionHeader';
 import CTASection from '../components/sections/CTASection';
+import PageHero from '../components/sections/PageHero';
 
 const agentTypes = [
   {
@@ -92,67 +93,12 @@ const capabilities = [
 const AIAgents = () => {
   return (
     <>
-      {/* Hero */}
-      <section className="pt-32 pb-16 lg:pt-40 lg:pb-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-white via-primary-50/30 to-white" />
-        <div className="absolute inset-0 bg-mesh" />
-        
-        <motion.div
-          className="absolute top-20 right-10 w-96 h-96 bg-gradient-to-br from-primary-200/50 to-accent-200/40 rounded-full blur-3xl"
-          animate={{ y: [0, -30, 0], scale: [1, 1.1, 1] }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-        />
-        <motion.div
-          className="absolute bottom-10 left-10 w-72 h-72 bg-gradient-to-tr from-accent-200/40 to-primary-200/30 rounded-full blur-3xl"
-          animate={{ y: [0, 20, 0] }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        />
-        
-        <div className="container-main relative z-10">
-          <div className="max-w-3xl mx-auto text-center">
-            <motion.span
-              className="badge-primary mb-6 inline-block"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-            >
-              AI Agents
-            </motion.span>
-            <motion.h1
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-            >
-              Intelligent Agents That{' '}
-              <span className="gradient-text">Work For You</span>
-            </motion.h1>
-            <motion.p
-              className="text-xl text-gray-600 leading-relaxed mb-8"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-            >
-              AI agents are autonomous systems that can understand, decide, and act on your behalf. 
-              They handle complex workflows, interact with customers, and process information—
-              freeing your team to focus on high-value work.
-            </motion.p>
-            <motion.div
-              className="flex flex-col sm:flex-row gap-4 justify-center"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-            >
-              <Link to="/contact" className="btn-primary btn-lg group">
-                Discuss Agent Solutions
-                <RxArrowRight className="group-hover:translate-x-1 transition-transform" />
-              </Link>
-              <Link to="/case-studies" className="btn-outline btn-lg">
-                See Examples
-              </Link>
-            </motion.div>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="AI Agents"
+        title="Intelligent agents built"
+        accent="for your operations"
+        description="AI agents are autonomous systems that understand, decide, and act on your behalf. They handle complex workflows, interact with customers, and process information so your team focuses on high-value work."
+      />
 
       {/* What Are AI Agents */}
       <Section>
@@ -162,10 +108,10 @@ const AIAgents = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <span className="badge-primary mb-4 inline-block">Understanding AI Agents</span>
+            <span className="inline-flex items-center px-2.5 py-1 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 text-xs font-semibold mb-4 inline-block">Understanding AI Agents</span>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
               Beyond Chatbots:{' '}
-              <span className="gradient-text">True Autonomy</span>
+              <span className="bg-gradient-to-r from-indigo-600 to-blue-500 bg-clip-text text-transparent">True Autonomy</span>
             </h2>
             <p className="text-lg text-gray-600 mb-6 leading-relaxed">
               Unlike simple automation or basic chatbots, AI agents can:
@@ -179,7 +125,7 @@ const AIAgents = () => {
                 'Handle exceptions and edge cases intelligently',
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3 text-gray-700">
-                  <RxCheckCircled className="text-primary-600 text-xl mt-0.5 flex-shrink-0" />
+                  <RxCheckCircled className="text-indigo-600 text-xl mt-0.5 flex-shrink-0" />
                   <span className="font-medium">{item}</span>
                 </li>
               ))}
@@ -200,10 +146,10 @@ const AIAgents = () => {
             ].map((stat, i) => (
               <div 
                 key={i} 
-                className="card-elevated p-6 text-center hover:border-primary-200 hover:-translate-y-1 transition-all duration-300"
+                className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 text-center hover:border-indigo-100 hover:-translate-y-1 transition-all duration-300"
               >
-                <div className="stats-value mb-1">{stat.value}</div>
-                <div className="stat-label text-sm">{stat.label}</div>
+                <div className="text-3xl font-bold text-gray-900 tracking-tight mb-1">{stat.value}</div>
+                <div className="text-sm text-gray-400 font-medium">{stat.label}</div>
               </div>
             ))}
           </motion.div>
@@ -214,7 +160,7 @@ const AIAgents = () => {
       <Section background="gray">
         <SectionHeader
           badge="Types of AI Agents"
-          title={<>Solutions for Every <span className="gradient-text">Use Case</span></>}
+          title={<>Solutions for Every <span className="bg-gradient-to-r from-indigo-600 to-blue-500 bg-clip-text text-transparent">Use Case</span></>}
           subtitle="We build different types of AI agents depending on your specific needs and workflows."
         />
 
@@ -222,13 +168,13 @@ const AIAgents = () => {
           {agentTypes.map((agent, index) => (
             <motion.div
               key={agent.title}
-              className="card-elevated p-8 hover:border-primary-200 transition-all duration-300 hover:-translate-y-1"
+              className="bg-white rounded-2xl border border-gray-100 shadow-sm p-8 hover:border-indigo-100 transition-all duration-300 hover:-translate-y-1"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
             >
-              <div className="icon-box icon-box-lg icon-box-primary mb-6">
+              <div className="w-12 h-12 rounded-xl bg-indigo-50 border border-indigo-100 flex items-center justify-center text-indigo-600 mb-6">
                 <agent.icon size={28} />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">{agent.title}</h3>
@@ -238,7 +184,7 @@ const AIAgents = () => {
                 <div className="grid grid-cols-2 gap-2">
                   {agent.useCases.map((useCase) => (
                     <div key={useCase} className="flex items-center gap-2 text-sm text-gray-600">
-                      <RxCheckCircled className="text-primary-600 flex-shrink-0" />
+                      <RxCheckCircled className="text-indigo-600 flex-shrink-0" />
                       <span>{useCase}</span>
                     </div>
                   ))}
@@ -253,7 +199,7 @@ const AIAgents = () => {
       <Section>
         <SectionHeader
           badge="Agent Capabilities"
-          title={<>Built With <span className="gradient-text">Enterprise Requirements</span></>}
+          title={<>Built With <span className="bg-gradient-to-r from-indigo-600 to-blue-500 bg-clip-text text-transparent">Enterprise Requirements</span></>}
           subtitle="Our AI agents are designed for reliability, security, and seamless integration with your existing systems."
         />
 
@@ -261,13 +207,13 @@ const AIAgents = () => {
           {capabilities.map((cap, index) => (
             <motion.div
               key={cap.title}
-              className="card-elevated p-6 hover:border-primary-200 transition-all duration-300 hover:-translate-y-1"
+              className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 hover:border-indigo-100 transition-all duration-300 hover:-translate-y-1"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.08 }}
             >
-              <div className="w-2 h-2 bg-primary-600 rounded-full mb-4" />
+              <div className="w-2 h-2 bg-indigo-600 rounded-full mb-4" />
               <h3 className="text-lg font-bold text-gray-900 mb-2">{cap.title}</h3>
               <p className="text-gray-600 text-sm leading-relaxed">{cap.description}</p>
             </motion.div>
@@ -279,7 +225,7 @@ const AIAgents = () => {
       <Section background="gray">
         <SectionHeader
           badge="Our Approach"
-          title={<>How We Build <span className="gradient-text">Custom Agents</span></>}
+          title={<>How We Build <span className="bg-gradient-to-r from-indigo-600 to-blue-500 bg-clip-text text-transparent">Custom Agents</span></>}
           subtitle="A structured process to design, build, and deploy AI agents that deliver real business value."
         />
 
@@ -298,7 +244,7 @@ const AIAgents = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
             >
-              <div className="text-5xl font-bold text-primary-100 mb-4">{item.step}</div>
+              <div className="text-5xl font-bold text-gray-200 mb-4">{item.step}</div>
               <h3 className="text-lg font-bold text-gray-900 mb-2">{item.title}</h3>
               <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
             </motion.div>
